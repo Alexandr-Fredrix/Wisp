@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>Wisp</AssemblyName>
+    <RootNamespace>Wisp</RootNamespace>
+    <Version>0.3.0-alpha.1</Version>
+    <Authors>Alexandr-Fredrix</Authors>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/Alexandr-Fredrix/Wisp</RepositoryUrl>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BepInEx"><HintPath>$(BepInExRefs)/BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(BepInExRefs)/0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="TeamCherry.Localization"><HintPath>$(HollowKnightRefs)/TeamCherry.Localization.dll</HintPath><Private>false</Private></Reference>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(HollowKnightRefs)/Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(HollowKnightRefs)/UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.IMGUIModule"><HintPath>$(HollowKnightRefs)/UnityEngine.IMGUIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.InputLegacyModule"><HintPath>$(HollowKnightRefs)/UnityEngine.InputLegacyModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextRenderingModule"><HintPath>$(HollowKnightRefs)/UnityEngine.TextRenderingModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UI"><HintPath>$(HollowKnightRefs)/UnityEngine.UI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Newtonsoft.Json"><HintPath>$(HollowKnightRefs)/Newtonsoft.Json.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.ImageConversionModule"><HintPath>$(HollowKnightRefs)/UnityEngine.ImageConversionModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule"><HintPath>$(HollowKnightRefs)/UnityEngine.UnityWebRequestModule.dll</HintPath><Private>false</Private></Reference>
+    <EmbeddedResource Include="../../content/media.json" LogicalName="Wisp.media.json" />
+    <EmbeddedResource Include="../../content/ui/*.png" LogicalName="Wisp.ui/%(Filename)%(Extension)" />
+    <EmbeddedResource Include="../../content/route.json" LogicalName="Wisp.route.json" />
+    <EmbeddedResource Include="../../content/enemies.json" LogicalName="Wisp.enemies.json" />
+  </ItemGroup>
+  <Target Name="ValidateGameReferences" BeforeTargets="ResolveAssemblyReferences">
+    <Error Condition="!Exists('$(HollowKnightRefs)/Assembly-CSharp.dll')" Text="Set HollowKnightRefs to a Hollow Knight 1.5.12620 Managed directory. Game DLLs are not bundled." />
+  </Target>
+</Project>

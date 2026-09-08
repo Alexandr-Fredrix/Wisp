@@ -1,0 +1,1184 @@
+{
+  "Crawlid": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/5/5b/B_Crawlid.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/6/69/Mapshot_HK_Crawlid_01.jpg",
+      "https://cdn.wikimg.net/en/hkwiki/images/9/93/Mapshot_HK_Crawlid_02.jpg",
+      "https://cdn.wikimg.net/en/hkwiki/images/6/6c/Mapshot_HK_Crawlid_03.jpg"
+    ],
+    "mapCaptions": [
+      "Locations in the Howling Cliffs, King's Pass, and Greenpath",
+      "Locations in the Forgotten Crossroads",
+      "Location in the Blue Lake"
+    ]
+  },
+  "Vengefly": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/e/e2/B_Vengefly.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/5/56/Mapshot_HK_Vengefly_01.jpg",
+      "https://cdn.wikimg.net/en/hkwiki/images/2/20/Mapshot_HK_Vengefly_02.jpg",
+      "https://cdn.wikimg.net/en/hkwiki/images/8/82/Mapshot_HK_Vengefly_06.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/5/5a/Mapshot_HK_Vengefly_03.jpg",
+      "https://cdn.wikimg.net/en/hkwiki/images/c/c2/Mapshot_HK_Vengefly_04.jpg",
+      "https://cdn.wikimg.net/en/hkwiki/images/e/ef/Mapshot_HK_Vengefly_05.jpg"
+    ],
+    "mapCaptions": [
+      "Locations in the Howling Cliffs and King's Pass",
+      "Locations in the Forgotten Crossroads",
+      "Location in the Infected Crossroads",
+      "Locations in Greenpath",
+      "Locations in the Resting Grounds",
+      "Locations in the City of Tears"
+    ]
+  },
+  "Vengefly_King": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/4/41/B_Vengefly_King.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/c/c0/Mapshot_HK_Vengefly_King_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9c/Mapshot_HK_Zote_05.png"
+    ]
+  },
+  "Gruzzer": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/6/63/B_Gruzzer.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/5/5a/Mapshot_HK_Gruzzer_02.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/a/a6/Mapshot_HK_Gruzzer_01.png"
+    ],
+    "mapCaptions": [
+      "Locations in the Forgotten Crossroads",
+      "Locations in the Infected Crossroads"
+    ]
+  },
+  "Gruz_Mother": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/9/9f/B_Gruz_Mother.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9c/Mapshot_HK_Zote_05.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/a/ac/Mapshot_HK_Gruz_Mother_01.png"
+    ],
+    "mapCaptions": [
+      "Colosseum of Fools",
+      "Location in Forgotten Crossroads"
+    ]
+  },
+  "Tiktik": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/9/91/B_Tiktik.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/7/7a/Mapshot_HK_Tiktik_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/b/b0/Mapshot_HK_Tiktik_02.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/9/92/Mapshot_HK_Tiktik_03.png"
+    ],
+    "mapCaptions": [
+      "Locations in the Howling Cliffs and Greenpath",
+      "Locations in the Forgotten Crossroads",
+      "Location in the Blue Lake"
+    ]
+  },
+  "Aspid_Hunter": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/7/71/B_Aspid_Hunter.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/c/cc/Mapshot_HK_Aspid_Hunter_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/d/da/Mapshot_HK_Aspid_Hunter_02.png"
+    ],
+    "mapCaptions": [
+      "Locations in Ancient Basin",
+      "Locations in the Forgotten Crossroads"
+    ]
+  },
+  "Aspid_Mother": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/c/c9/B_Aspid_Mother.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/94/Mapshot_HK_Aspid_Mother_01.png"
+    ],
+    "mapCaptions": [
+      "Locations in the Forgotten Crossroads"
+    ]
+  },
+  "Aspid_Hatchling": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/4/41/B_Aspid_Hatchling.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/94/Mapshot_HK_Aspid_Mother_01.png"
+    ],
+    "mapCaptions": [
+      "Aspid Mother locations in the Forgotten Crossroads"
+    ]
+  },
+  "Goam": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/7/76/Bestiary_armoured-worm_f.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/0/07/Mapshot_HK_Goam_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/4/45/Mapshot_HK_Goam_02.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/1/1a/Mapshot_HK_Goam_03.png"
+    ],
+    "mapCaptions": [
+      "Locations in Forgotten/Infected Crossroads",
+      "Locations in Deepnest",
+      "Goam's Journal entry location"
+    ]
+  },
+  "Wandering_Husk": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/e/ec/B_Wandering_Husk.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/d/da/Mapshot_HK_Wandering_Husk_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/4/4b/Mapshot_HK_Wandering_Husk_02.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/f/fd/Mapshot_HK_Wandering_Husk_03.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/e/e1/Mapshot_HK_Wandering_Husk_04.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/e/e5/Mapshot_HK_Wandering_Husk_05.png"
+    ],
+    "mapCaptions": [
+      "Locations in the City of Tears",
+      "Locations in Greenpath",
+      "Location in the Infected Crossroads",
+      "Locations in the Forgotten Crossroads",
+      "Locations in Deepnest"
+    ]
+  },
+  "Husk_Hornhead": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/c/cf/B_Husk_Hornhead.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/7/7e/Mapshot_HK_Husk_Hornhead_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/3/32/Mapshot_HK_Husk_Hornhead_02.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/2/22/Mapshot_HK_Husk_Hornhead_03.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/0/00/Mapshot_HK_Husk_Hornhead_04.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/3/3e/Mapshot_HK_Husk_Hornhead_05.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/5/56/Mapshot_HK_Husk_Hornhead_06.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/4/41/Mapshot_HK_Husk_Hornhead_07.png"
+    ],
+    "mapCaptions": [
+      "Location in the Royal Waterways",
+      "Locations in the City of Tears",
+      "Location in the Fungal Wastes",
+      "Locations in Greenpath",
+      "Locations in the Forgotten Crossroads",
+      "Locations in the Howling Cliffs",
+      "Locations in Deepnest"
+    ]
+  },
+  "Leaping_Husk": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/4/4d/B_Leaping_Husk.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/b/bb/Mapshot_HK_Leaping_Husk_05.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/4/49/Mapshot_HK_Leaping_Husk_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/1/17/Mapshot_HK_Leaping_Husk_02.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/6/66/Mapshot_HK_Leaping_Husk_03.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/7/71/Mapshot_HK_Leaping_Husk_04.png"
+    ],
+    "mapCaptions": [
+      "Locations in the Forgotten Crossroads",
+      "Locations in the Infected Crossroads",
+      "Location in Greenpath",
+      "Locations in the City of Tears",
+      "Locations in the Howling Cliffs"
+    ]
+  },
+  "Husk_Bully": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/6/6a/B_Husk_Bully.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/3/39/Mapshot_HK_Husk_Bully_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/d/da/Mapshot_HK_Husk_Bully_02.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/2/24/Mapshot_HK_Husk_Bully_03.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/c/c4/Mapshot_HK_Husk_Bully_04.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/e/e5/Mapshot_HK_Husk_Bully_05.png"
+    ],
+    "mapCaptions": [
+      "Locations in the Howling Cliffs",
+      "Locations in the Forgotten/Infected Crossroads",
+      "Location in Greenpath",
+      "Locations in the City of Tears",
+      "Locations in the Royal Waterways"
+    ]
+  },
+  "Husk_Warrior": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/6/69/B_Husk_Warrior.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/f/f6/Mapshot_HK_Husk_Warrior_01.png"
+    ],
+    "mapCaptions": [
+      "Location in the Forgotten Crossroads and Infected Crossroads"
+    ]
+  },
+  "Husk_Guard": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/1/1b/B_Husk_Guard.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/1/1d/Mapshot_HK_Husk_Guard_01.png"
+    ],
+    "mapCaptions": [
+      "Locations in the Forgotten Crossroads"
+    ]
+  },
+  "Entombed_Husk": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/6/65/B_Entombed_Husk.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/4/42/Mapshot_HK_Entombed_Husk_01.png"
+    ]
+  },
+  "False_Knight": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/9/98/B_False_Knight.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/5/50/Mapshot_HK_False_Knight_01.png"
+    ],
+    "mapCaptions": [
+      "Location in the Forgotten Crossroads"
+    ]
+  },
+  "Maggot": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/5/53/B_Maggot.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/7/76/Mapshot_HK_Maggot_01.jpg"
+    ],
+    "mapCaptions": [
+      "Locations in the Forgotten Crossroads"
+    ]
+  },
+  "Menderbug": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/6/6d/B_Menderbug.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/e/e7/Mapshot_HK_Menderbug_01.jpg"
+    ],
+    "mapCaptions": [
+      "Location in the Forgotten Crossroads"
+    ]
+  },
+  "Lifeseed": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/1/14/B_Lifeseed.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/5/5e/Mapshot_HK_Lifeseed.png"
+    ],
+    "mapCaptions": [
+      "Cocoon locations"
+    ]
+  },
+  "Baldur": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/4/4c/B_Baldur.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/f/fe/Mapshot_HK_Elder_Baldur_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/5/54/Mapshot_HK_Baldur_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/3/32/Mapshot_HK_Elder_Baldur_02.png"
+    ],
+    "mapCaptions": [
+      "Location in the Howling Cliffs",
+      "Location in Crystal Peak",
+      "Locations in the Forgotten Crossroads"
+    ]
+  },
+  "Elder_Baldur": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/5/52/B_Elder_Baldur.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/3/32/Mapshot_HK_Elder_Baldur_02.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/f/fe/Mapshot_HK_Elder_Baldur_01.png"
+    ],
+    "mapCaptions": [
+      "Locations in the Forgotten Crossroads",
+      "Locations in the Howling Cliffs"
+    ]
+  },
+  "Mosscreep": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/c/c1/B_Mosscreep.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/4/4a/Mapshot_HK_Mosscreep_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/8/83/Mapshot_HK_Mosscreep_02.png"
+    ]
+  },
+  "Mossfly": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/a/af/B_Mossfly.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/3/31/Mapshot_HK_Mossfly_02.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/2/29/Mapshot_HK_Mossfly_01.png"
+    ]
+  },
+  "Mosskin": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/4/47/B_Mosskin.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/a/a2/Mapshot_HK_Mosskin_01.png"
+    ]
+  },
+  "Volatile_Mosskin": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/1/1b/B_Volatile_Mosskin.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/a/a4/Mapshot_HK_Volatile_Mosskin_01.png"
+    ]
+  },
+  "Fool_Eater": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/c/ce/B_Fool_Eater.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/7/72/Mapshot_HK_Fool_Eater_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/0/03/Mapshot_HK_Fool_Eater_02.png"
+    ]
+  },
+  "Squit": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/0/05/B_Squit.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/d/d9/Mapshot_HK_Squit_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/b/b1/Mapshot_HK_Squit_02.png"
+    ]
+  },
+  "Obble": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/1/13/B_Obble.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/b/b1/Mapshot_HK_Obble_01.png"
+    ]
+  },
+  "Gulka": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/4/4d/B_Gulka.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/6/6d/Mapshot_HK_Gulka_01.png"
+    ]
+  },
+  "Maskfly": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/2/2a/B_Maskfly.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/0/0e/Mapshot_HK_Maskfly_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/4/47/Mapshot_HK_Maskfly_02.png"
+    ]
+  },
+  "Moss_Charger": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/5/56/B_Moss_Charger.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/5/50/Mapshot_HK_Moss_Charger_01.png"
+    ]
+  },
+  "Massive_Moss_Charger": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/6/63/B_Massive_Moss_Charger.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/d/d0/Mapshot_HK_Massive_Moss_Charger_01.jpg"
+    ]
+  },
+  "Moss_Knight": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/1/19/B_Moss_Knight.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/c/c6/Mapshot_HK_Moss_Knight_01.png"
+    ]
+  },
+  "Mossy_Vagabond": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/8/86/B_Mossy_Vagabond.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9b/Mapshot_HK_Mossy_Vagabond_01.png"
+    ]
+  },
+  "Durandoo": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/6/68/B_Durandoo.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/91/Mapshot_HK_Durandoo_01.jpg",
+      "https://cdn.wikimg.net/en/hkwiki/images/d/d7/Mapshot_HK_Durandoo_02.png"
+    ]
+  },
+  "Duranda": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/9/95/B_Duranda.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/a/a9/Mapshot_HK_Duranda_01.png"
+    ]
+  },
+  "Aluba": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/c/ce/B_Aluba.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/1/12/Mapshot_HK_Aluba_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/2/28/Mapshot_HK_Aluba_02.png"
+    ]
+  },
+  "Charged_Lumafly": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/7/71/B_Charged_Lumafly.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/3/33/Mapshot_HK_Charged_Lumafly_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/6/6e/Mapshot_HK_Charged_Lumafly_02.png"
+    ]
+  },
+  "Uoma": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/8/88/B_Uoma.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/90/Mapshot_HK_Uoma_01.png"
+    ]
+  },
+  "Ooma": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/7/7e/B_Ooma.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/8/83/Mapshot_HK_Ooma_01.png"
+    ]
+  },
+  "Uumuu": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/4/49/B_Uumuu.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/a/ae/Mapshot_HK_Quirrel_08.png"
+    ]
+  },
+  "Ambloom": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/c/c3/B_Ambloom.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/e/eb/Mapshot_HK_Ambloom_01.png"
+    ]
+  },
+  "Fungling": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/b/b9/B_Fungling.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9f/Mapshot_HK_Fungling_02.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/f/f4/Mapshot_HK_Fungling_01.png"
+    ]
+  },
+  "Fungoon": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/1/1c/B_Fungoon.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/1/10/Mapshot_HK_Fungoon_01.png"
+    ]
+  },
+  "Sporg": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/7/72/B_Sporg.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/8/84/Mapshot_HK_Sporg_01.png"
+    ]
+  },
+  "Fungified_Husk": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/1/1a/B_Fungified_Husk.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/d/d5/Mapshot_HK_Fungified_Husk_01.png"
+    ]
+  },
+  "Shrumeling": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/9/9a/B_Shrumeling.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/f/f2/Mapshot_HK_Shrumeling_01.png"
+    ]
+  },
+  "Shrumal_Warrior": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/c/ce/B_Shrumal_Warrior.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/d/dd/Mapshot_HK_Shrumal_Warrior_01.jpg"
+    ]
+  },
+  "Shrumal_Ogre": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/c/c8/B_Shrumal_Ogre.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/7/7a/Mapshot_HK_Shrumal_Ogre_01.jpg"
+    ]
+  },
+  "Mantis_Youth": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/6/6f/B_Mantis_Youth.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/2/29/Mapshot_HK_Mantis_Youth_01.png"
+    ]
+  },
+  "Mantis_Warrior": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/a/ae/B_Mantis_Warrior.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/b/bc/Mapshot_HK_Mantis_Warrior_01.png"
+    ]
+  },
+  "Mantis_Lords": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/d/d6/B_Mantis_Lords.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/b/b9/Mapshot_HK_Mantis_Lords_01.jpg"
+    ]
+  },
+  "Husk_Sentry": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/2/26/B_Husk_Sentry.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/c/c5/Mapshot_HK_Husk_Sentry_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/7/76/Mapshot_HK_Husk_Sentry_02.png"
+    ]
+  },
+  "Heavy_Sentry": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/1/12/B_Heavy_Sentry.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9e/Mapshot_HK_Heavy_Sentry_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/c/cb/Mapshot_HK_Heavy_Sentry_02.png"
+    ]
+  },
+  "Winged_Sentry": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/e/ec/B_Winged_Sentry.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/6/62/Mapshot_HK_Winged_Sentry_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/1/18/Mapshot_HK_Winged_Sentry_02.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/e/e9/Mapshot_HK_Winged_Sentry_03.png"
+    ]
+  },
+  "Lance_Sentry": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/b/b0/B_Lance_Sentry.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/3/31/Mapshot_HK_Lance_Sentry_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/d/d9/Mapshot_HK_Lance_Sentry_02.png"
+    ]
+  },
+  "Mistake": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/9/9d/B_Mistake.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/c/c4/Mapshot_HK_Mistake_01.png"
+    ]
+  },
+  "Folly": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/2/25/B_Folly.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/1/16/Mapshot_HK_Folly_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9c/Mapshot_HK_Zote_05.png"
+    ]
+  },
+  "Soul_Twister": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/b/b6/B_Soul_Twister.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/1/15/Mapshot_HK_Soul_Twister_01.png"
+    ]
+  },
+  "Soul_Warrior": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/0/0c/B_Soul_Warrior.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/90/Mapshot_HK_Soul_Warrior_01.jpg",
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9c/Mapshot_HK_Zote_05.png"
+    ]
+  },
+  "Soul_Master": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/7/72/B_Soul_Master.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/d/d1/Mapshot_HK_Soul_Master_01.jpg"
+    ]
+  },
+  "Husk_Dandy": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/1/1b/B_Husk_Dandy.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/8/83/Mapshot_HK_Husk_Dandy_01.png"
+    ]
+  },
+  "Cowardly_Husk": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/5/5b/B_Cowardly_Husk.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/7/7e/Mapshot_HK_Cowardly_Husk_01.png"
+    ]
+  },
+  "Gluttonous_Husk": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/d/dd/B_Gluttonous_Husk.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/c/c1/Mapshot_HK_Gluttonous_Husk_01.png"
+    ]
+  },
+  "Gorgeous_Husk": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/3/30/B_Gorgeous_Husk.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/6/6c/Mapshot_HK_Gorgeous_Husk_01.png"
+    ]
+  },
+  "Great_Husk_Sentry": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/6/63/B_Great_Husk_Sentry.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/8/87/Mapshot_HK_Great_Husk_Sentry_02.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/a/a0/Mapshot_HK_Great_Husk_Sentry_01.png"
+    ]
+  },
+  "Watcher_Knight": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/8/87/B_Watcher_Knight.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/4/44/Mapshot_HK_Watcher_Knights_01.jpg"
+    ]
+  },
+  "The_Collector": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/d/d5/B_Collector.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/7/7d/Mapshot_HK_Collector_01.jpg"
+    ]
+  },
+  "Belfly": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/7/77/B_Belfly.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/c/c4/Mapshot_HK_Belfly_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/1/19/Mapshot_HK_Belfly_02.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/6/6f/Mapshot_HK_Belfly_03.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/4/41/Mapshot_HK_Belfly_04.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/8/83/Mapshot_HK_Belfly_05.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9c/Mapshot_HK_Zote_05.png"
+    ]
+  },
+  "Pilflip": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/b/b4/B_Pilflip.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/8/81/Mapshot_HK_Pilflip_01.png"
+    ]
+  },
+  "Hwurmp": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/5/59/B_Hwurmp.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/3/3f/Mapshot_HK_Hwurmp_01.png"
+    ]
+  },
+  "Bluggsac": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/6/69/B_Bluggsac.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/8/8c/Mapshot_HK_Bluggsac.png"
+    ]
+  },
+  "Dung_Defender": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/0/0e/B_Dung_Defender.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/5/5b/Mapshot_HK_Dung_Defender_01.jpg"
+    ]
+  },
+  "White_Defender": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/a/a7/B_White_Defender.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/1/13/Mapshot_HK_White_Defender_01.jpg"
+    ]
+  },
+  "Flukefey": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/9/92/B_Flukefey.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/a/a3/Mapshot_HK_Flukefey_01.png"
+    ]
+  },
+  "Flukemon": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/f/f3/B_Flukemon.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/f/f2/Mapshot_HK_Flukemon_01.png"
+    ]
+  },
+  "Flukemunga": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/6/61/B_Flukemunga.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/0/09/Mapshot_HK_Flukemunga_01.png"
+    ]
+  },
+  "Flukemarm": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/1/1b/B_Flukemarm.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/c/c1/Mapshot_HK_Flukemarm_01.jpg"
+    ]
+  },
+  "Shardmite": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/b/ba/B_Shardmite.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/2/29/Mapshot_HK_Shardmite_01.png"
+    ]
+  },
+  "Glimback": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/4/42/B_Glimback.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/7/77/Mapshot_HK_Glimback_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/4/4b/Mapshot_HK_Glimback_02.png"
+    ],
+    "mapCaptions": [
+      "Locations in the Forgotten Crossroads",
+      "Locations in Crystal Peak"
+    ]
+  },
+  "Crystal_Hunter": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/7/7b/B_Crystal_Hunter.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/c/c7/Mapshot_HK_Crystal_Hunter_01.png"
+    ]
+  },
+  "Crystal_Crawler": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/6/6e/B_Crystal_Crawler.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/e/e5/Mapshot_HK_Crystal_Crawler_01.png"
+    ]
+  },
+  "Husk_Miner": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/e/ec/B_Husk_Miner.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/5/5b/Mapshot_HK_Husk_Miner_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/7/7f/Mapshot_HK_Myla_01.png"
+    ],
+    "mapCaptions": [
+      "Locations in Crystal Peak",
+      "Myla's location in the Forgotten Crossroads"
+    ]
+  },
+  "Crystallised_Husk": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/f/f6/B_Crystallised_Husk.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/f/fd/Mapshot_HK_Crystallised_Husk_01.png"
+    ]
+  },
+  "Crystal_Guardian": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/0/02/B_Crystal_Guardian.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/7/77/Mapshot_HK_Crystal_Guardian_01.jpg"
+    ]
+  },
+  "Furious_Vengefly": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/6/69/B_Furious_Vengefly.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/0/02/Mapshot_HK_Furious_Vengefly_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9c/Mapshot_HK_Zote_05.png"
+    ],
+    "mapCaptions": [
+      "Locations in the Infected Crossroads",
+      "Location of the Colosseum of Fools"
+    ]
+  },
+  "Volatile_Gruzzer": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/7/7b/B_Volatile_Gruzzer.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/8/81/Mapshot_HK_Volatile_Gruzzer_01.png"
+    ],
+    "mapCaptions": [
+      "Locations in the Infected Crossroads"
+    ]
+  },
+  "Violent_Husk": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/7/7d/B_Violent_Husk.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/e/e1/Mapshot_HK_Wandering_Husk_04.png"
+    ],
+    "mapCaptions": [
+      "Locations in the Infected Crossroad"
+    ]
+  },
+  "Slobbering_Husk": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/0/03/B_Slobbering_Husk.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/3/36/Mapshot_HK_Slobbering_Husk_01.png"
+    ],
+    "mapCaptions": [
+      "Locations in the Infected Crossroads"
+    ]
+  },
+  "Dirtcarver": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/0/02/B_Dirtcarver.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/f/ff/Mapshot_HK_Dirtcarver_01.png"
+    ]
+  },
+  "Carver_Hatcher": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/5/5f/B_Carver_Hatcher.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/2/29/Mapshot_HK_Carver_Hatcher_01.png"
+    ]
+  },
+  "Garpede": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/e/e9/B_Garpede.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/e/e0/Mapshot_HK_Garpede_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/a/aa/Mapshot_HK_Garpede_02.png"
+    ]
+  },
+  "Corpse_Creeper": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/7/71/B_Corpse_Creeper.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/2/24/Mapshot_HK_Corpse_Creeper_01.png"
+    ]
+  },
+  "Deepling": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/a/a5/B_Deepling.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/3/31/Mapshot_HK_Deepling_01.png"
+    ]
+  },
+  "Deephunter": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/1/18/B_Deephunter.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/97/Mapshot_HK_Deephunter_01.png"
+    ]
+  },
+  "Little_Weaver": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/5/5b/B_Little_Weaver.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/0/0a/Mapshot_HK_Little_Weaver_01.png"
+    ]
+  },
+  "Stalking_Devout": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/0/09/B_Stalking_Devout.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/2/26/Mapshot_HK_Stalking_Devout_01.png"
+    ]
+  },
+  "Nosk": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/a/a8/B_Nosk.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/b/bc/Mapshot_HK_Nosk_01.jpg"
+    ]
+  },
+  "Shadow_Creeper_(Hollow_Knight)": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/b/bf/B_Shadow_Creeper.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/a/a7/Mapshot_HK_Shadow_Creeper_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/2/22/Mapshot_HK_Shadow_Creeper_02.png"
+    ]
+  },
+  "Lesser_Mawlek": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/9/90/B_Lesser_Mawlek.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/1/12/Mapshot_HK_Lesser_Mawlek_01.png"
+    ]
+  },
+  "Mawlurk": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/c/cd/B_Mawlurk.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/0/00/Mapshot_HK_Mawlurk_01.png"
+    ]
+  },
+  "Brooding_Mawlek": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/4/42/B_Brooding_Mawlek2.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/c/c5/Mapshot_HK_Brooding_Mawlek_01.jpg",
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9c/Mapshot_HK_Zote_05.png"
+    ],
+    "mapCaptions": [
+      "Location in the Forgotten Crossroads",
+      "Location of the Colosseum of Fools"
+    ]
+  },
+  "Lightseed": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/1/15/B_Lightseed.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/a/a9/Mapshot_HK_Lightseed_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/a/ac/Mapshot_HK_Lightseed_02.png"
+    ],
+    "mapCaptions": [
+      "Location in Ancient Basin before defeating Broken Vessel",
+      "Location in the Forgotten Crossroads after it has become infected"
+    ]
+  },
+  "Infected_Balloon": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/f/fc/B_Infected_Balloon.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/b/b2/Mapshot_HK_Infected_Balloon_01.png"
+    ]
+  },
+  "Broken_Vessel": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/3/30/B_Broken_Vessel-2.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/5/55/Mapshot_HK_Broken_Vessel_01.jpg"
+    ]
+  },
+  "Boofly": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/1/13/B_Boofly.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/d/d6/Mapshot_HK_Boofly_01.png"
+    ]
+  },
+  "Primal_Aspid": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/a/a8/B_Primal_Aspid.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/2/2a/Mapshot_HK_Primal_Aspid_01.png"
+    ]
+  },
+  "Hopper": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/2/2d/B_Hopper.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/e/e8/Mapshot_HK_Hopper_01.png"
+    ]
+  },
+  "Great_Hopper": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/6/66/B_Great_Hopper.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/4/43/Mapshot_HK_Great_Hopper_01.png"
+    ]
+  },
+  "Grub_Mimic": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/5/54/B_Grub_Mimic.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/4/40/Mapshot_HK_Grub_Mimic_02.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/c/cb/Mapshot_HK_Grub_Mimic_01.png"
+    ]
+  },
+  "Hiveling": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/1/13/B_Hiveling.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/a/a3/Mapshot_HK_Hiveling_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/d/d5/Mapshot_HK_Hiveling_02.png"
+    ]
+  },
+  "Hive_Soldier": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/6/6e/B_Hive_Soldier.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/3/3e/Mapshot_HK_Hive_Soldier_01.png"
+    ]
+  },
+  "Hive_Guardian": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/f/f1/B_Hive_Guardian.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/1/1a/Mapshot_HK_Hive_Guardian_01.jpg"
+    ]
+  },
+  "Husk_Hive": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/7/7f/B_Husk_Hive.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/d/d5/Mapshot_HK_Husk_Hive_01.png"
+    ]
+  },
+  "Hive_Knight": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/f/fd/Hive_Knight.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/a/a8/Mapshot_HK_Hive_Knight_01.jpg"
+    ]
+  },
+  "Spiny_Husk": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/6/6c/B_Spiny_Husk.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/f/f2/Mapshot_HK_Spiny_Husk_01.png"
+    ]
+  },
+  "Loodle": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/f/f0/B_Loodle.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/a/ac/Mapshot_HK_Loodle_01.png"
+    ]
+  },
+  "Mantis_Petra": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/a/ae/B_Mantis_Petra.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/6/65/Mapshot_HK_Mantis_Petra_01.png"
+    ]
+  },
+  "Mantis_Traitor": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/d/da/B_Mantis_Traitor.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/f/fe/Mapshot_HK_Mantis_Traitor_01.png"
+    ]
+  },
+  "Traitor_Lord": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/2/2c/B_Traitor_Lord.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/b/b2/Mapshot_HK_Traitor_Lord_01.png"
+    ]
+  },
+  "Sharp_Baldur": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/5/5e/B_Sharp_Baldur.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9c/Mapshot_HK_Zote_05.png"
+    ]
+  },
+  "Armoured_Squit": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/2/2c/B_Armoured_Squit.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9c/Mapshot_HK_Zote_05.png"
+    ]
+  },
+  "Battle_Obble": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/9/9a/B_Battle_Obble.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9c/Mapshot_HK_Zote_05.png"
+    ]
+  },
+  "Oblobbles": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/0/09/B_Oblobble.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9c/Mapshot_HK_Zote_05.png"
+    ]
+  },
+  "Shielded_Fool": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/3/38/B_Shielded_Fool.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9c/Mapshot_HK_Zote_05.png"
+    ]
+  },
+  "Sturdy_Fool": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/b/b9/B_Sturdy_Fool.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9c/Mapshot_HK_Zote_05.png"
+    ]
+  },
+  "Winged_Fool": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/a/ad/B_Winged_Fool.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9c/Mapshot_HK_Zote_05.png"
+    ]
+  },
+  "Heavy_Fool": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/b/ba/B_Heavy_Fool.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9c/Mapshot_HK_Zote_05.png"
+    ]
+  },
+  "Death_Loodle": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/4/47/B_Death_Loodle.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9c/Mapshot_HK_Zote_05.png"
+    ]
+  },
+  "Volt_Twister": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/5/53/B_Volt_Twister.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9c/Mapshot_HK_Zote_05.png"
+    ]
+  },
+  "God_Tamer": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/d/d3/B_God_Tamer.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9c/Mapshot_HK_Zote_05.png"
+    ]
+  },
+  "Pale_Lurker": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/6/6b/B_Pale_Lurker.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9a/Mapshot_HK_Pale_Lurker_01.png"
+    ]
+  },
+  "Zote": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/5/5a/B_Zote.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/92/Mapshot_HK_Zote_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/d/d9/Mapshot_HK_Zote_02.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/c/c1/Mapshot_HK_Zote_03.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/a/a6/Mapshot_HK_Zote_04.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9c/Mapshot_HK_Zote_05.png"
+    ]
+  },
+  "Grey_Prince_Zote": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/1/17/B_Grey_Prince_Zote.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/d/d9/Mapshot_HK_Zote_02.png"
+    ]
+  },
+  "Winged_Zoteling": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/0/0b/Winged_Zoteling.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/d/d9/Mapshot_HK_Zote_02.png"
+    ]
+  },
+  "Hopping_Zoteling": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/8/88/Hopping_Zoteling.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/d/d9/Mapshot_HK_Zote_02.png"
+    ]
+  },
+  "Volatile_Zoteling": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/9/90/Volatile_Zoteling.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/d/d9/Mapshot_HK_Zote_02.png"
+    ]
+  },
+  "Xero": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/e/ed/B_Xero.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/4/45/Mapshot_HK_Xero_01.jpg"
+    ]
+  },
+  "Gorb": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/6/6c/B_Gorb.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/0/06/Mapshot_HK_Gorb_01.jpg"
+    ]
+  },
+  "Elder_Hu": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/e/ed/B_Elder_Hu.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/e/e7/Mapshot_HK_Elder_Hu_01.png"
+    ]
+  },
+  "Marmu": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/e/e8/B_Marmu.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/a/ad/Mapshot_HK_Marmu_01.png"
+    ]
+  },
+  "No_Eyes": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/3/3b/B_No_Eyes.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/6/6c/Mapshot_HK_No_Eyes_01.png"
+    ]
+  },
+  "Galien": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/9/96/B_Galien.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/5/56/Mapshot_HK_Galien_01.png"
+    ]
+  },
+  "Markoth": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/6/6b/B_Markoth.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/0/01/Mapshot_HK_Markoth_01.jpg"
+    ]
+  },
+  "Grimmkin_Novice": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/b/bf/B_Grimmkin_Novice.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/5/56/Mapshot_HK_Grimmkin_Novice_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/6/6c/Mapshot_HK_Grimmkin_Novice_02.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/5/57/Mapshot_HK_Grimmkin_Novice_03.png"
+    ]
+  },
+  "Grimmkin_Master": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/8/83/B_Grimmkin_Master.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/2/2c/Mapshot_HK_Grimmkin_Master_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/e/e2/Mapshot_HK_Grimmkin_Master_02.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/2/21/Mapshot_HK_Grimmkin_Master_03.png"
+    ]
+  },
+  "Grimmkin_Nightmare": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/e/ee/B_Grimmkin_Nightmare.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/b/b9/Mapshot_HK_Grimmkin_Nightmare_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/b/b0/Mapshot_HK_Grimmkin_Nightmare_02.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/2/22/Mapshot_HK_Grimmkin_Nightmare_03.png"
+    ]
+  },
+  "Grimm": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/5/5b/B_Grimm.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9b/Mapshot_HK_Brumm_01.png"
+    ]
+  },
+  "Nightmare_King_Grimm": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/0/09/B_Nightmare_King.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/9/9b/Mapshot_HK_Brumm_01.png"
+    ]
+  },
+  "Brothers_Oro_&_Mato": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/d/d1/B_Oro_%26_Mato.png",
+    "maps": []
+  },
+  "Paintmaster_Sheo": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/9/96/B_Paintmaster_Sheo.png",
+    "maps": []
+  },
+  "Great_Nailsage_Sly": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/e/ea/B_Great_Nailsage_Sly.png",
+    "maps": []
+  },
+  "Wingmould_(Hollow_Knight)": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/c/c7/B_Wingmould.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/8/84/Mapshot_HK_Wingmould_01.png"
+    ]
+  },
+  "Royal_Retainer": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/8/87/B_Royal_Retainer.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/7/7a/Mapshot_HK_Royal_Retainer_01.png"
+    ]
+  },
+  "Kingsmould": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/5/50/B_Kingsmould.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/c/c9/Mapshot_HK_Kingsmould_01.png"
+    ]
+  },
+  "Sibling": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/b/b3/B_Sibling.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/b/b5/Mapshot_HK_Sibling_01.png"
+    ]
+  },
+  "Void_Tendrils_(Hollow_Knight)": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/b/b3/B_Void_Tendrils.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/3/3b/Mapshot_HK_Void_Tendrils_01.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/e/ef/Mapshot_HK_Void_Tendrils_02.png",
+      "https://cdn.wikimg.net/en/hkwiki/images/1/1f/Mapshot_HK_Void_Tendrils_03.png"
+    ]
+  },
+  "Hornet_Protector": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/8/89/B_Hornet.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/3/3f/Mapshot_HK_Mothwing_Cloak_01.png"
+    ]
+  },
+  "The_Hollow_Knight": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/1/12/B_Hollow_Knight.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/7/7c/Mapshot_HK_Hornet_03.png"
+    ]
+  },
+  "Pure_Vessel": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/e/e4/B_Pure_Vessel.png",
+    "maps": []
+  },
+  "Radiance": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/5/52/B_Radiance.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/7/7c/Mapshot_HK_Hornet_03.png"
+    ]
+  },
+  "Shade": {
+    "portrait": "https://cdn.wikimg.net/en/hkwiki/images/b/b9/B_Shade.png",
+    "maps": [
+      "https://cdn.wikimg.net/en/hkwiki/images/1/1e/Mapshot_HK_Shade_Spawns.png"
+    ]
+  }
+}

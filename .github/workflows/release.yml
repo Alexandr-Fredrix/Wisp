@@ -1,0 +1,31 @@
+name: Verify release
+on:
+  release:
+    types: [published]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check release version
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          python3 tools/check.py
+          python3 -c 'import json,os; assert os.environ["RELEASE_TAG"] == "v"+json.load(open("version.json"))["version"]'
+      - run: python3 -m unittest discover -s tests
+      - name: Check packaged download
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          mkdir release-download
+          gh release download "$RELEASE_TAG" --pattern 'Wisp-*.zip*' --dir release-download
+          cd release-download
+          sha256sum -c *.sha256
+          python3 -c 'import glob,zipfile; z=zipfile.ZipFile(glob.glob("*.zip")[0]); assert [n for n in z.namelist() if n.lower().endswith(".dll")] == ["BepInEx/plugins/Wisp/Wisp.dll"]'
