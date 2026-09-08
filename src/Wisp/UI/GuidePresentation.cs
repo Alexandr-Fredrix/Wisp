@@ -34,8 +34,8 @@ namespace Wisp.UI
             activeTexture = new Texture2D(128, 32, TextureFormat.RGBA32, false);
             for (int y = 0; y < 32; y++) for (int x = 0; x < 128; x++)
             {
-                float fade = 1;
-                activeTexture.SetPixel(x, y, new Color(.5f, .65f, .85f, fade * .30f));
+                float fade = Mathf.Sin(Mathf.PI * x / 127f) * Mathf.Sin(Mathf.PI * y / 31f);
+                activeTexture.SetPixel(x, y, new Color(.5f, .65f, .85f, fade * .16f));
             }
             activeTexture.Apply();
             text = new GUIStyle(GUI.skin.label) { font = font, fontSize = 19, wordWrap = true, richText = false, clipping = TextClipping.Clip, padding = new RectOffset(4, 4, 4, 4) };
@@ -66,12 +66,62 @@ namespace Wisp.UI
         private static Texture2D Solid(Color color)
         { var texture = new Texture2D(1, 1); texture.SetPixel(0, 0, color); texture.Apply(); return texture; }
 
-        private bool Choose(Rect rect, string label, bool selected = false)
+        // The open item has an underline; only controller focus gets silver brackets.
+        private bool Choose(Rect rect, string label, bool selected = false, bool focused = false)
         {
-            bool clicked = GUI.Button(rect, label, selected ? active : button);
-            if (selected) Border(rect, new Color(.48f, .60f, .72f));
-            if (selected) GUI.Label(new Rect(rect.x + 2, rect.y + (rect.height - 22) / 2, 17, 22), "›", text);
+            bool clicked = GUI.Button(rect, label, focused ? active : button);
+            if (selected) Rule(new Rect(rect.x + 18, rect.yMax - 5, rect.width - 36, 1), new Color(.34f, .43f, .52f));
+            if (focused) FocusCorners(rect);
             return clicked;
+        }
+
+        private static void Rule(Rect rect, Color tint)
+        {
+            var old = GUI.color; GUI.color = tint;
+            GUI.DrawTexture(rect, Texture2D.whiteTexture); GUI.color = old;
+        }
+
+        private static void FocusCorners(Rect rect)
+        {
+            var silver = new Color(.82f, .9f, .96f);
+            foreach (float x in new[] { rect.x, rect.xMax - 1 })
+            {
+                Rule(new Rect(x, rect.y + 6, 1, 12), silver);
+                Rule(new Rect(x, rect.yMax - 18, 1, 12), silver);
+            }
+            foreach (float y in new[] { rect.y + 6, rect.yMax - 7 })
+            {
+                Rule(new Rect(rect.x, y, 10, 1), silver);
+                Rule(new Rect(rect.xMax - 10, y, 10, 1), silver);
+            }
+        }
+
+        private void KeyHint(Rect rect, string key)
+        {
+            GUI.Label(rect, key, new GUIStyle(small) { alignment = TextAnchor.MiddleCenter });
+            Rule(new Rect(rect.x + 5, rect.yMax - 2, rect.width - 10, 1), new Color(.38f, .48f, .58f));
+        }
+
+        private void ChangeTab(int target)
+        {
+            tab = target; padPane = 0; expandedEnemyMap = false;
+            detailChoice = mapTab ? 1 : 0; detailScroll = Vector2.zero;
+        }
+
+        private void OpenRegionJournal()
+        {
+            journalRegion = Current.English.Replace('’', '\''); allRegions = false;
+            enemyIndex = 0; enemyScroll = Vector2.zero; ChangeTab(1);
+        }
+
+        private string NavigationHint()
+        {
+            if (tab == 2) return "↑ ↓ Выбор настройки     A Изменить     B Закрыть";
+            if (tab == 1) return "↑ ↓ Враг     A Следующее место     X Фильтр области     RS Карта     LT / RT Масштаб     B Назад";
+            if (padPane == 0) return "↑ ↓ Область     A / → К шагам     B Закрыть";
+            if (padPane == 1) return "↑ ↓ Шаг     A / → К описанию и карте     Y Отметка     B / ← К областям";
+            return mapTab ? "↑ ↓ Выбрать вкладку · A Открыть     LS / RS Двигать карту     LT / RT Масштаб     Y Вписать     B / ← К шагам"
+                : "↑ ↓ Выбрать вкладку · A Открыть     RS Прокрутить текст     X Карта     B / ← К шагам";
         }
 
         private void Divider(Rect rect)
@@ -107,16 +157,18 @@ namespace Wisp.UI
                 // Every section has its own fixed viewport; no child can widen its parent.
                 GUI.Label(new Rect(112, 57, 870, 38), "WISP  /  Атлас Халлоунеста", heading);
                 if (Choose(new Rect(1040, 57, 145, 38), "Закрыть · F8")) Close();
-                if (Choose(new Rect(90, 103, 150, 38), "Маршрут", tab == 0)) tab = 0;
-                if (Choose(new Rect(250, 103, 220, 38), "Дневник охотника", tab == 1)) tab = 1;
-                if (Choose(new Rect(480, 103, 160, 38), "Настройки", tab == 2)) tab = 2;
+                KeyHint(new Rect(84, 107, 36, 28), "LB");
+                KeyHint(new Rect(682, 107, 36, 28), "RB");
+                if (Choose(new Rect(126, 103, 150, 38), "Маршрут", tab == 0)) ChangeTab(0);
+                if (Choose(new Rect(286, 103, 220, 38), "Дневник охотника", tab == 1)) ChangeTab(1);
+                if (Choose(new Rect(516, 103, 160, 38), "Настройки", tab == 2)) ChangeTab(2);
                 if (Choose(new Rect(750, 103, 430, 38), "Цель: " + (mod.Progress.RouteGoal == "steel" ? "Быстрая Стальная душа" : "112% · полное прохождение"))) { tab = 2; padPane = 0; }
                 Divider(new Rect(92, 147, 1096, 15));
                 GUI.BeginGroup(new Rect(84, 176, 1112, 530));
                 if (tab == 0) DrawRoute(); else if (tab == 1) DrawJournal(); else DrawSettings();
                 GUI.EndGroup();
                 Divider(new Rect(340, 721, 600, 14));
-                GUI.Label(new Rect(90, 740, 1100, 32), tab == 1 ? "LB/RB вкладки · ↑/↓ враг · A следующая карта · X область · LT/RT масштаб · B закрыть" : (mapTab ? "Стики — карта · LT/RT — масштаб · Y — вписать · крестовина — списки · B — закрыть" : "LB/RB — вкладки · крестовина — выбор · A — отметка · X — карта · B — закрыть"), small);
+                GUI.Label(new Rect(90, 740, 1100, 32), NavigationHint(), small);
             }
             finally { GUI.matrix = matrix; GUI.depth = depth; GUI.enabled = enabled; GUI.color = color; }
         }
@@ -125,30 +177,32 @@ namespace Wisp.UI
         {
             var chapters = RouteChapters;
             var steps = RouteSteps;
-            GUI.Label(new Rect(0, 0, 210, 28), padPane == 0 ? "◇ ОБЛАСТИ" : "ОБЛАСТИ", muted);
+            GUI.Label(new Rect(0, 0, 210, 28), padPane == 0 ? "ОБЛАСТИ · ВЫБОР" : "ОБЛАСТИ", muted);
             chapterScroll = GUI.BeginScrollView(new Rect(0, 34, 216, 496), chapterScroll, new Rect(0, 0, 192, chapters.Length * 96));
             for (int i = 0; i < chapters.Length; i++)
             {
                 bool visible = Visible(chapters[i]);
                 var included = chapters[i].Steps.Where(s => RouteGoals.Includes(mod.Progress.RouteGoal, s)).ToArray();
-                if (Choose(new Rect(0, i * 96, 192, 90), (visible ? chapters[i].Title : "Неизученная область") + (visible ? "\n" + included.Count(Done) + " / " + included.Length : ""), chapterIndex == i)) SelectChapter(i);
+                if (Choose(new Rect(0, i * 96, 192, 90), (visible ? chapters[i].Title : "Неизученная область") + (visible ? "\n" + included.Count(Done) + " / " + included.Length : ""), chapterIndex == i, chapterIndex == i && padPane == 0)) { padPane = 0; SelectChapter(i); }
             }
             GUI.EndScrollView();
-            GUI.Label(new Rect(238, 0, 238, 28), padPane == 1 ? "◇ ШАГИ" : "ШАГИ", muted);
+            GUI.Label(new Rect(238, 0, 238, 28), padPane == 1 ? "ШАГИ · ВЫБОР" : "ШАГИ", muted);
             if (!Visible(Current)) { Paragraph(new Rect(504, 30, 596, 440), "Область ещё не открыта", "Посети эту область или включи спойлеры в настройках."); return; }
             stepScroll = GUI.BeginScrollView(new Rect(238, 34, 240, 496), stepScroll, new Rect(0, 0, 216, steps.Length * 96));
             float sy = 0;
             for (int i = 0; i < steps.Length; i++)
             {
                 if (mod.Settings.HideCompleted && Done(steps[i]) && i != stepIndex) continue;
-                if (Choose(new Rect(0, sy, 216, 90), (Done(steps[i]) ? "✓ " : "○ ") + steps[i].Title, stepIndex == i)) SelectStep(i);
+                if (Choose(new Rect(0, sy, 216, 90), (Done(steps[i]) ? "✓ " : "○ ") + steps[i].Title, stepIndex == i, stepIndex == i && padPane == 1)) { padPane = 1; SelectStep(i); }
                 sy += 96;
             }
             GUI.EndScrollView();
-            if (Choose(new Rect(500, 0, 168, 32), "Описание", !mapTab)) mapTab = false;
-            if (Choose(new Rect(680, 0, 150, 32), "Карта", mapTab)) mapTab = true;
-            if (Choose(new Rect(844, 0, 240, 32), "Враги области"))
-            { journalRegion = Current.English.Replace('’', '\''); allRegions = false; enemyIndex = 0; enemyScroll = Vector2.zero; tab = 1; }
+            if (Choose(new Rect(500, 0, 168, 32), "Описание", !mapTab, padPane == 2 && detailChoice == 0)) { mapTab = false; detailChoice = 0; padPane = 2; }
+            if (Choose(new Rect(680, 0, 150, 32), "Карта", mapTab, padPane == 2 && detailChoice == 1)) { mapTab = true; detailChoice = 1; padPane = 2; }
+            if (Choose(new Rect(844, 0, 240, 32), "Враги области", false, padPane == 2 && detailChoice == 2)) OpenRegionJournal();
+            KeyHint(new Rect(216, 2, 22, 26), "↔");
+            KeyHint(new Rect(478, 2, 22, 26), "↔");
+            if (padPane == 2) Rule(new Rect(500, 36, 612, 2), new Color(.66f, .77f, .87f));
             if (mapTab) DrawAreaMap(new Rect(500, 44, 612, 428));
             else
             {
@@ -237,7 +291,7 @@ namespace Wisp.UI
             enemyIndex = Mathf.Clamp(enemyIndex, 0, enemies.Length - 1);
             enemyScroll = GUI.BeginScrollView(new Rect(0, 54, 216, 476), enemyScroll, new Rect(0, 0, 190, enemies.Length * 80));
             for (int i = 0; i < enemies.Length; i++)
-                if (Choose(new Rect(0, i * 80, 190, 74), (JournalStatus.Read(enemies[i], player).Complete ? "✓ " : "○ ") + EnemyName(enemies[i]), i == enemyIndex))
+                if (Choose(new Rect(0, i * 80, 190, 74), (JournalStatus.Read(enemies[i], player).Complete ? "✓ " : "○ ") + EnemyName(enemies[i]), i == enemyIndex, i == enemyIndex))
                 { enemyIndex = i; enemyMapIndex = 0; mapPan = Vector2.zero; mapZoom = 1; habitatScroll = Vector2.zero; }
             GUI.EndScrollView();
             // Two fixed journal pages: portrait/conditions and an uninterrupted habitat map.
@@ -300,8 +354,8 @@ namespace Wisp.UI
 
         private bool MapButton(Rect rect, string label, bool selected = false)
         {
-            Border(rect, selected ? new Color(.65f, .76f, .85f) : new Color(.30f, .39f, .47f));
-            return GUI.Button(rect, label, new GUIStyle(selected ? active : button) { alignment = TextAnchor.MiddleCenter, fontSize = 16, padding = new RectOffset(4, 4, 2, 2) });
+            Rule(new Rect(rect.x + 4, rect.yMax - 2, rect.width - 8, selected ? 2 : 1), selected ? new Color(.65f, .76f, .85f) : new Color(.23f, .30f, .37f));
+            return GUI.Button(rect, label, new GUIStyle(button) { alignment = TextAnchor.MiddleCenter, fontSize = 16, padding = new RectOffset(4, 4, 2, 2) });
         }
 
         private static void Border(Rect rect, Color tint)
@@ -344,13 +398,13 @@ namespace Wisp.UI
         private void DrawSettings()
         {
             GUI.Label(new Rect(12, 0, 1090, 36), "Цель этого сохранения", heading);
-            if (Choose(new Rect(12, 45, 470, 46), "112% · полное прохождение", mod.Progress.RouteGoal == "112")) SetGoal("112");
-            if (Choose(new Rect(520, 45, 572, 46), "Быстрое прохождение Стальной души", mod.Progress.RouteGoal == "steel")) SetGoal("steel");
+            if (Choose(new Rect(12, 45, 470, 46), "112% · полное прохождение", mod.Progress.RouteGoal == "112", padPane == 0 && mod.Progress.RouteGoal == "112")) SetGoal("112");
+            if (Choose(new Rect(520, 45, 572, 46), "Быстрое прохождение Стальной души", mod.Progress.RouteGoal == "steel", padPane == 0 && mod.Progress.RouteGoal == "steel")) SetGoal("steel");
             string goalText = mod.Progress.RouteGoal == "steel" ? "Короткий маршрут к первой концовке: способности, три Сновидца и Полый рыцарь. Без фарма дневника, Белого дворца и пантеонов. Время не гарантируется; это маршрут без сложных пропусков." : "Полный путеводитель с коллекциями и дневником. Некоторые дополнительные цели, включая пятый пантеон и дневник, сами по себе не дают процентов.";
             if (mod.Progress.RouteGoal == "steel" && !RouteGoals.IsSteelSave(player)) goalText += "\nЭто обычное сохранение: выбор цели Wisp не включает режим Стальной души. Его нужно выбрать при создании новой игры.";
             GUI.Label(new Rect(16, 101, 1080, 104), goalText, muted);
             string[] labels = { "Спойлеры: " + (mod.Settings.ShowSpoilers ? "показаны" : "скрыты"), "Выполненные задачи: " + (mod.Settings.HideCompleted ? "скрыты" : "показаны"), "Подсказка на паузе: " + (mod.Settings.ShowPauseHint ? "включена" : "выключена"), "Проводник поверх игры: " + (mod.Settings.ShowHud ? "включён" : "выключен") };
-            for (int i = 0; i < labels.Length; i++) if (Choose(new Rect(12, 218 + i * 46, 1080, 42), labels[i], padPane == i + 1)) ToggleSetting(i + 1);
+            for (int i = 0; i < labels.Length; i++) if (Choose(new Rect(12, 218 + i * 46, 1080, 42), labels[i], false, padPane == i + 1)) ToggleSetting(i + 1);
             GUI.Label(new Rect(16, 418, 1080, 48), "Цель и отметки хранятся отдельно для каждого сейва и сохраняются вместе с игрой. Смена цели не удаляет прогресс.", muted);
             GUI.Label(new Rect(16, 475, 1080, 48), "Карты и портреты открываются здесь. При первом просмотре изображений врагов нужен интернет; затем они доступны из локального кэша.", small);
         }

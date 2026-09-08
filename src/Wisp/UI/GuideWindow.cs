@@ -22,7 +22,8 @@ namespace Wisp.UI
         private bool ownsPause, opening, locating = true;
         private bool stickChordHeld;
         private float nextNavigation;
-        private int padPane = 1;
+        private int padPane = 0;
+        private int detailChoice;
         private string notice = "";
         private float noticeUntil;
         private readonly Dictionary<string, int> lastKills = new Dictionary<string, int>();
@@ -101,12 +102,19 @@ namespace Wisp.UI
             if (toggle) { if (open) Close(); else if (!opening) StartCoroutine(OpenFromGame()); }
             if (open && !Paused) { Close(); return; }
             if (!open) return;
-            if (Input.GetKeyDown(KeyCode.Escape) || device.Action2.WasPressed) { Close(); return; }
+            if (Input.GetKeyDown(KeyCode.Escape)) { Close(); return; }
+            if (device.Action2.WasPressed)
+            {
+                if (expandedEnemyMap) expandedEnemyMap = false;
+                else if (tab == 0 && padPane > 0) padPane--;
+                else Close();
+                return;
+            }
             if (Input.GetKeyDown(KeyCode.PageDown)) SelectStep(Math.Min(stepIndex + 1, RouteSteps.Length - 1));
             if (Input.GetKeyDown(KeyCode.PageUp)) SelectStep(Math.Max(0, stepIndex - 1));
-            if (device.LeftBumper.WasPressed) { tab = (tab + 2) % 3; detailScroll = Vector2.zero; }
-            if (device.RightBumper.WasPressed) { tab = (tab + 1) % 3; detailScroll = Vector2.zero; }
-            bool leftStickMaps = (tab == 0 && mapTab) || (tab == 1 && expandedEnemyMap);
+            if (device.LeftBumper.WasPressed) { ChangeTab((tab + 2) % 3); }
+            if (device.RightBumper.WasPressed) { ChangeTab((tab + 1) % 3); }
+            bool leftStickMaps = (tab == 0 && mapTab && padPane == 2) || (tab == 1 && expandedEnemyMap);
             int vertical = device.DPadUp.IsPressed || (!leftStickMaps && device.LeftStickY.Value > .5f) ? -1 : device.DPadDown.IsPressed || (!leftStickMaps && device.LeftStickY.Value < -.5f) ? 1 : 0;
             int horizontal = device.DPadLeft.IsPressed || (!leftStickMaps && device.LeftStickX.Value < -.5f) ? -1 : device.DPadRight.IsPressed || (!leftStickMaps && device.LeftStickX.Value > .5f) ? 1 : 0;
             if (vertical == 0 && horizontal == 0) nextNavigation = 0;
@@ -118,22 +126,29 @@ namespace Wisp.UI
                     padPane = Mathf.Clamp(padPane + horizontal, 0, 2);
                     if (padPane == 0 && vertical != 0) { SelectChapter(Mathf.Clamp(chapterIndex + vertical, 0, RouteChapters.Length - 1)); chapterScroll.y = Mathf.Max(0, chapterIndex * 96 - 192); }
                     else if (padPane == 1 && vertical != 0) { SelectStep(Mathf.Clamp(stepIndex + vertical, 0, RouteSteps.Length - 1)); stepScroll.y = Mathf.Max(0, stepIndex * 96 - 192); }
-                    else if (padPane == 2) detailScroll.y = Mathf.Max(0, detailScroll.y + vertical * 70);
+                    else if (padPane == 2 && vertical != 0) detailChoice = Mathf.Clamp(detailChoice + vertical, 0, 2);
                 }
                 else if (tab == 1) { enemyIndex = Mathf.Clamp(enemyIndex + vertical, 0, Math.Max(0, FilteredEnemies().Length - 1)); enemyScroll.y = Mathf.Max(0, enemyIndex * 80 - 160); enemyMapIndex = 0; mapPan = Vector2.zero; mapZoom = 1; }
                 else padPane = Mathf.Clamp(padPane + vertical, 0, 4);
             }
             if (tab == 0 && Visible(Current))
             {
-                if (device.Action3.WasPressed) { mapTab = !mapTab; mapDirty = true; }
-                if (device.Action1.WasPressed && !Completion.Confirmed(RouteSteps[stepIndex], player)) mod.Progress.Mark(RouteSteps[stepIndex].Id, !Done(RouteSteps[stepIndex]));
-                if (mapTab)
+                if (device.Action3.WasPressed) { mapTab = !mapTab; detailChoice = mapTab ? 1 : 0; padPane = 2; mapDirty = true; }
+                if (device.Action1.WasPressed)
+                {
+                    if (padPane < 2) { padPane++; detailChoice = mapTab ? 1 : 0; }
+                    else if (detailChoice == 2) OpenRegionJournal();
+                    else { mapTab = detailChoice == 1; mapDirty = true; }
+                }
+                if (device.Action4.WasPressed && padPane == 1 && !Completion.Confirmed(RouteSteps[stepIndex], player))
+                    mod.Progress.Mark(RouteSteps[stepIndex].Id, !Done(RouteSteps[stepIndex]));
+                if (mapTab && padPane == 2)
                 {
                     mapPan += MapStick(device, leftStickMaps) * Time.unscaledDeltaTime * 350;
                     mapZoom = Mathf.Clamp(mapZoom + (device.RightTrigger.Value - device.LeftTrigger.Value) * Time.unscaledDeltaTime * 2, 1, 5);
                     if (device.Action4.WasPressed) { mapPan = Vector2.zero; mapZoom = 1; }
                 }
-                else detailScroll.y = Mathf.Max(0, detailScroll.y - device.RightStickY.Value * Time.unscaledDeltaTime * 350);
+                else if (padPane == 2) detailScroll.y = Mathf.Max(0, detailScroll.y - device.RightStickY.Value * Time.unscaledDeltaTime * 350);
             }
             if (tab == 1) {
                 if (device.DPadRight.IsPressed) habitatScroll.y += Time.unscaledDeltaTime * 240;
@@ -174,6 +189,7 @@ namespace Wisp.UI
             if (!Paused || open) return;
             Refresh();
             open = true;
+            padPane = 0; detailChoice = mapTab ? 1 : 0;
             GuideInputGuard.Capture();
             mapDirty = true;
             suspendedEvents = EventSystem.current;

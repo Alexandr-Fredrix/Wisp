@@ -1,3 +1,12 @@
+# Unreleased — controller focus
+
+- Separate the currently open item (underline) from controller focus (silver corners).
+- Add LB/RB hints beside main tabs and contextual navigation help.
+- Keep the left stick in chapter/step lists until focus enters the map pane.
+- A enters panels or opens the highlighted detail tab; Y marks steps; B returns one panel.
+- Reset route focus when changing main tabs; remove large filled selection boxes.
+- Local build installed and guide opening observed; physical controller flow still needs verification. Published alpha.1 archive is unchanged.
+
 # 0.3.0-alpha.1
 
 - Port to Hollow Knight 1.5.12620 / BepInEx 5, without replacing game assemblies.
