@@ -1,0 +1,9 @@
+name: Идея / Feature request
+description: Предложить улучшение
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Какую задачу игрока нужно решить?
+    validations:
+      required: true

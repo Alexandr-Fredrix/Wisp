@@ -1,0 +1,38 @@
+name: Release source preview
+on:
+  push:
+    tags: ['v0.*']
+permissions:
+  contents: read
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate tag
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          python3 tools/check.py
+          python3 -c 'import json,os; v=json.load(open("version.json"))["version"]; assert os.environ["RELEASE_TAG"] == "v"+v, "Tag/version mismatch"'
+      - run: python3 -m unittest discover -s tests
+      - run: python3 tools/package_source.py
+      - name: Publish prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          VERSION="$(python3 -c 'import json; print(json.load(open("version.json"))["version"])')"
+          gh release create "$RELEASE_TAG" \
+            "dist/Wisp-source-$VERSION.zip" "dist/SHA256SUMS.txt" \
+            --verify-tag --prerelease \
+            --title "Wisp $VERSION — source preview" \
+            --notes-file "docs/releases/$VERSION.md"
