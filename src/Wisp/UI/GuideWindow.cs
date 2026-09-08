@@ -144,6 +144,9 @@ namespace Wisp.UI
                     mod.Progress.Mark(RouteSteps[stepIndex].Id, !Done(RouteSteps[stepIndex]));
                 if (mapTab && padPane == 2)
                 {
+                    // Exclude the two-stick open/close chord from this shortcut.
+                    if (device.RightStickButton.WasPressed && !device.LeftStickButton.IsPressed)
+                        SetMapMode(!fullReferenceMap);
                     mapPan += MapStick(device, leftStickMaps) * Time.unscaledDeltaTime * 350;
                     mapZoom = Mathf.Clamp(mapZoom + (device.RightTrigger.Value - device.LeftTrigger.Value) * Time.unscaledDeltaTime * 2, 1, 5);
                     if (device.Action4.WasPressed) { mapPan = Vector2.zero; mapZoom = 1; }

@@ -1,5 +1,6 @@
 # Unreleased — controller focus
 
+- Press the right stick in the map pane to switch reference/save maps; label the shortcut beside the controls and explain unavailable save maps.
 - Separate the currently open item (underline) from controller focus (silver corners).
 - Add LB/RB hints beside main tabs and contextual navigation help.
 - Keep the left stick in chapter/step lists until focus enters the map pane.

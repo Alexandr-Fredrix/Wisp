@@ -327,6 +327,16 @@ namespace Wisp.UI
             GUI.Label(new Rect(660, 484, 426, 40), "Hollow Knight Wiki / Team Cherry", small);
         }
 
+        private void SetMapMode(bool reference)
+        {
+            fullReferenceMap = reference;
+            mapPan = Vector2.zero;
+            mapZoom = 1;
+            mapDirty = true;
+            padPane = 2;
+            detailChoice = 1;
+        }
+
         private void DrawAreaMap(Rect viewport)
         {
             if (mapDirty && Event.current.type == EventType.Repaint)
@@ -336,11 +346,14 @@ namespace Wisp.UI
                 catch (Exception error) { areaMap.Dispose(); mod.LogError("Map preview: " + error); }
             }
             MapControls(new Rect(viewport.x, viewport.y, 322, 34));
-            if (MapButton(new Rect(viewport.x + 310, viewport.y, 146, 32), "Справочная", fullReferenceMap)) { fullReferenceMap = true; mapPan = Vector2.zero; mapZoom = 1; mapDirty = true; }
-            if (MapButton(new Rect(viewport.x + 462, viewport.y, 146, 32), "Изученная", !fullReferenceMap)) { fullReferenceMap = false; mapPan = Vector2.zero; mapZoom = 1; mapDirty = true; }
+            if (MapButton(new Rect(viewport.x + 310, viewport.y, 146, 32), "Справочная", fullReferenceMap)) SetMapMode(true);
+            if (MapButton(new Rect(viewport.x + 462, viewport.y, 146, 32), "Карта сейва", !fullReferenceMap)) SetMapMode(false);
+            GUI.Label(new Rect(viewport.x, viewport.y + 35, viewport.width, 26), "Нажатие RS — сменить тип карты", small);
             Texture texture = fullReferenceMap ? (Texture)media.Local("region-" + Current.Id) : areaMap.Texture;
             string message = fullReferenceMap ? "Справочная карта не сохранена. Используй игровую карту или раздел «Враги области» с картами мест обитания." : areaMap.Message;
-            DrawMapTexture(new Rect(viewport.x, viewport.y + 42, viewport.width, viewport.height - 76), texture, message);
+            if (!fullReferenceMap && texture == null)
+                message = "Карта сейва сейчас недоступна.\n\n" + (string.IsNullOrEmpty(message) ? "Wisp не смог построить изображение игровой карты." : message) + "\n\nНажми правый стик (RS), чтобы вернуться к справочной карте.";
+            DrawMapTexture(new Rect(viewport.x, viewport.y + 66, viewport.width, viewport.height - 100), texture, message);
             GUI.Label(new Rect(viewport.x, viewport.y + viewport.height - 30, viewport.width, 30), fullReferenceMap ? "Hollow Knight Wiki / Team Cherry · полная область, включая спойлеры" : "Карта текущего сохранения · колёсико — масштаб · потяни для перемещения", small);
         }
 
