@@ -24,6 +24,12 @@ namespace Wisp.Core
             { "godhome", new[] { "visitedGodhome" } }
         };
 
+        public static bool HasVisitEvidence(string chapterId, IPlayerState state)
+        {
+            string[] flags;
+            return Visits.TryGetValue(chapterId, out flags) && flags.Any(f => IsTrue(state, f));
+        }
+
         public static void Import(Chapter[] chapters, SaveProgress progress, IPlayerState state)
         {
             foreach (var chapter in chapters)

@@ -63,6 +63,9 @@ public static class CoreTests
         SaveDiscovery.Import(chapters, imported, state);
         Check(imported.VisitedChapters.Contains("city"), "An existing save restores visited areas without Wisp history");
         Check(imported.VisitedChapters.Contains("greenpath"), "Confirmed milestones reveal their own chapter");
+        Check(SaveDiscovery.HasVisitEvidence("city", state), "A persisted visit flag confirms actual exploration");
+        Check(!SaveDiscovery.HasVisitEvidence("greenpath", state), "A revealed chapter with a completed task is not proof of a visit");
+        Check(!SaveDiscovery.HasVisitEvidence("city", new State()), "Visit evidence must not leak into another save");
         Check(!imported.VisitedChapters.Contains("deepnest"), "Unknown visit flags cannot reveal an area");
         Check(imported.Completed.Count == 0, "Import must not fabricate manual task completion");
         SaveDiscovery.Import(chapters, imported, state);

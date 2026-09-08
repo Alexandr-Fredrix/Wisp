@@ -118,7 +118,7 @@ namespace Wisp.UI
         {
             if (tab == 2) return "↑ ↓ Выбор настройки     A Изменить     B Закрыть";
             if (tab == 1) return "↑ ↓ Враг     A Следующее место     X Фильтр области     RS Карта     LT / RT Масштаб     B Назад";
-            if (padPane == 0) return "↑ ↓ Область     A / → К шагам     B Закрыть";
+            if (padPane == 0) return "↑ ↓ Область     A / → К шагам     B Закрыть     ? — посещение не подтверждено";
             if (padPane == 1) return "↑ ↓ Шаг     A / → К описанию и карте     Y Отметка     B / ← К областям";
             return mapTab ? "↑ ↓ Выбрать вкладку · A Открыть     LS / RS Двигать карту     LT / RT Масштаб     Y Вписать     B / ← К шагам"
                 : "↑ ↓ Выбрать вкладку · A Открыть     RS Прокрутить текст     X Карта     B / ← К шагам";
@@ -182,8 +182,11 @@ namespace Wisp.UI
             for (int i = 0; i < chapters.Length; i++)
             {
                 bool visible = Visible(chapters[i]);
+                bool visited = chapters[i].Id == liveChapter || SaveDiscovery.HasVisitEvidence(chapters[i].Id, player);
                 var included = chapters[i].Steps.Where(s => RouteGoals.Includes(mod.Progress.RouteGoal, s)).ToArray();
-                if (Choose(new Rect(0, i * 96, 192, 90), (visible ? chapters[i].Title : "Неизученная область") + (visible ? "\n" + included.Count(Done) + " / " + included.Length : ""), chapterIndex == i, chapterIndex == i && padPane == 0)) { padPane = 0; SelectChapter(i); }
+                string progressLabel = included.Count(Done) + " / " + included.Length;
+                if (!visited) progressLabel += "     ?";
+                if (Choose(new Rect(0, i * 96, 192, 90), (visible ? chapters[i].Title : "Неизученная область") + (visible ? "\n" + progressLabel : ""), chapterIndex == i, chapterIndex == i && padPane == 0)) { padPane = 0; SelectChapter(i); }
             }
             GUI.EndScrollView();
             GUI.Label(new Rect(238, 0, 238, 28), padPane == 1 ? "ШАГИ · ВЫБОР" : "ШАГИ", muted);

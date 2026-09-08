@@ -1,5 +1,6 @@
 # Unreleased — controller focus
 
+- Keep an unexplored (?) indicator beside chapter progress even when spoilers reveal the name; require visit evidence independently of completed tasks.
 - Press the right stick in the map pane to switch reference/save maps; label the shortcut beside the controls and explain unavailable save maps.
 - Separate the currently open item (underline) from controller focus (silver corners).
 - Add LB/RB hints beside main tabs and contextual navigation help.
