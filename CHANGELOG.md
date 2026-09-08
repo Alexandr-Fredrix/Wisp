@@ -1,3 +1,9 @@
+# Unreleased
+
+- Read earned achievements through the game's profile provider, including other saves; label these confirmations separately from current-save progress.
+- Keep current-run HUD prerequisites and manual post-credits tasks independent of profile achievements.
+- Show exploration question marks only for location chapters, not ending or checklist sections.
+
 # 0.3.0-alpha.2 — controller focus
 
 - Keep an unexplored (?) indicator beside chapter progress even when spoilers reveal the name; require visit evidence independently of completed tasks.

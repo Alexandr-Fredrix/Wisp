@@ -185,7 +185,7 @@ namespace Wisp.UI
                 bool visited = chapters[i].Id == liveChapter || SaveDiscovery.HasVisitEvidence(chapters[i].Id, player);
                 var included = chapters[i].Steps.Where(s => RouteGoals.Includes(mod.Progress.RouteGoal, s)).ToArray();
                 string progressLabel = included.Count(Done) + " / " + included.Length;
-                if (!visited) progressLabel += "     ?";
+                if (!visited && SaveDiscovery.IsLocation(chapters[i].Id)) progressLabel += "     ?";
                 if (Choose(new Rect(0, i * 96, 192, 90), (visible ? chapters[i].Title : "Неизученная область") + (visible ? "\n" + progressLabel : ""), chapterIndex == i, chapterIndex == i && padPane == 0)) { padPane = 0; SelectChapter(i); }
             }
             GUI.EndScrollView();
@@ -212,6 +212,8 @@ namespace Wisp.UI
                 var selected = steps[Mathf.Clamp(stepIndex, 0, steps.Length - 1)];
                 string body = selected.Spoiler && !mod.Settings.ShowSpoilers ? "Описание содержит сюжетные спойлеры. Их можно включить в настройках." : selected.Body;
                 if (selected.Warning.Length > 0) body = "ВАЖНО\n" + selected.Warning + "\n\n" + body;
+                if (ProfileAchievements.Confirmed(selected, player) && !Completion.Confirmed(selected, player))
+                    body = "Достижение уже получено в игровом профиле — возможно, в другом сохранении. Это не выдаёт предметы и не открывает пути в текущем сейве.\n\n" + body;
                 if (mod.Progress.RouteGoal == "steel") body += "\n\nСтальная душа: здесь важна концовка без смерти. Дневник и необязательные задания можно оставить; лечение и подготовку к боссу не пропускай ради времени.";
                 float titleHeight = heading.CalcHeight(new GUIContent(selected.Title), 584);
                 float bodyHeight = text.CalcHeight(new GUIContent(body), 584);
@@ -220,6 +222,7 @@ namespace Wisp.UI
                 GUI.Label(new Rect(0, titleHeight + 20, 584, bodyHeight), body, text);
                 GUI.EndScrollView();
                 if (Completion.Confirmed(selected, player)) GUI.Label(new Rect(502, 434, 604, 40), "✓ Подтверждено этим сохранением", muted);
+                else if (ProfileAchievements.Confirmed(selected, player)) GUI.Label(new Rect(502, 434, 604, 40), "✓ Получено в игровом профиле", muted);
                 else if (Choose(new Rect(500, 434, 612, 40), Done(selected) ? "✓ Снять ручную отметку" : "○ Отметить выполненным")) mod.Progress.Mark(selected.Id, !Done(selected));
             }
             GUI.enabled = stepIndex > 0;

@@ -4,10 +4,12 @@ using Wisp.Core;
 
 public static class CoreTests
 {
-    private sealed class State : IPlayerState
+    private sealed class State : IPlayerState, IAchievementState
     {
         public Dictionary<string, bool> Bools = new Dictionary<string, bool>();
         public Dictionary<string, int> Ints = new Dictionary<string, int>();
+        public HashSet<string> Achievements = new HashSet<string>();
+        public bool IsUnlocked(string key) { return Achievements.Contains(key); }
         public bool TryBool(string name, out bool value) { return Bools.TryGetValue(name, out value); }
         public bool TryInt(string name, out int value) { return Ints.TryGetValue(name, out value); }
     }
@@ -29,6 +31,20 @@ public static class CoreTests
         state.Ints["spell"] = 2;
         Check(Completion.Confirmed(step, state), "Upgraded spell must satisfy base-spell requirement");
         Check(!Completion.Confirmed(new Step(), state), "Manual tasks must not autocomplete");
+        var profile = new State();
+        var ending = new Step { Id = "ending-a" };
+        Check(!ProfileAchievements.Confirmed(ending, profile), "Unavailable or locked profile achievements cannot confirm an ending");
+        profile.Achievements.Add("ENDING_A");
+        Check(ProfileAchievements.Confirmed(ending, profile), "An ending earned in another save is recognized from the game profile");
+        Check(!Completion.Confirmed(ending, profile), "Profile completion is not current-save completion");
+        Check(!ProfileAchievements.Confirmed(new Step { Id = "resume-save" }, profile), "An ending achievement cannot prove returning after credits");
+        Check(!ProfileAchievements.Confirmed(new Step { Id = "ending-b" }, profile), "One ending cannot confirm another ending");
+        profile.Achievements.Add("STEELSOUL");
+        Check(!ProfileAchievements.Confirmed(new Step { Id = "steel-start" }, profile), "A profile achievement cannot change a save's mode");
+        var profileImport = new SaveProgress();
+        SaveDiscovery.Import(new[] { new Chapter { Id = "first-ending", Steps = new[] { ending } } }, profileImport, profile);
+        Check(profileImport.Completed.Count == 0 && profileImport.VisitedChapters.Count == 0, "Profile achievements cannot fabricate save marks or visited areas");
+        Check(!SaveDiscovery.IsLocation("first-ending") && SaveDiscovery.IsLocation("city"), "Only real locations receive exploration markers");
         Check(!Completion.Confirmed(new Step { Conditions = new[] { new Condition { Kind = "unknown" } } }, state), "Unknown rule type must fail closed");
 
         var first = new SaveProgress();

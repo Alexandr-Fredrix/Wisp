@@ -5,8 +5,21 @@ using Wisp.Core;
 namespace Wisp.Game
 {
     // Field existence is checked explicitly: a missing field must never imply completion.
-    public sealed class PlayerReader : IPlayerState
+    public sealed class PlayerReader : IPlayerState, IAchievementState
     {
+        private readonly HashSet<string> unlocked = new HashSet<string>();
+        public bool IsUnlocked(string key) { return unlocked.Contains(key); }
+        public void RefreshAchievements()
+        {
+            unlocked.Clear();
+            var platform = Platform.Current;
+            if (platform == null) return;
+            foreach (var key in ProfileAchievements.Steps.Values)
+            {
+                try { if (platform.IsAchievementUnlocked(key) == true) unlocked.Add(key); }
+                catch (System.Exception) { } // An unavailable provider is not proof of completion.
+            }
+        }
         private readonly Dictionary<string, FieldInfo> fields = new Dictionary<string, FieldInfo>();
         private FieldInfo Field(string name)
         {

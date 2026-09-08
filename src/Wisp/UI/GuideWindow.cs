@@ -140,7 +140,7 @@ namespace Wisp.UI
                     else if (detailChoice == 2) OpenRegionJournal();
                     else { mapTab = detailChoice == 1; mapDirty = true; }
                 }
-                if (device.Action4.WasPressed && padPane == 1 && !Completion.Confirmed(RouteSteps[stepIndex], player))
+                if (device.Action4.WasPressed && padPane == 1 && !Completion.Confirmed(RouteSteps[stepIndex], player) && !ProfileAchievements.Confirmed(RouteSteps[stepIndex], player))
                     mod.Progress.Mark(RouteSteps[stepIndex].Id, !Done(RouteSteps[stepIndex]));
                 if (mapTab && padPane == 2)
                 {
@@ -227,6 +227,7 @@ namespace Wisp.UI
 
         private void Refresh()
         {
+            player.RefreshAchievements();
             var scene = GameManager.instance == null ? "" : GameManager.instance.GetSceneNameString();
             SaveDiscovery.Import(catalog.Chapters, mod.Progress, player);
             string previousRegion = liveRegion;
@@ -238,7 +239,7 @@ namespace Wisp.UI
             {
                 locating = false;
                 int index = Array.FindIndex(RouteChapters, c => c.Id == liveChapter);
-                if (index >= 0) { SelectChapter(index); int next = Array.FindIndex(RouteSteps, s => !Done(s)); SelectStep(Math.Max(0, next)); }
+                if (index >= 0) { SelectChapter(index); int next = Array.FindIndex(RouteSteps, s => !DoneInSave(s)); SelectStep(Math.Max(0, next)); }
             }
             if (previousRegion != liveRegion && !string.IsNullOrEmpty(liveRegion))
             {
@@ -259,7 +260,7 @@ namespace Wisp.UI
             }
             // Resolve save/journal state on the refresh tick, never in every IMGUI event.
             var hudChapter = catalog.Chapters.FirstOrDefault(c => c.Id == liveChapter);
-            var hudNext = hudChapter == null ? null : hudChapter.Steps.FirstOrDefault(s => RouteGoals.Includes(mod.Progress.RouteGoal, s) && !Done(s) && (!s.Spoiler || mod.Settings.ShowSpoilers));
+            var hudNext = hudChapter == null ? null : hudChapter.Steps.FirstOrDefault(s => RouteGoals.Includes(mod.Progress.RouteGoal, s) && !DoneInSave(s) && (!s.Spoiler || mod.Settings.ShowSpoilers));
             hudTask = hudNext == null ? "" : hudNext.Title;
         }
 
@@ -287,8 +288,10 @@ namespace Wisp.UI
             mod.Progress.StepId = RouteSteps[stepIndex].Id;
         }
 
-        private bool Done(Step step) { return Completion.Confirmed(step, player) || mod.Progress.Completed.Contains(step.Id); }
-        private bool Visible(Chapter chapter) { return mod.Settings.ShowSpoilers || chapter.Id == liveChapter || mod.Progress.VisitedChapters.Contains(chapter.Id) || chapter.Id == "kings-pass"; }
+        // A profile achievement does not remove prerequisites from the current run's HUD.
+        private bool DoneInSave(Step step) { return Completion.Confirmed(step, player) || mod.Progress.Completed.Contains(step.Id); }
+        private bool Done(Step step) { return DoneInSave(step) || ProfileAchievements.Confirmed(step, player); }
+        private bool Visible(Chapter chapter) { return mod.Settings.ShowSpoilers || chapter.Id == liveChapter || mod.Progress.VisitedChapters.Contains(chapter.Id) || chapter.Id == "kings-pass" || chapter.Steps.Any(s => ProfileAchievements.Confirmed(s, player)); }
 
         private void OnDestroy()
         {

@@ -30,6 +30,8 @@ namespace Wisp.Core
             return Visits.TryGetValue(chapterId, out flags) && flags.Any(f => IsTrue(state, f));
         }
 
+        public static bool IsLocation(string chapterId) { return Visits.ContainsKey(chapterId); }
+
         public static void Import(Chapter[] chapters, SaveProgress progress, IPlayerState state)
         {
             foreach (var chapter in chapters)
