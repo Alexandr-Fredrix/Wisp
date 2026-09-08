@@ -1,6 +1,6 @@
 <h1 align="center">Wisp</h1>
 <p align="center">Твой проводник по Халлоунесту — прямо в игре.</p>
-<p align="center"><a href="https://github.com/Alexandr-Fredrix/Wisp/releases/latest"><img alt="Последний выпуск" src="https://img.shields.io/github/v/release/Alexandr-Fredrix/Wisp?label=Скачать&color=738fa8"></a></p>
+<p align="center"><a href="https://github.com/Alexandr-Fredrix/Wisp/releases/tag/v0.3.0-alpha.1"><img alt="Последний выпуск" src="https://img.shields.io/badge/Wisp-0.3.0--alpha.1-738fa8"></a></p>
 <p align="center"><a href="https://github.com/Alexandr-Fredrix/Wisp/releases">Скачать</a> · <a href="https://github.com/Alexandr-Fredrix/Wisp/discussions">Обсуждения</a> · <a href="https://github.com/Alexandr-Fredrix/Wisp/issues/new/choose">Сообщить об ошибке</a> · <a href="README.en.md">English</a></p>
 
 **Hollow Knight 1.5.12620 · Windows x64 · BepInEx 5 · ранняя версия 0.3.0-alpha.1**
@@ -39,7 +39,7 @@
 
 ## Что важно знать
 
-Это **экспериментальная alpha**; Latest означает последний выпуск. Запуск и основные окна проверены до последних правок. Финальное оформление, исправление X и физический геймпад ещё проверяются. Перед установкой сделайте копию сейвов. Цель Стальной души не превращает обычный сейв в этот режим. У 4 записей пока нет карты; полные региональные карты требуют подготовленного кэша, карты врагов загружаются автоматически.
+Это **экспериментальный Pre-release**. Запуск и основные окна проверены до последних правок. Финальное оформление, исправление X и физический геймпад ещё проверяются. Перед установкой сделайте копию сейвов. Цель Стальной души не превращает обычный сейв в этот режим. У 4 записей пока нет карты; полные региональные карты требуют подготовленного кэша, карты врагов загружаются автоматически.
 
 ## Связь и права
 
