@@ -1,5 +1,5 @@
 {
-  "version": "0.3.0-alpha.1",
+  "version": "0.3.0-alpha.2",
   "stage": "development-alpha",
   "target_game": "1.5.12620",
   "loader": "BepInEx 5.4.23.5 x64"

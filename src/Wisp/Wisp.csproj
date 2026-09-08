@@ -4,7 +4,7 @@
     <LangVersion>latest</LangVersion>
     <AssemblyName>Wisp</AssemblyName>
     <RootNamespace>Wisp</RootNamespace>
-    <Version>0.3.0-alpha.1</Version>
+    <Version>0.3.0-alpha.2</Version>
     <Authors>Alexandr-Fredrix</Authors>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/Alexandr-Fredrix/Wisp</RepositoryUrl>

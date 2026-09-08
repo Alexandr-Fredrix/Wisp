@@ -1,4 +1,4 @@
-# Unreleased — controller focus
+# 0.3.0-alpha.2 — controller focus
 
 - Keep an unexplored (?) indicator beside chapter progress even when spoilers reveal the name; require visit evidence independently of completed tasks.
 - Press the right stick in the map pane to switch reference/save maps; label the shortcut beside the controls and explain unavailable save maps.

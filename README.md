@@ -1,9 +1,9 @@
 <h1 align="center">Wisp</h1>
 <p align="center">Твой проводник по Халлоунесту — прямо в игре.</p>
-<p align="center"><a href="https://github.com/Alexandr-Fredrix/Wisp/releases/tag/v0.3.0-alpha.1"><img alt="Последний выпуск" src="https://img.shields.io/badge/Wisp-0.3.0--alpha.1-738fa8"></a></p>
+<p align="center"><a href="https://github.com/Alexandr-Fredrix/Wisp/releases/tag/v0.3.0-alpha.2"><img alt="Последний выпуск" src="https://img.shields.io/badge/Wisp-0.3.0--alpha.2-738fa8"></a></p>
 <p align="center"><a href="https://github.com/Alexandr-Fredrix/Wisp/releases">Скачать</a> · <a href="https://github.com/Alexandr-Fredrix/Wisp/discussions">Обсуждения</a> · <a href="https://github.com/Alexandr-Fredrix/Wisp/issues/new/choose">Сообщить об ошибке</a> · <a href="README.en.md">English</a></p>
 
-**Hollow Knight 1.5.12620 · Windows x64 · BepInEx 5 · ранняя версия 0.3.0-alpha.1**
+**Hollow Knight 1.5.12620 · Windows x64 · BepInEx 5 · ранняя версия 0.3.0-alpha.2**
 
 ## Что умеет
 
@@ -14,25 +14,28 @@
 
 ## В игре
 
-Скриншоты ранней сборки 0.3.0. В текущем обновлении увеличен шрифт и упрощено оформление.
+Скриншоты текущего интерфейса 0.3.0-alpha.2, снятые в игре.
 
-![Маршрут Wisp](docs/images/route.png)
-*Области, шаги и подробное описание — в одном окне. F8 открывает проводник во время игры.*
+![Маршрут: области, шаги и инструкция](docs/images/route.png)
+**Маршрут.** Слева — области и прогресс, в центре — шаги, справа — откуда начать и что сделать. Светлые уголки показывают текущий фокус; подсказки кнопок находятся внизу.
 
-![Дневник охотника](docs/images/journal.png)
-*Портрет врага, прогресс записи и известные места обитания. Карты справочные и могут содержать спойлеры.*
+<details><summary>Карта, дневник и настройки — ещё 3 скриншота</summary>
 
-<details><summary>Компактная подсказка во время игры</summary>
+![Карта области внутри Wisp](docs/images/map.png)
+**Карта.** Приближай и перемещай изображение внутри проводника. Нажатие RS переключает справочную карту и карту сейва. На скриншоте — справочная карта с подготовленным кэшем; она может раскрывать неизученные места.
 
-![Подсказка](docs/images/hud.png)
+![Дневник охотника: Ползун и места обитания](docs/images/journal.png)
+**Дневник охотника.** Портрет, состояние записи и области обитания выбранного врага. Справа — карта с нанесёнными местами, которую можно увеличить или развернуть.
 
-Только следующая задача; подсказку можно выключить.
+![Настройки цели прохождения и подсказок](docs/images/settings.png)
+**Настройки.** Выбирай полный маршрут 112% или короткий путь Стальной души, скрывай спойлеры и завершённые задачи, включай подсказки. Цель маршрута не меняет настоящий режим сохранения.
+
 </details>
 
 ## Установка
 
 1. Один раз установите [BepInEx 5.4.23.5 x64](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.5).
-2. Скачайте **Wisp-0.3.0-alpha.1.zip** из [Releases](https://github.com/Alexandr-Fredrix/Wisp/releases) и распакуйте в папку игры.
+2. Скачайте **Wisp-0.3.0-alpha.2.zip** из [Releases](https://github.com/Alexandr-Fredrix/Wisp/releases) и распакуйте в папку игры.
 3. Загрузите сейв и нажмите **F8**.
 
 У самого мода **один устанавливаемый файл — Wisp.dll**. Картинки загружаются в кэш при просмотре; исходники скачивать не нужно. [Подробная инструкция](docs/INSTALL.md).

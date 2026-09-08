@@ -31,7 +31,7 @@ namespace Wisp
             guide.Initialize(this, Catalog.Load());
             patches = new Harmony("com.alexandr-fredrix.wisp");
             patches.PatchAll(typeof(WispMod).Assembly);
-            Logger.LogInfo("Wisp 0.3.0-alpha.1 / Unity 6. F8 or both sticks opens the guide. No input backend changes.");
+            Logger.LogInfo("Wisp 0.3.0-alpha.2 / Unity 6. F8 or both sticks opens the guide. No input backend changes.");
         }
         private T Read<T>(string path) where T : class
         {
