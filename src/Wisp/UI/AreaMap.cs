@@ -10,6 +10,7 @@ namespace Wisp.UI
     {
         public RenderTexture Texture { get; private set; }
         public string Message { get; private set; } = "";
+        private readonly List<Mesh> meshes = new List<Mesh>();
         private readonly List<Material> materials = new List<Material>();
         private sealed class Piece { public Mesh Mesh; public Matrix4x4 Matrix; public Material Material; }
 
@@ -18,7 +19,7 @@ namespace Wisp.UI
             Dispose();
             Message = "";
             var field = FieldFor(chapter);
-            if (field == null) { Message = "У этого раздела нет одной карты области. Выбери раздел локации."; return; }
+            if (field == null) { Message = Wisp.Core.I18n.T("У этого раздела нет одной карты области. Выбери раздел локации."); return; }
             GameObject area = null;
             foreach (var map in Resources.FindObjectsOfTypeAll<GameMap>())
             {
@@ -26,32 +27,40 @@ namespace Wisp.UI
                 if (info != null) area = info.GetValue(map) as GameObject;
                 if (area != null) break;
             }
-            if (area == null) { Message = "Карта игры пока не загружена. Открой обычную карту Hollow Knight, затем вернись в Wisp."; return; }
+            if (area == null) { Message = Wisp.Core.I18n.T("Карта игры пока не загружена. Открой обычную карту Hollow Knight, затем вернись в Wisp."); return; }
             var mappedInfo = typeof(PlayerData).GetField("scenesMapped");
             var mapped = mappedInfo == null || PlayerData.instance == null ? null : mappedInfo.GetValue(PlayerData.instance) as List<string>;
             var pieces = new List<Piece>();
             Bounds bounds = new Bounds();
             bool first = true;
             var shader = Shader.Find("Sprites/Default");
-            if (shader == null) { Message = "Не удалось подготовить изображение карты."; return; }
-            foreach (var filter in area.GetComponentsInChildren<MeshFilter>(true))
+            if (shader == null) { Message = Wisp.Core.I18n.T("Не удалось подготовить изображение карты."); return; }
+            foreach (var sprite in area.GetComponentsInChildren<tk2dBaseSprite>(true))
             {
-                var renderer = filter.GetComponent<MeshRenderer>();
-                if (filter.sharedMesh == null || renderer == null || renderer.sharedMaterial == null) continue;
-                if (!spoilers && !MappedRoom(filter.transform, area.transform, mapped)) continue;
-                var material = new Material(shader) { mainTexture = renderer.sharedMaterial.mainTexture };
+                if (!spoilers && !MappedRoom(sprite.transform, area.transform, mapped)) continue;
+                // Construct our own opaque geometry: the paused game's renderer may be faded or uninitialised.
+                var definition = sprite.GetCurrentSpriteDef();
+                if (definition == null || definition.positions == null || definition.positions.Length == 0 || definition.material == null) continue;
+                var mesh = new Mesh();
+                mesh.vertices = definition.positions;
+                mesh.uv = definition.uvs;
+                mesh.triangles = definition.indices;
+                var colors = new Color[definition.positions.Length];
+                for (int c = 0; c < colors.Length; c++) colors[c] = Color.white;
+                mesh.colors = colors;
+                mesh.RecalculateBounds();
+                meshes.Add(mesh);
+                var material = new Material(shader) { mainTexture = definition.material.mainTexture, color = Color.white };
                 materials.Add(material);
-                var matrix = area.transform.worldToLocalMatrix * filter.transform.localToWorldMatrix;
-                var meshBounds = filter.sharedMesh.bounds;
-                for (int i = 0; i < 8; i++)
+                var matrix = area.transform.worldToLocalMatrix * sprite.transform.localToWorldMatrix;
+                foreach (var vertex in definition.positions)
                 {
-                    var corner = meshBounds.center + Vector3.Scale(meshBounds.extents, new Vector3((i & 1) == 0 ? -1 : 1, (i & 2) == 0 ? -1 : 1, (i & 4) == 0 ? -1 : 1));
-                    var point = matrix.MultiplyPoint3x4(corner);
+                    var point = matrix.MultiplyPoint3x4(vertex);
                     if (first) { bounds = new Bounds(point, Vector3.zero); first = false; } else bounds.Encapsulate(point);
                 }
-                pieces.Add(new Piece { Mesh = filter.sharedMesh, Matrix = matrix, Material = material });
+                pieces.Add(new Piece { Mesh = mesh, Matrix = matrix, Material = material });
             }
-            if (pieces.Count == 0) { Message = "Нет нанесённых на карту комнат. Обнови карту на скамейке или включи спойлеры для полной области."; return; }
+            if (pieces.Count == 0) { Message = Wisp.Core.I18n.T("Нет нанесённых на карту комнат. Обнови карту на скамейке или включи спойлеры для полной области."); return; }
             float w = Mathf.Max(bounds.size.x * 1.08f, 1f), h = Mathf.Max(bounds.size.y * 1.08f, 1f);
             int textureW = w >= h ? 1600 : Mathf.Max(256, Mathf.RoundToInt(1600 * w / h));
             int textureH = h >= w ? 1600 : Mathf.Max(256, Mathf.RoundToInt(1600 * h / w));
@@ -88,6 +97,7 @@ namespace Wisp.UI
         {
             switch (chapter)
             {
+                case "fog-canyon": return "areaFogCanyon";
                 case "queens-gardens": return "areaQueensGardens";
                 case "kings-pass": return "areaCliffs";
                 case "abyss": return "areaAncientBasin";
@@ -111,6 +121,8 @@ namespace Wisp.UI
             if (Texture != null) { Texture.Release(); UnityEngine.Object.Destroy(Texture); Texture = null; }
             foreach (var material in materials) UnityEngine.Object.Destroy(material);
             materials.Clear();
+            foreach (var mesh in meshes) UnityEngine.Object.Destroy(mesh);
+            meshes.Clear();
         }
     }
 }

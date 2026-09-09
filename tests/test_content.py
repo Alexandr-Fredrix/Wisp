@@ -40,5 +40,17 @@ class ContentTests(unittest.TestCase):
             if step['id'] in manual:
                 self.assertEqual(step['conditions'], [])
 
+    def test_regions_do_not_include_nearby_entrances(self):
+        enemies = {e['id']: e for e in self.enemies}
+        guard = enemies['Husk_Guard']['regions']
+        self.assertIn('Forgotten Crossroads', guard)
+        self.assertIn('Infected Crossroads', guard)
+        self.assertNotIn('Crystal Peak', guard)
+        self.assertNotIn('Fog Canyon', guard)
+        self.assertIn("Queen's Gardens", enemies['Mossy_Vagabond']['regions'])
+        self.assertNotIn('Greenpath', enemies['Mossy_Vagabond']['regions'])
+        self.assertIn('The Abyss', enemies['Shadow_Creeper_(Hollow_Knight)']['regions'])
+        self.assertIn('Deepnest', enemies['Zote']['regions'])
+
 if __name__ == '__main__':
     unittest.main()

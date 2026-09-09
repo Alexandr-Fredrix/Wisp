@@ -6,11 +6,14 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using Newtonsoft.Json;
+using Wisp.Core;
 using UnityEngine;
 using UnityEngine.Networking;
 
 namespace Wisp.UI
 {
+    public sealed class StepImage { public string Label = ""; public string Url = ""; public bool Wide; }
+
     public sealed class EnemyMedia
     {
         public string Portrait = "";
@@ -18,7 +21,7 @@ namespace Wisp.UI
         public string[] MapCaptions = new string[0];
     }
 
-    // Artwork stays in a local cache; release archives contain reference URLs only.
+    // Local reference images are embedded; remaining wiki artwork is cached on demand.
     public sealed class MediaLibrary : IDisposable
     {
         private readonly MonoBehaviour owner;
@@ -28,16 +31,59 @@ namespace Wisp.UI
         private readonly Queue<string> order = new Queue<string>();
         private bool disposed;
         public readonly Dictionary<string, EnemyMedia> Enemies;
+        public readonly Dictionary<string, string> Regions;
+        public readonly Dictionary<string, string> EnglishRegions;
+        public readonly Dictionary<string, StepImage[]> Steps;
         public string Cache { get; private set; }
 
         public MediaLibrary(MonoBehaviour owner)
         {
             this.owner = owner;
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Wisp.regions-en.json"))
+            using (var reader = new StreamReader(stream))
+                EnglishRegions = JsonConvert.DeserializeObject<Dictionary<string,string>>(reader.ReadToEnd());
             Cache = Path.Combine(Application.persistentDataPath, "WispCache");
             using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Wisp.media.json"))
             using (var reader = new StreamReader(stream))
                 Enemies = JsonConvert.DeserializeObject<Dictionary<string, EnemyMedia>>(reader.ReadToEnd());
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Wisp.regions.json"))
+            using (var reader = new StreamReader(stream))
+                Regions = JsonConvert.DeserializeObject<Dictionary<string, string>>(reader.ReadToEnd());
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Wisp.step-media.json"))
+            using (var reader = new StreamReader(stream))
+                Steps = JsonConvert.DeserializeObject<Dictionary<string, StepImage[]>>(reader.ReadToEnd());
         }
+
+        public Texture2D AchievementIcon(string key)
+        {
+            string id = "achievement-" + key;
+            Texture2D image;
+            if (images.TryGetValue(id, out image)) return image;
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Wisp.achievements/" + key + ".jpg"))
+                if (stream != null) using (var buffer = new MemoryStream()) { stream.CopyTo(buffer); return Decode(id, buffer.ToArray()); }
+            return null;
+        }
+
+        public Texture2D Region(string id)
+        {
+            string key = "region-" + id;
+            if (I18n.English)
+            {
+                string englishMap;
+                if (EnglishRegions.TryGetValue(id, out englishMap)) return Get(englishMap);
+                return Regions.TryGetValue(id, out englishMap) ? Get(englishMap) : null;
+            }
+            Texture2D texture;
+            if (images.TryGetValue(key, out texture)) return texture;
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Wisp.ui/" + key + ".png"))
+                if (stream != null) using (var buffer = new MemoryStream()) { stream.CopyTo(buffer); return Decode(key, buffer.ToArray()); }
+            texture = Local(key);
+            if (texture != null) return texture;
+            string url;
+            return Regions.TryGetValue(id, out url) ? Get(url) : null;
+        }
+        public string RegionStatus(string id)
+        { string url; return Regions.TryGetValue(id, out url) ? Status(url) : Wisp.Core.I18n.T("Для этой зоны справочная карта пока не добавлена."); }
 
         public static string Key(string url)
         {
@@ -56,20 +102,27 @@ namespace Wisp.UI
                 if (File.Exists(path)) { var decoded = Decode(key, File.ReadAllBytes(path)); if (decoded != null) return decoded; }
             }
             catch (Exception) { }
-            errors[key] = "Изображение ещё не сохранено на этом компьютере.";
+            errors[key] = Wisp.Core.I18n.T("Изображение ещё не сохранено на этом компьютере.");
             return null;
         }
 
         public Texture2D Get(string url)
         {
             if (string.IsNullOrEmpty(url)) return null;
+            if (url.StartsWith("embedded:"))
+            {
+                Texture2D saved; if (images.TryGetValue(url, out saved)) return saved;
+                using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Wisp." + url.Substring(9)))
+                    if (stream != null) using (var buffer = new MemoryStream()) { stream.CopyTo(buffer); return Decode(url, buffer.ToArray()); }
+                return null;
+            }
             string key = Key(url);
             var texture = Local(key);
             if (texture != null) return texture;
-            if (!pending.Contains(key) && errors[key] == "Изображение ещё не сохранено на этом компьютере." && pending.Count < 3)
+            if (!pending.Contains(key) && errors[key] == Wisp.Core.I18n.T("Изображение ещё не сохранено на этом компьютере.") && pending.Count < 3)
             {
                 pending.Add(key);
-                errors[key] = "Загрузка изображения…";
+                errors[key] = Wisp.Core.I18n.T("Загрузка изображения…");
                 owner.StartCoroutine(Download(url, key));
             }
             return null;
@@ -78,7 +131,7 @@ namespace Wisp.UI
         public string Status(string url)
         {
             string result;
-            return errors.TryGetValue(Key(url), out result) ? result : "Загрузка изображения…";
+            return errors.TryGetValue(Key(url), out result) ? result : Wisp.Core.I18n.T("Загрузка изображения…");
         }
 
         public void Retry()
@@ -91,7 +144,7 @@ namespace Wisp.UI
         {
             Uri uri;
             if (!Uri.TryCreate(url, UriKind.Absolute, out uri) || uri.Scheme != "https" || uri.Host != "cdn.wikimg.net")
-            { errors[key] = "Неизвестный источник изображения."; pending.Remove(key); yield break; }
+            { errors[key] = Wisp.Core.I18n.T("Неизвестный источник изображения."); pending.Remove(key); yield break; }
             using (var request = new UnityWebRequest())
             {
                 request.url = url;
@@ -102,7 +155,7 @@ namespace Wisp.UI
                 if (!disposed)
                 {
                     if (request.result != UnityWebRequest.Result.Success)
-                        errors[key] = "Нет связи с библиотекой изображений. Нажми «Повторить».";
+                        errors[key] = Wisp.Core.I18n.T("Нет связи с библиотекой изображений. Нажми «Повторить».");
                     else try
                     {
                         var data = request.downloadHandler.data;
@@ -112,7 +165,7 @@ namespace Wisp.UI
                         Directory.CreateDirectory(Cache);
                         File.WriteAllBytes(Path.Combine(Cache, key + ".png"), data);
                     }
-                    catch (Exception) { errors[key] = "Не удалось прочитать или сохранить изображение."; }
+                    catch (Exception) { errors[key] = Wisp.Core.I18n.T("Не удалось прочитать или сохранить изображение."); }
                 }
             }
             pending.Remove(key);

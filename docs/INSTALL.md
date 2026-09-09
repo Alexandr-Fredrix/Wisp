@@ -1,17 +1,26 @@
-# Установка Wisp
+# Установка / Installation
 
-Windows x64 • Hollow Knight 1.5.12620 • BepInEx 5.4.23.5 x64.
+Windows x64 · Hollow Knight 1.5.12620 · BepInEx 5.4.23.5 x64.
 
-1. Закройте игру и сохраните копию `%USERPROFILE%/AppData/LocalLow/Team Cherry/Hollow Knight`.
-2. Установите [BepInEx 5 x64](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.5) в папку с hollow_knight.exe. Это нужно только один раз. Старый Modding API одновременно не используется: его оставшиеся библиотеки MonoMod/MMHOOK могут мешать загрузке.
-3. Распакуйте архив Wisp в папку игры. Должен появиться `BepInEx/plugins/Wisp/Wisp.dll`.
+## Русский
 
-Откройте сейв и нажмите F8. В настройках Wisp выберите цель: 112% или короткая Стальная душа. Выбор маршрута не меняет настоящий режим сейва.
+1. Закройте игру. Перед первым изменением модов сохраните копию папки `%USERPROFILE%/AppData/LocalLow/Team Cherry/Hollow Knight`.
+2. Установите BepInEx 5 x64 в папку с hollow_knight.exe. Старый Modding API одновременно не используется.
+3. Распакуйте Wisp-1.0.0.zip в папку игры. Должен появиться `BepInEx/plugins/Wisp/Wisp.dll`.
+4. Загрузите сейв, нажмите F8 или оба стика. В Настройках выберите цель и язык.
 
-Мышь выбирает пункты; колесо приближает карты, перетаскивание двигает их. Геймпад: оба стика открывают меню, LB/RB — главные вкладки. В маршруте ←/→ меняют панель, ↑/↓ выбирают пункт, A открывает его или переводит к следующей панели. В панели шагов Y меняет ручную отметку. X открывает карту и переводит фокус к ней; LS/RS двигают карту только в её панели, LT/RT меняют масштаб, Y вписывает. B возвращает к предыдущей панели, из списка областей закрывает окно. F8 закрывает сразу. Открытый пункт подчёркнут, текущий фокус выделен светлыми уголками; подсказки внизу зависят от панели. Физические контроллеры требуют дополнительной проверки.
+Мышь выбирает пункты; колесо прокручивает описание или приближает карту, перетаскивание двигает карту. На контроллере LB/RB меняют главные вкладки, стрелки выбирают панели и пункты, A открывает, B возвращает. Правый стик прокручивает описание. Следуйте подсказкам внизу: действия X/Y и LT/RT зависят от текущей панели. В дневнике X открывает выбор локации. В галерее Y листает иллюстрации, нажатие RS разворачивает их; в развёрнутом просмотре стики двигают карту, LT/RT меняют масштаб, Y вписывает.
 
-Отметки записываются после успешного сохранения игры в отдельную папку `Hollow Knight/Wisp/userN.json`. Старые отметки читаются из `userN.modded.json`, исходный файл не изменяется. Портреты и карты врагов сохраняются в WispCache автоматически после загрузки. Полные региональные карты пока требуют заранее подготовленного кэша.
+Настройки хранятся в `Hollow Knight/Wisp/settings.json`, отметки — в `Wisp/userN.json` после успешного сохранения игры. Смена языка их не удаляет. Изображения кэшируются в `WispCache`. Карта сейва и отдельная задача поверх игры удалены.
 
-На вкладке карты нажатие правого стика (RS) переключает «Справочную» и «Карту сейва». Отклонение стика двигает карту, нажатие меняет её тип. Если игровая карта не загрузилась, вернитесь к справочной тем же нажатием.
+Для обновления замените DLL при закрытой игре. Для удаления уберите только Wisp.dll; не удаляйте сейвы или файлы других модов.
 
-Для удаления достаточно убрать Wisp.dll при закрытой игре. Не удаляйте игровые сейвы или общие файлы других модов.
+## English
+
+Close the game, install BepInEx 5 x64 beside hollow_knight.exe, then extract Wisp-1.0.0.zip there. Load a save and press F8 or both sticks. Open Настройки (Settings), then Язык: Русский to choose English. Both languages are included.
+
+LB/RB switch main tabs; directional controls select panels/items; A opens and B returns. The right stick scrolls descriptions. Follow the contextual footer for X/Y and LT/RT actions. In the Journal, X opens the region selector. In the illustration gallery, Y changes images and pressing RS expands them. In expanded view, sticks pan, LT/RT zoom and Y fits the image.
+
+Mouse clicks select, the wheel scrolls descriptions or zooms maps, and dragging pans maps. Settings and per-save marks are stored separately in the game's persistent-data Wisp folder. Language changes preserve progress. Wiki images download on demand into WispCache unless embedded.
+
+Update or remove only Wisp.dll with the game closed. The release does not include BepInEx or game libraries.

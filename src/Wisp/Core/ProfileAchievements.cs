@@ -11,7 +11,7 @@ namespace Wisp.Core
     {
         // Only exact achievement objectives, never travel or preparation steps.
         public static readonly Dictionary<string, string> Steps = new Dictionary<string, string> {
-            { "first-charm", "CHARMED" }, { "false-knight", "FK_DEFEAT" },
+            { "void-choice", "VOID" }, { "first-charm", "CHARMED" }, { "false-knight", "FK_DEFEAT" },
             { "hornet-greenpath", "HORNET_1" }, { "mantis-lords", "MANTIS_LORDS" },
             { "soul-master", "SOUL_MASTER_DEFEAT" }, { "dung-defender", "DUNG_DEFENDER" },
             { "broken-vessel", "BROKEN_VESSEL" }, { "lost-kin", "DREAM_BROKEN_VESSEL" },

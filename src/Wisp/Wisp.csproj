@@ -4,7 +4,7 @@
     <LangVersion>latest</LangVersion>
     <AssemblyName>Wisp</AssemblyName>
     <RootNamespace>Wisp</RootNamespace>
-    <Version>0.4.0-alpha.1</Version>
+    <Version>1.0.0</Version>
     <Authors>Alexandr-Fredrix</Authors>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/Alexandr-Fredrix/Wisp</RepositoryUrl>
@@ -29,6 +29,14 @@
     <Reference Include="UnityEngine.UnityWebRequestModule"><HintPath>$(HollowKnightRefs)/UnityEngine.UnityWebRequestModule.dll</HintPath><Private>false</Private></Reference>
     <EmbeddedResource Include="../../content/ui/*.ttf" LogicalName="Wisp.ui/%(Filename)%(Extension)" />
     <EmbeddedResource Include="../../content/ui/*OFL.txt" LogicalName="Wisp.ui/%(Filename)%(Extension)" />
+    <EmbeddedResource Include="../../content/english.json" LogicalName="Wisp.english.json" />
+    <EmbeddedResource Include="../../content/regions-en.json" LogicalName="Wisp.regions-en.json" />
+    <EmbeddedResource Include="../../content/achievements.json" LogicalName="Wisp.achievements.json" />
+    <EmbeddedResource Include="../../content/achievements/*.jpg" LogicalName="Wisp.achievements/%(Filename)%(Extension)" />
+    <EmbeddedResource Include="../../content/locations/*.*" LogicalName="Wisp.locations/%(Filename)%(Extension)" />
+    <EmbeddedResource Include="../../content/mushroom/*.png" LogicalName="Wisp.mushroom/%(Filename)%(Extension)" />
+    <EmbeddedResource Include="../../content/step-media.json" LogicalName="Wisp.step-media.json" />
+    <EmbeddedResource Include="../../content/regions.json" LogicalName="Wisp.regions.json" />
     <EmbeddedResource Include="../../content/media.json" LogicalName="Wisp.media.json" />
     <EmbeddedResource Include="../../content/ui/*.png" LogicalName="Wisp.ui/%(Filename)%(Extension)" />
     <EmbeddedResource Include="../../content/route-pdf.json" LogicalName="Wisp.route-pdf.json" />

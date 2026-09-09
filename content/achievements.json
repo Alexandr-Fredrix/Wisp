@@ -1,0 +1,254 @@
+{
+  "CHARMED": {
+    "title": "Волшебный",
+    "description": "Получите первый амулет"
+  },
+  "ENCHANTED": {
+    "title": "Зачарованный",
+    "description": "Acquire half of Hallownest's Charms"
+  },
+  "BLESSED": {
+    "title": "Блаженный",
+    "description": "Acquire all Charms and receive Salubra's blessing"
+  },
+  "PROTECTED": {
+    "title": "Защищенный",
+    "description": "Соберите 4 осколка маски"
+  },
+  "MASKED": {
+    "title": "Замаскированный",
+    "description": "Соберите все осколки масок"
+  },
+  "SOULFUL": {
+    "title": "Воодушевленный",
+    "description": "Соберите 3 черепка сосуда"
+  },
+  "WORLDSOUL": {
+    "title": "Душа мира",
+    "description": "Соберите все черепки сосуда"
+  },
+  "FK_DEFEAT": {
+    "title": "Фальшь",
+    "description": "Победите Ложного рыцаря"
+  },
+  "DREAM_FK": {
+    "title": "Сила",
+    "description": ""
+  },
+  "HORNET_1": {
+    "title": "Испытание решительности",
+    "description": "Победите Хорнет на Зеленой тропе"
+  },
+  "HORNET_2": {
+    "title": "Доказательство решительности",
+    "description": ""
+  },
+  "SOUL_MASTER_DEFEAT": {
+    "title": "Просвещение",
+    "description": "Победите Мастера душ"
+  },
+  "BROKEN_VESSEL": {
+    "title": "Освобождение",
+    "description": "Победите Разбитый сосуд"
+  },
+  "DREAM_BROKEN_VESSEL": {
+    "title": "Покой",
+    "description": ""
+  },
+  "DUNG_DEFENDER": {
+    "title": "Честь",
+    "description": "Победите Навозного защитника"
+  },
+  "MANTIS_LORDS": {
+    "title": "Уважение",
+    "description": "Победите Лордов богомолов "
+  },
+  "COLLECTOR": {
+    "title": "Одержимость",
+    "description": ""
+  },
+  "ZOTE": {
+    "title": "Противостояние",
+    "description": ""
+  },
+  "ATTUNEMENT": {
+    "title": "Гармония ",
+    "description": "Соберите 600 сущности"
+  },
+  "AWAKENING": {
+    "title": "Пробуждение",
+    "description": "Соберите 1800 сущности и пробудите Гвоздь грез"
+  },
+  "ASCENSION": {
+    "title": "Вознесение",
+    "description": "Collect 2400 Essence and hear the Seer's final words"
+  },
+  "GRUBFRIEND": {
+    "title": "Друг гусеничек",
+    "description": "Спасите половину гусеничек"
+  },
+  "METAMORPHOSIS": {
+    "title": "Метаморфоза",
+    "description": "Спасите всех гусеничек"
+  },
+  "NEGLECT": {
+    "title": "Пренебрежение",
+    "description": "Оставьте Зота умирать"
+  },
+  "NAILSMITH_KILL": {
+    "title": "Чистота",
+    "description": ""
+  },
+  "NAILSMITH_SPARE": {
+    "title": "Счастливая пара",
+    "description": ""
+  },
+  "QUIRREL_EPILOGUE": {
+    "title": "Свидетель",
+    "description": ""
+  },
+  "MOURNER": {
+    "title": "Милосердие",
+    "description": "Утешьте Серую Плакальщицу"
+  },
+  "TRAITOR_LORD": {
+    "title": "Казнь",
+    "description": "Победите Предавшего лорда"
+  },
+  "STAG_STATION_HALF": {
+    "title": "Пути сообщения",
+    "description": "Open half of Hallownest's Stag Stations"
+  },
+  "STAG_STATION_ALL": {
+    "title": "Надежда",
+    "description": "Open all of Hallownest's Stag Stations and discover the Stag Nest"
+  },
+  "TEACHER": {
+    "title": "Наставница",
+    "description": "Уничтожьте Мономону Наставницу"
+  },
+  "WATCHER": {
+    "title": "Хранитель",
+    "description": "Уничтожьте Лурьена Хранителя"
+  },
+  "BEAST": {
+    "title": "Зверь",
+    "description": "Уничтожьте Херру Зверя"
+  },
+  "MAP": {
+    "title": "Картограф",
+    "description": "Получите карту каждой области"
+  },
+  "COLOSSEUM_1": {
+    "title": "Воин",
+    "description": "Пройдите Испытание воина"
+  },
+  "COLOSSEUM_2": {
+    "title": "Завоеватель",
+    "description": "Пройдите Испытание завоевателя"
+  },
+  "COLOSSEUM_3": {
+    "title": "Глупец",
+    "description": "Пройдите Испытание глупца"
+  },
+  "ENDING_A": {
+    "title": "Полый рыцарь",
+    "description": ""
+  },
+  "ENDING_B": {
+    "title": "Запечатанное родство",
+    "description": ""
+  },
+  "ENDING_C": {
+    "title": "Грез больше нет",
+    "description": ""
+  },
+  "VOID": {
+    "title": "Пустота",
+    "description": ""
+  },
+  "SPEEDRUN_1": {
+    "title": "Крайне быстрое прохождение",
+    "description": "Пройдите игру за 10 часов"
+  },
+  "SPEEDRUN_2": {
+    "title": "Молниеносное прохождение",
+    "description": "Пройдите игру за 5 часов"
+  },
+  "COMPLETION": {
+    "title": "Прохождение",
+    "description": "Пройдите и завершите игру на 100%"
+  },
+  "SPEED_COMPLETION": {
+    "title": "Быстрое прохождение",
+    "description": "Пройдите и завершите игру на 100% за 20 часов"
+  },
+  "STEELSOUL": {
+    "title": "Стальная душа",
+    "description": "Пройдите игру в режиме Стальной души"
+  },
+  "STEELSOUL_COMPLETION": {
+    "title": "Стальное сердце",
+    "description": "Пройдите и завершите игру на 100% в режиме Стальной души"
+  },
+  "HUNTER_1": {
+    "title": "Страстный охотник",
+    "description": "Record all of Hallownest's creatures in the Hunter's Journal"
+  },
+  "HUNTER_2": {
+    "title": "Истинный охотник",
+    "description": "Receive the Hunter's Mark"
+  },
+  "MR_MUSHROOM": {
+    "title": "Вестник перемен",
+    "description": ""
+  },
+  "DREAM_SOUL_MASTER_DEFEAT": {
+    "title": "Смертность",
+    "description": ""
+  },
+  "WHITE_DEFENDER": {
+    "title": "Память",
+    "description": ""
+  },
+  "GREY_PRINCE": {
+    "title": "Темный романс",
+    "description": ""
+  },
+  "GRIMM": {
+    "title": "Великое представление",
+    "description": ""
+  },
+  "NIGHTMARE_GRIMM": {
+    "title": "Ритуал",
+    "description": ""
+  },
+  "BANISHMENT": {
+    "title": "Изгнание",
+    "description": ""
+  },
+  "PANTHEON1": {
+    "title": "Братство",
+    "description": ""
+  },
+  "PANTHEON2": {
+    "title": "Вдохновение",
+    "description": ""
+  },
+  "PANTHEON3": {
+    "title": "Фокус",
+    "description": ""
+  },
+  "PANTHEON4": {
+    "title": "Душа и Тень",
+    "description": ""
+  },
+  "ENDINGD": {
+    "title": "Принять Пустоту",
+    "description": ""
+  },
+  "COMPLETIONGG": {
+    "title": "Чистое прохождение",
+    "description": "Пройдите и завершите игру на 112%"
+  }
+}

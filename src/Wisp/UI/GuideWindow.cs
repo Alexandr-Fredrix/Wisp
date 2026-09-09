@@ -25,7 +25,6 @@ namespace Wisp.UI
         private int padPane = 0;
         private int detailChoice;
         private bool contentFocus;
-        private bool journalSaveMap;
         private string notice = "";
         private float noticeUntil;
         private readonly Dictionary<string, int> lastKills = new Dictionary<string, int>();
@@ -47,11 +46,9 @@ namespace Wisp.UI
         private string liveRegion = "";
         private float nextRefresh;
         private string hudTask = "";
-        private readonly AreaMap areaMap = new AreaMap();
         private Vector2 mapPan;
         private float mapZoom = 1;
         private bool mapTab;
-        private bool mapDirty = true;
 
         public void Initialize(WispMod owner, Catalog data)
         {
@@ -73,12 +70,12 @@ namespace Wisp.UI
             lastKills.Clear();
             nextRefresh = 0;
             portraits.Clear();
-            mapDirty = true;
-            areaMap.Dispose();
+
+
         }
 
         private Chapter[] RouteChapters { get { return catalog.PdfChapters.Where(c => c.Goal == mod.Progress.RouteGoal).ToArray(); } }
-        private Step[] RouteSteps { get { return Current.Steps; } }
+        private Step[] RouteSteps { get { return Current.Steps.Where(s => !s.ReferenceOnly || s.Id.EndsWith("-guide")).ToArray(); } }
         private Chapter Current { get { return RouteChapters[Mathf.Clamp(chapterIndex, 0, RouteChapters.Length - 1)]; } }
         private string CurrentMapId { get { return RouteSteps[Mathf.Clamp(stepIndex, 0, RouteSteps.Length - 1)].MapChapter; } }
         private bool InSession
@@ -110,14 +107,25 @@ namespace Wisp.UI
             if (Input.GetKeyDown(KeyCode.Escape)) { Close(); return; }
             if (device.Action2.WasPressed)
             {
-                if (contentFocus || expandedEnemyMap) { contentFocus = false; expandedEnemyMap = false; }
+                if (expandedStepImage) expandedStepImage = false;
+                else if (choosingJournalRegion) choosingJournalRegion = false;
+                else if (contentFocus || expandedEnemyMap) { contentFocus = false; expandedEnemyMap = false; }
                 else if (padPane > 0) padPane--;
                 else Close();
                 return;
             }
-            if (device.LeftBumper.WasPressed) ChangeTab((primaryTab + 3) % 4);
-            if (device.RightBumper.WasPressed) ChangeTab((primaryTab + 1) % 4);
-            bool onMap = contentFocus && ((tab == 0 && mapTab) || tab == 1);
+            if (device.LeftBumper.WasPressed) CycleMainTab(-1);
+            if (device.RightBumper.WasPressed) CycleMainTab(1);
+            if (expandedStepImage)
+            {
+                mapPan += MapStick(device, true) * Time.unscaledDeltaTime * 350;
+                mapZoom = Mathf.Clamp(mapZoom + (device.RightTrigger.Value - device.LeftTrigger.Value) * Time.unscaledDeltaTime * 2, 1, 5);
+                if (device.DPadLeft.WasPressed) { stepImageIndex--; mapPan = Vector2.zero; mapZoom = 1; }
+                if (device.DPadRight.WasPressed) { stepImageIndex++; mapPan = Vector2.zero; mapZoom = 1; }
+                if (device.Action4.WasPressed) { mapPan = Vector2.zero; mapZoom = 1; }
+                return;
+            }
+            bool onMap = contentFocus && ((tab == 0 && mapTab) || tab == 1 || tab == 3);
             int vertical = device.DPadUp.IsPressed || (!onMap && device.LeftStickY.Value > .5f) ? -1 : device.DPadDown.IsPressed || (!onMap && device.LeftStickY.Value < -.5f) ? 1 : 0;
             int horizontal = device.DPadLeft.IsPressed || (!onMap && device.LeftStickX.Value < -.5f) ? -1 : device.DPadRight.IsPressed || (!onMap && device.LeftStickX.Value > .5f) ? 1 : 0;
             int trigger = !contentFocus && device.LeftTrigger.WasPressed ? -1 : !contentFocus && device.RightTrigger.WasPressed ? 1 : 0;
@@ -126,6 +134,12 @@ namespace Wisp.UI
             if (repeat) nextNavigation = Time.unscaledTime + .2f;
             int dx = trigger != 0 ? trigger : repeat ? horizontal : 0;
             int dy = repeat ? vertical : 0;
+            if (choosingJournalRegion)
+            {
+                if (dy != 0) { journalRegionIndex = Mathf.Clamp(journalRegionIndex + dy, 0, JournalRegions.Length - 1); revealJournalRegion = true; }
+                if (device.Action1.WasPressed) SelectJournalRegion(journalRegionIndex);
+                return;
+            }
             if (tab == 0)
             {
                 if (!contentFocus)
@@ -144,26 +158,37 @@ namespace Wisp.UI
                         else contentFocus = true;
                     }
                     if (device.Action3.WasPressed) { mapTab = true; detailChoice = 1; padPane = 2; }
-                    if (device.Action4.WasPressed && padPane == 1 && !RouteSteps[stepIndex].ReferenceOnly && !Completion.Confirmed(RouteSteps[stepIndex], player) && !ProfileAchievements.Confirmed(RouteSteps[stepIndex], player))
+                    if (device.Action4.WasPressed && padPane == 1 && !ProfileAchievements.Steps.ContainsKey(RouteSteps[stepIndex].Id) && !RouteSteps[stepIndex].ReferenceOnly && !Completion.Confirmed(RouteSteps[stepIndex], player) && !ProfileAchievements.Confirmed(RouteSteps[stepIndex], player))
                         mod.Progress.Mark(RouteSteps[stepIndex].Id, !Done(RouteSteps[stepIndex]));
                 }
-                else if (!mapTab) detailScroll.y = Mathf.Max(0, detailScroll.y + dy * 64 - device.RightStickY.Value * Time.unscaledDeltaTime * 350);
-                if (mapTab && padPane == 2 && device.RightStickButton.WasPressed && !device.LeftStickButton.IsPressed) SetMapMode(!fullReferenceMap);
+                // The selected description is scrollable without an extra confirm press.
+                if (!mapTab && padPane == 2 && detailChoice == 0)
+                {
+                    if (device.Action4.WasPressed) stepImageIndex++;
+                    if (device.RightStickButton.WasPressed) OpenStepImage();
+                    float stick = Mathf.Abs(device.RightStickY.Value) > .18f ? device.RightStickY.Value : 0;
+                    detailScroll.y = Mathf.Max(0, detailScroll.y + dy * 64 - stick * Time.unscaledDeltaTime * 350);
+                }
             }
             else if (tab == 1 && !contentFocus)
             {
                 if (padPane == 0)
                 {
-                    if (dy != 0) { enemyIndex = Mathf.Clamp(enemyIndex + dy, 0, Math.Max(0, FilteredEnemies().Length - 1)); enemyScroll.y = Mathf.Max(0, enemyIndex * 96 - 192); enemyMapIndex = 0; mapPan = Vector2.zero; mapZoom = 1; mapDirty = true; }
+                    if (dy != 0) { enemyIndex = Mathf.Clamp(enemyIndex + dy, 0, Math.Max(0, FilteredEnemies().Length - 1)); enemyScroll.y = Mathf.Max(0, enemyIndex * 96 - 192); enemyMapIndex = 0; mapPan = Vector2.zero; mapZoom = 1;  }
                     if (dx > 0 || device.Action1.WasPressed) padPane = 1;
                 }
                 else
                 {
-                    if (dx != 0) { journalSaveMap = dx > 0; mapPan = Vector2.zero; mapZoom = 1; mapDirty = true; }
+                    if (dx < 0) padPane = 0;
                     if (device.Action1.WasPressed) contentFocus = true;
-                    if (device.Action4.WasPressed) { enemyMapIndex++; mapDirty = true; mapPan = Vector2.zero; mapZoom = 1; }
+                    if (device.Action4.WasPressed) { enemyMapIndex++;  mapPan = Vector2.zero; mapZoom = 1; }
                 }
-                if (device.Action3.WasPressed) { allRegions = !allRegions; enemyIndex = 0; enemyScroll = Vector2.zero; }
+                if (device.Action3.WasPressed) { OpenJournalRegions(); }
+            }
+            else if (tab == 3)
+            {
+                if (!contentFocus && dy != 0) SelectAtlas(atlasIndex + dy);
+                if (!contentFocus && (device.Action1.WasPressed || dx > 0)) contentFocus = true;
             }
             else if (tab == 2)
             {
@@ -178,6 +203,9 @@ namespace Wisp.UI
                 if (device.Action4.WasPressed) { mapPan = Vector2.zero; mapZoom = 1; }
             }
         }
+
+        private void CycleMainTab(int direction)
+        { int[] order = { 0, 1, 3, 2 }; ChangeTab(order[(Array.IndexOf(order, tab) + direction + order.Length) % order.Length]); }
 
         private static Vector2 MapStick(InControl.InputDevice device, bool includeLeft)
         {
@@ -205,10 +233,11 @@ namespace Wisp.UI
         {
             if (!Paused || open) return;
             Refresh();
-            open = true;
+            ResetJournalRegion();
+            open = true; expandedStepImage = false;
             contentFocus = false; padPane = 0; detailChoice = mapTab ? 1 : 0;
             GuideInputGuard.Capture();
-            mapDirty = true;
+
             suspendedEvents = EventSystem.current;
             // Never disable the shared EventSystem: doing so unregisters gamepad UI input.
             if (suspendedEvents != null) { navigationWasEnabled = suspendedEvents.sendNavigationEvents; suspendedEvents.sendNavigationEvents = false; }
@@ -257,7 +286,8 @@ namespace Wisp.UI
             }
             if (previousRegion != liveRegion && !string.IsNullOrEmpty(liveRegion))
             {
-                notice = "Новая область · " + liveRegion;
+                ResetJournalRegion();
+                notice = Wisp.Core.I18n.T("Новая область · ") + liveRegion;
                 noticeUntil = Time.unscaledTime + 7;
             }
             foreach (var enemy in catalog.Enemies.Where(e => e.Regions.Contains(liveRegion)))
@@ -267,7 +297,7 @@ namespace Wisp.UI
                 int previous;
                 if (lastKills.TryGetValue(enemy.Id, out previous) && status.Remaining < previous)
                 {
-                    notice = enemy.Name + (status.Complete ? " · запись завершена" : " · осталось: " + status.Remaining);
+                    notice = enemy.Name + (status.Complete ? Wisp.Core.I18n.T(" · запись завершена") : Wisp.Core.I18n.T(" · осталось: ") + status.Remaining);
                     noticeUntil = Time.unscaledTime + 5;
                 }
                 lastKills[enemy.Id] = status.Remaining;
@@ -282,9 +312,9 @@ namespace Wisp.UI
         {
             chapterIndex = index;
             revealChapter = revealStep = true;
-            stepIndex = 0;
+            stepIndex = 0; stepImageIndex = 0;
             stepScroll = detailScroll = Vector2.zero;
-            mapDirty = true;
+
             mapPan = Vector2.zero;
             mapZoom = 1;
             Remember();
@@ -292,9 +322,9 @@ namespace Wisp.UI
 
         private void SelectStep(int index)
         {
-            stepIndex = index;
+            stepIndex = index; stepImageIndex = 0;
             revealStep = true;
-            mapDirty = true; mapPan = Vector2.zero; mapZoom = 1;
+             mapPan = Vector2.zero; mapZoom = 1;
             detailScroll = Vector2.zero;
             Remember();
         }
@@ -307,17 +337,18 @@ namespace Wisp.UI
 
         // A profile achievement does not remove prerequisites from the current run's HUD.
         private bool DoneInSave(Step step) { return Completion.Confirmed(step, player) || mod.Progress.Completed.Contains(step.Id); }
-        private bool Done(Step step) { return DoneInSave(step) || ProfileAchievements.Confirmed(step, player); }
+        private bool Done(Step step) { return ProfileAchievements.Steps.ContainsKey(step.Id) ? ProfileAchievements.Confirmed(step, player) : DoneInSave(step); }
         private bool Visible(Chapter chapter) { return mod.Settings.ShowSpoilers || chapter.Id.Contains("-ref-") || chapter.Id == liveChapter || mod.Progress.VisitedChapters.Contains(chapter.Id) || chapter.Id == "kings-pass" || chapter.Id == "pdf-a1" || chapter.Goal == "speed" || chapter.Goal == "steel" || chapter.Steps.Any(s => SaveDiscovery.HasVisitEvidence(s.MapChapter, player)) || chapter.Steps.Any(s => ProfileAchievements.Confirmed(s, player)); }
 
         private void OnDestroy()
         {
-            Close(); areaMap.Dispose();
+            Close();
             if (media != null) media.Dispose();
-            foreach (var texture in new[] { panelTexture, buttonTexture, activeTexture, frameTexture, dividerTexture })
+            foreach (var texture in new[] { panelTexture, buttonTexture, activeTexture, frameTexture, dividerTexture, scrollThumb })
                 if (texture != null) Destroy(texture);
             if (font != null) Destroy(font);
-            BundledFont.Release();
+            if (flatSkin != null) Destroy(flatSkin);
+
         }
         private void OnDisable() { Close(); GuideInputGuard.Clear(); }
     }

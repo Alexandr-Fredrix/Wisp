@@ -9,10 +9,14 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 def metadata():
     data = json.loads((ROOT / "version.json").read_text(encoding="utf-8"))
     version = data["version"]
-    if not re.fullmatch(r"0\.\d+\.\d+-(alpha|beta|rc)\.\d+", version):
-        raise ValueError("Source previews require a 0.x prerelease version")
-    if data["stage"] not in {"source-preview", "development-alpha"}:
-        raise ValueError("Unknown development stage")
+    stable = re.fullmatch(r"(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)\.(?:0|[1-9]\d*)", version)
+    preview = re.fullmatch(r"0\.\d+\.\d+-(alpha|beta|rc)\.\d+", version)
+    if not (stable or preview):
+        raise ValueError("Invalid version")
+    if stable and data["stage"] != "stable":
+        raise ValueError("Stable versions require the stable stage")
+    if preview and data["stage"] not in {"source-preview", "development-alpha"}:
+        raise ValueError("Prereleases require a development stage")
     return data
 
 def validate():

@@ -1,4 +1,4 @@
-"""Prepare a clearly labelled local development build, never publish a release."""
+"""Package the compiled mod and checksums; publishing is a separate action."""
 import argparse
 import hashlib
 import json
@@ -19,7 +19,8 @@ def package(dll):
         'target_game': '1.5.12620',
         'loader': 'BepInEx 5.4.23.5 x64',
         'runtime_tested': False,
-        'status': 'Development build. Complete docs/TESTING.md before public binary release.',
+        'status': 'Release build. Content, localization and core checks passed; see docs/TESTING.md for runtime coverage.',
+        'languages': ['ru', 'en'],
         'dll_sha256': hashlib.sha256(dll.read_bytes()).hexdigest(),
     }
     with zipfile.ZipFile(target, 'w', zipfile.ZIP_DEFLATED) as archive:

@@ -29,7 +29,7 @@ foreach ($source in (Get-ChildItem (Join-Path $root 'src/Wisp') -Recurse -Filter
     $trees.Add([Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree]::ParseText([IO.File]::ReadAllText($source.FullName)))
 }
 $version = (Get-Content (Join-Path $root 'version.json') -Raw | ConvertFrom-Json).version
-$trees.Add([Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree]::ParseText('[assembly:System.Reflection.AssemblyVersion("0.4.0.0")][assembly:System.Reflection.AssemblyInformationalVersion("' + $version + '")]'))
+$trees.Add([Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree]::ParseText('[assembly:System.Reflection.AssemblyVersion("1.0.0.0")][assembly:System.Reflection.AssemblyInformationalVersion("' + $version + '")]'))
 $options = [Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions]::new([Microsoft.CodeAnalysis.OutputKind]::DynamicallyLinkedLibrary)
 $options = $options.WithOptimizationLevel([Microsoft.CodeAnalysis.OptimizationLevel]::Release).WithDeterministic($true)
 $compilation = [Microsoft.CodeAnalysis.CSharp.CSharpCompilation]::Create('Wisp', $trees, $references, $options)
@@ -49,10 +49,25 @@ foreach ($enemy in $enemies) {
     }
 }
 $resources = [System.Collections.Generic.List[Microsoft.CodeAnalysis.ResourceDescription]]::new()
-foreach ($name in @('route.json','route-pdf.json','enemies.json','media.json','ui/frame.png','ui/divider.png','ui/JetBrainsMonoNerdFont-Regular.ttf','ui/JetBrainsMono-OFL.txt')) {
+foreach ($name in @('english.json','regions-en.json','achievements.json','step-media.json','regions.json','ui/region-abyss.png','ui/region-queens-gardens.png','ui/region-fog-canyon.png','route.json','route-pdf.json','enemies.json','media.json','ui/frame.png','ui/divider.png','ui/JetBrainsMonoNerdFont-Regular.ttf','ui/JetBrainsMono-OFL.txt')) {
     $resourcePath = Join-Path $root "content/$name"
     $factory = { [IO.File]::OpenRead($resourcePath) }.GetNewClosure()
     $resources.Add([Microsoft.CodeAnalysis.ResourceDescription]::new("Wisp.$name", [Func[IO.Stream]]$factory, $true))
+}
+foreach ($image in (Get-ChildItem (Join-Path $root 'content/achievements') -Filter '*.jpg')) {
+    $path = $image.FullName
+    $factory = { [IO.File]::OpenRead($path) }.GetNewClosure()
+    $resources.Add([Microsoft.CodeAnalysis.ResourceDescription]::new("Wisp.achievements/$($image.Name)", [Func[IO.Stream]]$factory, $true))
+}
+foreach ($image in (Get-ChildItem (Join-Path $root 'content/mushroom') -Filter '*.png')) {
+    $path = $image.FullName
+    $factory = { [IO.File]::OpenRead($path) }.GetNewClosure()
+    $resources.Add([Microsoft.CodeAnalysis.ResourceDescription]::new("Wisp.mushroom/$($image.Name)", [Func[IO.Stream]]$factory, $true))
+}
+foreach ($image in (Get-ChildItem (Join-Path $root 'content/locations') -File)) {
+    $path = $image.FullName
+    $factory = { [IO.File]::OpenRead($path) }.GetNewClosure()
+    $resources.Add([Microsoft.CodeAnalysis.ResourceDescription]::new("Wisp.locations/$($image.Name)", [Func[IO.Stream]]$factory, $true))
 }
 New-Item -ItemType Directory -Force -Path $OutputDirectory | Out-Null
 $output = [IO.File]::Create((Join-Path (Resolve-Path $OutputDirectory) 'Wisp.dll'))

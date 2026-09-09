@@ -27,12 +27,18 @@ namespace Wisp.Game
             {
                 if (stream == null) throw new FileNotFoundException("Missing embedded Wisp content", name);
                 using (var reader = new StreamReader(stream))
-                    return JsonConvert.DeserializeObject<T>(reader.ReadToEnd());
+                    {
+                    var data = Newtonsoft.Json.Linq.JToken.Parse(reader.ReadToEnd());
+                    foreach (var value in data.SelectTokens("$..*").OfType<Newtonsoft.Json.Linq.JValue>())
+                        if (value.Type == Newtonsoft.Json.Linq.JTokenType.String) value.Value = I18n.T((string)value.Value);
+                    return data.ToObject<T>();
+                }
             }
         }
 
         public string ChapterFor(string zone, string scene)
         {
+            if (zone == "ABYSS_DEEP") return "abyss";
             zone = NormalizeZone(zone);
             if (scene == "Tutorial_01") return "kings-pass";
             switch (zone)
@@ -57,6 +63,7 @@ namespace Wisp.Game
 
         public static string RegionFor(string zone, string scene)
         {
+            if (zone == "ABYSS_DEEP") return "The Abyss";
             zone = NormalizeZone(zone);
             if (scene == "Tutorial_01") return "King's Pass";
             switch (zone)

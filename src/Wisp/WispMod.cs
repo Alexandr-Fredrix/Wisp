@@ -10,7 +10,7 @@ using Wisp.UI;
 using Wisp.Game;
 namespace Wisp
 {
-    [BepInPlugin("com.alexandr-fredrix.wisp", "Wisp", "0.4.0")]
+    [BepInPlugin("com.alexandr-fredrix.wisp", "Wisp", "1.0.0")]
     public sealed class WispMod : BaseUnityPlugin
     {
         internal static WispMod Instance;
@@ -27,11 +27,15 @@ namespace Wisp
             directory = Path.Combine(Application.persistentDataPath, "Wisp");
             Directory.CreateDirectory(directory);
             Settings = Read<Preferences>(Path.Combine(directory, "settings.json")) ?? new Preferences();
+            using (var stream = typeof(WispMod).Assembly.GetManifestResourceStream("Wisp.english.json"))
+            using (var reader = new StreamReader(stream))
+                I18n.Translations = JsonConvert.DeserializeObject<System.Collections.Generic.Dictionary<string, string>>(reader.ReadToEnd());
+            I18n.English = Settings.Language == "en";
             guide = gameObject.AddComponent<GuideWindow>();
             guide.Initialize(this, Catalog.Load());
             patches = new Harmony("com.alexandr-fredrix.wisp");
             patches.PatchAll(typeof(WispMod).Assembly);
-            Logger.LogInfo("Wisp 0.4.0-alpha.1 / Unity 6. F8 or both sticks opens the guide. No input backend changes.");
+            Logger.LogInfo("Wisp 1.0.0 / Unity 6. F8 or both sticks opens the guide. No input backend changes.");
         }
         private T Read<T>(string path) where T : class
         {
@@ -66,6 +70,7 @@ namespace Wisp
             }
             catch (Exception e) { Logger.LogError("Cannot save Wisp data: " + e.Message); }
         }
+        internal void SavePreferences() { Write(Path.Combine(directory, "settings.json"), Settings); }
         internal void Saved(int id)
         {
             if (slot == id && id > 0) Write(Path.Combine(directory, "user" + id + ".json"), Progress);

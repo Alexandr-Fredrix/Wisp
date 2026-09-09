@@ -91,6 +91,7 @@ namespace Wisp.Core
 
     public sealed class Preferences
     {
+        public string Language = "ru";
         public bool ShowSpoilers;
         public bool HideCompleted;
         public bool ShowPauseHint = true;

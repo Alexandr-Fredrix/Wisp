@@ -1,6 +1,6 @@
 {
-  "version": "0.4.0-alpha.1",
-  "stage": "development-alpha",
+  "version": "1.0.0",
+  "stage": "stable",
   "target_game": "1.5.12620",
   "loader": "BepInEx 5.4.23.5 x64"
 }

@@ -10,47 +10,67 @@ namespace Wisp.UI
     public sealed partial class GuideWindow
     {
         private Texture2D frameTexture, dividerTexture;
-        private GUIStyle small, centered;
+        private GUIStyle small, centered, columnHeading;
+        private GUISkin flatSkin;
+        private int chapterPage, stepPage;
+        private Texture2D scrollThumb;
         private MediaLibrary media;
         private int enemyIndex, enemyMapIndex;
         private string journalRegion = "";
-        private bool fullReferenceMap = true;
         private bool expandedEnemyMap;
         private Vector2 habitatScroll;
 
         private string HabitatLabel(EnemyMedia entry, int index)
         {
-            if (entry == null || index >= entry.MapCaptions.Length || string.IsNullOrEmpty(entry.MapCaptions[index])) return "Место обитания";
+            if (entry == null || index >= entry.MapCaptions.Length || string.IsNullOrEmpty(entry.MapCaptions[index])) return Wisp.Core.I18n.T("Место обитания");
             return Habitat.Phase(entry.MapCaptions[index], entry.MapCaptions);
         }
-        private const float CanvasWidth = 1280, CanvasHeight = 800;
+        private const float ContentScale = 1358f / 1112f;
+        private static Rect ContentRect(float x, float y, float w, float h) { return new Rect(x * ContentScale, y, w * ContentScale, h); }
+
+        private const float CanvasWidth = 1422, CanvasHeight = 800;
 
         private void Styles()
         {
             if (text != null) return;
-            try { font = BundledFont.Load(); }
-            catch (Exception error) { mod.LogError("Wisp font: " + error); font = Font.CreateDynamicFontFromOSFont(new[] { "Consolas", "Arial" }, 18); }
-            panelTexture = Solid(new Color(.025f, .032f, .047f, 1f));
+            font = BundledFont.Load();
+
+            panelTexture = Solid(new Color(.031f, .051f, .071f, 1f));
             buttonTexture = Solid(Color.clear);
-            activeTexture = new Texture2D(128, 32, TextureFormat.RGBA32, false);
-            for (int y = 0; y < 32; y++) for (int x = 0; x < 128; x++)
-            {
-                float fade = Mathf.Sin(Mathf.PI * x / 127f) * Mathf.Sin(Mathf.PI * y / 31f);
-                activeTexture.SetPixel(x, y, new Color(.5f, .65f, .85f, fade * .16f));
-            }
-            activeTexture.Apply();
-            text = new GUIStyle(GUI.skin.label) { font = font, fontSize = 18, wordWrap = true, richText = false, clipping = TextClipping.Clip, padding = new RectOffset(4, 4, 4, 4) };
-            text.normal.textColor = new Color(.86f, .88f, .91f);
-            heading = new GUIStyle(text) { fontSize = 23, fontStyle = FontStyle.Normal };
-            muted = new GUIStyle(text) { fontSize = 16 };
-            muted.normal.textColor = new Color(.58f, .66f, .75f);
-            small = new GUIStyle(muted) { fontSize = 14 };
+            activeTexture = Solid(new Color(.11f, .18f, .23f, 1f));
+            text = new GUIStyle(GUI.skin.label) { font = font, fontSize = 20, wordWrap = true, richText = false, clipping = TextClipping.Clip, padding = new RectOffset(4, 4, 4, 4) };
+            text.normal.textColor = new Color(.91f, .95f, .97f);
+            heading = new GUIStyle(text) { fontSize = 26, fontStyle = FontStyle.Normal };
+            muted = new GUIStyle(text) { fontSize = 17 };
+            muted.normal.textColor = new Color(.65f, .76f, .82f);
+            small = new GUIStyle(muted) { fontSize = 15 };
+            columnHeading = new GUIStyle(muted) { alignment = TextAnchor.MiddleLeft };
             centered = new GUIStyle(text) { alignment = TextAnchor.MiddleCenter };
-            button = new GUIStyle(text) { alignment = TextAnchor.MiddleLeft, padding = new RectOffset(18, 12, 6, 6), fontSize = 18 };
+            button = new GUIStyle(text) { alignment = TextAnchor.MiddleLeft, padding = new RectOffset(10, 10, 4, 4), fontSize = 20 };
             button.normal.background = buttonTexture;
-            button.hover.background = activeTexture; button.hover.textColor = Color.white;
-            button.active.background = activeTexture; button.focused.background = activeTexture;
-            active = new GUIStyle(button); active.normal.background = activeTexture; active.normal.textColor = Color.white;
+            button.hover.background = buttonTexture; button.hover.textColor = Color.white;
+            button.active.background = buttonTexture; button.focused.background = buttonTexture;
+            active = new GUIStyle(button); active.normal.background = activeTexture; active.hover.background = activeTexture; active.active.background = activeTexture; active.normal.textColor = Color.white;
+            flatSkin = Instantiate(GUI.skin);
+            scrollThumb = Solid(new Color(.35f, .49f, .57f));
+            foreach (var track in new[] { flatSkin.verticalScrollbar, flatSkin.horizontalScrollbar })
+            {
+                track.normal.background = buttonTexture; track.hover.background = buttonTexture;
+                track.active.background = buttonTexture; track.border = new RectOffset();
+                track.margin = new RectOffset(); track.padding = new RectOffset();
+            }
+            flatSkin.verticalScrollbar.fixedWidth = 7;
+            flatSkin.horizontalScrollbar.fixedHeight = 7;
+            foreach (var thumb in new[] { flatSkin.verticalScrollbarThumb, flatSkin.horizontalScrollbarThumb })
+            {
+                thumb.normal.background = scrollThumb; thumb.hover.background = scrollThumb;
+                thumb.active.background = scrollThumb; thumb.border = new RectOffset();
+            }
+            foreach (var arrow in new[] { flatSkin.verticalScrollbarUpButton, flatSkin.verticalScrollbarDownButton, flatSkin.horizontalScrollbarLeftButton, flatSkin.horizontalScrollbarRightButton })
+            {
+                arrow.normal.background = buttonTexture; arrow.hover.background = buttonTexture;
+                arrow.active.background = buttonTexture; arrow.fixedHeight = arrow.fixedWidth = 0;
+            }
             frameTexture = Embedded("ui/frame.png"); dividerTexture = Embedded("ui/divider.png");
         }
 
@@ -71,9 +91,19 @@ namespace Wisp.UI
         private bool Choose(Rect rect, string label, bool selected = false, bool focused = false)
         {
             bool clicked = GUI.Button(rect, label, focused ? active : button);
-            if (selected) Rule(new Rect(rect.x + 18, rect.yMax - 5, rect.width - 36, 1), new Color(.34f, .43f, .52f));
+            if (selected) Underline(rect, label, button, new Color(.65f, .76f, .85f));
             if (focused) FocusCorners(rect);
             return clicked;
+        }
+
+        private void Underline(Rect rect, string label, GUIStyle style, Color tint)
+        {
+            float available = rect.width - style.padding.horizontal;
+            float width = Mathf.Min(available, style.CalcSize(new GUIContent(label)).x - style.padding.horizontal);
+            bool wrapped = label.Contains("\n") || style.CalcHeight(new GUIContent(label), rect.width) > style.lineHeight + style.padding.vertical + 2;
+            float x = style.alignment == TextAnchor.MiddleCenter ? rect.center.x - width / 2 : rect.x + style.padding.left;
+            float y = wrapped ? rect.yMax - 5 : rect.center.y + style.lineHeight / 2 + 4;
+            Rule(new Rect(x, y, Mathf.Max(1, width), 1), tint);
         }
 
         private static void Rule(Rect rect, Color tint)
@@ -99,53 +129,59 @@ namespace Wisp.UI
 
         private void KeyHint(Rect rect, string key)
         {
-            GUI.Label(rect, key, new GUIStyle(small) { alignment = TextAnchor.MiddleCenter });
-            Rule(new Rect(rect.x + 5, rect.yMax - 2, rect.width - 10, 1), new Color(.38f, .48f, .58f));
+            Rule(rect, new Color(.075f, .12f, .16f));
+            Border(rect, new Color(.38f, .52f, .60f));
+            GUI.Label(rect, key, new GUIStyle(small) { alignment = TextAnchor.MiddleCenter, wordWrap = false, padding = new RectOffset(0,0,0,0) });
         }
 
-        private void ChangeTab(int target)
+        private void ChangeTab(int target, bool routeRegion = false)
         {
-            primaryTab = target; tab = Math.Min(target, 2); padPane = 0; expandedEnemyMap = false; contentFocus = false;
-            detailChoice = mapTab ? 1 : 0; detailScroll = Vector2.zero;
+            if (target == 1 && !routeRegion) ResetJournalRegion();
+            expandedStepImage = false; choosingJournalRegion = false; primaryTab = target; tab = target; padPane = 0; expandedEnemyMap = false; contentFocus = false;
+             detailChoice = mapTab ? 1 : 0; detailScroll = Vector2.zero;
         }
 
         private void OpenRegionJournal()
         {
             var location = catalog.Chapters.FirstOrDefault(c => c.Id == CurrentMapId);
             journalRegion = location == null ? liveRegion : location.English.Replace('’', '\''); allRegions = false;
-            enemyIndex = 0; enemyScroll = Vector2.zero; ChangeTab(1);
+            enemyIndex = 0; enemyScroll = Vector2.zero; ChangeTab(1, true);
         }
 
         private string NavigationHint()
         {
-            if (contentFocus) return (tab == 1 || mapTab) ? "Стики: карта · LT/RT: масштаб · Y: вписать · B: к вкладкам" : "↑↓ / RS: текст · B: к вкладкам";
-            if (tab == 2) return "↑↓: настройка · ←→ / LT/RT: цель · A: изменить · B: назад";
-            if (tab == 1) return padPane == 0 ? "↑↓: враг · → / A: карты · X: фильтр · B: закрыть" : "←→ / LT/RT: тип карты · A: управлять · Y: другое место · B: к врагам";
-            if (padPane == 0) return "↑↓: область · A / →: шаги · B: закрыть · ?: посещение не подтверждено";
-            if (padPane == 1) return "↑↓: шаг · A / →: вкладки · Y: отметка · B / ←: области";
-            return "←→ / LT/RT: вкладка · A: открыть · X: карта · B: к шагам";
+            if (expandedStepImage) return Wisp.Core.I18n.T("Стики: перемещение · LT/RT: масштаб · ←→: иллюстрация · Y: вписать · B: описание");
+            if (choosingJournalRegion) return Wisp.Core.I18n.T("↑↓: локация · A: выбрать · B: назад");
+            if (tab == 3) return contentFocus ? Wisp.Core.I18n.T("Стики: карта · LT/RT: масштаб · Y: вписать · B: к зонам") : Wisp.Core.I18n.T("↑↓: зона · A / →: карта · B: закрыть");
+            if (contentFocus) return (tab == 1 || mapTab) ? Wisp.Core.I18n.T("Стики: карта · LT/RT: масштаб · Y: вписать · B: к вкладкам") : Wisp.Core.I18n.T("↑↓ / RS: текст · B: к вкладкам");
+            if (tab == 2) return Wisp.Core.I18n.T("↑↓: настройка · ←→ / LT/RT: цель · A: изменить · B: назад");
+            if (tab == 1) return padPane == 0 ? Wisp.Core.I18n.T("↑↓: враг · → / A: карты · X: фильтр · B: закрыть") : Wisp.Core.I18n.T("A: управлять картой · Y: другое место · B / ←: к врагам");
+            if (padPane == 0) return Wisp.Core.I18n.T("↑↓: область · A / →: шаги · B: закрыть · ?: посещение не подтверждено");
+            if (padPane == 1) return Wisp.Core.I18n.T("↑↓: шаг · A / →: вкладки · Y: отметка · B / ←: области");
+            if (!mapTab && detailChoice == 0) return Wisp.Core.I18n.T("↑↓ / RS: прокрутка · Y: иллюстрация · нажатие RS: развернуть · B: к шагам");
+            return Wisp.Core.I18n.T("←→ / LT/RT: вкладка · A: открыть · X: карта · B: к шагам");
         }
 
         private void Divider(Rect rect)
         {
-            if (dividerTexture == null) return;
-            // The generated texture includes transparent margins; only sample its central band.
-            GUI.DrawTextureWithTexCoords(rect, dividerTexture, new Rect(0, .31f, 1, .38f));
+            Rule(new Rect(rect.x, rect.center.y, rect.width, 1), new Color(.20f, .30f, .35f));
         }
 
         private void OnGUI()
         {
             if (mod == null || !InSession) return;
             Styles();
+            var oldSkin = GUI.skin;
+            GUI.skin = flatSkin;
             var matrix = GUI.matrix; int depth = GUI.depth; bool enabled = GUI.enabled; var color = GUI.color;
             float scale = Mathf.Min(Screen.width / (CanvasWidth + 24), Screen.height / (CanvasHeight + 24));
             GUI.matrix = Matrix4x4.TRS(new Vector3((Screen.width - CanvasWidth * scale) / 2, (Screen.height - CanvasHeight * scale) / 2), Quaternion.identity, new Vector3(scale, scale, 1));
             try
             {
+                GUI.color = Color.white;
                 if (!open)
                 {
-                    if (Paused && mod.Settings.ShowPauseHint) GUI.Label(new Rect(40, 752, 900, 28), "WISP · F8 / оба стика — проводник", muted);
-                    else if (!Paused && mod.Settings.ShowHud) DrawHud(CanvasWidth);
+                    if (Paused && mod.Settings.ShowPauseHint) GUI.Label(new Rect(40, 752, 900, 28), Wisp.Core.I18n.T("WISP · F8 / оба стика — проводник"), muted);
                     return;
                 }
                 GUI.depth = -1000;
@@ -154,96 +190,223 @@ namespace Wisp.UI
                 GUI.matrix = Matrix4x4.identity;
                 GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), panelTexture);
                 GUI.matrix = backdropMatrix;
-                Border(new Rect(36, 26, 1208, 748), new Color(.36f, .46f, .57f));
-                Divider(new Rect(528, 28, 224, 12));
+
+
                 // Every section has its own fixed viewport; no child can widen its parent.
-                GUI.Label(new Rect(112, 57, 870, 38), "WISP  /  Атлас Халлоунеста", heading);
-                if (Choose(new Rect(990, 57, 200, 38), "Закрыть · F8")) Close();
-                KeyHint(new Rect(84, 107, 36, 28), "LB");
-                KeyHint(new Rect(1156, 107, 36, 28), "RB");
-                if (Choose(new Rect(126, 103, 150, 38), "Маршрут", tab == 0)) ChangeTab(0);
-                if (Choose(new Rect(286, 103, 220, 38), "Дневник охотника", tab == 1)) ChangeTab(1);
-                if (Choose(new Rect(516, 103, 160, 38), "Настройки", primaryTab == 2)) ChangeTab(2);
-                if (Choose(new Rect(724, 103, 424, 38), "Цель: " + (mod.Progress.RouteGoal == "steel" ? "C · Стальная душа" : mod.Progress.RouteGoal == "speed" ? "B · Скорость" : "A · 112%"), primaryTab == 3)) { ChangeTab(3); }
-                Divider(new Rect(92, 147, 1096, 15));
-                GUI.BeginGroup(new Rect(84, 176, 1112, 530));
-                if (tab == 0) DrawRoute(); else if (tab == 1) DrawJournal(); else DrawSettings();
+                GUI.Label(new Rect(32, 32, 960, 42), Wisp.Core.I18n.T("WISP  /  Атлас Халлоунеста"), heading);
+                if (Choose(new Rect(1184, 32, 206, 42), Wisp.Core.I18n.T("Закрыть · F8"))) Close();
+                KeyHint(new Rect(32, 112, 38, 28), "LB");
+                KeyHint(new Rect(1352, 112, 38, 28), "RB");
+                if (Choose(new Rect(86, 105, 175, 42), Wisp.Core.I18n.T("Маршрут"), tab == 0)) ChangeTab(0);
+                if (Choose(new Rect(270, 105, 310, 42), Wisp.Core.I18n.T("Дневник охотника"), tab == 1)) ChangeTab(1);
+                if (Choose(new Rect(590, 105, 150, 42), Wisp.Core.I18n.T("Атлас"), tab == 3)) ChangeTab(3);
+                if (Choose(new Rect(750, 105, 205, 42), Wisp.Core.I18n.T("Настройки"), tab == 2)) ChangeTab(2);
+                GUI.Label(new Rect(985, 112, 350, 32), Wisp.Core.I18n.T("Цель: ") + (mod.Progress.RouteGoal == "steel" ? Wisp.Core.I18n.T("C · Стальная душа") : mod.Progress.RouteGoal == "speed" ? Wisp.Core.I18n.T("B · Скорость") : "A · 112%"), muted);
+                Divider(new Rect(32, 155, 1358, 2));
+                GUI.BeginGroup(new Rect(32, 182, 1358, 530));
+                if (tab == 0) DrawRoute(); else if (tab == 1) DrawJournal(); else if (tab == 3) DrawAtlas(); else DrawSettings();
+                Rule(new Rect(0, 42, 1358, 1), new Color(.20f, .30f, .35f));
                 GUI.EndGroup();
-                Divider(new Rect(340, 721, 600, 14));
-                GUI.Label(new Rect(90, 740, 1100, 32), NavigationHint(), small);
+                Divider(new Rect(32, 730, 1358, 2));
+                GUI.Label(new Rect(32, 747, 1358, 36), NavigationHint(), small);
             }
-            finally { GUI.matrix = matrix; GUI.depth = depth; GUI.enabled = enabled; GUI.color = color; }
+            finally { GUI.skin = oldSkin; GUI.matrix = matrix; GUI.depth = depth; GUI.enabled = enabled; GUI.color = color; }
         }
 
         private void DrawRoute()
         {
+            if (DrawExpandedStepImage()) return;
             var chapters = RouteChapters;
             var steps = RouteSteps;
-            GUI.Label(new Rect(0, 0, 210, 28), padPane == 0 ? "ОБЛАСТИ · ВЫБОР" : "ОБЛАСТИ", muted);
+            GUI.Label(ContentRect(30, 0, 180, 34), padPane == 0 ? Wisp.Core.I18n.T("ЭТАПЫ · ВЫБОР") : Wisp.Core.I18n.T("ЭТАПЫ"), columnHeading);
             string[] chapterLabels = chapters.Select(c => {
                 bool visible = Visible(c);
                 var tasks = c.Steps.Where(t => !t.ReferenceOnly).ToArray();
                 bool visited = c.Steps.Any(t => SaveDiscovery.HasVisitEvidence(t.MapChapter, player));
-                return visible ? c.Title + (tasks.Length == 0 ? "\nСправочник" : "\n" + tasks.Count(Done) + " / " + tasks.Length) + (!visited && !c.Id.Contains("-ref-") ? "  ?" : "") : "Неизученный этап";
+                return visible ? c.Title + (tasks.Length == 0 ? Wisp.Core.I18n.T("\nСправочник") : "\n" + tasks.Count(Done) + " / " + tasks.Length) + (!visited && !c.Id.Contains("-ref-") ? "  ?" : "") : Wisp.Core.I18n.T("Неизученный этап");
             }).ToArray();
-            float[] chapterHeights = chapterLabels.Select(t => Mathf.Max(92, button.CalcHeight(new GUIContent(t), 192) + 12)).ToArray();
-            float cy = 0;
-            if (revealChapter) { chapterScroll.y = Mathf.Max(0, chapterHeights.Take(chapterIndex).Sum() - 130); revealChapter = false; }
-            chapterScroll = GUI.BeginScrollView(new Rect(0, 42, 216, 488), chapterScroll, new Rect(0, 0, 192, chapterHeights.Sum()));
-            for (int i = 0; i < chapters.Length; i++)
-            {
-                if (Choose(new Rect(0, cy, 192, chapterHeights[i] - 6), chapterLabels[i], chapterIndex == i, chapterIndex == i && padPane == 0 && !contentFocus)) { contentFocus = false; padPane = 0; SelectChapter(i); }
-                cy += chapterHeights[i];
-            }
-            GUI.EndScrollView();
-            GUI.Label(new Rect(238, 0, 238, 28), padPane == 1 ? "ШАГИ · ВЫБОР" : "ШАГИ", muted);
-            if (!Visible(Current)) { Paragraph(new Rect(504, 30, 596, 440), "Область ещё не открыта", "Посети эту область или включи спойлеры в настройках."); return; }
-            string[] stepLabels = steps.Select(t => (t.ReferenceOnly ? "≡ " : Done(t) ? "✓ " : "○ ") + t.Title).ToArray();
-            float[] heights = stepLabels.Select((t, i) => mod.Settings.HideCompleted && Done(steps[i]) && i != stepIndex && !steps[i].ReferenceOnly ? 0 : Mathf.Max(84, button.CalcHeight(new GUIContent(t), 216) + 12)).ToArray();
-            if (revealStep) { stepScroll.y = Mathf.Max(0, heights.Take(stepIndex).Sum() - 120); revealStep = false; }
-            stepScroll = GUI.BeginScrollView(new Rect(238, 42, 240, 488), stepScroll, new Rect(0, 0, 216, heights.Sum()));
-            float sy = 0;
-            for (int i = 0; i < steps.Length; i++)
-            {
-                // Keep the selected row visible even when completed rows are collapsed.
-                if (mod.Settings.HideCompleted && Done(steps[i]) && i != stepIndex && !steps[i].ReferenceOnly) continue;
-                if (Choose(new Rect(0, sy, 216, heights[i] - 6), stepLabels[i], stepIndex == i, stepIndex == i && padPane == 1 && !contentFocus)) { contentFocus = false; padPane = 1; SelectStep(i); }
-                sy += heights[i];
-            }
-            GUI.EndScrollView();
-            if (Choose(new Rect(500, 0, 168, 32), "Описание", detailChoice == 0, !contentFocus && padPane == 2 && detailChoice == 0)) { contentFocus = false; mapTab = false; detailChoice = 0; padPane = 2; }
-            if (Choose(new Rect(680, 0, 150, 32), "Карта", detailChoice == 1, !contentFocus && padPane == 2 && detailChoice == 1)) { contentFocus = false; mapTab = true; detailChoice = 1; padPane = 2; }
-            if (Choose(new Rect(844, 0, 248, 32), "Враги области", detailChoice == 2, !contentFocus && padPane == 2 && detailChoice == 2)) OpenRegionJournal();
-            KeyHint(new Rect(216, 2, 22, 26), "↔");
-            KeyHint(new Rect(478, 2, 22, 26), "↔");
-            if (contentFocus) FocusCorners(new Rect(500, 42, 612, 434));
-            if (padPane == 2) Rule(new Rect(500, 36, 612, 2), new Color(.66f, .77f, .87f));
-            if (detailChoice == 2) Paragraph(new Rect(500, 44, 612, 428), "Враги области", "Нажми A, чтобы открыть дневник для выбранного места. B возвращает к шагам.");
-            else if (mapTab) DrawAreaMap(new Rect(500, 44, 612, 428));
+            PagedList(ContentRect(0, 54, 216, 476), chapterLabels, chapterIndex, ref chapterPage, ref revealChapter,
+                padPane == 0 && !contentFocus, index => { contentFocus = false; padPane = 0; SelectChapter(index); });
+            GUI.Label(ContentRect(238, 0, 238, 34), padPane == 1 ? Wisp.Core.I18n.T("ШАГИ · ВЫБОР") : Wisp.Core.I18n.T("ШАГИ"), columnHeading);
+            if (!Visible(Current)) { Paragraph(ContentRect(504, 30, 596, 440), Wisp.Core.I18n.T("Область ещё не открыта"), Wisp.Core.I18n.T("Посети эту область или включи спойлеры в настройках.")); return; }
+            string[] stepLabels = steps.Select(t => (t.ReferenceOnly ? (t.Id.StartsWith("mushroom-") ? "≡ " + t.Title : Wisp.Core.I18n.T("≡ Обзор этапа")) : (Done(t) ? "✓ " : "○ ") + t.Title)).ToArray();
+            PagedList(ContentRect(238, 54, 240, 476), stepLabels, stepIndex, ref stepPage, ref revealStep,
+                padPane == 1 && !contentFocus, index => { contentFocus = false; padPane = 1; SelectStep(index); }, steps.Select(t => mod.Settings.HideCompleted && Done(t) && !t.ReferenceOnly).ToArray());
+            if (Choose(ContentRect(538, 0, 144, 34), Wisp.Core.I18n.T("Описание"), detailChoice == 0, !contentFocus && padPane == 2 && detailChoice == 0)) { contentFocus = false; mapTab = false; detailChoice = 0; padPane = 2; }
+            if (Choose(ContentRect(696, 0, 128, 34), Wisp.Core.I18n.T("Карта"), detailChoice == 1, !contentFocus && padPane == 2 && detailChoice == 1)) { contentFocus = false; mapTab = true; detailChoice = 1; padPane = 2; }
+            if (Choose(ContentRect(830, 0, 240, 34), Wisp.Core.I18n.T("Враги области"), detailChoice == 2, !contentFocus && padPane == 2 && detailChoice == 2)) OpenRegionJournal();
+            KeyHint(ContentRect(0, 2, 24, 26), "←");
+            KeyHint(ContentRect(500, 2, 30, 26), "LT");
+            KeyHint(ContentRect(1080, 2, 30, 26), "RT");
+            KeyHint(ContentRect(464, 2, 24, 26), "→");
+            if (contentFocus) FocusCorners(ContentRect(500, 42, 612, 434));
+
+            if (detailChoice == 2) Paragraph(ContentRect(500, 54, 612, 418), Wisp.Core.I18n.T("Враги области"), Wisp.Core.I18n.T("Нажми A, чтобы открыть дневник для выбранного места. B возвращает к шагам."));
+            else if (mapTab) DrawAreaMap(ContentRect(500, 54, 612, 418));
             else
             {
                 var selected = steps[Mathf.Clamp(stepIndex, 0, steps.Length - 1)];
-                string body = selected.Spoiler && !mod.Settings.ShowSpoilers ? "Описание содержит сюжетные спойлеры. Их можно включить в настройках." : selected.Body;
-                if (selected.Warning.Length > 0) body = "ВАЖНО\n" + selected.Warning + "\n\n" + body;
-                if (ProfileAchievements.Confirmed(selected, player) && !Completion.Confirmed(selected, player))
-                    body = "Достижение уже получено в игровом профиле — возможно, в другом сохранении. Это не выдаёт предметы и не открывает пути в текущем сейве.\n\n" + body;
-                if (mod.Progress.RouteGoal == "steel") body += "\n\nСтальная душа: цель C — 100% без смерти и без ограничения времени. Проверяй набор на 100% в отдельном этапе.";
-                float titleHeight = heading.CalcHeight(new GUIContent(selected.Title), 584);
-                float bodyHeight = text.CalcHeight(new GUIContent(body), 584);
-                detailScroll = GUI.BeginScrollView(new Rect(500, 44, 612, 384), detailScroll, new Rect(0, 0, 588, titleHeight + bodyHeight + 28));
-                GUI.Label(new Rect(0, 0, 584, titleHeight), selected.Title, heading);
-                GUI.Label(new Rect(0, titleHeight + 20, 584, bodyHeight), body, text);
+                string body = selected.Spoiler && !mod.Settings.ShowSpoilers ? Wisp.Core.I18n.T("Описание содержит сюжетные спойлеры. Их можно включить в настройках.") : selected.Body;
+                if (selected.Warning.Length > 0) body = Wisp.Core.I18n.T("ВАЖНО\n") + selected.Warning + "\n\n" + body;
+
+                if (mod.Progress.RouteGoal == "steel") body += Wisp.Core.I18n.T("\n\nСтальная душа: цель C — 100% без смерти и без ограничения времени. Проверяй набор на 100% в отдельном этапе.");
+                body = System.Text.RegularExpressions.Regex.Replace(body, @"\s*Контекст этого этапа полностью приведён.*?PDF, стр\. \d+\.", "");
+                StepImage[] targets;
+                if ((selected.Spoiler && !mod.Settings.ShowSpoilers) || !media.Steps.TryGetValue(selected.Id, out targets)) targets = new StepImage[0];
+                float galleryHeight = targets.Length == 0 ? 0 : (targets.Any(t => t.Wide) ? 392 : ((targets.Length + 2) / 3) * 156 + 32);
+                string achievementKey;
+                bool hasAchievement = ProfileAchievements.Steps.TryGetValue(selected.Id, out achievementKey) && (!selected.Spoiler || mod.Settings.ShowSpoilers);
+                float achievementHeight = hasAchievement ? 126 : 0;
+                float titleHeight = heading.CalcHeight(new GUIContent(selected.Title), 584 * ContentScale);
+                string[] paragraphs = body.Split(new[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries);
+                float bodyHeight = paragraphs.Sum(part => text.CalcHeight(new GUIContent(part), 564 * ContentScale) + 18);
+                detailScroll = GUI.BeginScrollView(ContentRect(500, 54, 612, 374), detailScroll, ContentRect(0, 0, 588, titleHeight + achievementHeight + galleryHeight + bodyHeight + 28));
+                GUI.Label(ContentRect(0, 0, 584, titleHeight), selected.Title, heading);
+                if (hasAchievement) DrawAchievement(achievementKey, titleHeight + 12);
+                bool pagedGallery = targets.Any(t => t.Wide);
+                float paragraphY = titleHeight + achievementHeight + 20;
+                int startParagraph = 0;
+                if (pagedGallery && paragraphs.Length > 0)
+                {
+                    float leadHeight = text.CalcHeight(new GUIContent(paragraphs[0]), 564 * ContentScale);
+                    GUI.Label(ContentRect(8, paragraphY, 564, leadHeight), paragraphs[0], text);
+                    paragraphY += leadHeight + 18; startParagraph = 1;
+                }
+                if (targets.Length > 0) DrawStepImages(targets, paragraphY);
+                paragraphY += galleryHeight;
+                foreach (string part in paragraphs.Skip(startParagraph))
+                {
+                    float ph = text.CalcHeight(new GUIContent(part), 564 * ContentScale);
+                    GUI.Label(ContentRect(8, paragraphY, 564, ph), part, text);
+                    paragraphY += ph + 18;
+                }
                 GUI.EndScrollView();
-                if (selected.ReferenceOnly) GUI.Label(new Rect(502, 434, 604, 40), "Справка по PDF · не входит в счётчик задач", muted);
-                else if (Completion.Confirmed(selected, player)) GUI.Label(new Rect(502, 434, 604, 40), "✓ Подтверждено этим сохранением", muted);
-                else if (ProfileAchievements.Confirmed(selected, player)) GUI.Label(new Rect(502, 434, 604, 40), "✓ Получено в игровом профиле", muted);
-                else if (Choose(new Rect(500, 434, 612, 40), Done(selected) ? "✓ Снять ручную отметку" : "○ Отметить выполненным")) mod.Progress.Mark(selected.Id, !Done(selected));
+                if (selected.ReferenceOnly) GUI.Label(ContentRect(502, 434, 604, 40), Wisp.Core.I18n.T("Обзор · не входит в счётчик задач"), muted);
+                else if (ProfileAchievements.Steps.ContainsKey(selected.Id)) GUI.Label(ContentRect(502, 434, 604, 40), Wisp.Core.I18n.T("Достижение проверяется автоматически · игровой профиль"), muted);
+                else if (Completion.Confirmed(selected, player)) GUI.Label(ContentRect(502, 434, 604, 40), Wisp.Core.I18n.T("✓ Подтверждено этим сохранением"), muted);
+                else if (ProfileAchievements.Confirmed(selected, player)) GUI.Label(ContentRect(502, 434, 604, 40), Wisp.Core.I18n.T("✓ Получено в игровом профиле"), muted);
+                else if (Choose(ContentRect(500, 434, 612, 40), Done(selected) ? Wisp.Core.I18n.T("✓ Снять ручную отметку") : Wisp.Core.I18n.T("○ Отметить выполненным"))) mod.Progress.Mark(selected.Id, !Done(selected));
             }
             GUI.enabled = stepIndex > 0;
-            if (Choose(new Rect(500, 486, 145, 36), "‹ Назад")) SelectStep(stepIndex - 1);
+            if (Choose(ContentRect(500, 486, 145, 36), Wisp.Core.I18n.T("‹ Назад"))) SelectStep(stepIndex - 1);
             GUI.enabled = stepIndex < steps.Length - 1;
-            if (Choose(new Rect(960, 486, 145, 36), "Далее ›")) SelectStep(stepIndex + 1);
+            if (Choose(ContentRect(960, 486, 145, 36), Wisp.Core.I18n.T("Далее ›"))) SelectStep(stepIndex + 1);
             GUI.enabled = true;
+        }
+
+        private AchievementsList achievementCatalog;
+        private System.Collections.Generic.Dictionary<string, AchievementCaption> achievementCaptions;
+        private sealed class AchievementCaption { public string Title = ""; public string Description = ""; }
+        private void DrawAchievement(string key, float top)
+        {
+            if (achievementCaptions == null)
+                using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Wisp.achievements.json"))
+                using (var reader = new StreamReader(stream))
+                    achievementCaptions = Newtonsoft.Json.JsonConvert.DeserializeObject<System.Collections.Generic.Dictionary<string, AchievementCaption>>(reader.ReadToEnd());
+            if (achievementCatalog == null) achievementCatalog = Resources.FindObjectsOfTypeAll<AchievementsList>().FirstOrDefault();
+            var entry = achievementCatalog == null ? null : achievementCatalog.FindAchievement(key);
+            AchievementCaption fallback; achievementCaptions.TryGetValue(key, out fallback);
+            string title = entry == null ? "" : TeamCherry.Localization.Language.Get(entry.localizedTitle, "Achievements");
+            if (fallback != null) title = I18n.T(fallback.Title);
+            else if (string.IsNullOrEmpty(title) || title.StartsWith("#")) title = Wisp.Core.I18n.T("Достижение");
+            Rule(ContentRect(8, top, 564, 114), new Color(.06f, .10f, .13f));
+            var icon = media.AchievementIcon(key);
+            if (icon != null) GUI.DrawTexture(ContentRect(18, top + 20, 60, 60), icon, ScaleMode.ScaleToFit);
+            GUI.Label(ContentRect(88, top + 4, 468, 24), Wisp.Core.I18n.T("ДОСТИЖЕНИЕ"), small);
+            GUI.Label(ContentRect(88, top + 28, 468, 48), title, text);
+            string status = !player.AchievementKnown(key) ? Wisp.Core.I18n.T("Статус профиля пока недоступен") : player.IsUnlocked(key) ? Wisp.Core.I18n.T("✓ Получено в игровом профиле") : Wisp.Core.I18n.T("○ Ещё не получено");
+            GUI.Label(ContentRect(88, top + 79, 468, 30), status, small);
+        }
+
+        private int stepImageIndex;
+        private bool expandedStepImage;
+        private void OpenStepImage() { expandedStepImage = true; mapPan = Vector2.zero; mapZoom = 1; }
+        private bool DrawExpandedStepImage()
+        {
+            if (!expandedStepImage) return false;
+            StepImage[] targets;
+            var selected = RouteSteps[Mathf.Clamp(stepIndex, 0, RouteSteps.Length - 1)];
+            if ((selected.Spoiler && !mod.Settings.ShowSpoilers) || !media.Steps.TryGetValue(selected.Id, out targets) || targets.Length == 0)
+            { expandedStepImage = false; return false; }
+            stepImageIndex = (stepImageIndex % targets.Length + targets.Length) % targets.Length;
+            var target = targets[stepImageIndex];
+            if (MapButton(ContentRect(0, 0, 160, 34), Wisp.Core.I18n.T("‹ К описанию"))) expandedStepImage = false;
+            GUI.Label(ContentRect(180, 0, 900, 38), I18n.T(target.Label), muted);
+            MapControls(ContentRect(0, 48, 360, 32));
+            if (MapButton(ContentRect(630, 48, 80, 32), "‹")) { stepImageIndex--; mapPan = Vector2.zero; mapZoom = 1; }
+            GUI.Label(ContentRect(720, 48, 260, 32), (stepImageIndex + 1) + " / " + targets.Length, small);
+            if (MapButton(ContentRect(1015, 48, 80, 32), "›")) { stepImageIndex++; mapPan = Vector2.zero; mapZoom = 1; }
+            DrawMapTexture(ContentRect(0, 90, 1112, 405), media.Get(target.Url), media.Status(target.Url));
+            GUI.Label(ContentRect(0, 502, 1000, 26), "Hollow Knight Wiki / Team Cherry", small);
+            return true;
+        }
+
+        private void DrawStepImages(StepImage[] targets, float top)
+        {
+            if (targets.Any(t => t.Wide))
+            {
+                stepImageIndex = (stepImageIndex % targets.Length + targets.Length) % targets.Length;
+                if (MapButton(ContentRect(8, top, 48, 32), "‹")) stepImageIndex = (stepImageIndex + targets.Length - 1) % targets.Length;
+                if (MapButton(ContentRect(522, top, 48, 32), "›")) stepImageIndex = (stepImageIndex + 1) % targets.Length;
+                GUI.Label(ContentRect(66, top, 450, 32), Wisp.Core.I18n.T("Иллюстрация ") + (stepImageIndex + 1) + " / " + targets.Length + Wisp.Core.I18n.T(" · Y: следующая"), small);
+                var target = targets[stepImageIndex];
+                GUI.Label(ContentRect(8, top + 36, 564, 48), I18n.T(target.Label), muted);
+                var picture = media.Get(target.Url);
+                if (picture != null) GUI.DrawTexture(ContentRect(8, top + 88, 564, 270), picture, ScaleMode.ScaleToFit);
+                else GUI.Label(ContentRect(8, top + 88, 564, 80), media.Status(target.Url), small);
+                if (MapButton(ContentRect(8, top + 360, 564, 32), Wisp.Core.I18n.T("Развернуть · нажатие RS"))) OpenStepImage();
+                return;
+            }
+
+            for (int i = 0; i < targets.Length; i++)
+            {
+                float x = 8 + (i % 3) * 188, y = top + (i / 3) * 156;
+                var card = ContentRect(x, y, 180, 148);
+                Rule(card, new Color(.048f, .077f, .10f));
+                var texture = media.Get(targets[i].Url);
+                if (texture != null) GUI.DrawTexture(ContentRect(x + 12, y + 8, 156, 96), texture, ScaleMode.ScaleToFit);
+                else if (GUI.Button(ContentRect(x + 8, y + 8, 164, 96), media.Status(targets[i].Url), small)) media.Retry();
+                GUI.Label(ContentRect(x + 6, y + 108, 168, 40), I18n.T(targets[i].Label), new GUIStyle(small) { alignment = TextAnchor.UpperCenter });
+            }
+            GUI.Label(ContentRect(8, top + ((targets.Length + 2) / 3) * 156, 564, 26), Wisp.Core.I18n.T("Изображения: Hollow Knight Wiki / Team Cherry"), small);
+        }
+
+        private void PagedList(Rect viewport, string[] labels, int selected, ref int page, ref bool reveal, bool focused, Action<int> select, bool[] hidden = null)
+        {
+            const int count = 5;
+            int[] indices = Enumerable.Range(0, labels.Length).Where(i => hidden == null || !hidden[i] || i == selected).ToArray();
+            int selectedPosition = Array.IndexOf(indices, selected);
+            int last = Math.Max(0, (indices.Length - 1) / count);
+            if (reveal) { page = Math.Max(0, selectedPosition) / count; reveal = false; }
+            var evt = Event.current;
+            if (evt.type == EventType.ScrollWheel && viewport.Contains(evt.mousePosition))
+            { page = Mathf.Clamp(page + (evt.delta.y > 0 ? 1 : -1), 0, last); evt.Use(); }
+            page = Mathf.Clamp(page, 0, last);
+            float rowHeight = (viewport.height - 36) / count;
+            for (int row = 0; row < count; row++)
+            {
+                int position = page * count + row;
+                if (position >= indices.Length) break;
+                int index = indices[position];
+                Rect cell = new Rect(viewport.x, viewport.y + row * rowHeight, viewport.width - 14, rowHeight - 8);
+                string label = labels[index];
+                string suffix = "";
+                int split = label.LastIndexOf('\n');
+                if (split >= 0) { suffix = label.Substring(split); label = label.Substring(0, split); }
+                bool shortened = false;
+                while (label.Length > 1 && button.CalcHeight(new GUIContent(label + (shortened ? "…" : "") + suffix), cell.width) > cell.height - 4)
+                { label = label.Substring(0, label.Length - 1); shortened = true; }
+                Rule(cell, index == selected ? new Color(.085f,.14f,.18f) : new Color(.048f,.077f,.10f));
+                Border(cell, new Color(.12f,.20f,.25f));
+                if (Choose(cell, label + (shortened ? "…" : "") + suffix, index == selected, focused && index == selected)) select(index);
+            }
+            float bottom = viewport.yMax - 30;
+            GUI.enabled = page > 0;
+            if (MapButton(new Rect(viewport.x, bottom, 40, 28), "‹")) page--;
+            GUI.enabled = page < last;
+            if (MapButton(new Rect(viewport.xMax - 54, bottom, 40, 28), "›")) page++;
+            GUI.enabled = true;
+            GUI.Label(new Rect(viewport.x + 46, bottom, viewport.width - 106, 28), (page + 1) + " / " + (last + 1), new GUIStyle(small) { alignment = TextAnchor.MiddleCenter });
         }
 
         private void Paragraph(Rect viewport, string title, string body)
@@ -256,19 +419,66 @@ namespace Wisp.UI
             GUI.EndScrollView();
         }
 
+        private void ResetJournalRegion()
+        {
+            journalRegion = ""; allRegions = false; query = ""; choosingJournalRegion = false;
+            enemyIndex = enemyMapIndex = 0;
+            enemyScroll = habitatScroll = mapPan = Vector2.zero;
+            mapZoom = 1;  expandedEnemyMap = false;
+        }
+
+        private static string RegionName(string region)
+        {
+            switch (region)
+            {
+                case "Forgotten Crossroads": return Wisp.Core.I18n.T("Забытое перепутье");
+                case "Howling Cliffs": return Wisp.Core.I18n.T("Воющие утесы");
+                case "King's Pass": return Wisp.Core.I18n.T("Королевская тропа");
+                case "Greenpath": return Wisp.Core.I18n.T("Зеленая тропа");
+                case "City of Tears": return Wisp.Core.I18n.T("Город слез");
+                case "Colosseum of Fools": return Wisp.Core.I18n.T("Колизей глупцов");
+                case "Infected Crossroads": return Wisp.Core.I18n.T("Заражённое перепутье");
+                case "Ancient Basin": return Wisp.Core.I18n.T("Древний котлован");
+                case "Deepnest": return Wisp.Core.I18n.T("Глубинное гнездо");
+                case "Fungal Wastes": return Wisp.Core.I18n.T("Грибные пустоши");
+                case "Royal Waterways": return Wisp.Core.I18n.T("Королевские стоки");
+                case "Crystal Peak": return Wisp.Core.I18n.T("Кристальный пик");
+                case "Resting Grounds": return Wisp.Core.I18n.T("Земли упокоения");
+                case "Queen's Gardens": return Wisp.Core.I18n.T("Сады королевы");
+                case "Fog Canyon": return Wisp.Core.I18n.T("Туманный каньон");
+                case "Godhome": return Wisp.Core.I18n.T("Божий кров");
+                case "Kingdom's Edge": return Wisp.Core.I18n.T("Край королевства");
+                case "The Abyss": return Wisp.Core.I18n.T("Бездна ");
+                case "The Hive": return Wisp.Core.I18n.T("Улей");
+                case "Dirtmouth": return Wisp.Core.I18n.T("Грязьмут");
+                case "Grey Prince Zote": return Wisp.Core.I18n.T("Серый принц Зот");
+                case "Warrior Dreams": return Wisp.Core.I18n.T("Духи-воители");
+                case "The Grimm Troupe": return Wisp.Core.I18n.T("Мрачная труппа");
+                case "White Palace": return Wisp.Core.I18n.T("Белый дворец");
+                case "Story": return Wisp.Core.I18n.T("Сюжет");
+                default: return Wisp.Core.I18n.T("Область не определена");
+            }
+        }
+
+        private string JournalRegionLabel()
+        {
+            string region = string.IsNullOrEmpty(journalRegion) ? liveRegion : journalRegion;
+            return RegionName(region).Trim();
+        }
+
         private Enemy[] FilteredEnemies()
         {
             string region = string.IsNullOrEmpty(journalRegion) ? liveRegion : journalRegion;
             return catalog.Enemies.Where(e => (allRegions || e.Regions.Contains(region)) &&
                 (!allRegions || mod.Settings.ShowSpoilers || JournalStatus.Read(e, player).Discovered || e.Regions.Contains(liveRegion)) &&
                 (!mod.Settings.HideCompleted || !JournalStatus.Read(e, player).Complete) &&
-                (query.Length == 0 || EnemyName(e).IndexOf(query, StringComparison.OrdinalIgnoreCase) >= 0 || e.Name.IndexOf(query, StringComparison.OrdinalIgnoreCase) >= 0)).ToArray();
+                (query.Length == 0 || EnemyName(e).IndexOf(query, StringComparison.OrdinalIgnoreCase) >= 0 || e.Name.IndexOf(query, StringComparison.OrdinalIgnoreCase) >= 0))
+                .OrderBy(e => e.Optional).ThenBy(e => JournalStatus.Read(e, player).Complete).ToArray();
         }
 
         private string EnemyName(Enemy enemy)
         {
-            string translated = TeamCherry.Localization.Language.Get("NAME_" + enemy.JournalKey.ToUpperInvariant(), "Journal");
-            return string.IsNullOrEmpty(translated) || translated.StartsWith("#") ? enemy.Name : translated;
+            return enemy.Name;
         }
 
         private bool DrawExpandedEnemyMap()
@@ -283,112 +493,119 @@ namespace Wisp.UI
             {
                 enemyMapIndex %= entry.Maps.Length;
                 string expandedUrl = entry.Maps[enemyMapIndex];
-                GUI.DrawTexture(new Rect(0, 0, 1112, 530), panelTexture);
-                if (Choose(new Rect(0, 0, 210, 34), "‹ К записи врага")) expandedEnemyMap = false;
-                GUI.Label(new Rect(220, 0, 530, 34), HabitatLabel(entry, enemyMapIndex), text);
-                MapControls(new Rect(770, 0, 322, 34));
-                DrawMapTexture(new Rect(0, 44, 1112, 450), media.Get(expandedUrl), media.Status(expandedUrl));
-                if (Choose(new Rect(0, 497, 450, 30), "Следующее место обитания ›")) { enemyMapIndex++; mapZoom = 1; mapPan = Vector2.zero; }
-                GUI.Label(new Rect(500, 497, 610, 30), "Hollow Knight Wiki / Team Cherry · справочная карта", small);
+                GUI.DrawTexture(ContentRect(0, 0, 1112, 530), panelTexture);
+                if (Choose(ContentRect(0, 0, 210, 34), Wisp.Core.I18n.T("‹ К записи врага"))) expandedEnemyMap = false;
+                GUI.Label(ContentRect(220, 0, 530, 34), HabitatLabel(entry, enemyMapIndex), text);
+                MapControls(ContentRect(770, 0, 322, 34));
+                DrawMapTexture(ContentRect(0, 44, 1112, 450), media.Get(expandedUrl), media.Status(expandedUrl));
+                if (Choose(ContentRect(0, 497, 450, 30), Wisp.Core.I18n.T("Следующее место обитания ›"))) { enemyMapIndex++; mapZoom = 1; mapPan = Vector2.zero; }
+                GUI.Label(ContentRect(500, 497, 610, 30), Wisp.Core.I18n.T("Hollow Knight Wiki / Team Cherry · справочная карта"), small);
                 return true;
             }
             expandedEnemyMap = false;
             return false;
         }
 
+        private bool choosingJournalRegion;
+        private int journalRegionIndex, journalRegionPage;
+        private bool revealJournalRegion = true;
+        private string[] JournalRegions { get { return new[] { "", "*" }.Concat(catalog.Enemies.SelectMany(e => e.Regions).Distinct().Where(r => r != "Story" && r != "Warrior Dreams" && r != "Grey Prince Zote" && r != "The Grimm Troupe").OrderBy(RegionName)).ToArray(); } }
+        private void OpenJournalRegions()
+        {
+            var regions = JournalRegions;
+            journalRegionIndex = Math.Max(0, Array.IndexOf(regions, allRegions ? "*" : journalRegion));
+            revealJournalRegion = true; choosingJournalRegion = true; contentFocus = false;
+        }
+        private void SelectJournalRegion(int index)
+        {
+            string selected = JournalRegions[index]; ResetJournalRegion();
+            allRegions = selected == "*"; journalRegion = allRegions ? "" : selected;
+            padPane = 0;
+        }
+        private void DrawJournalRegions()
+        {
+            GUI.Label(ContentRect(0, 0, 850, 34), Wisp.Core.I18n.T("ЛОКАЦИЯ · ВЫБОР"), columnHeading);
+            if (Choose(ContentRect(930, 0, 170, 34), Wisp.Core.I18n.T("Назад · B"))) choosingJournalRegion = false;
+            var labels = JournalRegions.Select(r => r == "" ? Wisp.Core.I18n.T("Текущая область · ") + RegionName(liveRegion) : r == "*" ? Wisp.Core.I18n.T("Все области") : RegionName(r)).ToArray();
+            PagedList(ContentRect(0, 54, 650, 476), labels, journalRegionIndex, ref journalRegionPage, ref revealJournalRegion, true, SelectJournalRegion);
+            GUI.Label(ContentRect(700, 70, 390, 200), Wisp.Core.I18n.T("Выбери область, чтобы посмотреть её врагов.\n\nТекущая область следует за местоположением героя."), text);
+        }
+
         private void DrawJournal()
         {
+            if (choosingJournalRegion) { DrawJournalRegions(); return; }
             if (DrawExpandedEnemyMap()) return;
-            GUI.Label(new Rect(0, 0, 216, 34), padPane == 0 ? "ВРАГИ · ВЫБОР" : "ВРАГИ", muted);
-            KeyHint(new Rect(216, 0, 28, 30), "→");
-            GUI.Label(new Rect(250, 0, 370, 34), "СВЕДЕНИЯ", muted);
-            if (Choose(new Rect(644, 0, 250, 34), "Места обитания", !journalSaveMap, padPane == 1 && !journalSaveMap && !contentFocus)) { journalSaveMap = false; padPane = 1; contentFocus = false; }
-            if (Choose(new Rect(896, 0, 206, 34), "Карта сейва", journalSaveMap, padPane == 1 && journalSaveMap && !contentFocus)) { journalSaveMap = true; padPane = 1; contentFocus = false; mapDirty = true; }
-            if (MapButton(new Rect(0, 40, 216, 34), allRegions ? "Все области · X" : "Область · X")) { allRegions = !allRegions; enemyIndex = 0; }
+            GUI.Label(ContentRect(30, 0, 180, 34), padPane == 0 ? Wisp.Core.I18n.T("ВРАГИ · ВЫБОР") : Wisp.Core.I18n.T("ВРАГИ"), columnHeading);
+            KeyHint(ContentRect(0, 2, 24, 26), "←");
+            KeyHint(ContentRect(464, 2, 24, 26), "→");
+            GUI.Label(ContentRect(238, 0, 220, 34), Wisp.Core.I18n.T("СВЕДЕНИЯ"), columnHeading);
+            if (Choose(ContentRect(500, 0, 556, 34), Wisp.Core.I18n.T("Места обитания"), true, padPane == 1 && !contentFocus)) { padPane = 1; contentFocus = false; }
+            // Long area names wrap inside their own space; the input hint never wraps with them.
+            var regionStyle = new GUIStyle(button) { fontSize = 16, alignment = TextAnchor.MiddleLeft, wordWrap = true, padding = new RectOffset(4, 4, 0, 0) };
+            if (GUI.Button(ContentRect(0, 48, 180, 48), allRegions ? Wisp.Core.I18n.T("Все области") : JournalRegionLabel(), regionStyle)) OpenJournalRegions();
+            if (MapButton(ContentRect(186, 58, 28, 28), "X")) OpenJournalRegions();
             var enemies = FilteredEnemies();
-            if (enemies.Length == 0) { GUI.Label(new Rect(0, 66, 1100, 80), "Нет врагов по этому фильтру. Очисти поиск или выбери все открытые области.", text); return; }
+            if (enemies.Length == 0) { GUI.Label(ContentRect(0, 104, 1100, 80), Wisp.Core.I18n.T("Нет врагов по этому фильтру. Очисти поиск или выбери все открытые области."), text); return; }
             enemyIndex = Mathf.Clamp(enemyIndex, 0, enemies.Length - 1);
-            enemyScroll = GUI.BeginScrollView(new Rect(0, 82, 216, 448), enemyScroll, new Rect(0, 0, 190, enemies.Length * 96));
+            enemyScroll = GUI.BeginScrollView(ContentRect(0, 100, 216, 430), enemyScroll, ContentRect(0, 0, 190, enemies.Length * 96));
             for (int i = 0; i < enemies.Length; i++)
-                if (Choose(new Rect(0, i * 96, 190, 90), (JournalStatus.Read(enemies[i], player).Complete ? "✓ " : "○ ") + EnemyName(enemies[i]), i == enemyIndex, i == enemyIndex && padPane == 0 && !contentFocus))
-                { padPane = 0; contentFocus = false; enemyIndex = i; enemyMapIndex = 0; mapPan = Vector2.zero; mapZoom = 1; habitatScroll = Vector2.zero; }
+                if (Choose(ContentRect(0, i * 96, 190, 90), (JournalStatus.Read(enemies[i], player).Complete ? "✓ " : "○ ") + EnemyName(enemies[i]), i == enemyIndex, i == enemyIndex && padPane == 0 && !contentFocus))
+                { padPane = 0; contentFocus = false; enemyIndex = i; enemyMapIndex = 0;  mapPan = Vector2.zero; mapZoom = 1; habitatScroll = Vector2.zero; }
             GUI.EndScrollView();
-            // Two fixed journal pages: portrait/conditions and an uninterrupted habitat map.
-            Border(new Rect(234, 54, 398, 476), new Color(.26f, .34f, .42f));
-            Border(new Rect(644, 54, 458, 476), new Color(.26f, .34f, .42f));
-            Divider(new Rect(638, 70, 1, 444));
+
             var enemy = enemies[enemyIndex]; var status = JournalStatus.Read(enemy, player);
             EnemyMedia entry; media.Enemies.TryGetValue(enemy.Id, out entry);
             var portrait = entry == null ? null : media.Get(entry.Portrait);
-            if (portrait != null) GUI.DrawTexture(new Rect(250, 74, 120, 132), portrait, ScaleMode.ScaleToFit);
-            else GUI.Label(new Rect(250, 100, 120, 90), entry == null ? "Нет портрета" : media.Status(entry.Portrait), muted);
-            GUI.Label(new Rect(382, 74, 232, 88), EnemyName(enemy), heading);
-            GUI.Label(new Rect(382, 164, 232, 62), !status.Available ? "Счётчик недоступен" : status.Complete ? "✓ Запись завершена" : "Осталось победить: " + status.Remaining, muted);
-            Divider(new Rect(260, 226, 346, 9));
+            if (portrait != null) GUI.DrawTexture(ContentRect(250, 108, 152, 102), portrait, ScaleMode.ScaleToFit);
+            else GUI.Label(ContentRect(250, 108, 152, 102), entry == null ? Wisp.Core.I18n.T("Нет портрета") : media.Status(entry.Portrait), muted);
+            GUI.Label(ContentRect(238, 54, 240, 58), EnemyName(enemy), heading);
+            GUI.Label(ContentRect(238, 214, 240, 54), !status.Available ? Wisp.Core.I18n.T("Счётчик недоступен") : status.Complete ? Wisp.Core.I18n.T("✓ Запись завершена") : Wisp.Core.I18n.T("Осталось победить: ") + status.Remaining, muted);
+            Divider(ContentRect(238, 280, 240, 1));
             string warning = Habitat.Description(enemy, player);
-            if (string.IsNullOrEmpty(warning)) warning = enemy.Optional ? "Дополнительная запись дневника." : "Выбери карту справа. Точки мест обитания уже нанесены на изображение.";
-            string regions = string.Join(" · ", enemy.Regions.Select(r => { var chapter = catalog.Chapters.FirstOrDefault(c => c.English.Replace('’', '\'') == r); return chapter == null ? r : chapter.Title; }));
-            string body = warning + "\n\nОбласти: " + regions;
-            float bodyHeight = text.CalcHeight(new GUIContent(body), 344);
-            habitatScroll = GUI.BeginScrollView(new Rect(250, 244, 366, 264), habitatScroll, new Rect(0, 0, 344, bodyHeight));
-            GUI.Label(new Rect(0, 0, 344, bodyHeight), body, text);
+            if (string.IsNullOrEmpty(warning)) warning = enemy.Optional ? Wisp.Core.I18n.T("Дополнительная запись дневника.") : Wisp.Core.I18n.T("Выбери карту справа. Точки мест обитания уже нанесены на изображение.");
+            string regions = string.Join(" · ", enemy.Regions.Select(r => { var chapter = catalog.Chapters.FirstOrDefault(c => c.English.Replace('’', '\'') == r); return chapter == null ? RegionName(r) : chapter.Title; }));
+            string body = warning + Wisp.Core.I18n.T("\n\nОбласти: ") + regions;
+            float bodyHeight = text.CalcHeight(new GUIContent(body), 218 * ContentScale);
+            habitatScroll = GUI.BeginScrollView(ContentRect(238, 294, 240, 236), habitatScroll, ContentRect(0, 0, 218, bodyHeight));
+            GUI.Label(ContentRect(0, 0, 218, bodyHeight), body, text);
             GUI.EndScrollView();
-            if (contentFocus) FocusCorners(new Rect(650, 58, 450, 470));
-            if (journalSaveMap)
-            {
-                if (mapDirty && Event.current.type == EventType.Repaint)
-                {
-                    mapDirty = false;
-                    var region = catalog.Chapters.FirstOrDefault(c => enemy.Regions.Contains(c.English.Replace('’', '\'')));
-                    try { areaMap.Load(region == null ? Current.Id : region.Id, false); }
-                    catch (Exception error) { areaMap.Dispose(); mod.LogError("Journal map: " + error); }
-                }
-                MapControls(new Rect(660, 78, 322, 34));
-                DrawMapTexture(new Rect(660, 128, 426, 348), areaMap.Texture, areaMap.Message);
-                GUI.Label(new Rect(660, 484, 426, 40), "Карта текущего сохранения", small);
-                return;
-            }
-            GUI.Label(new Rect(660, 68, 260, 34), "Где искать", heading);
+            if (contentFocus) FocusCorners(ContentRect(500, 54, 612, 476));
+            GUI.Label(ContentRect(500, 54, 260, 34), Wisp.Core.I18n.T("Где искать"), heading);
             if (entry == null || entry.Maps.Length == 0)
-            { GUI.Label(new Rect(660, 128, 422, 160), "Отдельной карты пока нет. Известные области перечислены слева.", text); return; }
-            if (MapButton(new Rect(936, 68, 150, 34), "Развернуть")) { expandedEnemyMap = true; contentFocus = true; padPane = 1; }
+            { GUI.Label(ContentRect(500, 120, 612, 160), Wisp.Core.I18n.T("Отдельной карты пока нет. Известные области перечислены слева."), text); return; }
+            if (MapButton(ContentRect(950, 54, 150, 34), Wisp.Core.I18n.T("Развернуть"))) { expandedEnemyMap = true; contentFocus = true; padPane = 1; }
             enemyMapIndex %= entry.Maps.Length;
             string url = entry.Maps[enemyMapIndex];
-            if (MapButton(new Rect(660, 116, 426, 52), HabitatLabel(entry, enemyMapIndex) + " · " + (enemyMapIndex + 1) + "/" + entry.Maps.Length + " ›"))
+            if (MapButton(ContentRect(500, 92, 612, 40), HabitatLabel(entry, enemyMapIndex) + " · " + (enemyMapIndex + 1) + "/" + entry.Maps.Length + " ›"))
             { enemyMapIndex = (enemyMapIndex + 1) % entry.Maps.Length; mapPan = Vector2.zero; mapZoom = 1; url = entry.Maps[enemyMapIndex]; }
-            MapControls(new Rect(660, 182, 322, 34));
-            DrawMapTexture(new Rect(660, 228, 426, 250), media.Get(url), media.Status(url));
-            GUI.Label(new Rect(660, 484, 426, 40), "Hollow Knight Wiki / Team Cherry", small);
+            MapControls(ContentRect(500, 140, 322, 34));
+            DrawMapTexture(ContentRect(500, 184, 612, 294), media.Get(url), media.Status(url));
+            GUI.Label(ContentRect(500, 490, 612, 38), "Hollow Knight Wiki / Team Cherry", small);
         }
 
-        private void SetMapMode(bool reference)
+        private int atlasIndex, atlasPage;
+        private bool revealAtlas = true;
+        private readonly string[] atlasIds = { "dirtmouth", "kings-pass", "crossroads", "greenpath", "fog-canyon", "fungal", "city", "waterways", "crystal", "resting", "deepnest", "basin", "abyss", "edge", "queens-gardens" };
+        private string[] atlasNames { get { return new[] { Wisp.Core.I18n.T("Дёртмаут"), Wisp.Core.I18n.T("Воющие утёсы"), Wisp.Core.I18n.T("Забытое перепутье"), Wisp.Core.I18n.T("Зелёная тропа"), Wisp.Core.I18n.T("Туманный каньон"), Wisp.Core.I18n.T("Грибные пустоши"), Wisp.Core.I18n.T("Город слёз"), Wisp.Core.I18n.T("Королевские стоки"), Wisp.Core.I18n.T("Кристальный пик"), Wisp.Core.I18n.T("Земли упокоения"), Wisp.Core.I18n.T("Глубинное гнездо"), Wisp.Core.I18n.T("Древний котлован"), Wisp.Core.I18n.T("Бездна"), Wisp.Core.I18n.T("Край королевства"), Wisp.Core.I18n.T("Сады королевы") }; } }
+        private void SelectAtlas(int index)
+        { atlasIndex = Mathf.Clamp(index, 0, atlasIds.Length - 1); revealAtlas = true;  mapPan = Vector2.zero; mapZoom = 1; }
+        private void DrawAtlas()
         {
-            fullReferenceMap = reference;
-            mapPan = Vector2.zero;
-            mapZoom = 1;
-            mapDirty = true;
-            padPane = 2;
-            detailChoice = 1;
+            GUI.Label(ContentRect(0, 0, 230, 34), Wisp.Core.I18n.T("ЗОНЫ ХАЛЛОУНЕСТА"), columnHeading);
+            GUI.Label(ContentRect(260, 0, 450, 34), atlasNames[atlasIndex], text);
+            PagedList(ContentRect(0, 54, 240, 476), atlasNames, atlasIndex, ref atlasPage, ref revealAtlas, !contentFocus,
+                index => { SelectAtlas(index); contentFocus = false; });
+            MapControls(ContentRect(260, 54, 322, 34));
+            DrawMapTexture(ContentRect(260, 105, 840, 374), media.Region(atlasIds[atlasIndex]), media.RegionStatus(atlasIds[atlasIndex]));
+            GUI.Label(ContentRect(260, 490, 840, 36), Wisp.Core.I18n.T("Hollow Knight Wiki / Team Cherry · полная область"), small);
         }
 
         private void DrawAreaMap(Rect viewport)
         {
-            if (mapDirty && Event.current.type == EventType.Repaint)
-            {
-                mapDirty = false;
-                try { areaMap.Load(CurrentMapId, false); }
-                catch (Exception error) { areaMap.Dispose(); mod.LogError("Map preview: " + error); }
-            }
             MapControls(new Rect(viewport.x, viewport.y, 322, 34));
-            if (MapButton(new Rect(viewport.x + 310, viewport.y, 146, 32), "Справочная", fullReferenceMap)) SetMapMode(true);
-            if (MapButton(new Rect(viewport.x + 462, viewport.y, 146, 32), "Карта сейва", !fullReferenceMap)) SetMapMode(false);
-            GUI.Label(new Rect(viewport.x, viewport.y + 35, viewport.width, 26), "RS: тип карты · A: управление · B: назад", small);
-            Texture texture = fullReferenceMap ? (Texture)media.Local("region-" + CurrentMapId) : areaMap.Texture;
-            string message = fullReferenceMap ? "Справочная карта не сохранена. Используй игровую карту или раздел «Враги области» с картами мест обитания." : areaMap.Message;
-            if (!fullReferenceMap && texture == null)
-                message = "Карта сейва сейчас недоступна.\n\n" + (string.IsNullOrEmpty(message) ? "Wisp не смог построить изображение игровой карты." : message) + "\n\nНажми правый стик (RS), чтобы вернуться к справочной карте.";
-            DrawMapTexture(new Rect(viewport.x, viewport.y + 66, viewport.width, viewport.height - 100), texture, message);
-            GUI.Label(new Rect(viewport.x, viewport.y + viewport.height - 30, viewport.width, 30), fullReferenceMap ? "Hollow Knight Wiki / Team Cherry · полная область, включая спойлеры" : "Карта текущего сохранения · колёсико — масштаб · потяни для перемещения", small);
+            GUI.Label(new Rect(viewport.x, viewport.y + 35, viewport.width, 26), Wisp.Core.I18n.T("A: управление · B: назад"), small);
+            DrawMapTexture(new Rect(viewport.x, viewport.y + 66, viewport.width, viewport.height - 100), media.Region(CurrentMapId), media.RegionStatus(CurrentMapId));
+            GUI.Label(new Rect(viewport.x, viewport.y + viewport.height - 30, viewport.width, 30), Wisp.Core.I18n.T("Hollow Knight Wiki / Team Cherry · полная область, включая спойлеры"), small);
         }
 
         private void MapControls(Rect rect)
@@ -396,13 +613,14 @@ namespace Wisp.UI
             if (MapButton(new Rect(rect.x, rect.y, 34, 32), "−")) mapZoom = Mathf.Max(1, mapZoom / 1.25f);
             GUI.Label(new Rect(rect.x + 38, rect.y, 55, 32), Mathf.RoundToInt(mapZoom * 100) + "%", new GUIStyle(muted) { alignment = TextAnchor.MiddleCenter });
             if (MapButton(new Rect(rect.x + 97, rect.y, 34, 32), "+")) mapZoom = Mathf.Min(5, mapZoom * 1.25f);
-            if (MapButton(new Rect(rect.x + 139, rect.y, 152, 32), "Вписать · Y")) { mapPan = Vector2.zero; mapZoom = 1; }
+            if (MapButton(new Rect(rect.x + 139, rect.y, 152, 32), Wisp.Core.I18n.T("Вписать · Y"))) { mapPan = Vector2.zero; mapZoom = 1; }
         }
 
         private bool MapButton(Rect rect, string label, bool selected = false)
         {
-            Rule(new Rect(rect.x + 4, rect.yMax - 2, rect.width - 8, selected ? 2 : 1), selected ? new Color(.65f, .76f, .85f) : new Color(.23f, .30f, .37f));
-            return GUI.Button(rect, label, new GUIStyle(button) { alignment = TextAnchor.MiddleCenter, fontSize = 16, padding = new RectOffset(4, 4, 2, 2) });
+            var style = new GUIStyle(button) { alignment = TextAnchor.MiddleCenter, fontSize = 17, padding = new RectOffset(4, 4, 2, 2) };
+            if (selected) Underline(rect, label, style, new Color(.65f, .76f, .85f));
+            return GUI.Button(rect, label, style);
         }
 
         private static void Border(Rect rect, Color tint)
@@ -417,7 +635,7 @@ namespace Wisp.UI
 
         private void DrawMapTexture(Rect viewport, Texture texture, string message)
         {
-            if (texture == null) { GUI.Label(viewport, string.IsNullOrEmpty(message) ? "Карта пока недоступна." : message, text); return; }
+            if (texture == null) { GUI.Label(viewport, string.IsNullOrEmpty(message) ? Wisp.Core.I18n.T("Карта пока недоступна.") : message, text); return; }
             var evt = Event.current;
             if (viewport.Contains(evt.mousePosition))
             {
@@ -444,19 +662,19 @@ namespace Wisp.UI
 
         private void DrawSettings()
         {
-            KeyHint(new Rect(0, 0, 36, 32), "LT");
+            KeyHint(ContentRect(0, 0, 36, 32), "LT");
             string[] goals = { "112", "speed", "steel" };
-            string[] names = { "A · 112% и достижения", "B · Скорость и выборы", "C · Стальная душа" };
+            string[] names = { Wisp.Core.I18n.T("A · 112% и достижения"), Wisp.Core.I18n.T("B · Скорость и выборы"), Wisp.Core.I18n.T("C · Стальная душа") };
             for (int i = 0; i < 3; i++)
-                if (Choose(new Rect(42 + i * 342, 0, 338, 38), names[i], mod.Progress.RouteGoal == goals[i], padPane == 0 && mod.Progress.RouteGoal == goals[i])) SetGoal(goals[i]);
-            KeyHint(new Rect(1076, 0, 36, 32), "RT");
-            string goalText = mod.Progress.RouteGoal == "steel" ? "C · Стальная душа до 100%, без лимита времени. Сначала обычный финал, затем добор по набору PDF. Режим Steel Soul нужно выбрать при создании игры." : mod.Progress.RouteGoal == "speed" ? "B · Отдельное обычное сохранение: финал до 5 часов, затем 100% до 20 часов. Зота не спасать; Кузнеца убить; труппу изгнать." : "A · Основное обычное сохранение. A1–A15 по PDF: 112%, коллекции, Сады королевы, концовки и пантеоны. Серый принц Зот — после пятого пантеона.";
-            if (mod.Progress.RouteGoal == "steel" && !RouteGoals.IsSteelSave(player)) goalText += "\nВнимание: этот слот не в режиме Стальной души.";
-            GUI.Label(new Rect(16, 66, 1080, 138), goalText, text);
-            string[] labels = { "Спойлеры: " + (mod.Settings.ShowSpoilers ? "показаны" : "скрыты"), "Выполненные задачи: " + (mod.Settings.HideCompleted ? "скрыты" : "показаны"), "Подсказка на паузе: " + (mod.Settings.ShowPauseHint ? "включена" : "выключена"), "Проводник поверх игры: " + (mod.Settings.ShowHud ? "включён" : "выключен") };
-            for (int i = 0; i < labels.Length; i++) if (Choose(new Rect(12, 218 + i * 46, 1080, 42), labels[i], false, padPane == i + 1)) ToggleSetting(i + 1);
-            GUI.Label(new Rect(16, 418, 1080, 48), "Цель и отметки хранятся отдельно для каждого сейва и сохраняются вместе с игрой. Смена цели не удаляет прогресс.", muted);
-            GUI.Label(new Rect(16, 475, 1080, 48), "Карты и портреты открываются здесь. При первом просмотре изображений врагов нужен интернет; затем они доступны из локального кэша.", small);
+                if (Choose(ContentRect(42 + i * 342, 0, 338, 38), names[i], mod.Progress.RouteGoal == goals[i], padPane == 0 && mod.Progress.RouteGoal == goals[i])) SetGoal(goals[i]);
+            KeyHint(ContentRect(1076, 0, 36, 32), "RT");
+            string goalText = mod.Progress.RouteGoal == "steel" ? Wisp.Core.I18n.T("C · Стальная душа до 100%, без лимита времени. Сначала обычный финал, затем добор по списку маршрута. Режим Steel Soul нужно выбрать при создании игры.") : mod.Progress.RouteGoal == "speed" ? Wisp.Core.I18n.T("B · Отдельное обычное сохранение: финал до 5 часов, затем 100% до 20 часов. Зота не спасать; Кузнеца убить; труппу изгнать.") : Wisp.Core.I18n.T("A · Основное обычное сохранение. Этапы A1–A15: 112%, коллекции, Сады королевы, концовки и пантеоны. Серый принц Зот — после пятого пантеона.");
+            if (mod.Progress.RouteGoal == "steel" && !RouteGoals.IsSteelSave(player)) goalText += Wisp.Core.I18n.T("\nВнимание: этот слот не в режиме Стальной души.");
+            GUI.Label(ContentRect(16, 66, 1080, 138), goalText, text);
+            string[] labels = { Wisp.Core.I18n.T("Спойлеры: ") + (mod.Settings.ShowSpoilers ? Wisp.Core.I18n.T("показаны") : Wisp.Core.I18n.T("скрыты")), Wisp.Core.I18n.T("Выполненные задачи: ") + (mod.Settings.HideCompleted ? Wisp.Core.I18n.T("скрыты") : Wisp.Core.I18n.T("показаны")), Wisp.Core.I18n.T("Подсказка на паузе: ") + (mod.Settings.ShowPauseHint ? Wisp.Core.I18n.T("включена") : Wisp.Core.I18n.T("выключена")), I18n.English ? "Language: English" : "Язык: Русский" };
+            for (int i = 0; i < labels.Length; i++) if (Choose(ContentRect(12, 150 + i * 54, 720, 46), labels[i], false, padPane == i + 1)) ToggleSetting(i + 1);
+            GUI.Label(ContentRect(16, 398, 1080, 58), Wisp.Core.I18n.T("Цель и отметки хранятся отдельно для каждого сейва и сохраняются вместе с игрой. Смена цели не удаляет прогресс."), muted);
+            GUI.Label(ContentRect(16, 472, 1080, 48), Wisp.Core.I18n.T("Карты и портреты открываются здесь. При первом просмотре изображений врагов нужен интернет; затем они доступны из локального кэша."), small);
         }
 
         private void CycleGoal(int direction)
@@ -469,24 +687,19 @@ namespace Wisp.UI
         private void ToggleSetting(int index)
         {
             if (index == 0) CycleGoal(1);
-            if (index == 1) { mod.Settings.ShowSpoilers = !mod.Settings.ShowSpoilers; mapDirty = true; }
-            if (index == 2) mod.Settings.HideCompleted = !mod.Settings.HideCompleted;
+            if (index == 1) { mod.Settings.ShowSpoilers = !mod.Settings.ShowSpoilers;  }
+            if (index == 2) { mod.Settings.HideCompleted = !mod.Settings.HideCompleted; revealStep = true; }
             if (index == 3) mod.Settings.ShowPauseHint = !mod.Settings.ShowPauseHint;
-            if (index == 4) mod.Settings.ShowHud = !mod.Settings.ShowHud;
+            if (index == 4)
+            {
+                I18n.English = !I18n.English;
+                mod.Settings.Language = I18n.English ? "en" : "ru";
+                catalog = Wisp.Game.Catalog.Load();
+                detailScroll = habitatScroll = Vector2.zero;
+                revealChapter = revealStep = revealAtlas = revealJournalRegion = true;
+                mod.SavePreferences();
+            }
         }
 
-        private void DrawHud(float width)
-        {
-            if (Event.current.type != EventType.Repaint || string.IsNullOrEmpty(hudTask)) return;
-            float x = width - 280;
-            float height = text.CalcHeight(new GUIContent(hudTask), 228);
-            string extra = Time.unscaledTime < noticeUntil && !notice.StartsWith("Новая область") ? notice : "";
-            float extraHeight = extra.Length == 0 ? 0 : muted.CalcHeight(new GUIContent(extra), 228) + 8;
-            Rect card = new Rect(x, 46, 252, height + extraHeight + 30);
-            GUI.DrawTexture(card, panelTexture);
-            Border(card, new Color(.48f, .60f, .72f));
-            GUI.Label(new Rect(x + 12, 60, 228, height), hudTask, text);
-            if (extraHeight > 0) GUI.Label(new Rect(x + 12, 66 + height, 228, extraHeight), extra, muted);
-        }
     }
 }

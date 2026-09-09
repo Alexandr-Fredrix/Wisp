@@ -1,13 +1,14 @@
 [
   {
     "id": "Crawlid",
-    "name": "Crawlid",
+    "name": "Ползун",
     "journalKey": "Crawler",
     "regions": [
       "Forgotten Crossroads",
+      "Greenpath",
+      "Resting Grounds",
       "Howling Cliffs",
-      "King's Pass",
-      "Greenpath"
+      "King's Pass"
     ],
     "source": "https://hollowknight.wiki/w/Crawlid",
     "warning": "",
@@ -15,15 +16,17 @@
   },
   {
     "id": "Vengefly",
-    "name": "Vengefly",
+    "name": "Король",
     "journalKey": "Buzzer",
     "regions": [
+      "Infected Crossroads",
+      "Forgotten Crossroads",
+      "Greenpath",
+      "City of Tears",
+      "Resting Grounds",
       "Howling Cliffs",
       "King's Pass",
-      "Forgotten Crossroads",
-      "City of Tears",
-      "Colosseum of Fools",
-      "Infected Crossroads"
+      "Colosseum of Fools"
     ],
     "source": "https://hollowknight.wiki/w/Vengefly",
     "warning": "",
@@ -33,10 +36,11 @@
   },
   {
     "id": "Vengefly_King",
-    "name": "Vengefly King",
+    "name": "Король мстекрылов",
     "journalKey": "BigBuzzer",
     "regions": [
-      "Greenpath"
+      "Greenpath",
+      "Colosseum of Fools"
     ],
     "source": "https://hollowknight.wiki/w/Vengefly_King",
     "warning": "",
@@ -44,11 +48,11 @@
   },
   {
     "id": "Gruzzer",
-    "name": "Gruzzer",
+    "name": "Жужжалка",
     "journalKey": "Bouncer",
     "regions": [
-      "Forgotten Crossroads",
-      "Infected Crossroads"
+      "Infected Crossroads",
+      "Forgotten Crossroads"
     ],
     "source": "https://hollowknight.wiki/w/Gruzzer",
     "warning": "Удобнее закончить до заражения Перепутья. После заражения две обычные Жужжалки остаются у пути к Задумчивому чревню.",
@@ -58,11 +62,11 @@
   },
   {
     "id": "Gruz_Mother",
-    "name": "Gruz Mother",
+    "name": "Матка Жужж",
     "journalKey": "BigFly",
     "regions": [
-      "Colosseum of Fools",
-      "Forgotten Crossroads"
+      "Forgotten Crossroads",
+      "Colosseum of Fools"
     ],
     "source": "https://hollowknight.wiki/w/Gruz_Mother",
     "warning": "",
@@ -70,13 +74,13 @@
   },
   {
     "id": "Tiktik",
-    "name": "Tiktik",
+    "name": "Топтун",
     "journalKey": "Climber",
     "regions": [
       "Forgotten Crossroads",
-      "Howling Cliffs",
       "Greenpath",
-      "King's Pass"
+      "Resting Grounds",
+      "Howling Cliffs"
     ],
     "source": "https://hollowknight.wiki/w/Tiktik",
     "warning": "",
@@ -84,10 +88,11 @@
   },
   {
     "id": "Aspid_Hunter",
-    "name": "Aspid Hunter",
+    "name": "Охотничий аспид",
     "journalKey": "Spitter",
     "regions": [
       "Forgotten Crossroads",
+      "City of Tears",
       "Ancient Basin"
     ],
     "source": "https://hollowknight.wiki/w/Aspid_Hunter",
@@ -96,7 +101,7 @@
   },
   {
     "id": "Aspid_Mother",
-    "name": "Aspid Mother",
+    "name": "Матка аспидов",
     "journalKey": "Hatcher",
     "regions": [
       "Forgotten Crossroads"
@@ -107,7 +112,7 @@
   },
   {
     "id": "Aspid_Hatchling",
-    "name": "Aspid Hatchling",
+    "name": "Молодняк аспида",
     "journalKey": "Hatchling",
     "regions": [
       "Forgotten Crossroads"
@@ -118,12 +123,11 @@
   },
   {
     "id": "Goam",
-    "name": "Goam",
+    "name": "Жрун",
     "journalKey": "Worm",
     "regions": [
       "Forgotten Crossroads",
-      "Deepnest",
-      "Fungal Wastes"
+      "Deepnest"
     ],
     "source": "https://hollowknight.wiki/w/Goam",
     "warning": "",
@@ -131,11 +135,11 @@
   },
   {
     "id": "Wandering_Husk",
-    "name": "Wandering Husk",
+    "name": "Неприкаянная оболочка",
     "journalKey": "ZombieRunner",
     "regions": [
-      "Forgotten Crossroads",
       "Infected Crossroads",
+      "Forgotten Crossroads",
       "Greenpath",
       "City of Tears",
       "Deepnest"
@@ -148,16 +152,16 @@
   },
   {
     "id": "Husk_Hornhead",
-    "name": "Husk Hornhead",
+    "name": "Рогатая оболочка",
     "journalKey": "ZombieHornhead",
     "regions": [
       "Forgotten Crossroads",
-      "City of Tears",
-      "Deepnest",
       "Greenpath",
       "Fungal Wastes",
-      "Howling Cliffs",
-      "Royal Waterways"
+      "City of Tears",
+      "Royal Waterways",
+      "Deepnest",
+      "Howling Cliffs"
     ],
     "source": "https://hollowknight.wiki/w/Husk_Hornhead",
     "warning": "",
@@ -167,7 +171,7 @@
   },
   {
     "id": "Leaping_Husk",
-    "name": "Leaping Husk",
+    "name": "Прыгучая оболочка",
     "journalKey": "ZombieLeaper",
     "regions": [
       "Forgotten Crossroads",
@@ -183,14 +187,14 @@
   },
   {
     "id": "Husk_Bully",
-    "name": "Husk Bully",
+    "name": "Задиристая оболочка",
     "journalKey": "ZombieBarger",
     "regions": [
       "Forgotten Crossroads",
-      "City of Tears",
       "Greenpath",
-      "Howling Cliffs",
-      "Royal Waterways"
+      "City of Tears",
+      "Royal Waterways",
+      "Howling Cliffs"
     ],
     "source": "https://hollowknight.wiki/w/Husk_Bully",
     "warning": "",
@@ -200,7 +204,7 @@
   },
   {
     "id": "Husk_Warrior",
-    "name": "Husk Warrior",
+    "name": "Воинственная оболочка",
     "journalKey": "ZombieShield",
     "regions": [
       "Forgotten Crossroads"
@@ -213,10 +217,9 @@
   },
   {
     "id": "Husk_Guard",
-    "name": "Husk Guard",
+    "name": "Оболочка стражника",
     "journalKey": "ZombieGuard",
     "regions": [
-      "Crystal Peak",
       "Infected Crossroads",
       "Forgotten Crossroads"
     ],
@@ -228,7 +231,7 @@
   },
   {
     "id": "Entombed_Husk",
-    "name": "Entombed Husk",
+    "name": "Мумифицированная оболочка",
     "journalKey": "Mummy",
     "regions": [
       "Resting Grounds"
@@ -239,7 +242,7 @@
   },
   {
     "id": "False_Knight",
-    "name": "False Knight",
+    "name": "Ложный рыцарь",
     "journalKey": "FalseKnight",
     "regions": [
       "Forgotten Crossroads"
@@ -250,7 +253,7 @@
   },
   {
     "id": "Maggot",
-    "name": "Maggot",
+    "name": "Опарыш",
     "journalKey": "PrayerSlug",
     "regions": [
       "Forgotten Crossroads"
@@ -261,7 +264,7 @@
   },
   {
     "id": "Menderbug",
-    "name": "Menderbug",
+    "name": "Починжук",
     "journalKey": "MenderBug",
     "regions": [
       "Forgotten Crossroads"
@@ -272,7 +275,7 @@
   },
   {
     "id": "Lifeseed",
-    "name": "Lifeseed",
+    "name": "Живень",
     "journalKey": "HealthScuttler",
     "regions": [
       "Forgotten Crossroads",
@@ -284,11 +287,13 @@
   },
   {
     "id": "Baldur",
-    "name": "Baldur",
+    "name": "Бальдр",
     "journalKey": "Roller",
     "regions": [
-      "Howling Cliffs",
-      "Forgotten Crossroads"
+      "Forgotten Crossroads",
+      "City of Tears",
+      "Crystal Peak",
+      "Howling Cliffs"
     ],
     "source": "https://hollowknight.wiki/w/Baldur",
     "warning": "",
@@ -296,10 +301,11 @@
   },
   {
     "id": "Elder_Baldur",
-    "name": "Elder Baldur",
+    "name": "Древний бальдр",
     "journalKey": "Blocker",
     "regions": [
-      "Forgotten Crossroads"
+      "Forgotten Crossroads",
+      "Howling Cliffs"
     ],
     "source": "https://hollowknight.wiki/w/Elder_Baldur",
     "warning": "",
@@ -307,7 +313,7 @@
   },
   {
     "id": "Mosscreep",
-    "name": "Mosscreep",
+    "name": "Мшистик",
     "journalKey": "MossWalker",
     "regions": [
       "Greenpath",
@@ -319,11 +325,11 @@
   },
   {
     "id": "Mossfly",
-    "name": "Mossfly",
+    "name": "Мшекрыл",
     "journalKey": "MossFlyer",
     "regions": [
-      "Queen's Gardens",
-      "Greenpath"
+      "Fog Canyon",
+      "Queen's Gardens"
     ],
     "source": "https://hollowknight.wiki/w/Mossfly",
     "warning": "",
@@ -331,7 +337,7 @@
   },
   {
     "id": "Mosskin",
-    "name": "Mosskin",
+    "name": "Лишайник",
     "journalKey": "MossmanRunner",
     "regions": [
       "Greenpath"
@@ -342,7 +348,7 @@
   },
   {
     "id": "Volatile_Mosskin",
-    "name": "Volatile Mosskin",
+    "name": "Взрывной лишайник",
     "journalKey": "MossmanShaker",
     "regions": [
       "Greenpath"
@@ -353,7 +359,7 @@
   },
   {
     "id": "Fool_Eater",
-    "name": "Fool Eater",
+    "name": "Пожиратель глупцов",
     "journalKey": "SnapperTrap",
     "regions": [
       "Greenpath",
@@ -365,10 +371,11 @@
   },
   {
     "id": "Squit",
-    "name": "Squit",
+    "name": "Жалень",
     "journalKey": "Mosquito",
     "regions": [
-      "Greenpath"
+      "Greenpath",
+      "Fog Canyon"
     ],
     "source": "https://hollowknight.wiki/w/Squit",
     "warning": "",
@@ -376,7 +383,7 @@
   },
   {
     "id": "Obble",
-    "name": "Obble",
+    "name": "Круглан",
     "journalKey": "BlobFlyer",
     "regions": [
       "Greenpath"
@@ -387,7 +394,7 @@
   },
   {
     "id": "Gulka",
-    "name": "Gulka",
+    "name": "Гулка",
     "journalKey": "PlantShooter",
     "regions": [
       "Greenpath"
@@ -398,7 +405,7 @@
   },
   {
     "id": "Maskfly",
-    "name": "Maskfly",
+    "name": "Маскокрыл",
     "journalKey": "Pigeon",
     "regions": [
       "Greenpath",
@@ -410,7 +417,7 @@
   },
   {
     "id": "Moss_Charger",
-    "name": "Moss Charger",
+    "name": "Мшистый громила",
     "journalKey": "MossCharger",
     "regions": [
       "Greenpath"
@@ -421,7 +428,7 @@
   },
   {
     "id": "Massive_Moss_Charger",
-    "name": "Massive Moss Charger",
+    "name": "Массивный мшистый громила",
     "journalKey": "MegaMossCharger",
     "regions": [
       "Greenpath"
@@ -432,7 +439,7 @@
   },
   {
     "id": "Moss_Knight",
-    "name": "Moss Knight",
+    "name": "Мшистый рыцарь",
     "journalKey": "MossKnight",
     "regions": [
       "Greenpath"
@@ -443,11 +450,10 @@
   },
   {
     "id": "Mossy_Vagabond",
-    "name": "Mossy Vagabond",
+    "name": "Мшистый скиталец",
     "journalKey": "MossKnightFat",
     "regions": [
-      "Queen's Gardens",
-      "Greenpath"
+      "Queen's Gardens"
     ],
     "source": "https://hollowknight.wiki/w/Mossy_Vagabond",
     "warning": "После заражения живые скитальцы исчезают. Осмотр тела позволяет получить запись — она не потеряна.",
@@ -455,7 +461,7 @@
   },
   {
     "id": "Durandoo",
-    "name": "Durandoo",
+    "name": "Дюранду",
     "journalKey": "AcidWalker",
     "regions": [
       "Greenpath",
@@ -467,7 +473,7 @@
   },
   {
     "id": "Duranda",
-    "name": "Duranda",
+    "name": "Дюранда",
     "journalKey": "AcidFlyer",
     "regions": [
       "Greenpath"
@@ -478,11 +484,11 @@
   },
   {
     "id": "Aluba",
-    "name": "Aluba",
+    "name": "Алюба",
     "journalKey": "GrassHopper",
     "regions": [
-      "Queen's Gardens",
-      "Greenpath"
+      "Greenpath",
+      "Queen's Gardens"
     ],
     "source": "https://hollowknight.wiki/w/Aluba",
     "warning": "",
@@ -490,11 +496,11 @@
   },
   {
     "id": "Charged_Lumafly",
-    "name": "Charged Lumafly",
+    "name": "Заряженная светомуха",
     "journalKey": "ZapBug",
     "regions": [
-      "Fog Canyon",
-      "Greenpath"
+      "Greenpath",
+      "Fog Canyon"
     ],
     "source": "https://hollowknight.wiki/w/Charged_Lumafly",
     "warning": "",
@@ -502,7 +508,7 @@
   },
   {
     "id": "Uoma",
-    "name": "Uoma",
+    "name": "Юма",
     "journalKey": "JellyCrawler",
     "regions": [
       "Fog Canyon"
@@ -513,7 +519,7 @@
   },
   {
     "id": "Ooma",
-    "name": "Ooma",
+    "name": "Ума",
     "journalKey": "Jellyfish",
     "regions": [
       "Fog Canyon"
@@ -524,7 +530,7 @@
   },
   {
     "id": "Uumuu",
-    "name": "Uumuu",
+    "name": "Ууму",
     "journalKey": "MegaJellyfish",
     "regions": [
       "Fog Canyon"
@@ -535,7 +541,7 @@
   },
   {
     "id": "Ambloom",
-    "name": "Ambloom",
+    "name": "Шипогриб",
     "journalKey": "FungCrawler",
     "regions": [
       "Fungal Wastes"
@@ -546,10 +552,11 @@
   },
   {
     "id": "Fungling",
-    "name": "Fungling",
+    "name": "Споринка",
     "journalKey": "FungoonBaby",
     "regions": [
-      "Fungal Wastes"
+      "Fungal Wastes",
+      "Royal Waterways"
     ],
     "source": "https://hollowknight.wiki/w/Fungling",
     "warning": "",
@@ -557,7 +564,7 @@
   },
   {
     "id": "Fungoon",
-    "name": "Fungoon",
+    "name": "Спорун",
     "journalKey": "FungusFlyer",
     "regions": [
       "Fungal Wastes"
@@ -568,7 +575,7 @@
   },
   {
     "id": "Sporg",
-    "name": "Sporg",
+    "name": "Спорень",
     "journalKey": "MushroomTurret",
     "regions": [
       "Fungal Wastes"
@@ -579,7 +586,7 @@
   },
   {
     "id": "Fungified_Husk",
-    "name": "Fungified Husk",
+    "name": "Грибная оболочка",
     "journalKey": "FungifiedZombie",
     "regions": [
       "Fungal Wastes"
@@ -590,7 +597,7 @@
   },
   {
     "id": "Shrumeling",
-    "name": "Shrumeling",
+    "name": "Грибочек",
     "journalKey": "MushroomBaby",
     "regions": [
       "Fungal Wastes"
@@ -601,7 +608,7 @@
   },
   {
     "id": "Shrumal_Warrior",
-    "name": "Shrumal Warrior",
+    "name": "Грибной воин",
     "journalKey": "MushroomRoller",
     "regions": [
       "Fungal Wastes"
@@ -612,7 +619,7 @@
   },
   {
     "id": "Shrumal_Ogre",
-    "name": "Shrumal Ogre",
+    "name": "Грибной великан",
     "journalKey": "MushroomBrawler",
     "regions": [
       "Fungal Wastes"
@@ -623,7 +630,7 @@
   },
   {
     "id": "Mantis_Youth",
-    "name": "Mantis Youth",
+    "name": "Богомолий отрок",
     "journalKey": "MantisFlyerChild",
     "regions": [
       "Fungal Wastes"
@@ -634,7 +641,7 @@
   },
   {
     "id": "Mantis_Warrior",
-    "name": "Mantis Warrior",
+    "name": "Воин богомолов",
     "journalKey": "Mantis",
     "regions": [
       "Fungal Wastes"
@@ -645,7 +652,7 @@
   },
   {
     "id": "Mantis_Lords",
-    "name": "Mantis Lords",
+    "name": "Лорды богомолов",
     "journalKey": "MantisLord",
     "regions": [
       "Fungal Wastes"
@@ -656,11 +663,11 @@
   },
   {
     "id": "Husk_Sentry",
-    "name": "Husk Sentry",
+    "name": "Оболочка часового",
     "journalKey": "Sentry",
     "regions": [
-      "Royal Waterways",
-      "City of Tears"
+      "City of Tears",
+      "Royal Waterways"
     ],
     "source": "https://hollowknight.wiki/w/Husk_Sentry",
     "warning": "",
@@ -668,11 +675,11 @@
   },
   {
     "id": "Heavy_Sentry",
-    "name": "Heavy Sentry",
+    "name": "Тяжелый часовой",
     "journalKey": "SentryFat",
     "regions": [
-      "Royal Waterways",
-      "City of Tears"
+      "City of Tears",
+      "Royal Waterways"
     ],
     "source": "https://hollowknight.wiki/w/Heavy_Sentry",
     "warning": "",
@@ -680,12 +687,12 @@
   },
   {
     "id": "Winged_Sentry",
-    "name": "Winged Sentry",
+    "name": "Крылатый часовой",
     "journalKey": "FlyingSentrySword",
     "regions": [
+      "City of Tears",
       "Royal Waterways",
-      "Resting Grounds",
-      "City of Tears"
+      "Resting Grounds"
     ],
     "source": "https://hollowknight.wiki/w/Winged_Sentry",
     "warning": "",
@@ -693,11 +700,11 @@
   },
   {
     "id": "Lance_Sentry",
-    "name": "Lance Sentry",
+    "name": "Часовой пикинер",
     "journalKey": "FlyingSentryJavelin",
     "regions": [
-      "Royal Waterways",
-      "City of Tears"
+      "City of Tears",
+      "Royal Waterways"
     ],
     "source": "https://hollowknight.wiki/w/Lance_Sentry",
     "warning": "",
@@ -705,11 +712,11 @@
   },
   {
     "id": "Mistake",
-    "name": "Mistake",
+    "name": "Просчет",
     "journalKey": "MageBlob",
     "regions": [
-      "Colosseum of Fools",
-      "City of Tears"
+      "City of Tears",
+      "Colosseum of Fools"
     ],
     "source": "https://hollowknight.wiki/w/Mistake",
     "warning": "",
@@ -717,11 +724,12 @@
   },
   {
     "id": "Folly",
-    "name": "Folly",
+    "name": "Блажь",
     "journalKey": "MageBalloon",
     "regions": [
       "Godhome",
-      "City of Tears"
+      "City of Tears",
+      "Colosseum of Fools"
     ],
     "source": "https://hollowknight.wiki/w/Folly",
     "warning": "",
@@ -729,10 +737,11 @@
   },
   {
     "id": "Soul_Twister",
-    "name": "Soul Twister",
+    "name": "Искажатель душ",
     "journalKey": "Mage",
     "regions": [
-      "City of Tears"
+      "City of Tears",
+      "Colosseum of Fools"
     ],
     "source": "https://hollowknight.wiki/w/Soul_Twister",
     "warning": "",
@@ -740,10 +749,11 @@
   },
   {
     "id": "Soul_Warrior",
-    "name": "Soul Warrior",
+    "name": "Воин душ",
     "journalKey": "MageKnight",
     "regions": [
-      "City of Tears"
+      "City of Tears",
+      "Colosseum of Fools"
     ],
     "source": "https://hollowknight.wiki/w/Soul_Warrior",
     "warning": "",
@@ -751,7 +761,7 @@
   },
   {
     "id": "Soul_Master",
-    "name": "Soul Master",
+    "name": "Мастер душ",
     "journalKey": "MageLord",
     "regions": [
       "City of Tears"
@@ -762,7 +772,7 @@
   },
   {
     "id": "Husk_Dandy",
-    "name": "Husk Dandy",
+    "name": "Модная оболочка",
     "journalKey": "RoyalDandy",
     "regions": [
       "City of Tears"
@@ -773,7 +783,7 @@
   },
   {
     "id": "Cowardly_Husk",
-    "name": "Cowardly Husk",
+    "name": "Трусливая оболочка",
     "journalKey": "RoyalCoward",
     "regions": [
       "City of Tears"
@@ -784,7 +794,7 @@
   },
   {
     "id": "Gluttonous_Husk",
-    "name": "Gluttonous Husk",
+    "name": "Прожорливая оболочка",
     "journalKey": "RoyalPlumper",
     "regions": [
       "City of Tears"
@@ -795,7 +805,7 @@
   },
   {
     "id": "Gorgeous_Husk",
-    "name": "Gorgeous Husk",
+    "name": "Шикарная оболочка",
     "journalKey": "GorgeousHusk",
     "regions": [
       "City of Tears"
@@ -806,7 +816,7 @@
   },
   {
     "id": "Great_Husk_Sentry",
-    "name": "Great Husk Sentry",
+    "name": "Оболочка Великого часового",
     "journalKey": "GreatShieldZombie",
     "regions": [
       "City of Tears",
@@ -818,7 +828,7 @@
   },
   {
     "id": "Watcher_Knight",
-    "name": "Watcher Knight",
+    "name": "Рыцарь Хранитель",
     "journalKey": "BlackKnight",
     "regions": [
       "City of Tears"
@@ -829,11 +839,9 @@
   },
   {
     "id": "The_Collector",
-    "name": "The Collector",
+    "name": "Коллекционер",
     "journalKey": "JarCollector",
     "regions": [
-      "Queen's Gardens",
-      "Kingdom's Edge",
       "City of Tears"
     ],
     "source": "https://hollowknight.wiki/w/The_Collector",
@@ -842,14 +850,14 @@
   },
   {
     "id": "Belfly",
-    "name": "Belfly",
+    "name": "Звонокрыл",
     "journalKey": "CeilingDropper",
     "regions": [
-      "Royal Waterways",
-      "Kingdom's Edge",
       "City of Tears",
-      "Ancient Basin",
+      "Royal Waterways",
       "Resting Grounds",
+      "Ancient Basin",
+      "Kingdom's Edge",
       "Colosseum of Fools"
     ],
     "source": "https://hollowknight.wiki/w/Belfly",
@@ -858,7 +866,7 @@
   },
   {
     "id": "Pilflip",
-    "name": "Pilflip",
+    "name": "Перевертыш",
     "journalKey": "FlipHopper",
     "regions": [
       "Royal Waterways"
@@ -869,7 +877,7 @@
   },
   {
     "id": "Hwurmp",
-    "name": "Hwurmp",
+    "name": "Бульк",
     "journalKey": "Inflater",
     "regions": [
       "Royal Waterways"
@@ -880,14 +888,15 @@
   },
   {
     "id": "Bluggsac",
-    "name": "Bluggsac",
+    "name": "Тухляк",
     "journalKey": "EggSac",
     "regions": [
+      "Royal Waterways",
       "Crystal Peak",
+      "Resting Grounds",
       "Deepnest",
       "Kingdom's Edge",
-      "Queen's Gardens",
-      "Royal Waterways"
+      "Queen's Gardens"
     ],
     "source": "https://hollowknight.wiki/w/Bluggsac",
     "warning": "",
@@ -895,7 +904,7 @@
   },
   {
     "id": "Dung_Defender",
-    "name": "Dung Defender",
+    "name": "Навозный защитник",
     "journalKey": "DungDefender",
     "regions": [
       "Royal Waterways"
@@ -906,7 +915,7 @@
   },
   {
     "id": "White_Defender",
-    "name": "White Defender",
+    "name": "Белый защитник",
     "journalKey": "WhiteDefender",
     "regions": [
       "Royal Waterways"
@@ -917,7 +926,7 @@
   },
   {
     "id": "Flukefey",
-    "name": "Flukefey",
+    "name": "Тремокрыл",
     "journalKey": "Flukefly",
     "regions": [
       "Royal Waterways"
@@ -928,7 +937,7 @@
   },
   {
     "id": "Flukemon",
-    "name": "Flukemon",
+    "name": "Тремомон",
     "journalKey": "Flukeman",
     "regions": [
       "Royal Waterways"
@@ -939,7 +948,7 @@
   },
   {
     "id": "Flukemunga",
-    "name": "Flukemunga",
+    "name": "Треможор",
     "journalKey": "FatFluke",
     "regions": [
       "Royal Waterways"
@@ -950,7 +959,7 @@
   },
   {
     "id": "Flukemarm",
-    "name": "Flukemarm",
+    "name": "Тремоматка",
     "journalKey": "FlukeMother",
     "regions": [
       "Royal Waterways"
@@ -961,7 +970,7 @@
   },
   {
     "id": "Shardmite",
-    "name": "Shardmite",
+    "name": "Осколик",
     "journalKey": "CrystalCrawler",
     "regions": [
       "Crystal Peak"
@@ -972,11 +981,11 @@
   },
   {
     "id": "Glimback",
-    "name": "Glimback",
+    "name": "Светожук",
     "journalKey": "MinesCrawler",
     "regions": [
-      "Crystal Peak",
-      "Forgotten Crossroads"
+      "Forgotten Crossroads",
+      "Crystal Peak"
     ],
     "source": "https://hollowknight.wiki/w/Glimback",
     "warning": "",
@@ -984,7 +993,7 @@
   },
   {
     "id": "Crystal_Hunter",
-    "name": "Crystal Hunter",
+    "name": "Кристаллический охотник",
     "journalKey": "CrystalFlyer",
     "regions": [
       "Crystal Peak"
@@ -995,7 +1004,7 @@
   },
   {
     "id": "Crystal_Crawler",
-    "name": "Crystal Crawler",
+    "name": "Кристаллический ползун",
     "journalKey": "LaserBug",
     "regions": [
       "Crystal Peak"
@@ -1006,10 +1015,9 @@
   },
   {
     "id": "Husk_Miner",
-    "name": "Husk Miner",
+    "name": "Оболочка шахтера",
     "journalKey": "ZombieMiner",
     "regions": [
-      "Forgotten Crossroads",
       "Crystal Peak"
     ],
     "source": "https://hollowknight.wiki/w/Husk_Miner",
@@ -1018,7 +1026,7 @@
   },
   {
     "id": "Crystallised_Husk",
-    "name": "Crystallised Husk",
+    "name": "Кристаллизованная оболочка",
     "journalKey": "BeamMiner",
     "regions": [
       "Crystal Peak"
@@ -1029,7 +1037,7 @@
   },
   {
     "id": "Crystal_Guardian",
-    "name": "Crystal Guardian",
+    "name": "Кристаллический страж",
     "journalKey": "MegaBeamMiner",
     "regions": [
       "Crystal Peak"
@@ -1040,10 +1048,9 @@
   },
   {
     "id": "Furious_Vengefly",
-    "name": "Furious Vengefly",
+    "name": "Яростный мстекрыл",
     "journalKey": "AngryBuzzer",
     "regions": [
-      "Forgotten Crossroads",
       "Infected Crossroads",
       "Colosseum of Fools"
     ],
@@ -1055,10 +1062,9 @@
   },
   {
     "id": "Volatile_Gruzzer",
-    "name": "Volatile Gruzzer",
+    "name": "Взрывная жужжалка",
     "journalKey": "BurstingBouncer",
     "regions": [
-      "Forgotten Crossroads",
       "Infected Crossroads",
       "Colosseum of Fools"
     ],
@@ -1070,10 +1076,9 @@
   },
   {
     "id": "Violent_Husk",
-    "name": "Violent Husk",
+    "name": "Неистовая оболочка",
     "journalKey": "BurstingZombie",
     "regions": [
-      "Forgotten Crossroads",
       "Infected Crossroads"
     ],
     "source": "https://hollowknight.wiki/w/Violent_Husk",
@@ -1084,10 +1089,9 @@
   },
   {
     "id": "Slobbering_Husk",
-    "name": "Slobbering Husk",
+    "name": "Масляная оболочка",
     "journalKey": "SpittingZombie",
     "regions": [
-      "Forgotten Crossroads",
       "Infected Crossroads"
     ],
     "source": "https://hollowknight.wiki/w/Slobbering_Husk",
@@ -1098,11 +1102,10 @@
   },
   {
     "id": "Dirtcarver",
-    "name": "Dirtcarver",
+    "name": "Грязекоп",
     "journalKey": "BabyCentipede",
     "regions": [
-      "Deepnest",
-      "Fungal Wastes"
+      "Deepnest"
     ],
     "source": "https://hollowknight.wiki/w/Dirtcarver",
     "warning": "",
@@ -1110,7 +1113,7 @@
   },
   {
     "id": "Carver_Hatcher",
-    "name": "Carver Hatcher",
+    "name": "Матка грязекопов",
     "journalKey": "CentipedeHatcher",
     "regions": [
       "Deepnest"
@@ -1121,10 +1124,11 @@
   },
   {
     "id": "Garpede",
-    "name": "Garpede",
+    "name": "Гарпида",
     "journalKey": "BigCentipede",
     "regions": [
-      "Deepnest"
+      "Deepnest",
+      "Colosseum of Fools"
     ],
     "source": "https://hollowknight.wiki/w/Garpede",
     "warning": "",
@@ -1132,7 +1136,7 @@
   },
   {
     "id": "Corpse_Creeper",
-    "name": "Corpse Creeper",
+    "name": "Трупонос",
     "journalKey": "SpiderCorpse",
     "regions": [
       "Deepnest"
@@ -1143,7 +1147,7 @@
   },
   {
     "id": "Deepling",
-    "name": "Deepling",
+    "name": "Глубень",
     "journalKey": "MiniSpider",
     "regions": [
       "Deepnest"
@@ -1154,7 +1158,7 @@
   },
   {
     "id": "Deephunter",
-    "name": "Deephunter",
+    "name": "Глубинный охотник",
     "journalKey": "ShootSpider",
     "regions": [
       "Deepnest"
@@ -1165,7 +1169,7 @@
   },
   {
     "id": "Little_Weaver",
-    "name": "Little Weaver",
+    "name": "Маленький ткач",
     "journalKey": "SpiderFlyer",
     "regions": [
       "Deepnest"
@@ -1176,7 +1180,7 @@
   },
   {
     "id": "Stalking_Devout",
-    "name": "Stalking Devout",
+    "name": "Преследующий верующий",
     "journalKey": "SlashSpider",
     "regions": [
       "Deepnest"
@@ -1187,7 +1191,7 @@
   },
   {
     "id": "Nosk",
-    "name": "Nosk",
+    "name": "Носк",
     "journalKey": "MimicSpider",
     "regions": [
       "Deepnest"
@@ -1198,7 +1202,7 @@
   },
   {
     "id": "Shadow_Creeper_(Hollow_Knight)",
-    "name": "Shadow Creeper (Hollow Knight)",
+    "name": "Теневой ползун (Полый рыцарь)",
     "journalKey": "AbyssCrawler",
     "regions": [
       "Ancient Basin",
@@ -1210,7 +1214,7 @@
   },
   {
     "id": "Lesser_Mawlek",
-    "name": "Lesser Mawlek",
+    "name": "Низший чревень",
     "journalKey": "LesserMawlek",
     "regions": [
       "Ancient Basin",
@@ -1222,7 +1226,7 @@
   },
   {
     "id": "Mawlurk",
-    "name": "Mawlurk",
+    "name": "Чревосид",
     "journalKey": "MawlekTurret",
     "regions": [
       "Ancient Basin"
@@ -1233,10 +1237,11 @@
   },
   {
     "id": "Brooding_Mawlek",
-    "name": "Brooding Mawlek",
+    "name": "Задумчивый чревень",
     "journalKey": "Mawlek",
     "regions": [
-      "Forgotten Crossroads"
+      "Forgotten Crossroads",
+      "Colosseum of Fools"
     ],
     "source": "https://hollowknight.wiki/w/Brooding_Mawlek",
     "warning": "",
@@ -1244,13 +1249,11 @@
   },
   {
     "id": "Lightseed",
-    "name": "Lightseed",
+    "name": "Светик",
     "journalKey": "OrangeScuttler",
     "regions": [
-      "Ancient Basin",
       "Infected Crossroads",
-      "City of Tears",
-      "Forgotten Crossroads"
+      "Ancient Basin"
     ],
     "source": "https://hollowknight.wiki/w/Lightseed",
     "warning": "Добери перед Разбитым сосудом. После боя Светики в Котловане исчезают; запись можно закончить в Заражённом перепутье.",
@@ -1260,7 +1263,7 @@
   },
   {
     "id": "Infected_Balloon",
-    "name": "Infected Balloon",
+    "name": "Зараженный пузырь",
     "journalKey": "OrangeBalloon",
     "regions": [
       "Ancient Basin"
@@ -1271,7 +1274,7 @@
   },
   {
     "id": "Broken_Vessel",
-    "name": "Broken Vessel",
+    "name": "Разбитый сосуд",
     "journalKey": "InfectedKnight",
     "regions": [
       "Ancient Basin"
@@ -1282,7 +1285,7 @@
   },
   {
     "id": "Boofly",
-    "name": "Boofly",
+    "name": "Пухляш",
     "journalKey": "BlowFly",
     "regions": [
       "Kingdom's Edge"
@@ -1293,7 +1296,7 @@
   },
   {
     "id": "Primal_Aspid",
-    "name": "Primal Aspid",
+    "name": "Первобытный аспид",
     "journalKey": "SuperSpitter",
     "regions": [
       "Kingdom's Edge",
@@ -1305,10 +1308,11 @@
   },
   {
     "id": "Hopper",
-    "name": "Hopper",
+    "name": "Прыгун",
     "journalKey": "Hopper",
     "regions": [
-      "Kingdom's Edge"
+      "Kingdom's Edge",
+      "Colosseum of Fools"
     ],
     "source": "https://hollowknight.wiki/w/Hopper",
     "warning": "",
@@ -1316,7 +1320,7 @@
   },
   {
     "id": "Great_Hopper",
-    "name": "Great Hopper",
+    "name": "Великий прыгун",
     "journalKey": "GiantHopper",
     "regions": [
       "Kingdom's Edge",
@@ -1328,11 +1332,12 @@
   },
   {
     "id": "Grub_Mimic",
-    "name": "Grub Mimic",
+    "name": "Лжегусеничка",
     "journalKey": "GrubMimic",
     "regions": [
       "Crystal Peak",
-      "Deepnest"
+      "Deepnest",
+      "Colosseum of Fools"
     ],
     "source": "https://hollowknight.wiki/w/Grub_Mimic",
     "warning": "",
@@ -1340,7 +1345,7 @@
   },
   {
     "id": "Hiveling",
-    "name": "Hiveling",
+    "name": "Пчелка",
     "journalKey": "BeeHatchling",
     "regions": [
       "Kingdom's Edge",
@@ -1352,7 +1357,7 @@
   },
   {
     "id": "Hive_Soldier",
-    "name": "Hive Soldier",
+    "name": "Солдат Улья",
     "journalKey": "BeeStinger",
     "regions": [
       "The Hive"
@@ -1363,7 +1368,7 @@
   },
   {
     "id": "Hive_Guardian",
-    "name": "Hive Guardian",
+    "name": "Страж Улья",
     "journalKey": "BigBee",
     "regions": [
       "The Hive"
@@ -1374,7 +1379,7 @@
   },
   {
     "id": "Husk_Hive",
-    "name": "Husk Hive",
+    "name": "Оболочка с ульем",
     "journalKey": "ZombieHive",
     "regions": [
       "The Hive"
@@ -1385,7 +1390,7 @@
   },
   {
     "id": "Hive_Knight",
-    "name": "Hive Knight",
+    "name": "Рыцарь Улья",
     "journalKey": "HiveKnight",
     "regions": [
       "The Hive"
@@ -1396,7 +1401,7 @@
   },
   {
     "id": "Spiny_Husk",
-    "name": "Spiny Husk",
+    "name": "Колючая оболочка",
     "journalKey": "GardenZombie",
     "regions": [
       "Queen's Gardens"
@@ -1407,7 +1412,7 @@
   },
   {
     "id": "Loodle",
-    "name": "Loodle",
+    "name": "Шипоскок",
     "journalKey": "LazyFlyer",
     "regions": [
       "Queen's Gardens"
@@ -1418,7 +1423,7 @@
   },
   {
     "id": "Mantis_Petra",
-    "name": "Mantis Petra",
+    "name": "Богомол Петра",
     "journalKey": "MantisHeavyFlyer",
     "regions": [
       "Queen's Gardens",
@@ -1430,7 +1435,7 @@
   },
   {
     "id": "Mantis_Traitor",
-    "name": "Mantis Traitor",
+    "name": "Богомолий предатель",
     "journalKey": "HeavyMantis",
     "regions": [
       "Queen's Gardens",
@@ -1442,7 +1447,7 @@
   },
   {
     "id": "Traitor_Lord",
-    "name": "Traitor Lord",
+    "name": "Предавший лорд",
     "journalKey": "TraitorLord",
     "regions": [
       "Queen's Gardens"
@@ -1453,7 +1458,7 @@
   },
   {
     "id": "Sharp_Baldur",
-    "name": "Sharp Baldur",
+    "name": "Укрепленный бальдр",
     "journalKey": "ColRoller",
     "regions": [
       "Colosseum of Fools"
@@ -1464,7 +1469,7 @@
   },
   {
     "id": "Armoured_Squit",
-    "name": "Armoured Squit",
+    "name": "Бронированный жалень",
     "journalKey": "ColMosquito",
     "regions": [
       "Colosseum of Fools"
@@ -1475,7 +1480,7 @@
   },
   {
     "id": "Battle_Obble",
-    "name": "Battle Obble",
+    "name": "Боевой круглан",
     "journalKey": "Blobble",
     "regions": [
       "Colosseum of Fools"
@@ -1486,7 +1491,7 @@
   },
   {
     "id": "Oblobbles",
-    "name": "Oblobbles",
+    "name": "Закругланы",
     "journalKey": "Oblobble",
     "regions": [
       "Colosseum of Fools"
@@ -1497,7 +1502,7 @@
   },
   {
     "id": "Shielded_Fool",
-    "name": "Shielded Fool",
+    "name": "Защищенный глупец",
     "journalKey": "ColShield",
     "regions": [
       "Colosseum of Fools"
@@ -1508,7 +1513,7 @@
   },
   {
     "id": "Sturdy_Fool",
-    "name": "Sturdy Fool",
+    "name": "Крепкий глупец",
     "journalKey": "ColMiner",
     "regions": [
       "Colosseum of Fools"
@@ -1519,7 +1524,7 @@
   },
   {
     "id": "Winged_Fool",
-    "name": "Winged Fool",
+    "name": "Крылатый глупец",
     "journalKey": "ColFlyingSentry",
     "regions": [
       "Colosseum of Fools"
@@ -1530,7 +1535,7 @@
   },
   {
     "id": "Heavy_Fool",
-    "name": "Heavy Fool",
+    "name": "Тяжелый глупец",
     "journalKey": "ColWorm",
     "regions": [
       "Colosseum of Fools"
@@ -1541,7 +1546,7 @@
   },
   {
     "id": "Death_Loodle",
-    "name": "Death Loodle",
+    "name": "Смертоносный шипоскок",
     "journalKey": "ColHopper",
     "regions": [
       "Colosseum of Fools"
@@ -1552,7 +1557,7 @@
   },
   {
     "id": "Volt_Twister",
-    "name": "Volt Twister",
+    "name": "Искажатель электричества",
     "journalKey": "ElectricMage",
     "regions": [
       "Colosseum of Fools"
@@ -1563,11 +1568,11 @@
   },
   {
     "id": "God_Tamer",
-    "name": "God Tamer",
+    "name": "Божья укротительница",
     "journalKey": "LobsterLancer",
     "regions": [
-      "Colosseum of Fools",
-      "Godhome"
+      "Godhome",
+      "Colosseum of Fools"
     ],
     "source": "https://hollowknight.wiki/w/God_Tamer",
     "warning": "",
@@ -1575,7 +1580,7 @@
   },
   {
     "id": "Pale_Lurker",
-    "name": "Pale Lurker",
+    "name": "Бледный соглядатай",
     "journalKey": "PaleLurker",
     "regions": [
       "Colosseum of Fools"
@@ -1586,9 +1591,12 @@
   },
   {
     "id": "Zote",
-    "name": "Zote",
+    "name": "Зот",
     "journalKey": "Zote",
     "regions": [
+      "Greenpath",
+      "City of Tears",
+      "Deepnest",
       "Dirtmouth",
       "Colosseum of Fools"
     ],
@@ -1598,12 +1606,11 @@
   },
   {
     "id": "Grey_Prince_Zote",
-    "name": "Grey Prince Zote",
+    "name": "Серый принц Зот",
     "journalKey": "GreyPrince",
     "regions": [
-      "Colosseum of Fools",
-      "Dirtmouth",
-      "Grey Prince Zote"
+      "Grey Prince Zote",
+      "Dirtmouth"
     ],
     "source": "https://hollowknight.wiki/w/Grey_Prince_Zote",
     "warning": "",
@@ -1611,10 +1618,11 @@
   },
   {
     "id": "Winged_Zoteling",
-    "name": "Winged Zoteling",
+    "name": "Крылатый зотлинг",
     "journalKey": "ZotelingBuzzer",
     "regions": [
-      "Grey Prince Zote"
+      "Grey Prince Zote",
+      "Dirtmouth"
     ],
     "source": "https://hollowknight.wiki/w/Winged_Zoteling",
     "warning": "",
@@ -1622,10 +1630,11 @@
   },
   {
     "id": "Hopping_Zoteling",
-    "name": "Hopping Zoteling",
+    "name": "Прыгучий зотлинг",
     "journalKey": "ZotelingHopper",
     "regions": [
-      "Grey Prince Zote"
+      "Grey Prince Zote",
+      "Dirtmouth"
     ],
     "source": "https://hollowknight.wiki/w/Hopping_Zoteling",
     "warning": "",
@@ -1633,10 +1642,11 @@
   },
   {
     "id": "Volatile_Zoteling",
-    "name": "Volatile Zoteling",
+    "name": "Взрывной зотлинг",
     "journalKey": "ZotelingBalloon",
     "regions": [
-      "Grey Prince Zote"
+      "Grey Prince Zote",
+      "Dirtmouth"
     ],
     "source": "https://hollowknight.wiki/w/Volatile_Zoteling",
     "warning": "",
@@ -1644,10 +1654,11 @@
   },
   {
     "id": "Xero",
-    "name": "Xero",
+    "name": "Ксеро",
     "journalKey": "GhostXero",
     "regions": [
-      "Warrior Dreams"
+      "Warrior Dreams",
+      "Resting Grounds"
     ],
     "source": "https://hollowknight.wiki/w/Xero",
     "warning": "",
@@ -1655,10 +1666,11 @@
   },
   {
     "id": "Gorb",
-    "name": "Gorb",
+    "name": "Горб",
     "journalKey": "GhostAladar",
     "regions": [
-      "Warrior Dreams"
+      "Warrior Dreams",
+      "Howling Cliffs"
     ],
     "source": "https://hollowknight.wiki/w/Gorb",
     "warning": "",
@@ -1666,11 +1678,11 @@
   },
   {
     "id": "Elder_Hu",
-    "name": "Elder Hu",
+    "name": "Старейшина Ху",
     "journalKey": "GhostHu",
     "regions": [
-      "Fungal Wastes",
-      "Warrior Dreams"
+      "Warrior Dreams",
+      "Fungal Wastes"
     ],
     "source": "https://hollowknight.wiki/w/Elder_Hu",
     "warning": "",
@@ -1678,10 +1690,11 @@
   },
   {
     "id": "Marmu",
-    "name": "Marmu",
+    "name": "Марму",
     "journalKey": "GhostMarmu",
     "regions": [
-      "Warrior Dreams"
+      "Warrior Dreams",
+      "Queen's Gardens"
     ],
     "source": "https://hollowknight.wiki/w/Marmu",
     "warning": "",
@@ -1689,11 +1702,11 @@
   },
   {
     "id": "No_Eyes",
-    "name": "No Eyes",
+    "name": "Незрячая",
     "journalKey": "GhostNoEyes",
     "regions": [
-      "Greenpath",
-      "Warrior Dreams"
+      "Warrior Dreams",
+      "Greenpath"
     ],
     "source": "https://hollowknight.wiki/w/No_Eyes",
     "warning": "",
@@ -1701,10 +1714,11 @@
   },
   {
     "id": "Galien",
-    "name": "Galien",
+    "name": "Гальен",
     "journalKey": "GhostGalien",
     "regions": [
-      "Warrior Dreams"
+      "Warrior Dreams",
+      "Deepnest"
     ],
     "source": "https://hollowknight.wiki/w/Galien",
     "warning": "",
@@ -1712,10 +1726,11 @@
   },
   {
     "id": "Markoth",
-    "name": "Markoth",
+    "name": "Маркот",
     "journalKey": "GhostMarkoth",
     "regions": [
-      "Warrior Dreams"
+      "Warrior Dreams",
+      "Kingdom's Edge"
     ],
     "source": "https://hollowknight.wiki/w/Markoth",
     "warning": "",
@@ -1723,13 +1738,13 @@
   },
   {
     "id": "Grimmkin_Novice",
-    "name": "Grimmkin Novice",
+    "name": "Мрачный ученик",
     "journalKey": "FlameBearerSmall",
     "regions": [
+      "The Grimm Troupe",
       "Greenpath",
-      "Crystal Peak",
       "City of Tears",
-      "The Grimm Troupe"
+      "Crystal Peak"
     ],
     "source": "https://hollowknight.wiki/w/Grimmkin_Novice",
     "warning": "",
@@ -1737,13 +1752,13 @@
   },
   {
     "id": "Grimmkin_Master",
-    "name": "Grimmkin Master",
+    "name": "Мрачный мастер",
     "journalKey": "FlameBearerMed",
     "regions": [
-      "King's Pass",
+      "The Grimm Troupe",
       "Resting Grounds",
       "Kingdom's Edge",
-      "The Grimm Troupe"
+      "King's Pass"
     ],
     "source": "https://hollowknight.wiki/w/Grimmkin_Master",
     "warning": "",
@@ -1751,13 +1766,13 @@
   },
   {
     "id": "Grimmkin_Nightmare",
-    "name": "Grimmkin Nightmare",
+    "name": "Мрачный кошмар",
     "journalKey": "FlameBearerLarge",
     "regions": [
+      "The Grimm Troupe",
+      "Fungal Wastes",
       "Royal Waterways",
-      "Ancient Basin",
-      "The Hive",
-      "The Grimm Troupe"
+      "The Hive"
     ],
     "source": "https://hollowknight.wiki/w/Grimmkin_Nightmare",
     "warning": "Дополнительная запись: закончи до изгнания труппы. Для Метки Охотника не требуется.",
@@ -1765,10 +1780,10 @@
   },
   {
     "id": "Grimm",
-    "name": "Grimm",
+    "name": "Гримм",
     "journalKey": "Grimm",
     "regions": [
-      "Howling Cliffs"
+      "Dirtmouth"
     ],
     "source": "https://hollowknight.wiki/w/Grimm",
     "warning": "",
@@ -1776,10 +1791,11 @@
   },
   {
     "id": "Nightmare_King_Grimm",
-    "name": "Nightmare King Grimm",
+    "name": "Король Кошмара Гримм",
     "journalKey": "NightmareGrimm",
     "regions": [
-      "The Grimm Troupe"
+      "The Grimm Troupe",
+      "Dirtmouth"
     ],
     "source": "https://hollowknight.wiki/w/Nightmare_King_Grimm",
     "warning": "",
@@ -1787,7 +1803,7 @@
   },
   {
     "id": "Brothers_Oro_&_Mato",
-    "name": "Brothers Oro & Mato",
+    "name": "Братья Оро и Мато",
     "journalKey": "NailBros",
     "regions": [
       "Godhome"
@@ -1798,7 +1814,7 @@
   },
   {
     "id": "Paintmaster_Sheo",
-    "name": "Paintmaster Sheo",
+    "name": "Мастер кисти Шео",
     "journalKey": "Paintmaster",
     "regions": [
       "Godhome"
@@ -1809,7 +1825,7 @@
   },
   {
     "id": "Great_Nailsage_Sly",
-    "name": "Great Nailsage Sly",
+    "name": "Великий гуру гвоздей Слай",
     "journalKey": "Nailsage",
     "regions": [
       "Godhome"
@@ -1820,7 +1836,7 @@
   },
   {
     "id": "Wingmould_(Hollow_Knight)",
-    "name": "Wingmould (Hollow Knight)",
+    "name": "Крылень (Полый рыцарь)",
     "journalKey": "PalaceFly",
     "regions": [
       "White Palace"
@@ -1831,10 +1847,9 @@
   },
   {
     "id": "Royal_Retainer",
-    "name": "Royal Retainer",
+    "name": "Королевский слуга",
     "journalKey": "WhiteRoyal",
     "regions": [
-      "Ancient Basin",
       "White Palace"
     ],
     "source": "https://hollowknight.wiki/w/Royal_Retainer",
@@ -1843,7 +1858,7 @@
   },
   {
     "id": "Kingsmould",
-    "name": "Kingsmould",
+    "name": "Каролинг",
     "journalKey": "RoyalGuard",
     "regions": [
       "White Palace"
@@ -1854,7 +1869,7 @@
   },
   {
     "id": "Sibling",
-    "name": "Sibling",
+    "name": "Родственная душа",
     "journalKey": "Sibling",
     "regions": [
       "The Abyss"
@@ -1865,7 +1880,7 @@
   },
   {
     "id": "Void_Tendrils_(Hollow_Knight)",
-    "name": "Void Tendrils (Hollow Knight)",
+    "name": "Щупальца Пустоты (Полый рыцарь)",
     "journalKey": "AbyssTendril",
     "regions": [
       "The Abyss"
@@ -1876,12 +1891,12 @@
   },
   {
     "id": "Hornet_Protector",
-    "name": "Hornet Protector",
+    "name": "Защитница Хорнет",
     "journalKey": "Hornet",
     "regions": [
+      "Godhome",
       "Greenpath",
-      "Kingdom's Edge",
-      "Godhome"
+      "Kingdom's Edge"
     ],
     "source": "https://hollowknight.wiki/w/Hornet_Protector",
     "warning": "",
@@ -1889,10 +1904,11 @@
   },
   {
     "id": "The_Hollow_Knight",
-    "name": "The Hollow Knight",
+    "name": "Полый рыцарь",
     "journalKey": "HollowKnight",
     "regions": [
-      "Story"
+      "Story",
+      "Forgotten Crossroads"
     ],
     "source": "https://hollowknight.wiki/w/The_Hollow_Knight",
     "warning": "",
@@ -1900,7 +1916,7 @@
   },
   {
     "id": "Pure_Vessel",
-    "name": "Pure Vessel",
+    "name": "Чистый сосуд",
     "journalKey": "HollowKnightPrime",
     "regions": [
       "Godhome"
@@ -1911,11 +1927,12 @@
   },
   {
     "id": "Radiance",
-    "name": "Radiance",
+    "name": "Лучезарность",
     "journalKey": "FinalBoss",
     "regions": [
       "Story",
-      "Godhome"
+      "Godhome",
+      "Forgotten Crossroads"
     ],
     "source": "https://hollowknight.wiki/w/Radiance",
     "warning": "",
@@ -1923,10 +1940,9 @@
   },
   {
     "id": "Shade",
-    "name": "Shade",
+    "name": "Тень",
     "journalKey": "",
     "regions": [
-      "Dirtmouth",
       "Story"
     ],
     "source": "https://hollowknight.wiki/w/Shade",

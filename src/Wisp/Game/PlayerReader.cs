@@ -7,16 +7,18 @@ namespace Wisp.Game
     // Field existence is checked explicitly: a missing field must never imply completion.
     public sealed class PlayerReader : IPlayerState, IAchievementState
     {
+        private readonly HashSet<string> known = new HashSet<string>();
+        public bool AchievementKnown(string key) { return known.Contains(key); }
         private readonly HashSet<string> unlocked = new HashSet<string>();
         public bool IsUnlocked(string key) { return unlocked.Contains(key); }
         public void RefreshAchievements()
         {
-            unlocked.Clear();
+            unlocked.Clear(); known.Clear();
             var platform = Platform.Current;
             if (platform == null) return;
             foreach (var key in ProfileAchievements.Steps.Values)
             {
-                try { if (platform.IsAchievementUnlocked(key) == true) unlocked.Add(key); }
+                try { var state = platform.IsAchievementUnlocked(key); if (state.HasValue) { known.Add(key); if (state.Value) unlocked.Add(key); } }
                 catch (System.Exception) { } // An unavailable provider is not proof of completion.
             }
         }

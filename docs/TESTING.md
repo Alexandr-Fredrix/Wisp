@@ -1,28 +1,15 @@
-# Проверка игровой alpha
+# Validation scope — 1.0.0
 
-## Автоматизировано
+Completed locally:
 
-- 19 проверок C# ядра: неизвестные поля, несколько условий, улучшенные способности, независимость сохранений, обратимость отметок, миграция пустых списков, оставшиеся убийства.
-- Python: уникальность идентификаторов, описания, порядок напоминаний, ручные альтернативные решения, состав исходного архива.
-- Roslyn: компиляция против настоящего API и проверка существования полей PlayerData для правил/счётчиков.
+- 17 Python tests: route/media integrity, region regressions and complete English coverage for displayed text.
+- 45 C# core assertions.
+- Build against Hollow Knight 1.5.12620 / Unity 6 and BepInEx 5.4.23.5 x64.
+- Packaged catalog switched Russian → English → Russian, preserving chapter/step identifiers and a progress object.
+- User-supplied screenshots show the Russian route, map, Journal, atlas and settings before the language toggle was added.
 
-## Требует запуска в игре — пока не подтверждено
+Not yet exercised in a running game: the final bilingual DLL, live language-switch layout, and controller input after that switch. The automated checks do not certify every controller or screen resolution. No claim of a full 63-achievement playthrough is made.
 
-- [ ] 1.5.78.11833 + API v77: Wisp появляется в списке модов без ошибок.
-- [ ] Новое обычное сохранение: пауза → F8, все вкладки доступны.
-- [ ] Открытие/закрытие не нажимает меню под Wisp; Esc не оставляет курсор или меню заблокированными.
-- [ ] Длинные описания/списки прокручиваются на 1280×720, 1920×1080 и 21:9 без обрезанных кнопок.
-- [ ] Портреты совпадают с дневником; нет исключений GUI.
-- [ ] Карта не перевёрнута, масштаб и панорамирование ограничены областью. Настройка спойлеров работает.
-- [ ] Убить врага: оставшееся число соответствует дневнику. Недоступное поле не показано завершённым.
-- [ ] Отметить шаг → скамейка → выйти и загрузить тот же слот: отметка сохранена.
-- [ ] Другой слот без данных Wisp и новое сохранение в очищенном слоте не наследуют отметки.
-- [ ] Выключение/включение Wisp через API не создаёт второго окна или обработчиков.
-- [ ] Автоматические отметки соответствуют игре; ручные не меняют PlayerData.
-- [ ] Альтернативные ветки Зота/Кузнеца/Гримма не обещают обе развязки в одном сохранении.
+For runtime verification: open each main tab, switch both languages, inspect long descriptions and illustrated references, scroll with a controller, change Journal regions, restart and verify language persistence, then save/reload and verify marks. Check achievement status against the game profile. Report the resolution, controller and exact step when reporting a problem.
 
-Публичная бинарная alpha и заявка в Modlinks требуют результата игрового теста. Зелёный CI подтверждает логику и данные, а не работоспособность Unity-интерфейса.
-
-## Проверка alpha.2 — 8 сентября 2026
-
-На Windows, 2560×1440, игра 1.5.78.11833 + API v77: загрузка мода без ошибок; на отдельной копии старого сейва распознаны 34 задачи и 16 разделов. HUD отображается во время игры. F8 открывает окно из игры; повторный F8 возобновляет игру, персонаж реагирует на клавиатуру. Эти наблюдения не подтверждают физический геймпад, все разрешения, карту или полный игровой маршрут.
+Commands: `python -m unittest discover -s tests`, `python tools/check.py`, `pwsh -File tools/test-core.ps1`, and after building `pwsh -File tools/test-localization.ps1`.

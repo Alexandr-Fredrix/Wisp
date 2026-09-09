@@ -1,33 +1,49 @@
 # Wisp
 
-An in-game Hollow Knight guide by **Alex / Alexandr-Fredrix**.
+An in-game Hallownest guide by **Alex / Alexandr-Fredrix**.
 
-**0.3.0-alpha.2 · Hollow Knight 1.5.12620 · Windows x64 · BepInEx 5.4.23.5**
+**1.0.0 · English / Русский · Hollow Knight 1.5.12620 · Windows x64 · BepInEx 5.4.23.5**
 
-[Download](https://github.com/Alexandr-Fredrix/Wisp/releases) · [Discussions](https://github.com/Alexandr-Fredrix/Wisp/discussions) · [Report a bug](https://github.com/Alexandr-Fredrix/Wisp/issues/new/choose) · [Русский](README.md)
+[Download 1.0.0](https://github.com/Alexandr-Fredrix/Wisp/releases/tag/v1.0.0) · [Русский](README.md) · [Report an issue](https://github.com/Alexandr-Fredrix/Wisp/issues/new/choose)
 
-Step-by-step routes, per-save 112% or short Steel Soul goals, save discovery, illustrated Hunter journal, zoomable habitat maps and a compact task HUD. Guide content is currently Russian.
+Step-by-step routes for 112%, achievements, speedrun endings and Steel Soul. Illustrated items, bosses, locations, collections and all seven Mister Mushroom meetings. The Hunter's Journal tracks entries and filters by region; the atlas displays region maps inside the game.
 
-Current 0.3.0-alpha.2 interface, captured in-game.
+**Both languages are in one download.** Open **Настройки** (Settings), then click **Язык: Русский** to select **English**. Language is remembered independently of save goals and progress.
 
-![Route and step instructions](docs/images/route.png)
-**Route:** regions, progress and detailed instructions. Silver corners indicate controller focus; contextual button hints appear below.
+## Screenshots
 
-<details><summary>Map, journal and settings — 3 more screenshots</summary>
+Fresh in-game captures of the Russian interface, taken before the language toggle was added.
 
-![Reference map](docs/images/map.png)
-**Map:** pan and zoom in the guide; press RS to switch map types. This reference image uses a prepared cache and may reveal unexplored areas.
+![Route and stage instructions](docs/images/route.png)
 
-![Hunter journal](docs/images/journal.png)
-**Journal:** enemy portrait, entry progress and habitat locations on a zoomable map.
+<details><summary>Route map, Journal, atlas and settings</summary>
+
+![Route map](docs/images/map.png)
+
+![Journal and habitat maps](docs/images/journal.png)
+
+![Hallownest atlas](docs/images/atlas.png)
 
 ![Route settings](docs/images/settings.png)
-**Settings:** choose the 112% or short Steel Soul route and toggle spoilers and hints. A route goal does not change the actual save mode.
 
 </details>
 
-Install BepInEx 5 x64 once. Extract Wisp-0.3.0-alpha.2.zip into the game directory, then press F8 in a loaded save. Wisp itself is one installed DLL. Images cache on demand. Full regional reference maps currently require a separately prepared cache.
+## Install
 
-Experimental pre-release: startup, loaded-save guide and journal tested before the latest changes. The final layout, X-button fix, physical controller and full playthrough remain unverified. Back up your saves first. Four entries have no habitat map. A guide goal does not change the game's actual save mode.
+1. Install [BepInEx 5.4.23.5 x64](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.5) once.
+2. Extract **Wisp-1.0.0.zip** into the game folder. The mod is `BepInEx/plugins/Wisp/Wisp.dll`.
+3. Load a save and press **F8** or both controller sticks.
 
-Personal non-commercial play is permitted under [LICENSE](LICENSE). New protected code/materials may not be republished or reused without permission. Earlier MIT grants remain in effect. Game assets belong to Team Cherry.
+See [installation and controls](docs/INSTALL.md). Update the DLL while the game is closed; saved marks remain.
+
+Achievements are read from the game profile, while route conditions use the current save. Actions that cannot be confirmed automatically remain manually markable. Choosing the Steel Soul route does not change the actual save mode.
+
+Many illustrations are embedded. Remaining wiki portraits and maps download on first view and stay cached. Text baked into third-party artwork keeps its original language; the English atlas uses English maps.
+
+Build, content, core logic and catalog language switching are checked. The final bilingual interface has not yet been tested in a running game. See [validation scope](docs/TESTING.md).
+
+## Rights and support
+
+[Discussions](https://github.com/Alexandr-Fredrix/Wisp/discussions) · [License](LICENSE) · [Third-party materials](THIRD_PARTY_NOTICES.md)
+
+Free personal play is permitted. Resale, republication and reuse of newly protected original material require permission under LICENSE. Earlier MIT releases retain their terms. Hollow Knight and game artwork belong to Team Cherry.
