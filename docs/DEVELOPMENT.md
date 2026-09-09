@@ -25,7 +25,7 @@ dotnet build src/Wisp/Wisp.csproj -c Release -p:HollowKnightRefs="/path/to/hollo
 PowerShell 7 also includes Roslyn, so a system SDK is not required for the alternative build:
 
 ```powershell
-./tools/build.ps1 -HollowKnightRefs 'C:/path/to/hollow_knight_Data/Managed' -p:BepInExRefs='C:/path/to/BepInEx/core'
+./tools/build.ps1 -HollowKnightRefs 'C:/path/to/hollow_knight_Data/Managed' -BepInExRefs 'C:/path/to/BepInEx/core'
 ```
 
 Build output is `artifacts/Wisp/Wisp.dll`. PlayerData fields are checked and content is embedded in the DLL.
