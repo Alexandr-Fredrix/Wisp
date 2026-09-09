@@ -88,6 +88,7 @@ namespace Wisp.UI
         {
             switch (chapter)
             {
+                case "queens-gardens": return "areaQueensGardens";
                 case "kings-pass": return "areaCliffs";
                 case "abyss": return "areaAncientBasin";
                 case "dirtmouth": return "areaDirtmouth";

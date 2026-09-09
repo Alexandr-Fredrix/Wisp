@@ -24,6 +24,8 @@ namespace Wisp.UI
         private float nextNavigation;
         private int padPane = 0;
         private int detailChoice;
+        private bool contentFocus;
+        private bool journalSaveMap;
         private string notice = "";
         private float noticeUntil;
         private readonly Dictionary<string, int> lastKills = new Dictionary<string, int>();
@@ -33,6 +35,8 @@ namespace Wisp.UI
         private int chapterIndex;
         private int stepIndex;
         private int tab;
+        private int primaryTab;
+        private bool revealChapter = true, revealStep = true;
         private string query = "";
         private bool allRegions;
         private Vector2 chapterScroll, stepScroll, detailScroll, enemyScroll;
@@ -73,9 +77,10 @@ namespace Wisp.UI
             areaMap.Dispose();
         }
 
-        private Chapter[] RouteChapters { get { return catalog.Chapters.Where(c => c.Steps.Any(s => RouteGoals.Includes(mod.Progress.RouteGoal, s))).ToArray(); } }
-        private Step[] RouteSteps { get { return Current.Steps.Where(s => RouteGoals.Includes(mod.Progress.RouteGoal, s)).ToArray(); } }
+        private Chapter[] RouteChapters { get { return catalog.PdfChapters.Where(c => c.Goal == mod.Progress.RouteGoal).ToArray(); } }
+        private Step[] RouteSteps { get { return Current.Steps; } }
         private Chapter Current { get { return RouteChapters[Mathf.Clamp(chapterIndex, 0, RouteChapters.Length - 1)]; } }
+        private string CurrentMapId { get { return RouteSteps[Mathf.Clamp(stepIndex, 0, RouteSteps.Length - 1)].MapChapter; } }
         private bool InSession
         {
             get { var gm = GameManager.instance; return gm != null && (gm.gameState == GlobalEnums.GameState.PLAYING || gm.gameState == GlobalEnums.GameState.PAUSED) && HeroController.instance != null; }
@@ -105,64 +110,73 @@ namespace Wisp.UI
             if (Input.GetKeyDown(KeyCode.Escape)) { Close(); return; }
             if (device.Action2.WasPressed)
             {
-                if (expandedEnemyMap) expandedEnemyMap = false;
-                else if (tab == 0 && padPane > 0) padPane--;
+                if (contentFocus || expandedEnemyMap) { contentFocus = false; expandedEnemyMap = false; }
+                else if (padPane > 0) padPane--;
                 else Close();
                 return;
             }
-            if (Input.GetKeyDown(KeyCode.PageDown)) SelectStep(Math.Min(stepIndex + 1, RouteSteps.Length - 1));
-            if (Input.GetKeyDown(KeyCode.PageUp)) SelectStep(Math.Max(0, stepIndex - 1));
-            if (device.LeftBumper.WasPressed) { ChangeTab((tab + 2) % 3); }
-            if (device.RightBumper.WasPressed) { ChangeTab((tab + 1) % 3); }
-            bool leftStickMaps = (tab == 0 && mapTab && padPane == 2) || (tab == 1 && expandedEnemyMap);
-            int vertical = device.DPadUp.IsPressed || (!leftStickMaps && device.LeftStickY.Value > .5f) ? -1 : device.DPadDown.IsPressed || (!leftStickMaps && device.LeftStickY.Value < -.5f) ? 1 : 0;
-            int horizontal = device.DPadLeft.IsPressed || (!leftStickMaps && device.LeftStickX.Value < -.5f) ? -1 : device.DPadRight.IsPressed || (!leftStickMaps && device.LeftStickX.Value > .5f) ? 1 : 0;
+            if (device.LeftBumper.WasPressed) ChangeTab((primaryTab + 3) % 4);
+            if (device.RightBumper.WasPressed) ChangeTab((primaryTab + 1) % 4);
+            bool onMap = contentFocus && ((tab == 0 && mapTab) || tab == 1);
+            int vertical = device.DPadUp.IsPressed || (!onMap && device.LeftStickY.Value > .5f) ? -1 : device.DPadDown.IsPressed || (!onMap && device.LeftStickY.Value < -.5f) ? 1 : 0;
+            int horizontal = device.DPadLeft.IsPressed || (!onMap && device.LeftStickX.Value < -.5f) ? -1 : device.DPadRight.IsPressed || (!onMap && device.LeftStickX.Value > .5f) ? 1 : 0;
+            int trigger = !contentFocus && device.LeftTrigger.WasPressed ? -1 : !contentFocus && device.RightTrigger.WasPressed ? 1 : 0;
             if (vertical == 0 && horizontal == 0) nextNavigation = 0;
-            if (Time.unscaledTime >= nextNavigation && (vertical != 0 || horizontal != 0))
+            bool repeat = Time.unscaledTime >= nextNavigation && (vertical != 0 || horizontal != 0);
+            if (repeat) nextNavigation = Time.unscaledTime + .2f;
+            int dx = trigger != 0 ? trigger : repeat ? horizontal : 0;
+            int dy = repeat ? vertical : 0;
+            if (tab == 0)
             {
-                nextNavigation = Time.unscaledTime + .2f;
-                if (tab == 0)
+                if (!contentFocus)
                 {
-                    padPane = Mathf.Clamp(padPane + horizontal, 0, 2);
-                    if (padPane == 0 && vertical != 0) { SelectChapter(Mathf.Clamp(chapterIndex + vertical, 0, RouteChapters.Length - 1)); chapterScroll.y = Mathf.Max(0, chapterIndex * 96 - 192); }
-                    else if (padPane == 1 && vertical != 0) { SelectStep(Mathf.Clamp(stepIndex + vertical, 0, RouteSteps.Length - 1)); stepScroll.y = Mathf.Max(0, stepIndex * 96 - 192); }
-                    else if (padPane == 2 && vertical != 0) detailChoice = Mathf.Clamp(detailChoice + vertical, 0, 2);
+                    if (padPane < 2)
+                    {
+                        if (dx != 0) padPane = Mathf.Clamp(padPane + dx, 0, 2);
+                        else if (padPane == 0 && dy != 0) { SelectChapter(Mathf.Clamp(chapterIndex + dy, 0, RouteChapters.Length - 1)); chapterScroll.y = Mathf.Max(0, chapterIndex * 112 - 224); }
+                        else if (padPane == 1 && dy != 0) { SelectStep(Mathf.Clamp(stepIndex + dy, 0, RouteSteps.Length - 1)); stepScroll.y = Mathf.Max(0, stepIndex * 112 - 224); }
+                    }
+                    else if (dx != 0) { detailChoice = Mathf.Clamp(detailChoice + dx, 0, 2); if (detailChoice < 2) mapTab = detailChoice == 1; }
+                    if (device.Action1.WasPressed)
+                    {
+                        if (padPane < 2 && Visible(Current)) padPane++;
+                        else if (detailChoice == 2) OpenRegionJournal();
+                        else contentFocus = true;
+                    }
+                    if (device.Action3.WasPressed) { mapTab = true; detailChoice = 1; padPane = 2; }
+                    if (device.Action4.WasPressed && padPane == 1 && !RouteSteps[stepIndex].ReferenceOnly && !Completion.Confirmed(RouteSteps[stepIndex], player) && !ProfileAchievements.Confirmed(RouteSteps[stepIndex], player))
+                        mod.Progress.Mark(RouteSteps[stepIndex].Id, !Done(RouteSteps[stepIndex]));
                 }
-                else if (tab == 1) { enemyIndex = Mathf.Clamp(enemyIndex + vertical, 0, Math.Max(0, FilteredEnemies().Length - 1)); enemyScroll.y = Mathf.Max(0, enemyIndex * 80 - 160); enemyMapIndex = 0; mapPan = Vector2.zero; mapZoom = 1; }
-                else padPane = Mathf.Clamp(padPane + vertical, 0, 4);
+                else if (!mapTab) detailScroll.y = Mathf.Max(0, detailScroll.y + dy * 64 - device.RightStickY.Value * Time.unscaledDeltaTime * 350);
+                if (mapTab && padPane == 2 && device.RightStickButton.WasPressed && !device.LeftStickButton.IsPressed) SetMapMode(!fullReferenceMap);
             }
-            if (tab == 0 && Visible(Current))
+            else if (tab == 1 && !contentFocus)
             {
-                if (device.Action3.WasPressed) { mapTab = !mapTab; detailChoice = mapTab ? 1 : 0; padPane = 2; mapDirty = true; }
-                if (device.Action1.WasPressed)
+                if (padPane == 0)
                 {
-                    if (padPane < 2) { padPane++; detailChoice = mapTab ? 1 : 0; }
-                    else if (detailChoice == 2) OpenRegionJournal();
-                    else { mapTab = detailChoice == 1; mapDirty = true; }
+                    if (dy != 0) { enemyIndex = Mathf.Clamp(enemyIndex + dy, 0, Math.Max(0, FilteredEnemies().Length - 1)); enemyScroll.y = Mathf.Max(0, enemyIndex * 96 - 192); enemyMapIndex = 0; mapPan = Vector2.zero; mapZoom = 1; mapDirty = true; }
+                    if (dx > 0 || device.Action1.WasPressed) padPane = 1;
                 }
-                if (device.Action4.WasPressed && padPane == 1 && !Completion.Confirmed(RouteSteps[stepIndex], player) && !ProfileAchievements.Confirmed(RouteSteps[stepIndex], player))
-                    mod.Progress.Mark(RouteSteps[stepIndex].Id, !Done(RouteSteps[stepIndex]));
-                if (mapTab && padPane == 2)
+                else
                 {
-                    // Exclude the two-stick open/close chord from this shortcut.
-                    if (device.RightStickButton.WasPressed && !device.LeftStickButton.IsPressed)
-                        SetMapMode(!fullReferenceMap);
-                    mapPan += MapStick(device, leftStickMaps) * Time.unscaledDeltaTime * 350;
-                    mapZoom = Mathf.Clamp(mapZoom + (device.RightTrigger.Value - device.LeftTrigger.Value) * Time.unscaledDeltaTime * 2, 1, 5);
-                    if (device.Action4.WasPressed) { mapPan = Vector2.zero; mapZoom = 1; }
+                    if (dx != 0) { journalSaveMap = dx > 0; mapPan = Vector2.zero; mapZoom = 1; mapDirty = true; }
+                    if (device.Action1.WasPressed) contentFocus = true;
+                    if (device.Action4.WasPressed) { enemyMapIndex++; mapDirty = true; mapPan = Vector2.zero; mapZoom = 1; }
                 }
-                else if (padPane == 2) detailScroll.y = Mathf.Max(0, detailScroll.y - device.RightStickY.Value * Time.unscaledDeltaTime * 350);
-            }
-            if (tab == 1) {
-                if (device.DPadRight.IsPressed) habitatScroll.y += Time.unscaledDeltaTime * 240;
-                if (device.DPadLeft.IsPressed) habitatScroll.y = Mathf.Max(0, habitatScroll.y - Time.unscaledDeltaTime * 240);
                 if (device.Action3.WasPressed) { allRegions = !allRegions; enemyIndex = 0; enemyScroll = Vector2.zero; }
-                if (device.Action1.WasPressed) { enemyMapIndex++; mapPan = Vector2.zero; mapZoom = 1; }
-                mapPan += MapStick(device, leftStickMaps) * Time.unscaledDeltaTime * 350;
+            }
+            else if (tab == 2)
+            {
+                if (dy != 0) padPane = Mathf.Clamp(padPane + dy, 0, 4);
+                if (padPane == 0 && dx != 0) CycleGoal(dx);
+                if (device.Action1.WasPressed) ToggleSetting(padPane);
+            }
+            if (onMap)
+            {
+                mapPan += MapStick(device, true) * Time.unscaledDeltaTime * 350;
                 mapZoom = Mathf.Clamp(mapZoom + (device.RightTrigger.Value - device.LeftTrigger.Value) * Time.unscaledDeltaTime * 2, 1, 5);
                 if (device.Action4.WasPressed) { mapPan = Vector2.zero; mapZoom = 1; }
             }
-            if (tab == 2 && device.Action1.WasPressed) ToggleSetting(padPane);
         }
 
         private static Vector2 MapStick(InControl.InputDevice device, bool includeLeft)
@@ -192,7 +206,7 @@ namespace Wisp.UI
             if (!Paused || open) return;
             Refresh();
             open = true;
-            padPane = 0; detailChoice = mapTab ? 1 : 0;
+            contentFocus = false; padPane = 0; detailChoice = mapTab ? 1 : 0;
             GuideInputGuard.Capture();
             mapDirty = true;
             suspendedEvents = EventSystem.current;
@@ -238,8 +252,8 @@ namespace Wisp.UI
             if (locating && !string.IsNullOrEmpty(liveChapter))
             {
                 locating = false;
-                int index = Array.FindIndex(RouteChapters, c => c.Id == liveChapter);
-                if (index >= 0) { SelectChapter(index); int next = Array.FindIndex(RouteSteps, s => !DoneInSave(s)); SelectStep(Math.Max(0, next)); }
+                int index = Array.FindIndex(RouteChapters, c => c.Steps.Any(s => s.MapChapter == liveChapter));
+                if (index >= 0) { SelectChapter(index); int next = Array.FindIndex(RouteSteps, s => !s.ReferenceOnly && !DoneInSave(s)); SelectStep(Math.Max(0, next)); }
             }
             if (previousRegion != liveRegion && !string.IsNullOrEmpty(liveRegion))
             {
@@ -259,14 +273,15 @@ namespace Wisp.UI
                 lastKills[enemy.Id] = status.Remaining;
             }
             // Resolve save/journal state on the refresh tick, never in every IMGUI event.
-            var hudChapter = catalog.Chapters.FirstOrDefault(c => c.Id == liveChapter);
-            var hudNext = hudChapter == null ? null : hudChapter.Steps.FirstOrDefault(s => RouteGoals.Includes(mod.Progress.RouteGoal, s) && !DoneInSave(s) && (!s.Spoiler || mod.Settings.ShowSpoilers));
+            var hudChapter = RouteChapters.FirstOrDefault(c => c.Steps.Any(s => s.MapChapter == liveChapter));
+            var hudNext = hudChapter == null ? null : hudChapter.Steps.FirstOrDefault(s => !s.ReferenceOnly && !DoneInSave(s) && (!s.Spoiler || mod.Settings.ShowSpoilers));
             hudTask = hudNext == null ? "" : hudNext.Title;
         }
 
         private void SelectChapter(int index)
         {
             chapterIndex = index;
+            revealChapter = revealStep = true;
             stepIndex = 0;
             stepScroll = detailScroll = Vector2.zero;
             mapDirty = true;
@@ -278,6 +293,8 @@ namespace Wisp.UI
         private void SelectStep(int index)
         {
             stepIndex = index;
+            revealStep = true;
+            mapDirty = true; mapPan = Vector2.zero; mapZoom = 1;
             detailScroll = Vector2.zero;
             Remember();
         }
@@ -291,7 +308,7 @@ namespace Wisp.UI
         // A profile achievement does not remove prerequisites from the current run's HUD.
         private bool DoneInSave(Step step) { return Completion.Confirmed(step, player) || mod.Progress.Completed.Contains(step.Id); }
         private bool Done(Step step) { return DoneInSave(step) || ProfileAchievements.Confirmed(step, player); }
-        private bool Visible(Chapter chapter) { return mod.Settings.ShowSpoilers || chapter.Id == liveChapter || mod.Progress.VisitedChapters.Contains(chapter.Id) || chapter.Id == "kings-pass" || chapter.Steps.Any(s => ProfileAchievements.Confirmed(s, player)); }
+        private bool Visible(Chapter chapter) { return mod.Settings.ShowSpoilers || chapter.Id.Contains("-ref-") || chapter.Id == liveChapter || mod.Progress.VisitedChapters.Contains(chapter.Id) || chapter.Id == "kings-pass" || chapter.Id == "pdf-a1" || chapter.Goal == "speed" || chapter.Goal == "steel" || chapter.Steps.Any(s => SaveDiscovery.HasVisitEvidence(s.MapChapter, player)) || chapter.Steps.Any(s => ProfileAchievements.Confirmed(s, player)); }
 
         private void OnDestroy()
         {
@@ -300,6 +317,7 @@ namespace Wisp.UI
             foreach (var texture in new[] { panelTexture, buttonTexture, activeTexture, frameTexture, dividerTexture })
                 if (texture != null) Destroy(texture);
             if (font != null) Destroy(font);
+            BundledFont.Release();
         }
         private void OnDisable() { Close(); GuideInputGuard.Clear(); }
     }

@@ -10,6 +10,7 @@ namespace Wisp.Core
         public string Title = "";
         public string English = "";
         public string Summary = "";
+        public string Goal = "";
         public Step[] Steps = new Step[0];
     }
 
@@ -20,6 +21,8 @@ namespace Wisp.Core
         public string Body = "";
         public string Warning = "";
         public string Source = "";
+        public string MapChapter = "";
+        public bool ReferenceOnly;
         public bool Spoiler;
         public Condition[] Conditions = new Condition[0];
     }
@@ -75,7 +78,7 @@ namespace Wisp.Core
             VisitedChapters = (VisitedChapters ?? new List<string>()).Where(x => !string.IsNullOrEmpty(x)).Distinct().Take(1000).ToList();
             ChapterId = ChapterId ?? "kings-pass";
             StepId = StepId ?? "movement";
-            if (RouteGoal != "112" && RouteGoal != "steel") RouteGoal = "112";
+            if (RouteGoal != "112" && RouteGoal != "steel" && RouteGoal != "speed") RouteGoal = "112";
         }
 
         public void Mark(string id, bool done)

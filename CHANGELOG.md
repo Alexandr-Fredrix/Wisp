@@ -1,3 +1,10 @@
+# 0.4.0-alpha.1
+
+- Local gameplay candidate: bundled JetBrainsMono Nerd Font, explicit controller content focus, aligned navigation rows.
+- PDF route A1–A15, B/C goals and collection reference pages; preserved existing objective IDs and manual marks.
+- No separate completion checkbox for returning after credits.
+- Live controller and visual verification pending.
+
 # Unreleased
 
 - Read earned achievements through the game's profile provider, including other saves; label these confirmations separately from current-save progress.

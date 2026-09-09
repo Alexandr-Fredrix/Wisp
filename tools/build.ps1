@@ -29,7 +29,7 @@ foreach ($source in (Get-ChildItem (Join-Path $root 'src/Wisp') -Recurse -Filter
     $trees.Add([Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree]::ParseText([IO.File]::ReadAllText($source.FullName)))
 }
 $version = (Get-Content (Join-Path $root 'version.json') -Raw | ConvertFrom-Json).version
-$trees.Add([Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree]::ParseText('[assembly:System.Reflection.AssemblyVersion("0.3.0.0")][assembly:System.Reflection.AssemblyInformationalVersion("' + $version + '")]'))
+$trees.Add([Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree]::ParseText('[assembly:System.Reflection.AssemblyVersion("0.4.0.0")][assembly:System.Reflection.AssemblyInformationalVersion("' + $version + '")]'))
 $options = [Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions]::new([Microsoft.CodeAnalysis.OutputKind]::DynamicallyLinkedLibrary)
 $options = $options.WithOptimizationLevel([Microsoft.CodeAnalysis.OptimizationLevel]::Release).WithDeterministic($true)
 $compilation = [Microsoft.CodeAnalysis.CSharp.CSharpCompilation]::Create('Wisp', $trees, $references, $options)
@@ -49,7 +49,7 @@ foreach ($enemy in $enemies) {
     }
 }
 $resources = [System.Collections.Generic.List[Microsoft.CodeAnalysis.ResourceDescription]]::new()
-foreach ($name in @('route.json','enemies.json','media.json','ui/frame.png','ui/divider.png')) {
+foreach ($name in @('route.json','route-pdf.json','enemies.json','media.json','ui/frame.png','ui/divider.png','ui/JetBrainsMonoNerdFont-Regular.ttf','ui/JetBrainsMono-OFL.txt')) {
     $resourcePath = Join-Path $root "content/$name"
     $factory = { [IO.File]::OpenRead($resourcePath) }.GetNewClosure()
     $resources.Add([Microsoft.CodeAnalysis.ResourceDescription]::new("Wisp.$name", [Func[IO.Stream]]$factory, $true))

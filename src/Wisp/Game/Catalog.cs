@@ -10,11 +10,12 @@ namespace Wisp.Game
     public sealed class Catalog
     {
         public Chapter[] Chapters;
+        public Chapter[] PdfChapters;
         public Enemy[] Enemies;
 
         public static Catalog Load()
         {
-            var result = new Catalog { Chapters = Read<Chapter[]>("route.json"), Enemies = Read<Enemy[]>("enemies.json") };
+            var result = new Catalog { Chapters = Read<Chapter[]>("route.json"), PdfChapters = Read<Chapter[]>("route-pdf.json"), Enemies = Read<Enemy[]>("enemies.json") };
             if (result.Chapters.Length == 0 || result.Chapters.SelectMany(x => x.Steps).Any(x => string.IsNullOrEmpty(x.Id)))
                 throw new InvalidDataException("Wisp route is empty or invalid");
             return result;
@@ -47,8 +48,8 @@ namespace Wisp.Game
                 case "ABYSS": return "basin";
                 case "DEEP_NEST": return "deepnest";
                 case "OUTSKIRTS": return "edge";
-                case "ROYAL_GARDENS": return "abyss";
-                case "WHITE_PALACE": return "abyss";
+                case "ROYAL_GARDENS": return "queens-gardens";
+                case "WHITE_PALACE": return "white-palace";
                 case "GODS_GLORY": return "godhome";
                 default: return "";
             }

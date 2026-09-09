@@ -4,7 +4,7 @@
     <LangVersion>latest</LangVersion>
     <AssemblyName>Wisp</AssemblyName>
     <RootNamespace>Wisp</RootNamespace>
-    <Version>0.3.0-alpha.2</Version>
+    <Version>0.4.0-alpha.1</Version>
     <Authors>Alexandr-Fredrix</Authors>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/Alexandr-Fredrix/Wisp</RepositoryUrl>
@@ -27,8 +27,11 @@
     <Reference Include="Newtonsoft.Json"><HintPath>$(HollowKnightRefs)/Newtonsoft.Json.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="UnityEngine.ImageConversionModule"><HintPath>$(HollowKnightRefs)/UnityEngine.ImageConversionModule.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="UnityEngine.UnityWebRequestModule"><HintPath>$(HollowKnightRefs)/UnityEngine.UnityWebRequestModule.dll</HintPath><Private>false</Private></Reference>
+    <EmbeddedResource Include="../../content/ui/*.ttf" LogicalName="Wisp.ui/%(Filename)%(Extension)" />
+    <EmbeddedResource Include="../../content/ui/*OFL.txt" LogicalName="Wisp.ui/%(Filename)%(Extension)" />
     <EmbeddedResource Include="../../content/media.json" LogicalName="Wisp.media.json" />
     <EmbeddedResource Include="../../content/ui/*.png" LogicalName="Wisp.ui/%(Filename)%(Extension)" />
+    <EmbeddedResource Include="../../content/route-pdf.json" LogicalName="Wisp.route-pdf.json" />
     <EmbeddedResource Include="../../content/route.json" LogicalName="Wisp.route.json" />
     <EmbeddedResource Include="../../content/enemies.json" LogicalName="Wisp.enemies.json" />
   </ItemGroup>

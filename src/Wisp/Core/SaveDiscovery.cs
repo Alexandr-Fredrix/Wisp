@@ -21,7 +21,9 @@ namespace Wisp.Core
             { "deepnest", new[] { "visitedDeepnest" } },
             { "edge", new[] { "visitedOutskirts" } },
             { "abyss", new[] { "visitedAbyssLower", "visitedWhitePalace", "visitedRoyalGardens" } },
-            { "godhome", new[] { "visitedGodhome" } }
+            { "godhome", new[] { "visitedGodhome" } },
+            { "queens-gardens", new[] { "visitedRoyalGardens" } },
+            { "white-palace", new[] { "visitedWhitePalace" } }
         };
 
         public static bool HasVisitEvidence(string chapterId, IPlayerState state)

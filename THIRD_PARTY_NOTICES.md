@@ -6,7 +6,7 @@ The Russian route text was authored for the owner's Achievement Path project and
 
 `content/ui/frame.png` and `content/ui/divider.png` are original decorative artwork generated with the built-in imagegen tool for this project. Prompts are recorded in `content/ui/PROMPTS.md`. These decorations contain no extracted game sprites or map data.
 
-Font selection uses a font already installed on the user's system. No font files are bundled. The API/game DLLs used for local compilation are not included in the Wisp license or distributed output.
+JetBrainsMono Nerd Font Regular is embedded in Wisp.dll. JetBrains Mono copyright 2020 The JetBrains Mono Project Authors; Nerd Fonts patched distribution. Licensed under SIL OFL 1.1, preserved at `content/ui/JetBrainsMono-OFL.txt` and embedded alongside the font. This font is excluded from Wisp’s personal-use restrictions. The Windows loader registers it privately for the game process; it does not install a system font. The API/game DLLs used for local compilation are not included in the Wisp license or distributed output.
 
 ## General policy
 
@@ -20,4 +20,4 @@ The owner's local installation may use a region reference cache prepared from Ac
 
 Do not incorporate third-party code without checking its terms.
 
-Bundled third-party artwork and libraries: **none**.
+Bundled font: JetBrainsMono Nerd Font Regular (SIL OFL 1.1). Bundled third-party game artwork and libraries: **none**.
