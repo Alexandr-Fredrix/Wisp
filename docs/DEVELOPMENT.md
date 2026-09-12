@@ -28,20 +28,26 @@ PowerShell 7 also includes Roslyn, so a system SDK is not required for the alter
 ./tools/build.ps1 -HollowKnightRefs 'C:/path/to/hollow_knight_Data/Managed' -BepInExRefs 'C:/path/to/BepInEx/core'
 ```
 
-Build output is artifacts/Wisp/Wisp.dll. PlayerData fields are checked and content is embedded in the DLL.
+Build output is `artifacts/Wisp/Wisp.dll`. PlayerData fields are checked and content is embedded in the DLL.
 
 ## Structure
 
-- src/Wisp/Core: data models, progress normalization, read-only completion rules and journal-counter semantics.
-- src/Wisp/Game: API/game readers and embedded-content loading.
-- src/Wisp/UI: pause overlay, cached image viewer and controller navigation.
-- content: guide text, enemy region metadata, image references and bundled reference artwork.
+- `src/Wisp/Core`: data models, progress normalization, read-only completion rules and journal-counter semantics.
+- `src/Wisp/Game`: API/game readers and embedded-content loading.
+- `src/Wisp/UI`: pause overlay, portraits, navigation and map/image rendering.
+- `content`: guide and localization data plus media embedded into the DLL, including achievement images, location media, UI assets/fonts, maps and source metadata.
+- `tests`: content, localization, route, packaging and core-logic regression tests.
+- `tools`: validation, build and packaging scripts.
+
+Generated outputs stay out of Git (`bin/`, `obj/`, `dist/`, `artifacts/`). Game libraries, local configuration, logs and secrets are never committed.
 
 Never set game flags to simulate completed steps. Missing or unknown fields are unavailable, never completed. Alternative choices remain manual. Wisp stores sidecar data after a successful game-save callback; preferences save on normal application quit.
 
-Follow TESTING.md and RELEASING.md. Alpha releases list unverified behavior; CI does not replace a game test.
+Follow `TESTING.md` and `RELEASING.md`. Automated checks do not replace an in-game test; release notes must state the actual validation scope.
 
-## Local candidate validation
+
+
+## Validating the packaged build
 
 Use PowerShell 7 and Python 3.11+. Pillow is needed only for editorial export and image optimization. Run `test-core.ps1` and `test-media.ps1` without game files. The latter uses engine/network doubles against the actual MediaLibrary.
 

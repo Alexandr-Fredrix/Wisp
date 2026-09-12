@@ -1,51 +1,125 @@
 > **1.0.0** remains the main release. Try [**1.0.1 (pre-release)**](https://github.com/Alexandr-Fredrix/Wisp/releases/tag/v1.0.1) to test fixes and optimizations. In-game testing is pending; see the [automated validation results](docs/releases/1.0.1.md).
 
+<div align="center">
+
 # Wisp
 
-An in-game Hallownest guide by **Alex / Alexandr-Fredrix**.
+**Your guide through Hallownest — directly inside the game.**
 
-**1.0.0 · English / Русский · Hollow Knight 1.5.12620 · Windows x64 · BepInEx 5.4.23.5**
+A step-by-step companion for **112%**, every achievement, speedrun endings, **Steel Soul**, the Hunter's Journal and world maps.
 
-[Download 1.0.0](https://github.com/Alexandr-Fredrix/Wisp/releases/tag/v1.0.0) · [Русский](README.md) · [Report an issue](https://github.com/Alexandr-Fredrix/Wisp/issues/new/choose)
+[![Release](https://img.shields.io/badge/release-v1.0.0-2ea44f?style=flat-square&logo=github)](https://github.com/Alexandr-Fredrix/Wisp/releases)
+[![Validate](https://github.com/Alexandr-Fredrix/Wisp/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Alexandr-Fredrix/Wisp/actions/workflows/ci.yml)
+![Hollow Knight](https://img.shields.io/badge/Hollow%20Knight-1.5.12620-6f42c1?style=flat-square)
+![Platform](https://img.shields.io/badge/platform-Windows%20x64-0078D4?style=flat-square&logo=windows)
+![Languages](https://img.shields.io/badge/languages-EN%20%7C%20RU-2f81f7?style=flat-square)
 
-Step-by-step routes for 112%, achievements, speedrun endings and Steel Soul. Illustrated items, bosses, locations, collections and all seven Mister Mushroom meetings. The Hunter's Journal tracks entries and filters by region; the atlas displays region maps inside the game.
+[**Download**](https://github.com/Alexandr-Fredrix/Wisp/releases) · [**Русский**](README.md) · [**Install**](docs/INSTALL.md) · [**Report an issue**](https://github.com/Alexandr-Fredrix/Wisp/issues/new/choose)
 
-**Both languages are in one download.** Open **Настройки** (Settings), then click **Язык: Русский** to select **English**. Language is remembered independently of save goals and progress.
+</div>
+
+---
+
+## What Wisp does
+
+- 🧭 **Progression routes** — a structured path through 112%, achievements, alternate choices and endings.
+- 🏆 **Achievement companion** — achievements are tied to specific stages and actions for the current save.
+- ⚡ **Speedrun and Steel Soul** — separate goals and routes without mixing progress between saves.
+- 🗺️ **Maps and illustrations** — regional maps plus images for objectives, items, bosses and collections inside the game.
+- 📖 **Hunter's Journal** — entry progress, region filtering and habitat maps.
+- 🍄 **Mister Mushroom** — all seven encounters presented as one sequential route.
+- 🌐 **English + Русский** — both languages are included in one download; changing language preserves progress.
+- 🎮 **Mouse, keyboard and controller** — navigation, scrolling, galleries and map zoom/pan.
 
 ## Screenshots
 
-Fresh in-game captures of the Russian interface, taken before the language toggle was added.
-
 ![Route and stage instructions](docs/images/route.png)
 
-<details><summary>Route map, Journal, atlas and settings</summary>
+<details>
+<summary><b>Show more screenshots</b></summary>
+<br>
 
-![Route map](docs/images/map.png)
+| Route map | Hunter's Journal |
+|---|---|
+| ![Route map](docs/images/map.png) | ![Hunter's Journal](docs/images/journal.png) |
 
-![Journal and habitat maps](docs/images/journal.png)
-
-![Hallownest atlas](docs/images/atlas.png)
-
-![Route settings](docs/images/settings.png)
+| Atlas | Settings |
+|---|---|
+| ![Atlas](docs/images/atlas.png) | ![Settings](docs/images/settings.png) |
 
 </details>
 
-## Install
+## Quick start
 
-1. Install [BepInEx 5.4.23.5 x64](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.5) once.
-2. Extract **Wisp-1.0.0.zip** into the game folder. The mod is `BepInEx/plugins/Wisp/Wisp.dll`.
-3. Load a save and press **F8** or both controller sticks.
+1. Install [**BepInEx 5.4.23.5 x64**](https://github.com/BepInEx/BepInEx/releases/tag/v5.4.23.5) into the Hollow Knight directory.
+2. Download **Wisp-1.0.0.zip** from [Releases](https://github.com/Alexandr-Fredrix/Wisp/releases).
+3. Extract it into the game directory. You should get:
 
-See [installation and controls](docs/INSTALL.md). Update the DLL while the game is closed; saved marks remain.
+```text
+Hollow Knight/
+└─ BepInEx/
+   └─ plugins/
+      └─ Wisp/
+         └─ Wisp.dll
+```
 
-Achievements are read from the game profile, while route conditions use the current save. Actions that cannot be confirmed automatically remain manually markable. Choosing the Steel Soul route does not change the actual save mode.
+4. Load a save and press **F8** or **both controller sticks**.
 
-Many illustrations are embedded. Remaining wiki portraits and maps download on first view and stay cached. Text baked into third-party artwork keeps its original language; the English atlas uses English maps.
+> Full installation, update, removal and controls: **[docs/INSTALL.md](docs/INSTALL.md)**.
 
-Build, content, core logic and catalog language switching are checked. The final bilingual interface has not yet been tested in a running game. See [validation scope](docs/TESTING.md).
+## Controls
 
-## Rights and support
+| Action | Control |
+|---|---|
+| Open Wisp | `F8` or press both sticks |
+| Main tabs | `LB / RB` |
+| Select panel / item | D-pad / directions |
+| Open / back | `A / B` |
+| Scroll description | right stick |
+| Region selector in Journal | `X` |
+| Next illustration | `Y` |
+| Expand image | press `RS` |
+| Map zoom | `LT / RT` |
 
-[Discussions](https://github.com/Alexandr-Fredrix/Wisp/discussions) · [License](LICENSE) · [Third-party materials](THIRD_PARTY_NOTICES.md)
+With a mouse, click to select, use the wheel to scroll or zoom, and drag to pan maps.
 
-Free personal play is permitted. Resale, republication and reuse of newly protected original material require permission under LICENSE. Earlier MIT releases retain their terms. Hollow Knight and game artwork belong to Team Cherry.
+## Progress model
+
+Wisp reads achievements from the game profile while route conditions come from the **current save**. Actions that cannot be confirmed automatically can still be marked manually.
+
+Wisp preferences and route marks are stored separately from the game's own saves. Changing language does not reset selected goals or progress. Choosing the Steel Soul route **does not change the actual save mode**.
+
+## Compatibility
+
+- **Hollow Knight:** `1.5.12620`
+- **OS:** Windows x64
+- **BepInEx:** `5.4.23.5 x64`
+- **Wisp:** `1.0.0`
+- **Languages:** English / Русский
+
+Many images are embedded in the mod. Remaining wiki maps and portraits download on first view and stay in the local cache.
+
+> **Validation status:** automated build, content, core-logic and localization checks pass. The final bilingual UI still needs a complete in-game validation pass. See [TESTING.md](docs/TESTING.md).
+
+## Development
+
+```text
+src/       mod source
+content/   routes, localization and embedded media
+tests/     automated checks
+tools/     build, validation and packaging
+docs/      install and technical documentation
+```
+
+- [Development](docs/DEVELOPMENT.md)
+- [Testing](docs/TESTING.md)
+- [Releasing](docs/RELEASING.md)
+- [Changelog](CHANGELOG.md)
+
+## Project
+
+Author: **Alex / [Alexandr-Fredrix](https://github.com/Alexandr-Fredrix)**
+
+[Discussions](https://github.com/Alexandr-Fredrix/Wisp/discussions) · [Issues](https://github.com/Alexandr-Fredrix/Wisp/issues) · [License](LICENSE) · [Third-party materials](THIRD_PARTY_NOTICES.md)
+
+Free personal play is permitted. Resale, republication and reuse of newly protected original material require permission under `LICENSE`. Earlier MIT releases retain their terms. **Hollow Knight** and game artwork belong to Team Cherry.
