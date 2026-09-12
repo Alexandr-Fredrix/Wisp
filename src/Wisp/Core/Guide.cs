@@ -22,6 +22,7 @@ namespace Wisp.Core
         public string Warning = "";
         public string Source = "";
         public string MapChapter = "";
+        public string Collection = "";
         public bool ReferenceOnly;
         public bool Spoiler;
         public Condition[] Conditions = new Condition[0];

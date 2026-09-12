@@ -60,4 +60,24 @@ class LocalizationTests(unittest.TestCase):
                 self.assertNotIn(step['id'], self.translations)
                 for rule in step.get('conditions', []):
                     self.assertNotIn(rule.get('field', ''), self.translations)
-        self.assertTrue(self.read('regions-en.json')['abyss'].endswith('The_Abyss_Map.png'))
+        self.assertEqual(set(self.read('regions-en.json')), set(self.read('regions.json')))
+
+    def test_atlas_is_available_in_both_languages_without_network(self):
+        from PIL import Image
+        for name in ['regions.json', 'regions-en.json']:
+            maps = self.read(name)
+            self.assertEqual(len(maps), 15)
+            for url in maps.values():
+                self.assertTrue(url.startswith('embedded:'), url)
+                with Image.open(ROOT / 'content' / url[9:]) as image:
+                    image.verify()
+
+    def test_reviewed_translation_details_do_not_regress(self):
+        audit = json.loads((ROOT / 'tests/fixtures/ui-review-2026-09-13.json').read_text(encoding='utf-8'))
+        for change in audit['translationCorrections']:
+            self.assertEqual(self.translations[change['ru']], change['after'], change['id'])
+        for chapter in self.read('route-pdf.json'):
+            for step in chapter['steps']:
+                body = self.translations.get(step['body'], step['body'])
+                self.assertNotIn('Collections → Stag Stations', body)
+                self.assertNotIn('Collections → Cartographer', body)

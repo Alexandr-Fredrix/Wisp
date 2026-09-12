@@ -22,13 +22,15 @@ def metadata():
 def validate():
     version = metadata()["version"]
     for name in ["README.md", "README.en.md", "LICENSE", "THIRD_PARTY_NOTICES.md",
-                 "CONTRIBUTING.md", "SECURITY.md", "docs/RELEASING.md",
-                 f"docs/releases/{version}.md"]:
+                 "CHANGELOG.md", "docs/INSTALL.md", "docs/DEVELOPMENT.md"]:
         if not (ROOT / name).is_file():
             raise ValueError(f"Missing file: {name}")
     project = ET.parse(ROOT / "src/Wisp/Wisp.csproj")
     if project.findtext(".//Version") != version:
         raise ValueError("C# project version differs from version.json")
+    plugin = (ROOT / 'src/Wisp/WispMod.cs').read_text(encoding='utf-8')
+    if f'"Wisp", "{version}"' not in plugin or f'Wisp {version} / Unity' not in plugin:
+        raise ValueError('Plugin metadata/log version differs from version.json')
     if version not in (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"):
         raise ValueError("Version missing from changelog")
     return version

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "dirtmouth",
+    "originalUrl": "https://cdn.wikimg.net/en/hkwiki/images/f/f7/Dirtmouth_Map.png",
+    "file": "atlas-dirtmouth.png",
+    "sha256": "fb8b6f72013be489b7d6244edd1396f9a78148bc375746117b972d4d319ad891"
+  },
+  {
+    "id": "kings-pass",
+    "originalUrl": "https://cdn.wikimg.net/en/hkwiki/images/4/4b/Howling_Cliffs_Map.png",
+    "file": "atlas-kings-pass.png",
+    "sha256": "2bf90cbffd81867fe39a2c154d7894856d57f1db66f5da622cd48a002e45b8d8"
+  },
+  {
+    "id": "crossroads",
+    "originalUrl": "https://cdn.wikimg.net/en/hkwiki/images/7/72/Forgotten_Crossroads_Map.png",
+    "file": "atlas-crossroads.png",
+    "sha256": "7d9fe62d581c51a045d373719714a8215abaec4198ac2d965370775e213b7658"
+  },
+  {
+    "id": "greenpath",
+    "originalUrl": "https://cdn.wikimg.net/en/hkwiki/images/4/47/Greenpath_Map.png",
+    "file": "atlas-greenpath.png",
+    "sha256": "c1a737a2d0bbefbb7417e908cffaa1ded77a72f3d24ecdf2a69892966c60f45e"
+  },
+  {
+    "id": "fungal",
+    "originalUrl": "https://cdn.wikimg.net/en/hkwiki/images/c/c1/Fungal_Wastes_Map.png",
+    "file": "atlas-fungal.png",
+    "sha256": "a555a1d6e3ff2dcb7787540a0c7934a18ce8b1f14f785307b62213d583fc5318"
+  },
+  {
+    "id": "city",
+    "originalUrl": "https://cdn.wikimg.net/en/hkwiki/images/0/00/City_of_Tears_Map.png",
+    "file": "atlas-city.png",
+    "sha256": "9fe84c9d80a2d1647230ce6e095a0a896a44023637519f8d4c5a19b6c5bfddef"
+  },
+  {
+    "id": "waterways",
+    "originalUrl": "https://cdn.wikimg.net/en/hkwiki/images/5/5b/Royal_Waterways_Map.png",
+    "file": "atlas-waterways.png",
+    "sha256": "7488fb65dc38b7fd1c722b00f2c200b72605030a73722e866e7010b920f200a4"
+  },
+  {
+    "id": "crystal",
+    "originalUrl": "https://cdn.wikimg.net/en/hkwiki/images/4/4d/Crystal_Peak_Map.png",
+    "file": "atlas-crystal.png",
+    "sha256": "39c87c9d88ac71b1f494fc088fea7cd0d2b68d9c7558c160e6e8d6ae2dd1ae35"
+  },
+  {
+    "id": "resting",
+    "originalUrl": "https://cdn.wikimg.net/en/hkwiki/images/2/28/Resting_Grounds_Map.png",
+    "file": "atlas-resting.png",
+    "sha256": "3c3f206dd4016c8145baf26cc2de49819430bbbaa1eade0cf5d7ad9a06ff255c"
+  },
+  {
+    "id": "deepnest",
+    "originalUrl": "https://cdn.wikimg.net/en/hkwiki/images/0/05/Deepnest_Map.png",
+    "file": "atlas-deepnest.png",
+    "sha256": "52247cd0f8d999d6714a0a94e4a0d768cc2731d07475c1636dde68b75c94fb4d"
+  },
+  {
+    "id": "basin",
+    "originalUrl": "https://cdn.wikimg.net/en/hkwiki/images/3/34/Ancient_Basin_Map.png",
+    "file": "atlas-basin.png",
+    "sha256": "a7c46d85902ca1eccaf86aa4b54d981182e6fff006ce40643dab27754c9465f9"
+  },
+  {
+    "id": "edge",
+    "originalUrl": "https://cdn.wikimg.net/en/hkwiki/images/4/48/Kingdom%27s_Edge_Map.png",
+    "file": "atlas-edge.png",
+    "sha256": "86cdbbe941a32ba9c45275a85d92353d007ab82ace3bf3b45015b25a46b08487"
+  }
+]

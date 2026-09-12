@@ -1,3 +1,17 @@
 {
-  "abyss": "https://cdn.wikimg.net/en/hkwiki/images/a/ab/The_Abyss_Map.png"
+  "dirtmouth": "embedded:locations/atlas-dirtmouth.png",
+  "kings-pass": "embedded:locations/atlas-kings-pass.png",
+  "crossroads": "embedded:locations/atlas-crossroads.png",
+  "greenpath": "embedded:locations/atlas-greenpath.png",
+  "fog-canyon": "embedded:ui/region-fog-canyon.png",
+  "fungal": "embedded:locations/atlas-fungal.png",
+  "city": "embedded:locations/atlas-city.png",
+  "waterways": "embedded:locations/atlas-waterways.png",
+  "crystal": "embedded:locations/atlas-crystal.png",
+  "resting": "embedded:locations/atlas-resting.png",
+  "deepnest": "embedded:locations/atlas-deepnest.png",
+  "basin": "embedded:locations/atlas-basin.png",
+  "edge": "embedded:locations/atlas-edge.png",
+  "queens-gardens": "embedded:ui/region-queens-gardens.png",
+  "abyss": "embedded:ui/region-abyss.png"
 }

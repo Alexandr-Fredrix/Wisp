@@ -55,6 +55,7 @@ namespace Wisp.UI
         {
             Close();
             if (catalog == null || mod == null) return;
+            expandedCollectionMap = false; collectionInfo = false;
             InvalidateView();
             locating = !RouteView.Restore(RouteChapters, mod.Progress, out chapterIndex, out stepIndex);
             detailScroll = enemyScroll = Vector2.zero;
@@ -108,7 +109,8 @@ namespace Wisp.UI
             if (Input.GetKeyDown(KeyCode.Escape)) { Close(); return; }
             if (device.Action2.WasPressed)
             {
-                if (expandedStepImage) expandedStepImage = false;
+                if (tab == 4 && (expandedCollectionMap || collectionInfo)) { expandedCollectionMap = false; collectionInfo = false; contentFocus = false; }
+                else if (expandedStepImage) expandedStepImage = false;
                 else if (choosingJournalRegion) choosingJournalRegion = false;
                 else if (contentFocus || expandedEnemyMap) { contentFocus = false; expandedEnemyMap = false; }
                 else if (padPane > 0) padPane--;
@@ -128,7 +130,7 @@ namespace Wisp.UI
                 if (device.Action4.WasPressed) { mapPan = Vector2.zero; mapZoom = 1; }
                 return;
             }
-            bool onMap = contentFocus && ((tab == 0 && mapTab) || (tab == 1 && padPane == 2) || tab == 3);
+            bool onMap = contentFocus && ((tab == 4 && !collectionInfo) || (tab == 0 && mapTab) || (tab == 1 && padPane == 2) || tab == 3);
             int vertical = device.DPadUp.IsPressed || (!onMap && device.LeftStickY.Value > .5f) ? -1 : device.DPadDown.IsPressed || (!onMap && device.LeftStickY.Value < -.5f) ? 1 : 0;
             int horizontal = device.DPadLeft.IsPressed || (!onMap && device.LeftStickX.Value < -.5f) ? -1 : device.DPadRight.IsPressed || (!onMap && device.LeftStickX.Value > .5f) ? 1 : 0;
             int trigger = !contentFocus && device.LeftTrigger.WasPressed ? -1 : !contentFocus && device.RightTrigger.WasPressed ? 1 : 0;
@@ -143,7 +145,8 @@ namespace Wisp.UI
                 if (device.Action1.WasPressed) SelectJournalRegion(journalRegionIndex);
                 return;
             }
-            if (tab == 0)
+            if (tab == 4) UpdateCollections(device, dx, dy, retriedImage);
+            else if (tab == 0)
             {
                 if (!contentFocus)
                 {
@@ -167,7 +170,7 @@ namespace Wisp.UI
                 // The selected description is scrollable without an extra confirm press.
                 if (!mapTab && padPane == 2 && detailChoice == 0)
                 {
-                    if (device.Action4.WasPressed) stepImageIndex++;
+                    if (device.Action4.WasPressed) { if (RouteSteps[stepIndex].Collection.Length > 0) { OpenCollection(RouteSteps[stepIndex].Collection); return; } stepImageIndex++; }
                     if (device.RightStickButton.WasPressed) OpenStepImage();
                     float stick = Mathf.Abs(device.RightStickY.Value) > .18f ? device.RightStickY.Value : 0;
                     detailScroll.y = Mathf.Max(0, detailScroll.y + dy * 64 - stick * Time.unscaledDeltaTime * 350);
@@ -214,7 +217,7 @@ namespace Wisp.UI
         }
 
         private void CycleMainTab(int direction)
-        { int[] order = { 0, 1, 3, 2 }; ChangeTab(order[(Array.IndexOf(order, tab) + direction + order.Length) % order.Length]); }
+        { int[] order = { 0, 1, 4, 3, 2 }; ChangeTab(order[(Array.IndexOf(order, tab) + direction + order.Length) % order.Length]); }
 
         private static Vector2 MapStick(InControl.InputDevice device, bool includeLeft)
         {

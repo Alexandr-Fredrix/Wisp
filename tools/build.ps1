@@ -54,7 +54,7 @@ foreach ($enemy in $enemies) {
     }
 }
 $resources = [System.Collections.Generic.List[Microsoft.CodeAnalysis.ResourceDescription]]::new()
-foreach ($name in @('english.json','regions-en.json','achievements.json','step-media.json','regions.json','ui/region-abyss.png','ui/region-queens-gardens.png','ui/region-fog-canyon.png','route.json','route-pdf.json','enemies.json','media.json','ui/JetBrainsMonoNerdFont-Regular.ttf','ui/JetBrainsMono-OFL.txt')) {
+foreach ($name in @('collections.json','english.json','regions-en.json','achievements.json','step-media.json','regions.json','ui/region-abyss.png','ui/region-queens-gardens.png','ui/region-fog-canyon.png','route.json','route-pdf.json','enemies.json','media.json','ui/JetBrainsMonoNerdFont-Regular.ttf','ui/JetBrainsMono-OFL.txt')) {
     $resourcePath = Join-Path $root "content/$name"
     $factory = { [IO.File]::OpenRead($resourcePath) }.GetNewClosure()
     $resources.Add([Microsoft.CodeAnalysis.ResourceDescription]::new("Wisp.$name", [Func[IO.Stream]]$factory, $true))

@@ -72,6 +72,26 @@ public static class MediaHarness
         try
         {
             var host=new UnityEngine.MonoBehaviour();var media=Make(host,cache);
+            typeof(MediaLibrary).GetField("Regions").SetValue(media,new Dictionary<string,string>{{"city","embedded:locations/atlas-city.png"}});
+            typeof(MediaLibrary).GetField("EnglishRegions").SetValue(media,new Dictionary<string,string>{{"city","embedded:locations/atlas-city.png"}});
+            I18n.English=false;
+            Check(media.RegionSource("city")=="embedded:locations/atlas-city.png","RU atlas selects packaged map without cache");
+            I18n.English=true;
+            Check(media.RegionSource("city")=="embedded:locations/atlas-city.png","English atlas does not bypass packaged maps");
+            I18n.English=false;
+            Check(media.RegionSource("city")=="embedded:locations/atlas-city.png" && host.Jobs.Count==0,"Language round trip preserves atlas source without network");
+            var galleries=new Dictionary<string,StepImage[]> {
+                { "well",new[]{new StepImage {Url="a"}} },
+                { "speed/pdf-b1/well",new StepImage[0] },
+                { "112/pdf-a4/nail-upgrade",new[]{new StepImage {Url="edited"}} }
+            };
+            typeof(MediaLibrary).GetField("Steps").SetValue(media,galleries);
+            StepImage[] found;
+            Check(media.TryStepImages("speed","pdf-b1","well",out found) && found.Length==0,"Empty occurrence hides inherited gallery");
+            Check(media.TryStepImages("112","pdf-a1","well",out found) && found.Length==1 && found[0].Url=="a","A keeps shared gallery after B deletion");
+            Check(media.TryStepImages("steel","pdf-c1","well",out found) && found.Length==1,"C keeps shared gallery after B deletion");
+            Check(media.TryStepImages("112","pdf-a4","nail-upgrade",out found) && found[0].Url=="edited","Occurrence selects edited image and status URL together");
+
             foreach(var url in urls)media.Get(url);
             Check(host.Jobs.Count==3,"Actual loader limits active requests");
             I18n.English=true;host.Complete(0,true,Pixels(64,64));media.Get(urls[3]);

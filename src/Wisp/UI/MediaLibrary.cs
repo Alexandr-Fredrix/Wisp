@@ -33,6 +33,7 @@ namespace Wisp.UI
         public readonly Dictionary<string, string> Regions;
         public readonly Dictionary<string, string> EnglishRegions;
         public readonly Dictionary<string, StepImage[]> Steps;
+        public readonly CollectionGroup[] Collections;
         public string Cache { get; private set; }
         public long CachedBytes { get { return budget.Bytes; } }
         public int CachedCount { get { return images.Count; } }
@@ -44,11 +45,17 @@ namespace Wisp.UI
             Regions = Read<Dictionary<string, string>>("regions.json");
             Enemies = Read<Dictionary<string, EnemyMedia>>("media.json");
             Steps = Read<Dictionary<string, StepImage[]>>("step-media.json");
+            Collections = Read<CollectionGroup[]>("collections.json");
         }
         private static T Read<T>(string name)
         {
             using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Wisp." + name))
             using (var reader = new StreamReader(stream)) return JsonConvert.DeserializeObject<T>(reader.ReadToEnd());
+        }
+        public bool TryStepImages(string goal, string chapter, string step, out StepImage[] result)
+        {
+            // An empty occurrence override intentionally hides the inherited gallery.
+            return Steps.TryGetValue(goal + "/" + chapter + "/" + step, out result) || Steps.TryGetValue(step, out result);
         }
         public Texture2D AchievementIcon(string key) { return Get("embedded:achievements/" + key + ".jpg"); }
         public string RegionSource(string id)
@@ -57,12 +64,10 @@ namespace Wisp.UI
             string key = (I18n.English ? "en:" : "ru:") + id;
             if (regionSources.TryGetValue(key, out url)) return url;
             if (I18n.English && EnglishRegions.TryGetValue(id, out url)) return regionSources[key] = url;
-            if (!I18n.English)
-            {
-                if (id == "abyss" || id == "queens-gardens" || id == "fog-canyon") return regionSources[key] = "embedded:ui/region-" + id + ".png";
-                if (File.Exists(Path.Combine(Cache, "region-" + id + ".png"))) return regionSources[key] = "local:region-" + id;
-            }
-            return regionSources[key] = Regions.TryGetValue(id, out url) ? url : "";
+            // Packaged maps work in both languages, including a fresh offline install.
+            if (Regions.TryGetValue(id, out url)) return regionSources[key] = url;
+            if (File.Exists(Path.Combine(Cache, "region-" + id + ".png"))) return regionSources[key] = "local:region-" + id;
+            return regionSources[key] = "";
         }
         public Texture2D Region(string id) { return Get(RegionSource(id)); }
         public string RegionStatus(string id) { return Status(RegionSource(id)); }

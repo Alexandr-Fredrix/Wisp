@@ -5,6 +5,7 @@ import json
 import pathlib
 import re
 import shutil
+import subprocess
 from collections import Counter
 from PIL import Image
 
@@ -17,6 +18,9 @@ def export(destination, cache):
     if document.exists() or assets.exists():
         raise FileExistsError('Editorial snapshot already exists; choose a new destination. Never overwrite edits.')
     read = lambda name: json.loads((ROOT/'content'/name).read_text(encoding='utf-8'))
+    source_commit = subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+    source_version = json.loads((ROOT/'version.json').read_text(encoding='utf-8'))['version']
+    source_dirty = bool(subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True).strip())
     chapters, media = read('route-pdf.json'), read('step-media.json')
     achievements, regions = read('achievements.json'), read('regions.json')
     geography = {c['id']: c['title'] for c in read('route.json')}
@@ -55,7 +59,7 @@ def export(destination, cache):
     shared = Counter(s['id'] for c in chapters for s in c['steps'])
     goals = {'112':'A — 112% и достижения', 'speed':'B — скорость и противоположные выборы', 'steel':'C — Стальная душа'}
     out = ['# Wisp — три прохождения для проверки', '',
-           'Исходный снимок: 1.0.0, commit 7af903f. Это редакторский документ с полными спойлерами, а не игровой прогресс.', '',
+           f'Исходный снимок: {source_version}, commit {source_commit}' + (' с локальными изменениями' if source_dirty else '') + '. Это редакторский документ с полными спойлерами, а не игровой прогресс.', '',
            'Редактируйте инструкции прямо здесь. Замечания оставляйте под соответствующим пунктом. Новые картинки кладите в `Wisp-материалы/new/` и вставляйте обычной Markdown-ссылкой. Сохраняйте метки `wisp:`: по ним правки связываются с модом. Повторная выгрузка этот файл не заменяет.', '',
            'Все показываемые картинки локальные. Для переноса скопируйте этот файл вместе с папкой `Wisp-материалы`. Источники могут вести в интернет, но он не нужен для чтения документа.', '', '## Оглавление', '']
     for goal, title in goals.items():
@@ -87,14 +91,14 @@ def export(destination, cache):
                 if source: out += [image(source,geography.get(region,region)), '']
                 elif region: out += ['Региональная карта в доступных материалах отсутствует. Можно предложить её ниже.', '']
                 out += ['#### Иллюстрации пункта', '']
-                for a in media.get(s['id'],[]): out += ['**'+a['label']+'**', '', image(a['url'],a['label']), '']
-                if not media.get(s['id']): out += ['Отдельных иллюстраций нет.', '']
+                for a in media.get(marker, media.get(s['id'],[])): out += ['**'+a['label']+'**', '', image(a['url'],a['label']), '']
+                if not media.get(marker, media.get(s['id'])): out += ['Отдельных иллюстраций нет.', '']
                 out += ['<details>', '<summary>Служебные данные — для переноса в мод</summary>', '', '```json', json.dumps({'goal':goal,'chapterId':c['id'],'stepId':s['id'],'mapChapter':region,'conditions':s.get('conditions',[]),'achievement':key,'source':s.get('source','')},ensure_ascii=False,indent=2), '```', '', '</details>', '',
                         '#### Ваша проверка', '', '- [ ] Проверено', '', '**Что исправить:**', '', '**Чего не хватает:**', '', '**Добавить или заменить изображение:**', '', '---', '']
                 occurrences.append({'marker':marker,'chapter':c['id'],'goal':goal,'step':s,'hidden':bool(hidden)})
     document.write_text('\n'.join(out),encoding='utf-8')
     shutil.copyfile(document,assets/'baseline/original-review.md')
-    manifest = {'source_commit':'7af903f','occurrences':occurrences,'images':files,'document_sha256':hashlib.sha256(document.read_bytes()).hexdigest()}
+    manifest = {'source_commit':source_commit,'source_version':source_version,'source_dirty':source_dirty,'occurrences':occurrences,'images':files,'document_sha256':hashlib.sha256(document.read_bytes()).hexdigest()}
     (assets/'baseline/manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
     validate(document, manifest)
     print('Exported:',len(chapters),'chapters,',len(occurrences),'steps,',len(set(x['file'] for x in files.values())),'unique local images')
@@ -105,7 +109,7 @@ def validate(document, manifest):
     assert markers == [x['marker'] for x in manifest['occurrences']]
     bodies = re.findall(r'<!-- body:start -->\n(.*?)\n<!-- body:end -->',text,re.S)
     assert bodies == [x['step']['body'] for x in manifest['occurrences']]
-    assert len(markers)==len(set(markers))==300
+    assert len(markers)==len(set(markers))==len(manifest['occurrences'])>0
     for item in manifest['images'].values():
         path=document.parent/item['file']
         assert hashlib.sha256(path.read_bytes()).hexdigest()==item['sha256']

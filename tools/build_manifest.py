@@ -10,6 +10,7 @@ def digest(path):
 
 def inputs():
     paths=[ROOT/'version.json']
+    paths.extend(ROOT/name for name in ['LICENSE','THIRD_PARTY_NOTICES.md','docs/INSTALL.md'] if (ROOT/name).is_file())
     for directory in ['src','content','tools','tests']:
         paths.extend(p for p in (ROOT/directory).rglob('*') if p.is_file() and not {'obj','bin','__pycache__'}&set(p.relative_to(ROOT).parts))
     return {p.relative_to(ROOT).as_posix():digest(p) for p in sorted(paths)}

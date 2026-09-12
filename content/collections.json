@@ -1,0 +1,1710 @@
+[
+  {
+    "id": "charms",
+    "title": "Амулеты",
+    "summary": "Хрупкий/нерушимый амулет занимает один слот. То же относится к Мрачное дитя/Беспечная песнь и Душа Короля/Сердце пустоты. Для Блаженный нужны 40 слотов и Благословение Салюбры.\n\nЖивительное ядро: удобный практический запас для входа - не меньше 16 синих масок у самой двери. Используй Благословение Джони, Хрупкое сердце, Сердце жизненной крови и при необходимости коконы. Урон по дороге уменьшает запас. В Стальная душа эта комната опасна для сохранения. Если не хватает процента: забери амулет, который отдала Божественная после оплаты, либо верни хрупкий вариант после изгнания. Пока амулет проглочен ею, его процент отсутствует.",
+    "items": [
+      {
+        "id": "charm-2",
+        "title": "Капризный компас",
+        "location": "Изельда, Грязьмут",
+        "icon": "",
+        "charmId": 2,
+        "effect": "Показывает положение Рыцаря на открытой карте.",
+        "maps": [
+          {
+            "label": "Капризный компас · место получения",
+            "url": "embedded:locations/Mapshot_HK_Iselda_01.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-1",
+        "title": "Загребущий рой",
+        "location": "Слай",
+        "icon": "",
+        "charmId": 1,
+        "effect": "Собирает рассыпанные гео поблизости.",
+        "maps": [
+          {
+            "label": "Загребущий рой · место получения",
+            "url": "embedded:locations/Mapshot_HK_Sly_02.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-4",
+        "title": "Крепкий панцирь",
+        "location": "Слай",
+        "icon": "",
+        "charmId": 4,
+        "effect": "Продлевает неуязвимость после получения урона.",
+        "maps": [
+          {
+            "label": "Крепкий панцирь · место получения",
+            "url": "embedded:locations/Mapshot_HK_Sly_02.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-20",
+        "title": "Ловец душ",
+        "location": "Родовой курган",
+        "icon": "",
+        "charmId": 20,
+        "effect": "Увеличивает количество ДУШИ от ударов гвоздём.",
+        "maps": [
+          {
+            "label": "Ловец душ · место получения",
+            "url": "embedded:locations/Mapshot_HK_Snail_Shaman_01.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-19",
+        "title": "Шаманский камень",
+        "location": "Салюбра",
+        "icon": "",
+        "charmId": 19,
+        "effect": "Усиливает заклинания.",
+        "maps": [
+          {
+            "label": "Шаманский камень · место получения",
+            "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-21",
+        "title": "Пожиратель душ",
+        "location": "Склепы Земель упокоения",
+        "icon": "",
+        "charmId": 21,
+        "effect": "Значительно увеличивает количество ДУШИ от ударов гвоздём.",
+        "maps": [
+          {
+            "label": "Пожиратель душ · место получения",
+            "url": "embedded:locations/Mapshot_HK_Soul_Eater.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-31",
+        "title": "Трюкач",
+        "location": "Юг Грибных пустошей",
+        "icon": "",
+        "charmId": 31,
+        "effect": "Позволяет чаще делать рывок и совершать рывок вниз.",
+        "maps": [
+          {
+            "label": "Трюкач · место получения",
+            "url": "embedded:locations/Mapshot_HK_Dashmaster.jpg",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-37",
+        "title": "Ловкач",
+        "location": "Слай, после Ключа лавочника",
+        "icon": "",
+        "charmId": 37,
+        "effect": "Увеличивает скорость бега.",
+        "maps": [
+          {
+            "label": "Ловкач · место получения",
+            "url": "embedded:locations/Mapshot_HK_Sly_02.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-3",
+        "title": "Песнь гусеничек",
+        "location": "Награда за 10 гусеничек",
+        "icon": "",
+        "charmId": 3,
+        "effect": "Даёт ДУШУ при получении урона.",
+        "maps": [
+          {
+            "label": "Песнь гусеничек · место получения",
+            "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-35",
+        "title": "Элегия куколки",
+        "location": "Награда за 46 гусеничек; пропустить в B/C",
+        "icon": "",
+        "charmId": 35,
+        "effect": "При полном здоровье гвоздь выпускает лучи.",
+        "maps": [
+          {
+            "label": "Элегия куколки · место получения",
+            "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-23",
+        "title": "Хрупкое / Нерушимое сердце",
+        "location": "Пожиратель ног / Божественная",
+        "icon": "",
+        "charmId": 23,
+        "effect": "Добавляет две маски здоровья. Хрупкая форма ломается при обычной смерти; нерушимая сохраняется.",
+        "maps": [
+          {
+            "label": "Хрупкое Сердце · место получения",
+            "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-24",
+        "title": "Хрупкая / Нерушимая жадность",
+        "location": "Пожиратель ног / Божественная",
+        "icon": "",
+        "charmId": 24,
+        "effect": "Увеличивает гео, выпадающие из врагов. Хрупкая форма ломается при обычной смерти.",
+        "maps": [
+          {
+            "label": "Хрупкая Жадность · место получения",
+            "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-25",
+        "title": "Хрупкая / Нерушимая сила",
+        "location": "Пожиратель ног / Божественная",
+        "icon": "",
+        "charmId": 25,
+        "effect": "Увеличивает урон обычных ударов гвоздём. Хрупкая форма ломается при обычной смерти.",
+        "maps": [
+          {
+            "label": "Хрупкая Сила · место получения",
+            "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-33",
+        "title": "Искажатель заклинаний",
+        "location": "Святилище душ",
+        "icon": "",
+        "charmId": 33,
+        "effect": "Уменьшает расход ДУШИ на заклинания.",
+        "maps": [
+          {
+            "label": "Искажатель заклинаний · место получения",
+            "url": "embedded:locations/Mapshot_HK_Spell_Twister.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-14",
+        "title": "Непоколебимое тело",
+        "location": "Салюбра",
+        "icon": "",
+        "charmId": 14,
+        "effect": "Убирает отдачу Рыцаря при ударе гвоздём.",
+        "maps": [
+          {
+            "label": "Непоколебимое тело · место получения",
+            "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-15",
+        "title": "Тяжелый выпад",
+        "location": "Слай, после Ключа лавочника",
+        "icon": "",
+        "charmId": 15,
+        "effect": "Сильнее отбрасывает врагов и облегчает их оглушение.",
+        "maps": [
+          {
+            "label": "Тяжелый выпад · место получения",
+            "url": "embedded:locations/Mapshot_HK_Sly_02.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-32",
+        "title": "Быстрый удар",
+        "location": "Край королевства, под хижиной Оро",
+        "icon": "",
+        "charmId": 32,
+        "effect": "Ускоряет обычные удары гвоздём.",
+        "maps": [
+          {
+            "label": "Быстрый удар · место получения",
+            "url": "embedded:locations/Mapshot_HK_Quick_Slash.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-18",
+        "title": "Длинный гвоздь",
+        "location": "Салюбра",
+        "icon": "",
+        "charmId": 18,
+        "effect": "Увеличивает дальность обычных ударов гвоздём.",
+        "maps": [
+          {
+            "label": "Длинный гвоздь · место получения",
+            "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-13",
+        "title": "Метка гордости",
+        "location": "После Лордов богомолов",
+        "icon": "",
+        "charmId": 13,
+        "effect": "Значительно увеличивает дальность обычных ударов гвоздём.",
+        "maps": [
+          {
+            "label": "Метка гордости · место получения",
+            "url": "embedded:locations/Mapshot_HK_Mark_of_Pride.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-6",
+        "title": "Ярость Павшего",
+        "location": "Королевский перевал",
+        "icon": "",
+        "charmId": 6,
+        "effect": "При одной оставшейся маске усиливает обычные удары гвоздём.",
+        "maps": [
+          {
+            "label": "Ярость Павшего · место получения",
+            "url": "embedded:locations/Mapshot_HK_Fury_of_the_Fallen.jpg",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-12",
+        "title": "Колючки страданий",
+        "location": "Зелёная тропа",
+        "icon": "",
+        "charmId": 12,
+        "effect": "После получения урона выпускает шипы вокруг Рыцаря.",
+        "maps": [
+          {
+            "label": "Колючки страданий · место получения",
+            "url": "embedded:locations/Mapshot_HK_Thorns_of_Agony.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-5",
+        "title": "Панцирь Бальдра",
+        "location": "Юг Воющих утёсов",
+        "icon": "",
+        "charmId": 5,
+        "effect": "Защищает во время фокусирования; после нескольких попаданий требует отдыха на скамье.",
+        "maps": [
+          {
+            "label": "Панцирь Бальдра · место получения",
+            "url": "embedded:locations/Mapshot_HK_Baldur_Shell.jpg",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-11",
+        "title": "Тремогнездо",
+        "location": "Победить Матерь трем (Тремоматка)",
+        "icon": "",
+        "charmId": 11,
+        "effect": "Заменяет Мстительный дух и Теневую душу роем трем.",
+        "maps": [
+          {
+            "label": "Тремогнездо · место получения",
+            "url": "embedded:locations/Mapshot_HK_Flukemarm_01.jpg",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-10",
+        "title": "Герб Защитника",
+        "location": "Навозный защитник",
+        "icon": "",
+        "charmId": 10,
+        "effect": "Создаёт вокруг Рыцаря облако, наносящее урон врагам.",
+        "maps": [
+          {
+            "label": "Герб Защитника · место получения",
+            "url": "embedded:locations/Mapshot_HK_Dung_Defender_01.jpg",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-22",
+        "title": "Пылающее чрево",
+        "location": "Перепутье; нужно Кристальное сердце",
+        "icon": "",
+        "charmId": 22,
+        "effect": "Расходует ДУШУ, создавая летающих детёнышей, атакующих врагов.",
+        "maps": [
+          {
+            "label": "Пылающее чрево · место получения",
+            "url": "embedded:locations/Mapshot_HK_Glowing_Womb.jpg",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-7",
+        "title": "Быстрый фокус",
+        "location": "Салюбра",
+        "icon": "",
+        "charmId": 7,
+        "effect": "Ускоряет лечение фокусированием.",
+        "maps": [
+          {
+            "label": "Быстрый фокус · место получения",
+            "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-34",
+        "title": "Глубокий фокус",
+        "location": "Кристальный пик",
+        "icon": "",
+        "charmId": 34,
+        "effect": "Лечит две маски за одно фокусирование, но замедляет его.",
+        "maps": [
+          {
+            "label": "Глубокий фокус · место получения",
+            "url": "embedded:locations/Mapshot_HK_Deep_Focus.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-8",
+        "title": "Живительное сердце",
+        "location": "Салюбра",
+        "icon": "",
+        "charmId": 8,
+        "effect": "Даёт две синие маски после отдыха на скамье.",
+        "maps": [
+          {
+            "label": "Живительное сердце · место получения",
+            "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-9",
+        "title": "Живительное ядро",
+        "location": "Дверь с синими огнями в Бездне",
+        "icon": "",
+        "charmId": 9,
+        "effect": "Даёт четыре синие маски после отдыха на скамье.",
+        "maps": [
+          {
+            "label": "Живительное ядро · место получения",
+            "url": "embedded:locations/Mapshot_HK_Lifeblood_Core.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-27",
+        "title": "Благословение Джони",
+        "location": "Покой Джони на Воющих утёсах",
+        "icon": "",
+        "charmId": 27,
+        "effect": "Заменяет обычное здоровье увеличенным запасом синих масок; обычное лечение недоступно.",
+        "maps": [
+          {
+            "label": "Благословение Джони · место получения",
+            "url": "embedded:locations/Mapshot_HK_Joni_01.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-29",
+        "title": "Кровь Улья",
+        "location": "За Рыцарем улья; пропустить в B/C",
+        "icon": "",
+        "charmId": 29,
+        "effect": "Со временем восстанавливает последнюю потерянную маску, если не получать новый урон.",
+        "maps": [
+          {
+            "label": "Кровь Улья · место получения",
+            "url": "embedded:locations/studio-af7854c0bb8687feb09f627b3d7c1bc3aa170f5df7e2d181d420029acb2dc2d9.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-17",
+        "title": "Споровый гриб",
+        "location": "Запад Грибных пустошей",
+        "icon": "",
+        "charmId": 17,
+        "effect": "После лечения создаёт облако спор, наносящее урон; позволяет понимать Господина Гриба.",
+        "maps": [
+          {
+            "label": "Споровый гриб · место получения",
+            "url": "embedded:locations/Mapshot_HK_Spore_Shroom.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-16",
+        "title": "Пронизывающая тень",
+        "location": "Глубинное гнездо; Теневая накидка",
+        "icon": "",
+        "charmId": 16,
+        "effect": "Теневой рывок наносит урон врагам и становится длиннее.",
+        "maps": [
+          {
+            "label": "Пронизывающая тень · место получения",
+            "url": "embedded:locations/Mapshot_HK_Sharp_Shadow.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-28",
+        "title": "Облик Унн",
+        "location": "Озеро Унн; Слеза Измы",
+        "icon": "",
+        "charmId": 28,
+        "effect": "Позволяет двигаться во время лечения.",
+        "maps": [
+          {
+            "label": "Облик Унн · место получения",
+            "url": "embedded:locations/Mapshot_HK_Unn_01.jpg",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-26",
+        "title": "Ореол Мастера гвоздя",
+        "location": "Слай после всех трёх искусств гвоздя",
+        "icon": "",
+        "charmId": 26,
+        "effect": "Ускоряет зарядку искусств гвоздя.",
+        "maps": [
+          {
+            "label": "Ореол Мастера гвоздя · место получения",
+            "url": "embedded:locations/Mapshot_HK_Sly_02.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-39",
+        "title": "Песнь Ткача",
+        "location": "Логово ткачей, Глубинное гнездо",
+        "icon": "",
+        "charmId": 39,
+        "effect": "Призывает маленьких ткачей, атакующих врагов.",
+        "maps": [
+          {
+            "label": "Песнь Ткача · место получения",
+            "url": "embedded:locations/Mapshot_HK_Weavers_Den.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-30",
+        "title": "Повелитель грез",
+        "location": "Провидица: 500 эссенции",
+        "icon": "",
+        "charmId": 30,
+        "effect": "Ускоряет Гвоздь грёз и увеличивает получаемую от него ДУШУ.",
+        "maps": [
+          {
+            "label": "Повелитель грез · место получения",
+            "url": "embedded:locations/Mapshot_HK_Seer_01.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-38",
+        "title": "Щит Грез",
+        "location": "Под домом Провидицы",
+        "icon": "",
+        "charmId": 38,
+        "effect": "Призывает вращающийся щит, способный блокировать снаряды и задевать врагов.",
+        "maps": [
+          {
+            "label": "Щит Грез · место получения",
+            "url": "embedded:locations/Mapshot_HK_Dreamshield.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-40",
+        "title": "Мрачное дитя / Беспечная песнь",
+        "location": "Гримм / Нимм после изгнания",
+        "icon": "",
+        "charmId": 40,
+        "effect": "Мрачное дитя атакует врагов после развития. Беспечная песнь вместо него даёт шанс избежать урона.",
+        "maps": [
+          {
+            "label": "Мрачное дитя · место получения",
+            "url": "embedded:locations/Mapshot_HK_Brumm_01.png",
+            "wide": true
+          },
+          {
+            "label": "Беспечная песнь · место получения",
+            "url": "embedded:locations/Mapshot_HK_Nymm_01.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "charm-36",
+        "title": "Душа Короля / Сердце пустоты",
+        "location": "Белая леди + Дворец / Бездна; пропустить в B/C",
+        "icon": "",
+        "charmId": 36,
+        "effect": "Душа Короля постепенно восполняет ДУШУ. Сердце пустоты заменяет её, объединяет Пустоту и открывает дальнейшие концовки.",
+        "maps": [
+          {
+            "label": "Душа Короля · место получения",
+            "url": "embedded:locations/Mapshot_HK_White_Lady_01.png",
+            "wide": true
+          },
+          {
+            "label": "Душа Короля · место получения",
+            "url": "embedded:locations/Mapshot_HK_Kingsoul_01.png",
+            "wide": true
+          },
+          {
+            "label": "Сердце пустоты · место получения",
+            "url": "embedded:locations/Mapshot_HK_Birthplace.png",
+            "wide": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "grubs",
+    "title": "Гусеницы",
+    "summary": "46 гусениц. На карте каждой карточки отмечено место поиска. Награды забирай у Отца гусеничек.",
+    "items": [
+      {
+        "id": "grub-1",
+        "title": "Гусеничка · Перепутье · 1",
+        "location": "Гусеничка · Перепутье · 1",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Перепутье · 1",
+            "url": "embedded:locations/Grub_Forgotten_Crossroads_Location_1.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-2",
+        "title": "Гусеничка · Перепутье · 2",
+        "location": "Гусеничка · Перепутье · 2",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Перепутье · 2",
+            "url": "embedded:locations/Grub_Forgotten_Crossroads_Location_2.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-3",
+        "title": "Гусеничка · Перепутье · 3",
+        "location": "Гусеничка · Перепутье · 3",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Перепутье · 3",
+            "url": "embedded:locations/Grub_Forgotten_Crossroads_Location_3.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-4",
+        "title": "Гусеничка · Перепутье · 4",
+        "location": "Гусеничка · Перепутье · 4",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Перепутье · 4",
+            "url": "embedded:locations/Grub_Forgotten_Crossroads_Location_4.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-5",
+        "title": "Гусеничка · Перепутье · 5",
+        "location": "Гусеничка · Перепутье · 5",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Перепутье · 5",
+            "url": "embedded:locations/Grub_Forgotten_Crossroads_Location_5.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-6",
+        "title": "Гусеничка · Зелёная тропа · 1",
+        "location": "Гусеничка · Зелёная тропа · 1",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Зелёная тропа · 1",
+            "url": "embedded:locations/Grub_Greenpath_Location_1.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-7",
+        "title": "Гусеничка · Зелёная тропа · 2",
+        "location": "Гусеничка · Зелёная тропа · 2",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Зелёная тропа · 2",
+            "url": "embedded:locations/Grub_Greenpath_Location_2.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-8",
+        "title": "Гусеничка · Зелёная тропа · 3",
+        "location": "Гусеничка · Зелёная тропа · 3",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Зелёная тропа · 3",
+            "url": "embedded:locations/Grub_Greenpath_Location_3.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-9",
+        "title": "Гусеничка · Воющие утёсы · 4",
+        "location": "Гусеничка · Воющие утёсы · 4",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Воющие утёсы · 4",
+            "url": "embedded:locations/Grub_Greenpath_Location_4.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-10",
+        "title": "Гусеничка · Зелёная тропа · 5",
+        "location": "Гусеничка · Зелёная тропа · 5",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Зелёная тропа · 5",
+            "url": "embedded:locations/Grub_Greenpath_Location_5.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-11",
+        "title": "Гусеничка · Грибные пустоши · 1",
+        "location": "Гусеничка · Грибные пустоши · 1",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Грибные пустоши · 1",
+            "url": "embedded:locations/Grub_Fungal_Wastes_Location_1.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-12",
+        "title": "Гусеничка · Грибные пустоши · 2",
+        "location": "Гусеничка · Грибные пустоши · 2",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Грибные пустоши · 2",
+            "url": "embedded:locations/Grub_Fungal_Wastes_Location_2.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-13",
+        "title": "Гусеничка · Город слёз · 1",
+        "location": "Гусеничка · Город слёз · 1",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Город слёз · 1",
+            "url": "embedded:locations/Grub_City_of_Tears_Location_1.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-14",
+        "title": "Гусеничка · Город слёз · 2",
+        "location": "Гусеничка · Город слёз · 2",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Город слёз · 2",
+            "url": "embedded:locations/Grub_City_of_Tears_Location_2.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-15",
+        "title": "Гусеничка · Город слёз · 3",
+        "location": "Гусеничка · Город слёз · 3",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Город слёз · 3",
+            "url": "embedded:locations/Grub_City_of_Tears_Location_3.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-16",
+        "title": "Гусеничка · Город слёз · 4",
+        "location": "Гусеничка · Город слёз · 4",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Город слёз · 4",
+            "url": "embedded:locations/Grub_City_of_Tears_Location_4.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-17",
+        "title": "Гусеничка · Город слёз · 5",
+        "location": "Гусеничка · Город слёз · 5",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Город слёз · 5",
+            "url": "embedded:locations/Grub_City_of_Tears_Location_5.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-18",
+        "title": "Гусеничка · Кристальный пик · 1",
+        "location": "Гусеничка · Кристальный пик · 1",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Кристальный пик · 1",
+            "url": "embedded:locations/Grub_Crystal_Peak_Location_1.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-19",
+        "title": "Гусеничка · Кристальный пик · 2",
+        "location": "Гусеничка · Кристальный пик · 2",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Кристальный пик · 2",
+            "url": "embedded:locations/Grub_Crystal_Peak_Location_2.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-20",
+        "title": "Гусеничка · Кристальный пик · 3",
+        "location": "Гусеничка · Кристальный пик · 3",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Кристальный пик · 3",
+            "url": "embedded:locations/Grub_Crystal_Peak_Location_3.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-21",
+        "title": "Гусеничка · Кристальный пик · 4",
+        "location": "Гусеничка · Кристальный пик · 4",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Кристальный пик · 4",
+            "url": "embedded:locations/Grub_Crystal_Peak_Location_4.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-22",
+        "title": "Гусеничка · Кристальный пик · 5",
+        "location": "Гусеничка · Кристальный пик · 5",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Кристальный пик · 5",
+            "url": "embedded:locations/Grub_Crystal_Peak_Location_5.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-23",
+        "title": "Гусеничка · Кристальный пик · 6",
+        "location": "Гусеничка · Кристальный пик · 6",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Кристальный пик · 6",
+            "url": "embedded:locations/Grub_Crystal_Peak_Location_6.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-24",
+        "title": "Гусеничка · Кристальный пик · 7",
+        "location": "Гусеничка · Кристальный пик · 7",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Кристальный пик · 7",
+            "url": "embedded:locations/Grub_Crystal_Peak_Location_7.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-25",
+        "title": "Гусеничка · Земли упокоения · 1",
+        "location": "Гусеничка · Земли упокоения · 1",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Земли упокоения · 1",
+            "url": "embedded:locations/Grub_Resting_Grounds_Location_1.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-26",
+        "title": "Гусеничка · Королевские стоки · 1",
+        "location": "Гусеничка · Королевские стоки · 1",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Королевские стоки · 1",
+            "url": "embedded:locations/Grub_Royal_Waterways_Location_1.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-27",
+        "title": "Гусеничка · Королевские стоки · 2",
+        "location": "Гусеничка · Королевские стоки · 2",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Королевские стоки · 2",
+            "url": "embedded:locations/Grub_Royal_Waterways_Location_2.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-28",
+        "title": "Гусеничка · Королевские стоки · 3",
+        "location": "Гусеничка · Королевские стоки · 3",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Королевские стоки · 3",
+            "url": "embedded:locations/Grub_Royal_Waterways_Location_3.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-29",
+        "title": "Гусеничка · Край королевства · 1",
+        "location": "Гусеничка · Край королевства · 1",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Край королевства · 1",
+            "url": "embedded:locations/Grub_Kingdom's_Edge_Location_1.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-30",
+        "title": "Гусеничка · Край королевства · 2",
+        "location": "Гусеничка · Край королевства · 2",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Край королевства · 2",
+            "url": "embedded:locations/Grub_Kingdom's_Edge_Location_2.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-31",
+        "title": "Гусеничка · Туманный каньон · 1",
+        "location": "Гусеничка · Туманный каньон · 1",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Туманный каньон · 1",
+            "url": "embedded:locations/Grub_Fog_Canyon_Location_1.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-32",
+        "title": "Гусеничка · Сады королевы · 1",
+        "location": "Гусеничка · Сады королевы · 1",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Сады королевы · 1",
+            "url": "embedded:locations/Grub_Queen's_Gardens_Location_1.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-33",
+        "title": "Гусеничка · Сады королевы · 2",
+        "location": "Гусеничка · Сады королевы · 2",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Сады королевы · 2",
+            "url": "embedded:locations/Grub_Queen's_Gardens_Location_2.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-34",
+        "title": "Гусеничка · Сады королевы · 3",
+        "location": "Гусеничка · Сады королевы · 3",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Сады королевы · 3",
+            "url": "embedded:locations/Grub_Queen's_Gardens_Location_3.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-35",
+        "title": "Гусеничка · Глубинное гнездо · 1",
+        "location": "Гусеничка · Глубинное гнездо · 1",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Глубинное гнездо · 1",
+            "url": "embedded:locations/Grub_Deepnest_Location_1.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-36",
+        "title": "Гусеничка · Глубинное гнездо · 2",
+        "location": "Гусеничка · Глубинное гнездо · 2",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Глубинное гнездо · 2",
+            "url": "embedded:locations/Grub_Deepnest_Location_2.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-37",
+        "title": "Гусеничка · Глубинное гнездо · 3",
+        "location": "Гусеничка · Глубинное гнездо · 3",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Глубинное гнездо · 3",
+            "url": "embedded:locations/Grub_Deepnest_Location_3.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-38",
+        "title": "Гусеничка · Глубинное гнездо · 4",
+        "location": "Гусеничка · Глубинное гнездо · 4",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Глубинное гнездо · 4",
+            "url": "embedded:locations/Grub_Deepnest_Location_4.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-39",
+        "title": "Гусеничка · Глубинное гнездо · 5",
+        "location": "Гусеничка · Глубинное гнездо · 5",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Глубинное гнездо · 5",
+            "url": "embedded:locations/Grub_Deepnest_Location_5.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-40",
+        "title": "Гусеничка · Древний котлован · 1",
+        "location": "Гусеничка · Древний котлован · 1",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Древний котлован · 1",
+            "url": "embedded:locations/Grub_Ancient_Basin_Location_1.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-41",
+        "title": "Гусеничка · Древний котлован · 2",
+        "location": "Гусеничка · Древний котлован · 2",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Древний котлован · 2",
+            "url": "embedded:locations/Grub_Ancient_Basin_Location_2.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-42",
+        "title": "Гусеничка · Улей · 1",
+        "location": "Гусеничка · Улей · 1",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Улей · 1",
+            "url": "embedded:locations/Grub_Hive_Location_1.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-43",
+        "title": "Гусеничка · Улей · 2",
+        "location": "Гусеничка · Улей · 2",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Улей · 2",
+            "url": "embedded:locations/Grub_Hive_Location_2.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-44",
+        "title": "Гусеничка · Башня любви · 1",
+        "location": "Гусеничка · Башня любви · 1",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Башня любви · 1",
+            "url": "embedded:locations/Grub_Tower_of_Love_Location_1.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-45",
+        "title": "Гусеничка · Башня любви · 2",
+        "location": "Гусеничка · Башня любви · 2",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Башня любви · 2",
+            "url": "embedded:locations/Grub_Tower_of_Love_Location_2.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "grub-46",
+        "title": "Гусеничка · Башня любви · 3",
+        "location": "Гусеничка · Башня любви · 3",
+        "icon": "embedded:locations/studio-3d6157b8caff922588dc0b1c678950cbe791e81e95069e99b36d516083fe29b1.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Гусеничка · Башня любви · 3",
+            "url": "embedded:locations/Grub_Tower_of_Love_Location_3.png",
+            "wide": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "masks",
+    "title": "Осколки маски",
+    "summary": "Для маршрута A собери все 16 осколков. Четыре осколка дают одну маску и 1%. Пометкой B/C выделен набор из 12 осколков для 100%.\n\nДостижения: Защищенный после 4 осколков, Замаскированный после 16. Покупки у Слая и выдачу наград у персонаж нужно действительно забрать, одного выполненного условия недостаточно.",
+    "items": [
+      {
+        "id": "mask-1",
+        "title": "Осколок маски 01",
+        "location": "Слай: 150 гео. · набор B/C",
+        "icon": "embedded:locations/studio-46ef6038d19acfc68344b0baee5a9cec3e06a79bc40bb678b1827a41c423bf0b.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Слай · четыре покупки",
+            "url": "embedded:locations/Mapshot_HK_Sly_02.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "mask-2",
+        "title": "Осколок маски 02",
+        "location": "Слай: 500 гео, после предыдущего. · набор B/C",
+        "icon": "embedded:locations/studio-46ef6038d19acfc68344b0baee5a9cec3e06a79bc40bb678b1827a41c423bf0b.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Слай · четыре покупки",
+            "url": "embedded:locations/Mapshot_HK_Sly_02.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "mask-3",
+        "title": "Осколок маски 03",
+        "location": "Слай: 800 гео; принести Ключ лавочника. · набор B/C",
+        "icon": "embedded:locations/studio-46ef6038d19acfc68344b0baee5a9cec3e06a79bc40bb678b1827a41c423bf0b.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Слай · четыре покупки",
+            "url": "embedded:locations/Mapshot_HK_Sly_02.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "mask-4",
+        "title": "Осколок маски 04",
+        "location": "Слай: 1500 гео, после предыдущего. · набор B/C",
+        "icon": "embedded:locations/studio-46ef6038d19acfc68344b0baee5a9cec3e06a79bc40bb678b1827a41c423bf0b.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Слай · четыре покупки",
+            "url": "embedded:locations/Mapshot_HK_Sly_02.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "mask-5",
+        "title": "Осколок маски 05",
+        "location": "Чревень (Задумчивый чревень), запад Перепутья. · набор B/C",
+        "icon": "embedded:locations/studio-46ef6038d19acfc68344b0baee5a9cec3e06a79bc40bb678b1827a41c423bf0b.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Задумчивый чревень",
+            "url": "embedded:locations/Mapshot_HK_Brooding_Mawlek_01.jpg",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "mask-6",
+        "title": "Осколок маски 06",
+        "location": "Отец гусеничек: спасти 5 гусеничек. · набор B/C",
+        "icon": "embedded:locations/studio-46ef6038d19acfc68344b0baee5a9cec3e06a79bc40bb678b1827a41c423bf0b.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Отец гусеничек",
+            "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "mask-7",
+        "title": "Осколок маски 07",
+        "location": "Перепутье: проход с Жрун южнее Ложного рыцаря. · набор B/C",
+        "icon": "embedded:locations/studio-46ef6038d19acfc68344b0baee5a9cec3e06a79bc40bb678b1827a41c423bf0b.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Перепутье · южнее Ложного рыцаря",
+            "url": "embedded:locations/Mapshot_HK_Mask_Shard_03.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "mask-8",
+        "title": "Осколок маски 08",
+        "location": "Правая часть Станции королевы; нужна Клешня. · набор B/C",
+        "icon": "embedded:locations/studio-46ef6038d19acfc68344b0baee5a9cec3e06a79bc40bb678b1827a41c423bf0b.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Станция королевы",
+            "url": "embedded:locations/Mapshot_HK_Mask_Shard_04.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "mask-9",
+        "title": "Осколок маски 09",
+        "location": "Дом Бретты в Грязьмуте после её спасения. · набор B/C",
+        "icon": "embedded:locations/studio-46ef6038d19acfc68344b0baee5a9cec3e06a79bc40bb678b1827a41c423bf0b.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Дом Бретты",
+            "url": "embedded:locations/Mapshot_HK_Zote_02.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "mask-10",
+        "title": "Осколок маски 10",
+        "location": "Каменное святилище на Зелёной тропе; взять фонарь. · набор B/C",
+        "icon": "embedded:locations/studio-46ef6038d19acfc68344b0baee5a9cec3e06a79bc40bb678b1827a41c423bf0b.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Каменное святилище",
+            "url": "embedded:locations/Mapshot_HK_No_Eyes_01.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "mask-11",
+        "title": "Осколок маски 11",
+        "location": "Северо-запад Королевских стоков, проплыть под основным путём влево. · набор B/C",
+        "icon": "embedded:locations/studio-46ef6038d19acfc68344b0baee5a9cec3e06a79bc40bb678b1827a41c423bf0b.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Королевские стоки",
+            "url": "embedded:locations/Mapshot_HK_Mask_Shard_07.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "mask-12",
+        "title": "Осколок маски 12",
+        "location": "Глубинное гнездо через Грибное ядро; нужны Крылья.",
+        "icon": "embedded:locations/studio-46ef6038d19acfc68344b0baee5a9cec3e06a79bc40bb678b1827a41c423bf0b.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Глубинное гнездо",
+            "url": "embedded:locations/Mapshot_HK_Mask_Shard_08.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "mask-13",
+        "title": "Осколок маски 13",
+        "location": "Победа над Яростным стражем на Кристальном пике.",
+        "icon": "embedded:locations/studio-46ef6038d19acfc68344b0baee5a9cec3e06a79bc40bb678b1827a41c423bf0b.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Разъярённый страж",
+            "url": "embedded:locations/Mapshot_HK_Mask_Shard_09.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "mask-14",
+        "title": "Осколок маски 14",
+        "location": "Улей: заманить большого стража в разрушаемую стену.",
+        "icon": "embedded:locations/studio-46ef6038d19acfc68344b0baee5a9cec3e06a79bc40bb678b1827a41c423bf0b.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Улей",
+            "url": "embedded:locations/Mapshot_HK_Mask_Shard_10.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "mask-15",
+        "title": "Осколок маски 15",
+        "location": "Провидица: 1500 эссенции. · набор B/C",
+        "icon": "embedded:locations/studio-46ef6038d19acfc68344b0baee5a9cec3e06a79bc40bb678b1827a41c423bf0b.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Провидица · 1500 эссенции",
+            "url": "embedded:locations/Mapshot_HK_Seer_01.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "mask-16",
+        "title": "Осколок маски 16",
+        "location": "Серая плакальщица: завершить доставку цветка.",
+        "icon": "embedded:locations/studio-46ef6038d19acfc68344b0baee5a9cec3e06a79bc40bb678b1827a41c423bf0b.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Нежный цветок",
+            "url": "embedded:locations/Mapshot_HK_Grey_Mourner_01.png",
+            "wide": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "vessels",
+    "title": "Черепки сосуда",
+    "summary": "Для A — все 9. Для B/C — номера 1–5 и 8. Три черепка образуют один сосуд.",
+    "items": [
+      {
+        "id": "vessel-1",
+        "title": "Черепок сосуда 01",
+        "location": "Слай: 550 гео.",
+        "icon": "embedded:locations/studio-16a2720bae6a817d9a2decc490b10011d3d43b1ee29bd378443751e18998c32c.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Слай · две покупки",
+            "url": "embedded:locations/Mapshot_HK_Sly_02.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "vessel-2",
+        "title": "Черепок сосуда 02",
+        "location": "Слай: 900 гео после Ключа лавочника.",
+        "icon": "embedded:locations/studio-16a2720bae6a817d9a2decc490b10011d3d43b1ee29bd378443751e18998c32c.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Слай · две покупки",
+            "url": "embedded:locations/Mapshot_HK_Sly_02.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "vessel-3",
+        "title": "Черепок сосуда 03",
+        "location": "Зелёная тропа: рядом с закрытым проходом к Садам королевы.",
+        "icon": "embedded:locations/studio-16a2720bae6a817d9a2decc490b10011d3d43b1ee29bd378443751e18998c32c.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Зелёная тропа",
+            "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_02.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "vessel-4",
+        "title": "Черепок сосуда 04",
+        "location": "Перепутье: слева от лифта, который открывается из Города слёз.",
+        "icon": "embedded:locations/studio-16a2720bae6a817d9a2decc490b10011d3d43b1ee29bd378443751e18998c32c.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Перепутье",
+            "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_03.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "vessel-5",
+        "title": "Черепок сосуда 05",
+        "location": "Город слёз: над Королевской станцией рядом с лифтом.",
+        "icon": "embedded:locations/studio-16a2720bae6a817d9a2decc490b10011d3d43b1ee29bd378443751e18998c32c.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Город слёз",
+            "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_04.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "vessel-6",
+        "title": "Черепок сосуда 06",
+        "location": "Глубинное гнездо: над действующей трамвайной линией.",
+        "icon": "embedded:locations/studio-16a2720bae6a817d9a2decc490b10011d3d43b1ee29bd378443751e18998c32c.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Глубинное гнездо",
+            "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_05.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "vessel-7",
+        "title": "Черепок сосуда 07",
+        "location": "Гнездо рогачей: в начале области.",
+        "icon": "embedded:locations/studio-16a2720bae6a817d9a2decc490b10011d3d43b1ee29bd378443751e18998c32c.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Воющие утёсы",
+            "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_06.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "vessel-8",
+        "title": "Черепок сосуда 08",
+        "location": "Провидица: 700 эссенции.",
+        "icon": "embedded:locations/studio-16a2720bae6a817d9a2decc490b10011d3d43b1ee29bd378443751e18998c32c.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Провидица · 700 эссенции",
+            "url": "embedded:locations/Mapshot_HK_Seer_01.png",
+            "wide": true
+          }
+        ]
+      },
+      {
+        "id": "vessel-9",
+        "title": "Черепок сосуда 09",
+        "location": "Фонтан Древнего котлована: пожертвовать суммарно 3000 гео.",
+        "icon": "embedded:locations/studio-16a2720bae6a817d9a2decc490b10011d3d43b1ee29bd378443751e18998c32c.png",
+        "charmId": 0,
+        "effect": "",
+        "maps": [
+          {
+            "label": "Фонтан Древнего котлована",
+            "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_08.png",
+            "wide": true
+          }
+        ]
+      }
+    ]
+  }
+]

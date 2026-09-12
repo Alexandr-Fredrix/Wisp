@@ -10,7 +10,7 @@ using Wisp.UI;
 using Wisp.Game;
 namespace Wisp
 {
-    [BepInPlugin("com.alexandr-fredrix.wisp", "Wisp", "1.0.1")]
+    [BepInPlugin("com.alexandr-fredrix.wisp", "Wisp", "1.1.0")]
     public sealed class WispMod : BaseUnityPlugin
     {
         internal static WispMod Instance;
@@ -40,7 +40,7 @@ namespace Wisp
             guide.Initialize(this, Catalog.Load());
             patches = new Harmony("com.alexandr-fredrix.wisp");
             patches.PatchAll(typeof(WispMod).Assembly);
-            Logger.LogInfo("Wisp 1.0.1 / Unity 6. F8 or both sticks opens the guide. No input backend changes.");
+            Logger.LogInfo("Wisp 1.1.0 / Unity 6. F8 or both sticks opens the guide. No input backend changes.");
         }
         private T Read<T>(string path) where T : class
         {

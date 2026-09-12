@@ -27,7 +27,7 @@ def package(dll):
         'target_game': '1.5.12620',
         'loader': 'BepInEx 5.4.23.5 x64',
         'runtime_tested': False,
-        'status': 'Pre-release 1.0.1. Version 1.0.0 remains the main release. Automated checks recorded in VALIDATION.json; game and controller testing pending.',
+        'status': 'Release ' + version + '. Automated checks passed; a complete in-game/controller pass remains pending.',
         'base_commit': manifest['base_commit'],
         'languages': ['ru', 'en'],
         'dll_sha256': hashlib.sha256(dll.read_bytes()).hexdigest(),
@@ -35,10 +35,9 @@ def package(dll):
     with zipfile.ZipFile(target, 'w', zipfile.ZIP_DEFLATED) as archive:
         archive.write(dll, 'BepInEx/plugins/Wisp/Wisp.dll')
         for name in ['LICENSE', 'THIRD_PARTY_NOTICES.md', 'docs/INSTALL.md']:
-            archive.write(ROOT / name, pathlib.Path(name).name)
-        archive.writestr('BUILD-STATUS.json', json.dumps(notice, indent=2) + '\n')
-        archive.writestr('VALIDATION.json', json.dumps(evidence, indent=2) + '\n')
-        archive.writestr('BUILD-MANIFEST.json', json.dumps(manifest, indent=2) + '\n')
+            archive.write(ROOT / name, 'BepInEx/plugins/Wisp/' + pathlib.Path(name).name)
+        archive.write(ROOT/'content/ui/JetBrainsMono-OFL.txt', 'BepInEx/plugins/Wisp/JetBrainsMono-OFL.txt')
+    (output / f'Wisp-{version}-validation.json').write_text(json.dumps({'build':notice,'validation':evidence},indent=2)+'\n',encoding='utf-8')
     (output / (target.name + '.sha256')).write_text(hashlib.sha256(target.read_bytes()).hexdigest() + '  ' + target.name + '\n', encoding='utf-8')
     print(target)
     return target

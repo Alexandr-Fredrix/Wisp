@@ -1,0 +1,2646 @@
+{
+  "date": "2026-09-12",
+  "rule": "!ReferenceOnly || Id.EndsWith(\"-guide\", StringComparison.Ordinal)",
+  "source": "src/Wisp/Core/RouteView.cs:9",
+  "before": 300,
+  "after": 213,
+  "removed": [
+    {
+      "goal": "112",
+      "chapter": "pdf-a1",
+      "id": "pdf-a1-instruction-1",
+      "marker": "112/pdf-a1/pdf-a1-instruction-1",
+      "title": "Спустись в колодец",
+      "coverage": [
+        "pdf-a1-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a1-instruction-1",
+        "title": "Спустись в колодец",
+        "body": "Спустись в колодец. Найди Корнифера, купи карту; у Изельды в Грязьмуте возьми перо и компас, когда откроется магазин. Открывай станции рогача по ходу движения.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a1",
+      "id": "pdf-a1-instruction-2",
+      "marker": "112/pdf-a1/pdf-a1-instruction-2",
+      "title": "Исследуй нижнюю правую часть Перепутья: победи Матку жужж и поговори со Слаем в домике",
+      "coverage": [
+        "pdf-a1-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a1-instruction-2",
+        "title": "Исследуй нижнюю правую часть Перепутья: победи Матку жужж и поговори со Слаем в домике",
+        "body": "Исследуй нижнюю правую часть Перепутья: победи Матку жужж и поговори со Слаем в домике. После спасения он станет продавцом в Грязьмуте.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a1",
+      "id": "pdf-a1-instruction-3",
+      "marker": "112/pdf-a1/pdf-a1-instruction-3",
+      "title": "Победи Ложного рыцаря, забери Городской герб и гео",
+      "coverage": [
+        "pdf-a1-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a1-instruction-3",
+        "title": "Победи Ложного рыцаря, забери Городской герб и гео",
+        "body": "Победи Ложного рыцаря, забери Городской герб и гео. Достижение: Фальшь. Не используй выход из боя, если босс ещё не побеждён.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a1",
+      "id": "pdf-a1-instruction-4",
+      "marker": "112/pdf-a1/pdf-a1-instruction-4",
+      "title": "Пройди Родовой курган и получи Мстительный дух",
+      "coverage": [
+        "pdf-a1-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a1-instruction-4",
+        "title": "Пройди Родовой курган и получи Мстительный дух",
+        "body": "Пройди Родовой курган и получи Мстительный дух. Забери Ловца душ (Ловец душ). Первый амулет откроет Волшебный.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a1",
+      "id": "pdf-a1-instruction-5",
+      "marker": "112/pdf-a1/pdf-a1-instruction-5",
+      "title": "Освобождай доступных гусеничек",
+      "coverage": [
+        "pdf-a1-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a1-instruction-5",
+        "title": "Освобождай доступных гусеничек",
+        "body": "Освобождай доступных гусеничек. Возвращайся к Отцу гусеничек за наградами; они помогают оплачивать снаряжение. Непроходимые места помечай на карте.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a2",
+      "id": "pdf-a2-instruction-1",
+      "marker": "112/pdf-a2/pdf-a2-instruction-1",
+      "title": "Открой западный проход из Перепутья: стреляй Мстительным духом в закрывающего путь…",
+      "coverage": [
+        "pdf-a2-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a2-instruction-1",
+        "title": "Открой западный проход из Перепутья: стреляй Мстительным духом в закрывающего путь…",
+        "body": "Открой западный проход из Перепутья: стреляй Мстительным духом в закрывающего путь старшего балдура, когда он раскрывается.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "greenpath",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a2",
+      "id": "pdf-a2-instruction-2",
+      "marker": "112/pdf-a2/pdf-a2-instruction-2",
+      "title": "Сразу спаси Зота в верхней части Зелёной тропы",
+      "coverage": [
+        "pdf-a2-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a2-instruction-2",
+        "title": "Сразу спаси Зота в верхней части Зелёной тропы",
+        "body": "Сразу спаси Зота в верхней части Зелёной тропы. Победи удерживающего его Короля мстекрылов. Этот шаг должен предшествовать Клешне богомола.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "greenpath",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a2",
+      "id": "pdf-a2-instruction-3",
+      "marker": "112/pdf-a2/pdf-a2-instruction-3",
+      "title": "Найди Охотника в его пещере и возьми дневник",
+      "coverage": [
+        "pdf-a2-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a2-instruction-3",
+        "title": "Найди Охотника в его пещере и возьми дневник",
+        "body": "Найди Охотника в его пещере и возьми дневник. Убивай встреченные виды врагов; целенаправленный добор записей оставь на поздний этап.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "greenpath",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a2",
+      "id": "pdf-a2-instruction-4",
+      "marker": "112/pdf-a2/pdf-a2-instruction-4",
+      "title": "Победи Хорнет, забери Накидку мотылька (Накидка мотылька)",
+      "coverage": [
+        "pdf-a2-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a2-instruction-4",
+        "title": "Победи Хорнет, забери Накидку мотылька (Накидка мотылька)",
+        "body": "Победи Хорнет, забери Накидку мотылька (Накидка мотылька). Откроется Испытание решительности. Активируй местную станцию.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "greenpath",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a2",
+      "id": "pdf-a2-instruction-5",
+      "marker": "112/pdf-a2/pdf-a2-instruction-5",
+      "title": "Двигайся на юг через Туманный каньон к Станции королевы",
+      "coverage": [
+        "pdf-a2-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a2-instruction-5",
+        "title": "Двигайся на юг через Туманный каньон к Станции королевы",
+        "body": "Двигайся на юг через Туманный каньон к Станции королевы. Пока просто пройди каньон: недоступного Корнифера и закрытые проходы оставь на потом.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "greenpath",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a3",
+      "id": "pdf-a3-instruction-1",
+      "marker": "112/pdf-a3/pdf-a3-instruction-1",
+      "title": "От Станции королевы войди в Грибные пустоши",
+      "coverage": [
+        "pdf-a3-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a3-instruction-1",
+        "title": "От Станции королевы войди в Грибные пустоши",
+        "body": "От Станции королевы войди в Грибные пустоши. По пути забери дополнительную ячейку амулетов после двух грибных великанов.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "fungal",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a3",
+      "id": "pdf-a3-instruction-2",
+      "marker": "112/pdf-a3/pdf-a3-instruction-2",
+      "title": "Найди Пожирателя ног",
+      "coverage": [
+        "pdf-a3-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a3-instruction-2",
+        "title": "Найди Пожирателя ног",
+        "body": "Найди Пожирателя ног. Купи Хрупкую силу, когда позволяют деньги; при смерти вне безопасного сна её придётся чинить. Для исследования полезен запас здоровья.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "fungal",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a3",
+      "id": "pdf-a3-instruction-3",
+      "marker": "112/pdf-a3/pdf-a3-instruction-3",
+      "title": "В деревне богомолов возьми Клешню богомола (Клешня богомола)",
+      "coverage": [
+        "pdf-a3-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a3-instruction-3",
+        "title": "В деревне богомолов возьми Клешню богомола (Клешня богомола)",
+        "body": "В деревне богомолов возьми Клешню богомола (Клешня богомола). Теперь доступны прыжки от стен и путь в Город слёз.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "fungal",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a3",
+      "id": "pdf-a3-instruction-4",
+      "marker": "112/pdf-a3/pdf-a3-instruction-4",
+      "title": "Спаси Бретту в южной части Пустошей, рядом с областью Трюкач",
+      "coverage": [
+        "pdf-a3-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a3-instruction-4",
+        "title": "Спаси Бретту в южной части Пустошей, рядом с областью Трюкач",
+        "body": "Спаси Бретту в южной части Пустошей, рядом с областью Трюкач. Позже забери осколок маски в её доме в Грязьмуте.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "fungal",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a3",
+      "id": "pdf-a3-instruction-5",
+      "marker": "112/pdf-a3/pdf-a3-instruction-5",
+      "title": "Бой с Лордами богомолов можно выполнить сейчас или после улучшения гвоздя",
+      "coverage": [
+        "pdf-a3-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a3-instruction-5",
+        "title": "Бой с Лордами богомолов можно выполнить сейчас или после улучшения гвоздя",
+        "body": "Бой с Лордами богомолов можно выполнить сейчас или после улучшения гвоздя. Победа даёт Уважение, доступ к Знаку гордости и удобный вход в Глубинное гнездо.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "fungal",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a4",
+      "id": "pdf-a4-instruction-1",
+      "marker": "112/pdf-a4/pdf-a4-instruction-1",
+      "title": "Доберись до городских ворот через восток Грибных пустошей и вставь Городской герб",
+      "coverage": [
+        "pdf-a4-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a4-instruction-1",
+        "title": "Доберись до городских ворот через восток Грибных пустошей и вставь Городской герб",
+        "body": "Доберись до городских ворот через восток Грибных пустошей и вставь Городской герб. В городе сначала открой скамьи, лифты и станцию Городских складов.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "city",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a4",
+      "id": "pdf-a4-instruction-2",
+      "marker": "112/pdf-a4/pdf-a4-instruction-2",
+      "title": "Посети Кузнеца в западной части города: первое улучшение гвоздя стоит 250 гео и не…",
+      "coverage": [
+        "pdf-a4-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a4-instruction-2",
+        "title": "Посети Кузнеца в западной части города: первое улучшение гвоздя стоит 250 гео и не…",
+        "body": "Посети Кузнеца в западной части города: первое улучшение гвоздя стоит 250 гео и не требует руды. С этого момента регулярно возвращайся с новой рудой.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "city",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a4",
+      "id": "pdf-a4-instruction-3",
+      "marker": "112/pdf-a4/pdf-a4-instruction-3",
+      "title": "Найди Лемма",
+      "coverage": [
+        "pdf-a4-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a4-instruction-3",
+        "title": "Найди Лемма",
+        "body": "Найди Лемма. Продавай ему реликвии, когда нужны деньги. Не обязательно продавать сразу всё: реликвии удобны как резерв на покупки.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "city",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a4",
+      "id": "pdf-a4-instruction-4",
+      "marker": "112/pdf-a4/pdf-a4-instruction-4",
+      "title": "В Святилище душ забери Заклинателя (Искажатель заклинаний), победи Мастера душ и получи…",
+      "coverage": [
+        "pdf-a4-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a4-instruction-4",
+        "title": "В Святилище душ забери Заклинателя (Искажатель заклинаний), победи Мастера душ и получи…",
+        "body": "В Святилище душ забери Заклинателя (Искажатель заклинаний), победи Мастера душ и получи Опустошающее пике. Достижение: Просвещение.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "city",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a4",
+      "id": "pdf-a4-instruction-5",
+      "marker": "112/pdf-a4/pdf-a4-instruction-5",
+      "title": "Собери доступные проходы обратно в Перепутье",
+      "coverage": [
+        "pdf-a4-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a4-instruction-5",
+        "title": "Собери доступные проходы обратно в Перепутье",
+        "body": "Собери доступные проходы обратно в Перепутье. Накапливай 1800 гео на Светомуший фонарь у Слая: он заметно упрощает тёмные области.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "city",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a4",
+      "id": "pdf-a4-instruction-6",
+      "marker": "112/pdf-a4/pdf-a4-instruction-6",
+      "title": "Позже принеси Слаю Ключ лавочника с Кристального пика, купи Изящный ключ и открой…",
+      "coverage": [
+        "pdf-a4-guide"
+      ],
+      "reason": "Оборванный дубль; полная фраза в обзоре A4, возврат после A5 явно указан в pdf-shade-soul",
+      "original": {
+        "id": "pdf-a4-instruction-6",
+        "title": "Позже принеси Слаю Ключ лавочника с Кристального пика, купи Изящный ключ и открой…",
+        "body": "Позже принеси Слаю Ключ лавочника с Кристального пика, купи Изящный ключ и открой запертую комнату Святилища. Победи Воина душ и возьми Тень души (Тень",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "city",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a5",
+      "id": "pdf-a5-instruction-1",
+      "marker": "112/pdf-a5/pdf-a5-instruction-1",
+      "title": "Войди на Кристальный пик из Перепутья через разрушаемый пол с помощью пике",
+      "coverage": [
+        "pdf-a5-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a5-instruction-1",
+        "title": "Войди на Кристальный пик из Перепутья через разрушаемый пол с помощью пике",
+        "body": "Войди на Кристальный пик из Перепутья через разрушаемый пол с помощью пике. Фонарь пригодится в тёмных ответвлениях.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crystal",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a5",
+      "id": "pdf-a5-instruction-2",
+      "marker": "112/pdf-a5/pdf-a5-instruction-2",
+      "title": "Найди Ключ лавочника и отнеси Слаю при ближайшем возвращении",
+      "coverage": [
+        "pdf-a5-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a5-instruction-2",
+        "title": "Найди Ключ лавочника и отнеси Слаю при ближайшем возвращении",
+        "body": "Найди Ключ лавочника и отнеси Слаю при ближайшем возвращении. Забери Кристальное сердце: длинный заряжаемый рывок.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crystal",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a5",
+      "id": "pdf-a5-instruction-3",
+      "marker": "112/pdf-a5/pdf-a5-instruction-3",
+      "title": "В Кристаллизованном кургане получи Нисходящую тьму (Нисходящая Тьма)",
+      "coverage": [
+        "pdf-a5-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a5-instruction-3",
+        "title": "В Кристаллизованном кургане получи Нисходящую тьму (Нисходящая Тьма)",
+        "body": "В Кристаллизованном кургане получи Нисходящую тьму (Нисходящая Тьма). Это сильная атака вниз с временной неуязвимостью; потренируй её до сложных боссов.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crystal",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a5",
+      "id": "pdf-a5-instruction-4",
+      "marker": "112/pdf-a5/pdf-a5-instruction-4",
+      "title": "Спустись с восточной стороны Пика в Земли упокоения",
+      "coverage": [
+        "pdf-a5-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a5-instruction-4",
+        "title": "Спустись с восточной стороны Пика в Земли упокоения",
+        "body": "Спустись с восточной стороны Пика в Земли упокоения. Пройди событие у памятника и получи Гвоздь грёз. Открой станцию у Провидицы.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crystal",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a5",
+      "id": "pdf-a5-instruction-5",
+      "marker": "112/pdf-a5/pdf-a5-instruction-5",
+      "title": "Возьми Щит грёз под домом Провидицы",
+      "coverage": [
+        "pdf-a5-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a5-instruction-5",
+        "title": "Возьми Щит грёз под домом Провидицы",
+        "body": "Возьми Щит грёз под домом Провидицы. Побеждай духов-воинов и возвращайся за наградами эссенции. После 300 доступна первая руда от Провидицы.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crystal",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a5",
+      "id": "pdf-a5-instruction-6",
+      "marker": "112/pdf-a5/pdf-a5-instruction-6",
+      "title": "На вершину Пика за рудой у Венца Халлоунеста удобно вернуться после получения Крыльев",
+      "coverage": [
+        "pdf-a5-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a5-instruction-6",
+        "title": "На вершину Пика за рудой у Венца Халлоунеста удобно вернуться после получения Крыльев",
+        "body": "На вершину Пика за рудой у Венца Халлоунеста удобно вернуться после получения Крыльев. Яростного стража тоже оставь до усиления.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crystal",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a6",
+      "id": "pdf-a6-instruction-1",
+      "marker": "112/pdf-a6/pdf-a6-instruction-1",
+      "title": "Открой люк в Городе слёз Простым ключом",
+      "coverage": [
+        "pdf-a6-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a6-instruction-1",
+        "title": "Открой люк в Городе слёз Простым ключом",
+        "body": "Открой люк в Городе слёз Простым ключом. Если ключа нет, проверь Городские склады или магазин Слая. Победи Навозного защитника: Честь.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "basin",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a6",
+      "id": "pdf-a6-instruction-2",
+      "marker": "112/pdf-a6/pdf-a6-instruction-2",
+      "title": "Нажми переключатель после Навозного защитника",
+      "coverage": [
+        "pdf-a6-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a6-instruction-2",
+        "title": "Нажми переключатель после Навозного защитника",
+        "body": "Нажми переключатель после Навозного защитника. С Кристальным сердцем пройди к Роще Измы и возьми Слезу Измы: теперь можно плавать в кислоте.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "basin",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a6",
+      "id": "pdf-a6-instruction-3",
+      "marker": "112/pdf-a6/pdf-a6-instruction-3",
+      "title": "В Древнем котловане забери руду западнее трамвайной станции",
+      "coverage": [
+        "pdf-a6-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a6-instruction-3",
+        "title": "В Древнем котловане забери руду западнее трамвайной станции",
+        "body": "В Древнем котловане забери руду западнее трамвайной станции. При возможности сразу улучши гвоздь.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "basin",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a6",
+      "id": "pdf-a6-instruction-4",
+      "marker": "112/pdf-a6/pdf-a6-instruction-4",
+      "title": "С помощью Кристального сердца доберись до Разбитого сосуда",
+      "coverage": [
+        "pdf-a6-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a6-instruction-4",
+        "title": "С помощью Кристального сердца доберись до Разбитого сосуда",
+        "body": "С помощью Кристального сердца доберись до Разбитого сосуда. Победи его, возьми Крылья монарха (Монаршие крылья): Отпустите.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "basin",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a6",
+      "id": "pdf-a6-instruction-5",
+      "marker": "112/pdf-a6/pdf-a6-instruction-5",
+      "title": "Используй Гвоздь грёз на останках Сосуда, когда будешь готов к Потерянному собрату",
+      "coverage": [
+        "pdf-a6-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a6-instruction-5",
+        "title": "Используй Гвоздь грёз на останках Сосуда, когда будешь готов к Потерянному собрату",
+        "body": "Используй Гвоздь грёз на останках Сосуда, когда будешь готов к Потерянному собрату. Первая победа даст Покой и 400 эссенции. Можно отложить до более сильного гвоздя. После получения Крыльев или снятия печати одного из Грезящих Перепутье заражается. Это обычное развитие мира; достижения и коллекции продолжают быть доступны.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "basin",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a7",
+      "id": "pdf-a7-instruction-1",
+      "marker": "112/pdf-a7/pdf-a7-instruction-1",
+      "title": "С фонарём исследуй Глубинное гнездо",
+      "coverage": [
+        "pdf-a7-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a7-instruction-1",
+        "title": "С фонарём исследуй Глубинное гнездо",
+        "body": "С фонарём исследуй Глубинное гнездо. Если входишь через Лордов богомолов, сначала победи их. Открой горячий источник и станцию Далёкой деревни.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "deepnest",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a7",
+      "id": "pdf-a7-instruction-2",
+      "marker": "112/pdf-a7/pdf-a7-instruction-2",
+      "title": "Освободи Зота из паутины",
+      "coverage": [
+        "pdf-a7-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a7-instruction-2",
+        "title": "Освободи Зота из паутины",
+        "body": "Освободи Зота из паутины. На Заброшенном трамвае возьми Проездной. Победи Носка и забери руду. При необходимости вернись сюда после усиления.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "deepnest",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a7",
+      "id": "pdf-a7-instruction-3",
+      "marker": "112/pdf-a7/pdf-a7-instruction-3",
+      "title": "В Далёкой деревне пройди Логово зверя",
+      "coverage": [
+        "pdf-a7-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a7-instruction-3",
+        "title": "В Далёкой деревне пройди Логово зверя",
+        "body": "В Далёкой деревне пройди Логово зверя. Гвоздём грёз войди к Херре, атакуй её и закончи поглощение фокусом: Зверь.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "deepnest",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a7",
+      "id": "pdf-a7-instruction-4",
+      "marker": "112/pdf-a7/pdf-a7-instruction-4",
+      "title": "Из Королевской станции через скрытый водный проход выйди на Край королевства",
+      "coverage": [
+        "pdf-a7-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a7-instruction-4",
+        "title": "Из Королевской станции через скрытый водный проход выйди на Край королевства",
+        "body": "Из Королевской станции через скрытый водный проход выйди на Край королевства. Поднимись к Хорнет и победи её второй раз: Доказательство решительности. Получи Клеймо короля.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "deepnest",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a7",
+      "id": "pdf-a7-instruction-5",
+      "marker": "112/pdf-a7/pdf-a7-instruction-5",
+      "title": "Вернись в Древний котлован, открой Бездну Клеймом, включи маяк и получи Теневую…",
+      "coverage": [
+        "pdf-a7-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a7-instruction-5",
+        "title": "Вернись в Древний котлован, открой Бездну Клеймом, включи маяк и получи Теневую…",
+        "body": "Вернись в Древний котлован, открой Бездну Клеймом, включи маяк и получи Теневую накидку (Теневая накидка). Уклонение через врагов станет важным инструментом.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "abyss",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a7",
+      "id": "pdf-a7-instruction-6",
+      "marker": "112/pdf-a7/pdf-a7-instruction-6",
+      "title": "На Краю королевства забери Быстрый удар и выучи Рывок-удар у Оро за…",
+      "coverage": [
+        "pdf-a7-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a7-instruction-6",
+        "title": "На Краю королевства забери Быстрый удар и выучи Рывок-удар у Оро за…",
+        "body": "На Краю королевства забери Быстрый удар и выучи Рывок-удар у Оро за 800 гео. Колизей можно начать сейчас, но третье испытание отложи.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "deepnest",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a8",
+      "id": "pdf-a8-instruction-1",
+      "marker": "112/pdf-a8/pdf-a8-instruction-1",
+      "title": "Слеза Измы открывает удобный путь к Архивам наставницы в Туманном каньоне",
+      "coverage": [
+        "pdf-a8-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a8-instruction-1",
+        "title": "Слеза Измы открывает удобный путь к Архивам наставницы в Туманном каньоне",
+        "body": "Слеза Измы открывает удобный путь к Архивам наставницы в Туманном каньоне. Победи Уумуу с помощью Квиррела и сними печать Мономоны: Наставница.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a8",
+      "id": "pdf-a8-instruction-2",
+      "marker": "112/pdf-a8/pdf-a8-instruction-2",
+      "title": "Сразу после этого сходи на восточный берег Голубого озера и договори с Квиррелом до…",
+      "coverage": [
+        "pdf-a8-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a8-instruction-2",
+        "title": "Сразу после этого сходи на восточный берег Голубого озера и договори с Квиррелом до…",
+        "body": "Сразу после этого сходи на восточный берег Голубого озера и договори с Квиррелом до Свидетель.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a8",
+      "id": "pdf-a8-instruction-3",
+      "marker": "112/pdf-a8/pdf-a8-instruction-3",
+      "title": "С Крыльями поднимись в Шпиль хранителя в Городе слёз",
+      "coverage": [
+        "pdf-a8-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a8-instruction-3",
+        "title": "С Крыльями поднимись в Шпиль хранителя в Городе слёз",
+        "body": "С Крыльями поднимись в Шпиль хранителя в Городе слёз. Перед боссами проломи потолок и сбей люстру: бой станет короче. Победи Рыцарей-хранителей и сними печать Лурьена: Рыцарь.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a8",
+      "id": "pdf-a8-instruction-4",
+      "marker": "112/pdf-a8/pdf-a8-instruction-4",
+      "title": "Когда все три печати сняты, войди в храм Чёрного яйца",
+      "coverage": [
+        "pdf-a8-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a8-instruction-4",
+        "title": "Когда все три печати сняты, войди в храм Чёрного яйца",
+        "body": "Когда все три печати сняты, войди в храм Чёрного яйца. Прочитай табличку рядом со скамьёй: Чутьё мира покажет процент завершения.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a8",
+      "id": "pdf-a8-instruction-5",
+      "marker": "112/pdf-a8/pdf-a8-instruction-5",
+      "title": "Без Сердце пустоты победи Полого рыцаря: Полый рыцарь",
+      "coverage": [
+        "pdf-a8-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a8-instruction-5",
+        "title": "Без Сердце пустоты победи Полого рыцаря: Полый рыцарь",
+        "body": "Без Сердце пустоты победи Полого рыцаря: Полый рыцарь. После титров загрузи тот же слот и продолжай. Новую игру создавать здесь не нужно.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a10",
+      "id": "pdf-a10-instruction-1",
+      "marker": "112/pdf-a10/pdf-a10-instruction-1",
+      "title": "В Садах королевы найди Ключ любви: он понадобится для Коллекционера",
+      "coverage": [
+        "pdf-a10-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a10-instruction-1",
+        "title": "В Садах королевы найди Ключ любви: он понадобится для Коллекционера",
+        "body": "В Садах королевы найди Ключ любви: он понадобится для Коллекционера. С Теневой накидкой победи Предавшего лорда: Казнь. Белая леди отдаст половину Души короля.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "queens-gardens",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a10",
+      "id": "pdf-a10-instruction-2",
+      "marker": "112/pdf-a10/pdf-a10-instruction-2",
+      "title": "В Дворцовых землях Древнего котлована примени Пробуждённый гвоздь грёз к телу каролинга",
+      "coverage": [
+        "pdf-a10-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a10-instruction-2",
+        "title": "В Дворцовых землях Древнего котлована примени Пробуждённый гвоздь грёз к телу каролинга",
+        "body": "В Дворцовых землях Древнего котлована примени Пробуждённый гвоздь грёз к телу каролинга. Пройди основной маршрут Белого дворца и забери вторую половину. Путь боли для достижений не требуется.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "queens-gardens",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a10",
+      "id": "pdf-a10-instruction-3",
+      "marker": "112/pdf-a10/pdf-a10-instruction-3",
+      "title": "Надень собранную Душу короля (Душа Короля), вернись на дно Бездны, пройди Место…",
+      "coverage": [
+        "pdf-a10-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a10-instruction-3",
+        "title": "Надень собранную Душу короля (Душа Короля), вернись на дно Бездны, пройди Место…",
+        "body": "Надень собранную Душу короля (Душа Короля), вернись на дно Бездны, пройди Место рождения и воспоминание. Получишь Пустота и Сердце пустоты.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "abyss",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a10",
+      "id": "pdf-a10-instruction-4",
+      "marker": "112/pdf-a10/pdf-a10-instruction-4",
+      "title": "Вернись к Полому рыцарю",
+      "coverage": [
+        "pdf-a10-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a10-instruction-4",
+        "title": "Вернись к Полому рыцарю",
+        "body": "Вернись к Полому рыцарю. Когда вмешается Хорнет, продолжай обычный бой и добей босса: Запечатанное родство. Затем загрузи слот повторно.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "queens-gardens",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a10",
+      "id": "pdf-a10-instruction-5",
+      "marker": "112/pdf-a10/pdf-a10-instruction-5",
+      "title": "В следующем бою во время удержания боссa Хорнет ударь его Гвоздём грёз",
+      "coverage": [
+        "pdf-a10-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a10-instruction-5",
+        "title": "В следующем бою во время удержания боссa Хорнет ударь его Гвоздём грёз",
+        "body": "В следующем бою во время удержания боссa Хорнет ударь его Гвоздём грёз. Победи Лучезарность: Грез больше нет.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "queens-gardens",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a11",
+      "id": "pdf-a11-instruction-1",
+      "marker": "112/pdf-a11/pdf-a11-instruction-1",
+      "title": "На Воющих утёсах найди скрытую пещеру с большим телом жука",
+      "coverage": [
+        "pdf-a11-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a11-instruction-1",
+        "title": "На Воющих утёсах найди скрытую пещеру с большим телом жука",
+        "body": "На Воющих утёсах найди скрытую пещеру с большим телом жука. Используй Гвоздь грёз, вернись в соседнюю комнату и несколько раз ударь основание фонаря. В Грязьмуте появится труппа.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "dirtmouth",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a11",
+      "id": "pdf-a11-instruction-2",
+      "marker": "112/pdf-a11/pdf-a11-instruction-2",
+      "title": "Поговори с Гриммом, надень Мрачное дитя и собери три огня, отмеченные на карте",
+      "coverage": [
+        "pdf-a11-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a11-instruction-2",
+        "title": "Поговори с Гриммом, надень Мрачное дитя и собери три огня, отмеченные на карте",
+        "body": "Поговори с Гриммом, надень Мрачное дитя и собери три огня, отмеченные на карте. Вернись к Гримму. Повтори сбор для следующей стадии и победи обычного Гримма: Великое представление плюс ячейка амулетов.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "dirtmouth",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a11",
+      "id": "pdf-a11-instruction-3",
+      "marker": "112/pdf-a11/pdf-a11-instruction-3",
+      "title": "На последней стадии собери ещё три огня",
+      "coverage": [
+        "pdf-a11-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a11-instruction-3",
+        "title": "На последней стадии собери ещё три огня",
+        "body": "На последней стадии собери ещё три огня. Не разрушай фонарь с Бруммом. С надетым Мрачное дитя используй Гвоздь грёз на спящем Гримме.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "dirtmouth",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a11",
+      "id": "pdf-a11-instruction-4",
+      "marker": "112/pdf-a11/pdf-a11-instruction-4",
+      "title": "Победи Короля кошмара Гримма в его квестовом сне: Ритуал",
+      "coverage": [
+        "pdf-a11-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a11-instruction-4",
+        "title": "Победи Короля кошмара Гримма в его квестовом сне: Ритуал",
+        "body": "Победи Короля кошмара Гримма в его квестовом сне: Ритуал. Отдельная победа в Божий кров это достижение не заменяет. Для первого прохождения Гримма полезнее разучить ответы на атаки, чем размениваться здоровьем. В тренировочных попытках выбирай одну цель: сначала переживать атаки, затем добавлять по одному безопасному удару. Двух ячеек",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "dirtmouth",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a11",
+      "id": "pdf-a11-instruction-5",
+      "marker": "112/pdf-a11/pdf-a11-instruction-5",
+      "title": "Собери 6 кусков руды и последовательно оплати все улучшения гвоздя",
+      "coverage": [
+        "pdf-a11-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a11-instruction-5",
+        "title": "Собери 6 кусков руды и последовательно оплати все улучшения гвоздя",
+        "body": "Собери 6 кусков руды и последовательно оплати все улучшения гвоздя. Последнее стоит 4000 гео и 3 руды. После ковки не атакуй Кузнеца: уйди из комнаты.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "dirtmouth",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a11",
+      "id": "pdf-a11-instruction-6",
+      "marker": "112/pdf-a11/pdf-a11-instruction-6",
+      "title": "У Шео на западе Зелёной тропы выучи Великий удар",
+      "coverage": [
+        "pdf-a11-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a11-instruction-6",
+        "title": "У Шео на западе Зелёной тропы выучи Великий удар",
+        "body": "У Шео на западе Зелёной тропы выучи Великий удар. Отдохни на скамье или проедь на рогаче и вернись в его хижину. Поговори с живущим там Кузнецом: Счастливая пара. Белый защитник: Память",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "dirtmouth",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a11",
+      "id": "pdf-a11-instruction-7",
+      "marker": "112/pdf-a11/pdf-a11-instruction-7",
+      "title": "После победы над Навозным защитником и всеми тремя Грезящими вернись в правую часть…",
+      "coverage": [
+        "pdf-a11-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a11-instruction-7",
+        "title": "После победы над Навозным защитником и всеми тремя Грезящими вернись в правую часть…",
+        "body": "После победы над Навозным защитником и всеми тремя Грезящими вернись в правую часть его арены. Примени пике под платформой и спустись в скрытую комнату.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "dirtmouth",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a11",
+      "id": "pdf-a11-instruction-8",
+      "marker": "112/pdf-a11/pdf-a11-instruction-8",
+      "title": "Используй Гвоздь грёз на спящем защитнике и победи Белого защитника один раз: Память…",
+      "coverage": [
+        "pdf-a11-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a11-instruction-8",
+        "title": "Используй Гвоздь грёз на спящем защитнике и победи Белого защитника один раз: Память…",
+        "body": "Используй Гвоздь грёз на спящем защитнике и победи Белого защитника один раз: Память и 300 эссенции. Пять побед для достижения не нужны.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "dirtmouth",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a12",
+      "id": "pdf-a12-instruction-1",
+      "marker": "112/pdf-a12/pdf-a12-instruction-1",
+      "title": "С Ключом любви из Садов королевы открой Башню любви у Края королевства",
+      "coverage": [
+        "pdf-a12-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a12-instruction-1",
+        "title": "С Ключом любви из Садов королевы открой Башню любви у Края королевства",
+        "body": "С Ключом любви из Садов королевы открой Башню любви у Края королевства. Победи Коллекционера: Одержимость. Возьми Карту Коллекционера наверху.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a12",
+      "id": "pdf-a12-instruction-2",
+      "marker": "112/pdf-a12/pdf-a12-instruction-2",
+      "title": "Карта покажет оставшихся гусеничек на купленных картах областей",
+      "coverage": [
+        "pdf-a12-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a12-instruction-2",
+        "title": "Карта покажет оставшихся гусеничек на купленных картах областей",
+        "body": "Карта покажет оставшихся гусеничек на купленных картах областей. Освободи 23 для Друг гусеничек и все 46 для Метаморфоза. Забери награду за 46 у Отца гусеничек: Элегию куколки.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a12",
+      "id": "pdf-a12-instruction-3",
+      "marker": "112/pdf-a12/pdf-a12-instruction-3",
+      "title": "Закрой список 40 амулетов на страницах справочника",
+      "coverage": [
+        "pdf-a12-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a12-instruction-3",
+        "title": "Закрой список 40 амулетов на страницах справочника",
+        "body": "Закрой список 40 амулетов на страницах справочника. Для Блаженный нужно также купить Благословение Салюбры за 800 гео. Хрупкие амулеты засчитываются; покупать все нерушимые версии не обязательно.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a12",
+      "id": "pdf-a12-instruction-4",
+      "marker": "112/pdf-a12/pdf-a12-instruction-4",
+      "title": "Купи карты всех 13 областей: Картограф",
+      "coverage": [
+        "pdf-a12-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a12-instruction-4",
+        "title": "Купи карты всех 13 областей: Картограф",
+        "body": "Купи карты всех 13 областей: Картограф. Если Корнифер ушёл, проверь магазин Изельды. Полностью дорисовывать каждую комнату для достижения не требуется.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a12",
+      "id": "pdf-a12-instruction-5",
+      "marker": "112/pdf-a12/pdf-a12-instruction-5",
+      "title": "Открой станции: Грязьмут, Перепутье, Зелёная тропа, Станция королевы, Городские…",
+      "coverage": [
+        "pdf-a12-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a12-instruction-5",
+        "title": "Открой станции: Грязьмут, Перепутье, Зелёная тропа, Станция королевы, Городские…",
+        "body": "Открой станции: Грязьмут, Перепутье, Зелёная тропа, Станция королевы, Городские склады, Королевская станция, Земли упокоения, Далёкая деревня, Сады королевы, Скрытая станция. Поговори с Последним рогачом и доберись до Гнезда: Надежда. По пути откроется Пути сообщения.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a12",
+      "id": "pdf-a12-instruction-6",
+      "marker": "112/pdf-a12/pdf-a12-instruction-6",
+      "title": "Собери 16 осколков маски и 9 черепков сосуда: Замаскированный и Душа мира",
+      "coverage": [
+        "pdf-a12-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a12-instruction-6",
+        "title": "Собери 16 осколков маски и 9 черепков сосуда: Замаскированный и Душа мира",
+        "body": "Собери 16 осколков маски и 9 черепков сосуда: Замаскированный и Душа мира. Их меньшие пороги дают Защищенный и Воодушевленный. Нежный цветок: Милосердие",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a12",
+      "id": "pdf-a12-instruction-7",
+      "marker": "112/pdf-a12/pdf-a12-instruction-7",
+      "title": "Найди Серую плакальщицу в особняке Земель упокоения",
+      "coverage": [
+        "pdf-a12-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a12-instruction-7",
+        "title": "Найди Серую плакальщицу в особняке Земель упокоения",
+        "body": "Найди Серую плакальщицу в особняке Земель упокоения. Сначала без цветка пройди до могилы в Садах королевы, открой короткие проходы и потренируй последние прыжки над шипами.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a12",
+      "id": "pdf-a12-instruction-8",
+      "marker": "112/pdf-a12/pdf-a12-instruction-8",
+      "title": "Подготовь маршрут обратно от могилы: Сады → короткий участок Туманного каньона →…",
+      "coverage": [
+        "pdf-a12-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a12-instruction-8",
+        "title": "Подготовь маршрут обратно от могилы: Сады → короткий участок Туманного каньона →…",
+        "body": "Подготовь маршрут обратно от могилы: Сады → короткий участок Туманного каньона → Грибные пустоши → Город слёз → Земли упокоения. Убивай врагов по дороге и не садись на скамью.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a12",
+      "id": "pdf-a12-instruction-9",
+      "marker": "112/pdf-a12/pdf-a12-instruction-9",
+      "title": "Возьми цветок и повтори подготовленный путь в сторону могилы",
+      "coverage": [
+        "pdf-a12-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a12-instruction-9",
+        "title": "Возьми цветок и повтори подготовленный путь в сторону могилы",
+        "body": "Возьми цветок и повтори подготовленный путь в сторону могилы. Получение урона, поездка на рогаче и телепортация Вратами грёз уничтожают цветок. Часть врагов возрождается и без скамьи, поэтому сохраняй осторожность.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a12",
+      "id": "pdf-a12-instruction-10",
+      "marker": "112/pdf-a12/pdf-a12-instruction-10",
+      "title": "Положи цветок на могилу и вернись к Плакальщице за осколком и Милосердие",
+      "coverage": [
+        "pdf-a12-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a12-instruction-10",
+        "title": "Положи цветок на могилу и вернись к Плакальщице за осколком и Милосердие",
+        "body": "Положи цветок на могилу и вернись к Плакальщице за осколком и Милосердие. При неудаче у неё можно взять новый цветок.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "crossroads",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a13",
+      "id": "pdf-a13-instruction-1",
+      "marker": "112/pdf-a13/pdf-a13-instruction-1",
+      "title": "В первом испытании победи спасённого Зота в финале: Противостояние",
+      "coverage": [
+        "pdf-a13-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a13-instruction-1",
+        "title": "В первом испытании победи спасённого Зота в финале: Противостояние",
+        "body": "В первом испытании победи спасённого Зота в финале: Противостояние. Само испытание даёт Душ и ячейку. Если проходил его до спасения Зота в Глубинном гнезде, пройди ещё раз после его освобождения.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "edge",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a13",
+      "id": "pdf-a13-instruction-2",
+      "marker": "112/pdf-a13/pdf-a13-instruction-2",
+      "title": "Пройди второе испытание: Завоеватель и кусок руды",
+      "coverage": [
+        "pdf-a13-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a13-instruction-2",
+        "title": "Пройди второе испытание: Завоеватель и кусок руды",
+        "body": "Пройди второе испытание: Завоеватель и кусок руды. Это важный шаг для Чистый гвоздь.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "edge",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a13",
+      "id": "pdf-a13-instruction-3",
+      "marker": "112/pdf-a13/pdf-a13-instruction-3",
+      "title": "Перед третьим испытанием собери Чистый гвоздь, улучшенные заклинания, 8-9 масок и больше…",
+      "coverage": [
+        "pdf-a13-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a13-instruction-3",
+        "title": "Перед третьим испытанием собери Чистый гвоздь, улучшенные заклинания, 8-9 масок и больше…",
+        "body": "Перед третьим испытанием собери Чистый гвоздь, улучшенные заклинания, 8-9 масок и больше ячеек. Выучи все три искусства гвоздя; у Слая в подвале забери Ореол Мастера гвоздя.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "edge",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a13",
+      "id": "pdf-a13-instruction-4",
+      "marker": "112/pdf-a13/pdf-a13-instruction-4",
+      "title": "Потренируй заряженный удар по летающим врагам и удары вниз в воздухе",
+      "coverage": [
+        "pdf-a13-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a13-instruction-4",
+        "title": "Потренируй заряженный удар по летающим врагам и удары вниз в воздухе",
+        "body": "Потренируй заряженный удар по летающим врагам и удары вниз в воздухе. В фазе без пола важнее безопасно удерживаться на стенах, чем пытаться лечиться.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "edge",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a13",
+      "id": "pdf-a13-instruction-5",
+      "marker": "112/pdf-a13/pdf-a13-instruction-5",
+      "title": "Пройди третье испытание и победи Звероукротительницу: Глупыш",
+      "coverage": [
+        "pdf-a13-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a13-instruction-5",
+        "title": "Пройди третье испытание и победи Звероукротительницу: Глупыш",
+        "body": "Пройди третье испытание и победи Звероукротительницу: Глупыш. При раздельной атаке цели сосредоточься на звере.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "edge",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a13",
+      "id": "pdf-a13-instruction-6",
+      "marker": "112/pdf-a13/pdf-a13-instruction-6",
+      "title": "Открой дневник, выпиши недостающие виды и оставшиеся убийства",
+      "coverage": [
+        "pdf-a13-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a13-instruction-6",
+        "title": "Открой дневник, выпиши недостающие виды и оставшиеся убийства",
+        "body": "Открой дневник, выпиши недостающие виды и оставшиеся убийства. Сначала закрой записи на обычных маршрутах, затем займись редкими существами.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "edge",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a13",
+      "id": "pdf-a13-instruction-7",
+      "marker": "112/pdf-a13/pdf-a13-instruction-7",
+      "title": "Для неуязвимых существ ищи исследуемые объекты: окаменелый Жрун, тело Гарпида, бак…",
+      "coverage": [
+        "pdf-a13-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a13-instruction-7",
+        "title": "Для неуязвимых существ ищи исследуемые объекты: окаменелый Жрун, тело Гарпида, бак…",
+        "body": "Для неуязвимых существ ищи исследуемые объекты: окаменелый Жрун, тело Гарпида, бак Заряженная светомуха и отпечаток Щупальца Пустоты. Точные ориентиры приведены в отдельном справочнике.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "edge",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a13",
+      "id": "pdf-a13-instruction-8",
+      "marker": "112/pdf-a13/pdf-a13-instruction-8",
+      "title": "Проверь Кристальных ползунов: против них используй заклинания",
+      "coverage": [
+        "pdf-a13-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a13-instruction-8",
+        "title": "Проверь Кристальных ползунов: против них используй заклинания",
+        "body": "Проверь Кристальных ползунов: против них используй заклинания. Особое внимание удели тихим существам вроде Алюба, Маскокрыл и Живень.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "edge",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a13",
+      "id": "pdf-a13-instruction-9",
+      "marker": "112/pdf-a13/pdf-a13-instruction-9",
+      "title": "Когда обязательные записи завершены, возвращайся к Охотнику и забери Метку",
+      "coverage": [
+        "pdf-a13-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a13-instruction-9",
+        "title": "Когда обязательные записи завершены, возвращайся к Охотнику и забери Метку",
+        "body": "Когда обязательные записи завершены, возвращайся к Охотнику и забери Метку. Не требуются Починжук, Путь боли, все Лучезарный-боссы и все печати пантеонов.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "edge",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a14",
+      "id": "pdf-a14-instruction-1",
+      "marker": "112/pdf-a14/pdf-a14-instruction-1",
+      "title": "Доберись до Мусорной ямы через западную часть Королевских стоков",
+      "coverage": [
+        "pdf-a14-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a14-instruction-1",
+        "title": "Доберись до Мусорной ямы через западную часть Королевских стоков",
+        "body": "Доберись до Мусорной ямы через западную часть Королевских стоков. Простым ключом открой кокон Искательницы богов, забери Богоискатель и используй на ней Гвоздь грёз.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "godhome",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a14",
+      "id": "pdf-a14-instruction-2",
+      "marker": "112/pdf-a14/pdf-a14-instruction-2",
+      "title": "Если нужен ещё один Простой ключ, найди Бледного соглядатая за разрушаемой стеной в…",
+      "coverage": [
+        "pdf-a14-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a14-instruction-2",
+        "title": "Если нужен ещё один Простой ключ, найди Бледного соглядатая за разрушаемой стеной в…",
+        "body": "Если нужен ещё один Простой ключ, найди Бледного соглядатая за разрушаемой стеной в задней части Колизея. Пройди погоню и победи его.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "godhome",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a14",
+      "id": "pdf-a14-instruction-3",
+      "marker": "112/pdf-a14/pdf-a14-instruction-3",
+      "title": "Осмотри двери пантеонов",
+      "coverage": [
+        "pdf-a14-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a14-instruction-3",
+        "title": "Осмотри двери пантеонов",
+        "body": "Осмотри двери пантеонов. Неоткрытый портрет показывает, какого босса ещё надо победить в мире. Побеждай необходимых боссов; Зота специально добавлять не надо.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "godhome",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a14",
+      "id": "pdf-a14-instruction-4",
+      "marker": "112/pdf-a14/pdf-a14-instruction-4",
+      "title": "В Зале богов тренируй конкретные трудные бои, затем проходи пантеон целиком",
+      "coverage": [
+        "pdf-a14-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a14-instruction-4",
+        "title": "В Зале богов тренируй конкретные трудные бои, затем проходи пантеон целиком",
+        "body": "В Зале богов тренируй конкретные трудные бои, затем проходи пантеон целиком. До попыток собери 11 ячеек, 9 масок, 3 дополнительных сосуда, Чистый гвоздь и улучшения заклинаний.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "godhome",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a15",
+      "id": "pdf-a15-instruction-1",
+      "marker": "112/pdf-a15/pdf-a15-instruction-1",
+      "title": "Добейся устойчивых побед над Чистым сосудом и Королём кошмара в Зале богов",
+      "coverage": [
+        "pdf-a15-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a15-instruction-1",
+        "title": "Добейся устойчивых побед над Чистым сосудом и Королём кошмара в Зале богов",
+        "body": "Добейся устойчивых побед над Чистым сосудом и Королём кошмара в Зале богов. Для Маркота и Безглазой тренируй также арену Вознесённый: её геометрия ближе к пятому пантеону.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "godhome",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a15",
+      "id": "pdf-a15-instruction-2",
+      "marker": "112/pdf-a15/pdf-a15-instruction-2",
+      "title": "Пройди пантеон до Абсолютной Лучезарности хотя бы один раз",
+      "coverage": [
+        "pdf-a15-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a15-instruction-2",
+        "title": "Пройди пантеон до Абсолютной Лучезарности хотя бы один раз",
+        "body": "Пройди пантеон до Абсолютной Лучезарности хотя бы один раз. После первой встречи её можно отдельно тренировать в Зале богов, даже если попытка завершилась поражением.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "godhome",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a15",
+      "id": "pdf-a15-instruction-3",
+      "marker": "112/pdf-a15/pdf-a15-instruction-3",
+      "title": "Перед возвращением к полной попытке научись проходить все фазы Абсолютной Лучезарности",
+      "coverage": [
+        "pdf-a15-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a15-instruction-3",
+        "title": "Перед возвращением к полной попытке научись проходить все фазы Абсолютной Лучезарности",
+        "body": "Перед возвращением к полной попытке научись проходить все фазы Абсолютной Лучезарности. Несколько побед подряд в тренировке - хороший ориентир, а не условие достижения.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "godhome",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a15",
+      "id": "pdf-a15-instruction-4",
+      "marker": "112/pdf-a15/pdf-a15-instruction-4",
+      "title": "Оставляй запас души к трудным боям",
+      "coverage": [
+        "pdf-a15-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a15-instruction-4",
+        "title": "Оставляй запас души к трудным боям",
+        "body": "Оставляй запас души к трудным боям. На Маркоте используй первую фазу для накопления и трать заклинания, когда появляется второй щит.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "godhome",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a15",
+      "id": "pdf-a15-instruction-5",
+      "marker": "112/pdf-a15/pdf-a15-instruction-5",
+      "title": "Пройди весь пятый пантеон и закончи бой с Абсолютной Лучезарностью: Принять Пустоту",
+      "coverage": [
+        "pdf-a15-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a15-instruction-5",
+        "title": "Пройди весь пятый пантеон и закончи бой с Абсолютной Лучезарностью: Принять Пустоту",
+        "body": "Пройди весь пятый пантеон и закончи бой с Абсолютной Лучезарностью: Принять Пустоту. Ограничивающие печати и прохождение без урона не нужны.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "godhome",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a15",
+      "id": "pdf-a15-instruction-6",
+      "marker": "112/pdf-a15/pdf-a15-instruction-6",
+      "title": "Загрузи A и вернись в Грязьмут",
+      "coverage": [
+        "pdf-a15-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a15-instruction-6",
+        "title": "Загрузи A и вернись в Грязьмут",
+        "body": "Загрузи A и вернись в Грязьмут. Если Бретта и Зот спасены, Зот побеждён в Колизее и есть Крылья, подвал Бретты доступен.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "godhome",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a15",
+      "id": "pdf-a15-instruction-7",
+      "marker": "112/pdf-a15/pdf-a15-instruction-7",
+      "title": "Примени Гвоздь грёз к статуе и победи Серого принца Зота один раз: Темный романс",
+      "coverage": [
+        "pdf-a15-guide"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a15-instruction-7",
+        "title": "Примени Гвоздь грёз к статуе и победи Серого принца Зота один раз: Темный романс",
+        "body": "Примени Гвоздь грёз к статуе и победи Серого принца Зота один раз: Темный романс. Десять побед и золотая статуя для Steam не нужны.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "godhome",
+        "referenceOnly": true
+      }
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a15",
+      "id": "pdf-a15-instruction-8",
+      "marker": "112/pdf-a15/pdf-a15-instruction-8",
+      "title": "Закрой квест Мистера Гриба по справочнику и снова получи концовку, если «Вестник перемен» ещё не получен",
+      "coverage": [
+        "mushroom"
+      ],
+      "reason": "Дословный фрагмент видимого обзора того же этапа",
+      "original": {
+        "id": "pdf-a15-instruction-8",
+        "title": "Закрой квест Мистера Гриба по справочнику и снова получи концовку, если «Вестник перемен» ещё не получен",
+        "body": "После трёх Сновидцев надень «Грибные споры». Встречи идут строго по порядку. Ударь Господина Гриба обычным гвоздём и дослушай разговор до его ухода. Без амулета он не перейдёт дальше.\n\nПОРЯДОК ВСТРЕЧ\n1. Грибные пустоши\n2. Край королевства\n3. Глубинное гнездо\n4. Воющие утёсы\n5. Древний котлован\n6. Туманный каньон\n7. Королевская тропа\n\nПосле седьмой встречи снова получи любую концовку: откроется достижение «Вестник перемен». Ниже в списке шагов — семь мест с картами и скриншотами.",
+        "warning": "",
+        "source": "Hollow_Knight_63_Achievements_Roadmap_RU.pdf",
+        "spoiler": false,
+        "conditions": [],
+        "mapChapter": "godhome",
+        "referenceOnly": true
+      }
+    }
+  ],
+  "chapters": [
+    {
+      "goal": "112",
+      "chapter": "pdf-a1",
+      "title": "A1 · Грязьмут → Забытое перепутье",
+      "visible": 10,
+      "tasks": 9,
+      "references": 1,
+      "hidden": 5,
+      "retained_ids": [
+        "pdf-a1-guide",
+        "movement",
+        "reach-town",
+        "well",
+        "cornifer",
+        "station",
+        "sly",
+        "false-knight",
+        "vengeful-spirit",
+        "first-charm"
+      ],
+      "retained_sha256": "2c795cedc06b048a660edcf44516b54d782183c10f26b4ae2a31a7194fcfdaeb",
+      "chapter_metadata_sha256": "164fa374e90038785f68e14f6167f4a85e8241e71e509c3ebd69eebabd6f195a"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a2",
+      "title": "A2 · Зелёная тропа → Хорнет",
+      "visible": 5,
+      "tasks": 4,
+      "references": 1,
+      "hidden": 5,
+      "retained_ids": [
+        "pdf-a2-guide",
+        "enter-greenpath",
+        "hunter-journal-start",
+        "zote-choice",
+        "hornet-greenpath"
+      ],
+      "retained_sha256": "63afe43911c798e7509bdea765753c43fbcddf45b664099dfb6a72eef6f188e2",
+      "chapter_metadata_sha256": "a8595bb3350a15a6fed84621a9aa941d3435e9f514824e6ca44bba8afe778adb"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a3",
+      "title": "A3 · Грибные пустоши и деревня богомолов",
+      "visible": 5,
+      "tasks": 4,
+      "references": 1,
+      "hidden": 5,
+      "retained_ids": [
+        "pdf-a3-guide",
+        "pdf-bretta",
+        "mantis-claw",
+        "mantis-lords",
+        "hunter-mossy-vagabond"
+      ],
+      "retained_sha256": "83a789f75b89367b70bbfb4dad023b42b9423e67977269fec22130e978ecd2f4",
+      "chapter_metadata_sha256": "e48549925525cba26838a93c442d722cb670cc8334e7123413ff43d7f819723b"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a4",
+      "title": "A4 · Город слёз и Святилище душ",
+      "visible": 7,
+      "tasks": 6,
+      "references": 1,
+      "hidden": 6,
+      "retained_ids": [
+        "pdf-a4-guide",
+        "city-gate",
+        "nail-upgrade",
+        "soul-master",
+        "city-transport",
+        "lantern",
+        "pdf-shade-soul"
+      ],
+      "retained_sha256": "e6b6d0ce5a343f66bfa77b71584f3beda7988fb35bddbe82124ec60a268d6ae2",
+      "chapter_metadata_sha256": "7d6c518cd2907d8870215d2f6c9f4419572cec8d185878982ffbe341ab36d129"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a5",
+      "title": "A5 · Кристальный пик → Земли упокоения",
+      "visible": 6,
+      "tasks": 5,
+      "references": 1,
+      "hidden": 6,
+      "retained_ids": [
+        "pdf-a5-guide",
+        "crystal-heart",
+        "descend-resting",
+        "dream-nail",
+        "pdf-shopkeeper-key",
+        "pdf-descending-dark"
+      ],
+      "retained_sha256": "c10affecb3f9851b1fcd9813bdf4dfe2a80589c880167e3e1c8f4fba04df9828",
+      "chapter_metadata_sha256": "94769e899afb29ee3683214f823ec2777350357239ebe62f37b295dbf78aabe4"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a6",
+      "title": "A6 · Королевские стоки → Древний котлован",
+      "visible": 8,
+      "tasks": 7,
+      "references": 1,
+      "hidden": 5,
+      "retained_ids": [
+        "pdf-a6-guide",
+        "waterways-key",
+        "dung-defender",
+        "ismas-tear",
+        "basin-bench",
+        "hunter-lightseeds",
+        "broken-vessel",
+        "lost-kin"
+      ],
+      "retained_sha256": "e1b897803ec374c58ea9f793f21343484c6a36048833fa7f16913665ab55e899",
+      "chapter_metadata_sha256": "4fe358499d4e0c54facaf06136f5d0f85dea895489f3a0e57631bbbde05c639f"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a7",
+      "title": "A7 · Глубинное гнездо и Край королевства",
+      "visible": 8,
+      "tasks": 7,
+      "references": 1,
+      "hidden": 6,
+      "retained_ids": [
+        "pdf-a7-guide",
+        "deepnest-zote",
+        "tram-pass",
+        "herrah",
+        "hornet-sentinel",
+        "shade-cloak",
+        "pdf-nosk",
+        "pdf-oro"
+      ],
+      "retained_sha256": "032fce4e7263d4dd4e4533ad9020565b3b9e304cde098ac1ff08761281533577",
+      "chapter_metadata_sha256": "616c18a74f449945c7476b3dac3a7b4465c13023c49a6b6a51d4a6f3fd674ac5"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a8",
+      "title": "A8 · Два оставшихся Грезящих → Чёрное яйцо",
+      "visible": 5,
+      "tasks": 4,
+      "references": 1,
+      "hidden": 5,
+      "retained_ids": [
+        "pdf-a8-guide",
+        "monomon",
+        "quirrel",
+        "lurien",
+        "ending-a"
+      ],
+      "retained_sha256": "eab56d60319396818c2bc13a5fc10de84a9f95f603c74c9e7dbd823c134752a0",
+      "chapter_metadata_sha256": "9ce2c9fc6486aa995e0ff420f7ab25c0f110b39880c9c2d63f368c5fe2a96c0b"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a9",
+      "title": "A9 · Собери 2400 эссенции",
+      "visible": 8,
+      "tasks": 7,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-a9-guide",
+        "essence-600",
+        "failed-champion",
+        "soul-tyrant",
+        "white-defender",
+        "awoken",
+        "seer-final",
+        "pdf-seven-warriors"
+      ],
+      "retained_sha256": "d105ab02f885a5b7feb348f590d3046204f42339b8cfa124eb6e44c4dfc6d481",
+      "chapter_metadata_sha256": "fa59926c82d1e164ea0ffe52f4840e073adfbd18e4b5ed581affccea9ad53069"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a10",
+      "title": "A10 · Сады королевы → Белый дворец → Бездна",
+      "visible": 7,
+      "tasks": 6,
+      "references": 1,
+      "hidden": 5,
+      "retained_ids": [
+        "pdf-a10-guide",
+        "pdf-love-key",
+        "traitor",
+        "white-palace",
+        "void-choice",
+        "ending-b",
+        "ending-c"
+      ],
+      "retained_sha256": "9516d771bbc7a49d5ae6dfdebd920f2f2375ce7f2a690580f3d46f81fe71d4df",
+      "chapter_metadata_sha256": "899266f3237597b6248acb43fcd0fb5a4937466fd43de7557c10daf509f7aa7d"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a11",
+      "title": "A11 · Гримм и истории персонажей",
+      "visible": 6,
+      "tasks": 5,
+      "references": 1,
+      "hidden": 8,
+      "retained_ids": [
+        "pdf-a11-guide",
+        "summon-troupe",
+        "grimm-first",
+        "hunter-grimm-nightmare",
+        "grimm-ritual",
+        "smith-spare"
+      ],
+      "retained_sha256": "213b2031a6b473cdc8a3f27b39422e31b20cb3d2138ba08d766445630fa2688c",
+      "chapter_metadata_sha256": "2499c8652a633ceeb304c34e1c045796783dc17f044d57cac8fddf612f061c6f"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a12",
+      "title": "A12 · Собрать мир и доставить цветок",
+      "visible": 14,
+      "tasks": 13,
+      "references": 1,
+      "hidden": 10,
+      "retained_ids": [
+        "pdf-a12-guide",
+        "collector",
+        "half-grubs",
+        "all-grubs",
+        "half-charms",
+        "all-charms",
+        "all-maps",
+        "half-stations",
+        "all-stations",
+        "four-shards",
+        "all-shards",
+        "three-vessels",
+        "all-vessels",
+        "delicate-flower"
+      ],
+      "retained_sha256": "d146fc4240cf4a693d6236ba315cda8693b335cdb20b47824b86923bc0bb9c29",
+      "chapter_metadata_sha256": "402864aa7cfb71ab18c156c4f94ce71fdaf439fe147d7aa18e97d5b5aa7c5623"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a13",
+      "title": "A13 · Колизей и дневник охотника",
+      "visible": 7,
+      "tasks": 6,
+      "references": 1,
+      "hidden": 9,
+      "retained_ids": [
+        "pdf-a13-guide",
+        "trial-one",
+        "zote-arena",
+        "trial-two",
+        "trial-three",
+        "hunter-record",
+        "hunter-mark"
+      ],
+      "retained_sha256": "8bf9bf2903f8758d561d9f0ef2ec9f2838e9fc3dd3831324ed82a212491dc4aa",
+      "chapter_metadata_sha256": "f4255fd269a0b4331dc15e1fe3d1b6868f6031fa5706f4b9eb518a3a6a093ea6"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a14",
+      "title": "A14 · Первые четыре пантеона",
+      "visible": 8,
+      "tasks": 7,
+      "references": 1,
+      "hidden": 4,
+      "retained_ids": [
+        "pdf-a14-guide",
+        "godtuner",
+        "pantheon-1",
+        "pantheon-2",
+        "pantheon-3",
+        "pantheon-4",
+        "complete-100",
+        "complete-112"
+      ],
+      "retained_sha256": "00c05267b6105c3c811597513b2c9d2f7b8a7a420006c0a14a427fa6d6689139",
+      "chapter_metadata_sha256": "914706126afd4ccfd60cb2aa9fc6defe0982bb8807a0472169518fed3e9e6272"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a15",
+      "title": "A15 · Пятый пантеон и последний Зот",
+      "visible": 11,
+      "tasks": 3,
+      "references": 8,
+      "hidden": 8,
+      "retained_ids": [
+        "pdf-a15-guide",
+        "pantheon-5",
+        "grey-prince",
+        "mushroom",
+        "mushroom-1-guide",
+        "mushroom-2-guide",
+        "mushroom-3-guide",
+        "mushroom-4-guide",
+        "mushroom-5-guide",
+        "mushroom-6-guide",
+        "mushroom-7-guide"
+      ],
+      "retained_sha256": "6bed23887f69a341e7de1ff02c5b83e281cfa429f81fb4ea52571b06bc34a56e",
+      "chapter_metadata_sha256": "9b65e98d23e4a5c481c3ffe5f22a4bfeae5d0fe77ed898ebe79b6b74d9e57eba"
+    },
+    {
+      "goal": "speed",
+      "chapter": "pdf-b1",
+      "title": "B1 · Концовка до 5 часов",
+      "visible": 23,
+      "tasks": 22,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-b1-guide",
+        "well",
+        "cornifer",
+        "sly",
+        "false-knight",
+        "vengeful-spirit",
+        "hornet-greenpath",
+        "mantis-claw",
+        "city-gate",
+        "nail-upgrade",
+        "soul-master",
+        "lantern",
+        "crystal-heart",
+        "dream-nail",
+        "dung-defender",
+        "ismas-tear",
+        "broken-vessel",
+        "lurien",
+        "monomon",
+        "herrah",
+        "ending-a",
+        "speed-10",
+        "speed-5"
+      ],
+      "retained_sha256": "29f1e2d6c3050ff9b1347cc18b7ea41a5a57287ff94b2039bcc117a08600fa61",
+      "chapter_metadata_sha256": "a1482713f478ca9ebdb7c9f561f274bcb98f9b02bd3f89f3369c9e3d0f016c29"
+    },
+    {
+      "goal": "speed",
+      "chapter": "pdf-b-100",
+      "title": "B · Набор на 100%",
+      "visible": 9,
+      "tasks": 8,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-b-100-guide",
+        "hornet-sentinel",
+        "shade-cloak",
+        "mantis-lords",
+        "traitor",
+        "collector",
+        "trial-one",
+        "trial-two",
+        "awoken"
+      ],
+      "retained_sha256": "a2dc09351b33c8c90b1e95901700a3a34b271b15bc592cf1744145de57cdfd85",
+      "chapter_metadata_sha256": "37663e0a911e47e20d05c983d908b95957c8752fa18123c5e8e9593f7eac7782"
+    },
+    {
+      "goal": "speed",
+      "chapter": "pdf-b2",
+      "title": "B2 · 100% до 20 часов",
+      "visible": 8,
+      "tasks": 7,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-b2-guide",
+        "neglect",
+        "smith-kill",
+        "summon-troupe",
+        "grimm-first",
+        "hunter-grimm-nightmare",
+        "grimm-banish",
+        "speed-100"
+      ],
+      "retained_sha256": "1b493048617237a2b040f07d5d92ef4015e7499c929b235f4f7acf5e8a33a644",
+      "chapter_metadata_sha256": "64d05114bcdf6130fcd898fdc6fb55402ef3193d8ef8f22085b9691c3b356cf5"
+    },
+    {
+      "goal": "steel",
+      "chapter": "pdf-c1",
+      "title": "C1 · Стальная душа: первый финал",
+      "visible": 25,
+      "tasks": 24,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-c1-guide",
+        "steel-start",
+        "well",
+        "cornifer",
+        "sly",
+        "false-knight",
+        "vengeful-spirit",
+        "hornet-greenpath",
+        "mantis-claw",
+        "city-gate",
+        "nail-upgrade",
+        "soul-master",
+        "lantern",
+        "crystal-heart",
+        "dream-nail",
+        "dung-defender",
+        "ismas-tear",
+        "hunter-lightseeds",
+        "broken-vessel",
+        "hornet-sentinel",
+        "shade-cloak",
+        "lurien",
+        "monomon",
+        "herrah",
+        "steel-ending"
+      ],
+      "retained_sha256": "521f9b13d69e070aab35bbaea5e4a404a4de569304d53d77ee93536ebbe37cf5",
+      "chapter_metadata_sha256": "7e19fc484701113977237c8d31d48b6778e9b3d2c5b5970bb7a46831daeb5826"
+    },
+    {
+      "goal": "steel",
+      "chapter": "pdf-c-100",
+      "title": "C · Набор на 100%",
+      "visible": 9,
+      "tasks": 8,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-c-100-guide",
+        "hornet-sentinel",
+        "shade-cloak",
+        "mantis-lords",
+        "traitor",
+        "collector",
+        "trial-one",
+        "trial-two",
+        "awoken"
+      ],
+      "retained_sha256": "b100becc5e0b5bc0c22bb4a41f5cd7198ef7c0fbfc12ee5797f3caecbb733b39",
+      "chapter_metadata_sha256": "f6242f99b5f461da2872bc61d67f139d13cd5f04f0b1484c8f43bff5b38045c6"
+    },
+    {
+      "goal": "steel",
+      "chapter": "pdf-c2",
+      "title": "C2 · Стальная душа: 100%",
+      "visible": 6,
+      "tasks": 5,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-c2-guide",
+        "summon-troupe",
+        "grimm-first",
+        "hunter-grimm-nightmare",
+        "grimm-banish",
+        "steel-100"
+      ],
+      "retained_sha256": "42ce4d807c069f0296791f8b281a6b7a93d48578b463b42b3671e3dbe5972d8b",
+      "chapter_metadata_sha256": "56fb671d9079f4dca3780702cc9a0b3262fb182c40bbc434b1b51dd992e1eee3"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a-ref-17",
+      "title": "A · Осколки маски",
+      "visible": 1,
+      "tasks": 0,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-a-ref-17-guide"
+      ],
+      "retained_sha256": "07c28c39c472be53b2e35ffa3c54d91ea98abef7240804ff7f06f4daed132bc2",
+      "chapter_metadata_sha256": "b6a894bdd8b2e9b467e672e9a608253126a51740621f8fbee8191a54991294ba"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a-ref-18",
+      "title": "A · Сосуды и руда",
+      "visible": 1,
+      "tasks": 0,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-a-ref-18-guide"
+      ],
+      "retained_sha256": "3e9ade6d590ff834a22f60365fb798b2413753c3900b4adf47f47509f635b245",
+      "chapter_metadata_sha256": "280634d51192afa2ea52a59600205a3ef9caa60d0efadc5a477110da6f88ea11"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a-ref-19",
+      "title": "A · Амулеты · часть 1",
+      "visible": 1,
+      "tasks": 0,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-a-ref-19-guide"
+      ],
+      "retained_sha256": "f9e888977e5730ec8ad0d70503bbc5435f1a4cb0efd3c9a8153c07c34446fa28",
+      "chapter_metadata_sha256": "39879adb294a634d485f9525c70fa48d63e5ea9b3e340df84beadae1a13c53bc"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a-ref-20",
+      "title": "A · Амулеты · часть 2",
+      "visible": 1,
+      "tasks": 0,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-a-ref-20-guide"
+      ],
+      "retained_sha256": "f2a7cb2f03859872b2c2b97f38dd1c74dce41f08d29106cd4d7bc2a72b448693",
+      "chapter_metadata_sha256": "d0dc5fceddd9edc4a0bafe8b88b8f30a947f02d878722e93ab98c678368e774b"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a-ref-21",
+      "title": "A · Проценты и способности",
+      "visible": 1,
+      "tasks": 0,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-a-ref-21-guide"
+      ],
+      "retained_sha256": "73e6dd22cfab380671e8c27ba3dd2cdae4067930a8ff0b0cb9bee4141cec3fdd",
+      "chapter_metadata_sha256": "7d0277a078c20a02fc219e350fd6eb3533b6e9c116b9736bdf2d9a970d9ce820"
+    },
+    {
+      "goal": "112",
+      "chapter": "pdf-a-ref-22",
+      "title": "A · Редкие записи и Мистер Гриб",
+      "visible": 1,
+      "tasks": 0,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-a-ref-22-guide"
+      ],
+      "retained_sha256": "2d180f65d9c5d87156e3b162c1eabf5694422fe6d7df0719ff7bfdade85020eb",
+      "chapter_metadata_sha256": "4b3329c267661ec04d442e93f36332d5407bdca1a78a433a5facc95ab3ebeb5d"
+    },
+    {
+      "goal": "speed",
+      "chapter": "pdf-b-ref-17",
+      "title": "B · Осколки маски",
+      "visible": 1,
+      "tasks": 0,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-b-ref-17-guide"
+      ],
+      "retained_sha256": "f822c92a7cecd59f1f522855bc4307c58d43a14f14c0364f60a63fdb25c0aeea",
+      "chapter_metadata_sha256": "4326adb5ea04190612916ea0bd295e7875cf6d706b4cf370bd72f9647075f77d"
+    },
+    {
+      "goal": "speed",
+      "chapter": "pdf-b-ref-18",
+      "title": "B · Сосуды и руда",
+      "visible": 1,
+      "tasks": 0,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-b-ref-18-guide"
+      ],
+      "retained_sha256": "75377ba77d87581b03ac25147996d6587453025ea0417d95a746d5927f2754e4",
+      "chapter_metadata_sha256": "e03b05a125acf82a152499f97e3bc2a8c37fd750dfc10b3c02a22defcaaa8213"
+    },
+    {
+      "goal": "speed",
+      "chapter": "pdf-b-ref-19",
+      "title": "B · Амулеты · часть 1",
+      "visible": 1,
+      "tasks": 0,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-b-ref-19-guide"
+      ],
+      "retained_sha256": "b13e908dbfc5e962081f51dae5170c81ad48d8a4cb9932717643abd70b8a8572",
+      "chapter_metadata_sha256": "af0066a0cf98669817bb997fb8f84725b87e63d2197d3c507d3321ec3c03b715"
+    },
+    {
+      "goal": "speed",
+      "chapter": "pdf-b-ref-20",
+      "title": "B · Амулеты · часть 2",
+      "visible": 1,
+      "tasks": 0,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-b-ref-20-guide"
+      ],
+      "retained_sha256": "7da14dd8d11c6fe1cb0f6d9cc0259562ed9f589a87b8cbe3d1a283fdf87b5ae9",
+      "chapter_metadata_sha256": "c6ffd828ebe8020995af39ddd93ad1c1845d4683f7648afdf695a4bc2c9f11f6"
+    },
+    {
+      "goal": "speed",
+      "chapter": "pdf-b-ref-21",
+      "title": "B · Проценты и способности",
+      "visible": 1,
+      "tasks": 0,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-b-ref-21-guide"
+      ],
+      "retained_sha256": "1fab169b671f35f88bfac5990aacee4e536c28f5b13873d84b5e9d7880097be5",
+      "chapter_metadata_sha256": "904202a239625c10891cc32cea9fe839a72370f81422a3ea8c6fae2801308fe4"
+    },
+    {
+      "goal": "speed",
+      "chapter": "pdf-b-ref-22",
+      "title": "B · Редкие записи и Мистер Гриб",
+      "visible": 1,
+      "tasks": 0,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-b-ref-22-guide"
+      ],
+      "retained_sha256": "91a54d03057b75c5f7d966b2d543021c76b1d5a499f421837ee1e89d79efea18",
+      "chapter_metadata_sha256": "664c5207c41e9ea196970532dcf82d55ff7c1201d8f27a3a1d4ef1b4375b771a"
+    },
+    {
+      "goal": "steel",
+      "chapter": "pdf-c-ref-17",
+      "title": "C · Осколки маски",
+      "visible": 1,
+      "tasks": 0,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-c-ref-17-guide"
+      ],
+      "retained_sha256": "0f18331ec3018ea491e4775e589dfd8bb2674a8c3d0cb49254614f7a0622e660",
+      "chapter_metadata_sha256": "f036d66e54785d3843a99d0649cfdadf15067f698ddb3b227ed091e7f74361d1"
+    },
+    {
+      "goal": "steel",
+      "chapter": "pdf-c-ref-18",
+      "title": "C · Сосуды и руда",
+      "visible": 1,
+      "tasks": 0,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-c-ref-18-guide"
+      ],
+      "retained_sha256": "0e445eb1cb3d8a3534b6b8583fb6a540dd910aa338a59e0b1cfda91bdf9533c7",
+      "chapter_metadata_sha256": "7234b261e67e54a66c79de0354edb3320d3ca785b6a8763e65c43cd0370d90cc"
+    },
+    {
+      "goal": "steel",
+      "chapter": "pdf-c-ref-19",
+      "title": "C · Амулеты · часть 1",
+      "visible": 1,
+      "tasks": 0,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-c-ref-19-guide"
+      ],
+      "retained_sha256": "f9a29e86356b3ff0246aa76e73a8df2e4cf8c011a2e0f9b04a0983fb91c657b5",
+      "chapter_metadata_sha256": "eeb3100c5a6b19dbd0afb44e1d35bd18c2eb9e96f857c7776fb74d111920f55c"
+    },
+    {
+      "goal": "steel",
+      "chapter": "pdf-c-ref-20",
+      "title": "C · Амулеты · часть 2",
+      "visible": 1,
+      "tasks": 0,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-c-ref-20-guide"
+      ],
+      "retained_sha256": "0650dec732c5ef08476fc302df4e8473c064a13ca5de54c062ea6b93b2a4f89d",
+      "chapter_metadata_sha256": "8ecca177076a108f1bbbee2f71a06a0f4df0021ff62c8d7bf4a17a4a8b1b04ff"
+    },
+    {
+      "goal": "steel",
+      "chapter": "pdf-c-ref-21",
+      "title": "C · Проценты и способности",
+      "visible": 1,
+      "tasks": 0,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-c-ref-21-guide"
+      ],
+      "retained_sha256": "2641b75426eb459447e1694c6eeea09b53062f204f76f59566f2a1bdf188ed4a",
+      "chapter_metadata_sha256": "a4c518c59dc16f57334ce03018c961d3241daa7a4b56840e259f6ba97e25f161"
+    },
+    {
+      "goal": "steel",
+      "chapter": "pdf-c-ref-22",
+      "title": "C · Редкие записи и Мистер Гриб",
+      "visible": 1,
+      "tasks": 0,
+      "references": 1,
+      "hidden": 0,
+      "retained_ids": [
+        "pdf-c-ref-22-guide"
+      ],
+      "retained_sha256": "911f4d988af2564dee95c5be8d43c3d1e6277ead0386fa2ae998e1ef53e0880d",
+      "chapter_metadata_sha256": "054ee45140f02bb8ba23ef67d444dc91de0811d30f8e486cffee89bdedba1a4a"
+    }
+  ],
+  "editor_revision": 5
+}

@@ -16,7 +16,8 @@ namespace Wisp.UI
         private bool RetryFocusedImages()
         {
             var urls = new List<string>();
-            if (tab == 3) urls.Add(media.RegionSource(atlasIds[atlasIndex]));
+            if (tab == 4) { var item = CurrentCollectionItem; if (item != null) { urls.Add(item.Icon); if (item.Maps.Length > 0) urls.Add(item.Maps[CollectionMapIndex].Url); } }
+            else if (tab == 3) urls.Add(media.RegionSource(atlasIds[atlasIndex]));
             else if (tab == 1)
             {
                 var enemies = FilteredEnemies();
@@ -35,7 +36,7 @@ namespace Wisp.UI
                     var step = RouteSteps[Mathf.Clamp(stepIndex, 0, RouteSteps.Length - 1)];
                     if (step.Spoiler && !mod.Settings.ShowSpoilers) return false;
                     StepImage[] targets;
-                    if (media.Steps.TryGetValue(step.Id, out targets) && targets.Length > 0)
+                    if (media.TryStepImages(Current.Goal, Current.Id, step.Id, out targets) && targets.Length > 0)
                     {
                         if (expandedStepImage || targets.Any(t => t.Wide)) urls.Add(targets[(stepImageIndex % targets.Length + targets.Length) % targets.Length].Url);
                         else urls.AddRange(targets.Select(t => t.Url));

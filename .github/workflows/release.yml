@@ -17,6 +17,7 @@ jobs:
         run: |
           python3 tools/check.py
           python3 -c 'import json,os; assert os.environ["RELEASE_TAG"] == "v"+json.load(open("version.json"))["version"]'
+      - run: python3 -m pip install -r tools/requirements-tests.txt
       - run: python3 -m unittest discover -s tests
       - name: Check packaged download
         env:

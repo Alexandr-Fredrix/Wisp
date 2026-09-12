@@ -73,7 +73,7 @@ namespace Wisp.UI
             }
             keyStyle = new GUIStyle(small) { alignment = TextAnchor.MiddleCenter, wordWrap = false, padding = new RectOffset(0,0,0,0) };
             cardStyle = new GUIStyle(small) { alignment = TextAnchor.UpperCenter };
-            pageStyle = new GUIStyle(small) { alignment = TextAnchor.MiddleCenter };
+            pageStyle = new GUIStyle(muted) { alignment = TextAnchor.MiddleCenter, wordWrap = false, padding = new RectOffset(0,0,0,0) };
             zoomStyle = new GUIStyle(muted) { alignment = TextAnchor.MiddleCenter };
             mapStyle = new GUIStyle(button) { alignment = TextAnchor.MiddleCenter, fontSize = 17, padding = new RectOffset(4,4,2,2) };
             regionStyle = new GUIStyle(button) { fontSize = 16, alignment = TextAnchor.MiddleLeft, wordWrap = true, padding = new RectOffset(4,4,0,0) };
@@ -132,7 +132,7 @@ namespace Wisp.UI
         private void ChangeTab(int target, bool routeRegion = false)
         {
             if (target == 1 && !routeRegion) ResetJournalRegion();
-            expandedStepImage = false; choosingJournalRegion = false; tab = target; padPane = 0; expandedEnemyMap = false; contentFocus = false;
+            expandedCollectionMap = false; collectionInfo = false; expandedStepImage = false; choosingJournalRegion = false; tab = target; padPane = 0; expandedEnemyMap = false; contentFocus = false;
              detailChoice = mapTab ? 1 : 0; detailScroll = Vector2.zero;
         }
 
@@ -145,6 +145,7 @@ namespace Wisp.UI
 
         private string NavigationHint()
         {
+            if (tab == 4) return CollectionHint();
             if (expandedStepImage) return Wisp.Core.I18n.T("Стики: перемещение · LT/RT: масштаб · ←→: иллюстрация · X: повтор · Y: вписать · B: описание");
             if (choosingJournalRegion) return Wisp.Core.I18n.T("↑↓: локация · A: выбрать · B: назад");
             if (tab == 3) return contentFocus ? Wisp.Core.I18n.T("Стики: карта · LT/RT: масштаб · X: повтор · Y: вписать · B: к зонам") : Wisp.Core.I18n.T("↑↓: зона · A / →: карта · B: закрыть");
@@ -154,6 +155,7 @@ namespace Wisp.UI
             if (tab == 1) return padPane == 0 ? I18n.T("↑↓: враг · A / →: сведения · X: фильтр · B: закрыть") : padPane == 1 ? I18n.T("↑↓ / RS: сведения · A / →: карта · X: повтор / фильтр · B: враги") : I18n.T("A: карта · RS: развернуть · Y: другое место · X: повтор / фильтр · B: сведения");
             if (padPane == 0) return Wisp.Core.I18n.T("↑↓: область · A / →: шаги · B: закрыть · ?: посещение не подтверждено");
             if (padPane == 1) return Wisp.Core.I18n.T("↑↓: шаг · A / →: вкладки · Y: отметка · B / ←: области");
+            if (tab == 0 && padPane == 2 && !mapTab && RouteSteps[stepIndex].Collection.Length > 0) return I18n.T("↑↓ / RS: текст · Y: открыть коллекцию · B: к шагам");
             if (!mapTab && detailChoice == 0) return Wisp.Core.I18n.T("↑↓ / RS: прокрутка · Y: иллюстрация · RS: развернуть · X: повтор / карта · B: к шагам");
             return Wisp.Core.I18n.T("←→ / LT/RT: вкладка · A: открыть · X: карта · B: к шагам");
         }
@@ -195,14 +197,15 @@ namespace Wisp.UI
                 if (Choose(new Rect(1184, 32, 206, 42), Wisp.Core.I18n.T("Закрыть · F8"))) Close();
                 KeyHint(new Rect(32, 112, 38, 28), "LB");
                 KeyHint(new Rect(1352, 112, 38, 28), "RB");
-                if (Choose(new Rect(86, 105, 175, 42), Wisp.Core.I18n.T("Маршрут"), tab == 0)) ChangeTab(0);
-                if (Choose(new Rect(270, 105, 310, 42), Wisp.Core.I18n.T("Дневник охотника"), tab == 1)) ChangeTab(1);
-                if (Choose(new Rect(590, 105, 150, 42), Wisp.Core.I18n.T("Атлас"), tab == 3)) ChangeTab(3);
-                if (Choose(new Rect(750, 105, 205, 42), Wisp.Core.I18n.T("Настройки"), tab == 2)) ChangeTab(2);
-                GUI.Label(new Rect(985, 112, 350, 32), Wisp.Core.I18n.T("Цель: ") + (mod.Progress.RouteGoal == "steel" ? Wisp.Core.I18n.T("C · Стальная душа") : mod.Progress.RouteGoal == "speed" ? Wisp.Core.I18n.T("B · Скорость") : "A · 112%"), muted);
+                if (Choose(new Rect(86, 105, 150, 42), I18n.T("Маршрут"), tab == 0)) ChangeTab(0);
+                if (Choose(new Rect(244, 105, 285, 42), I18n.T("Дневник охотника"), tab == 1)) ChangeTab(1);
+                if (Choose(new Rect(537, 105, 205, 42), I18n.T("Коллекции"), tab == 4)) ChangeTab(4);
+                if (Choose(new Rect(750, 105, 130, 42), I18n.T("Атлас"), tab == 3)) ChangeTab(3);
+                if (Choose(new Rect(888, 105, 195, 42), I18n.T("Настройки"), tab == 2)) ChangeTab(2);
+                GUI.Label(new Rect(1100, 105, 240, 42), I18n.T("Цель: ") + (mod.Progress.RouteGoal == "steel" ? "C" : mod.Progress.RouteGoal == "speed" ? "B" : "A · 112%"), columnHeading);
                 Divider(new Rect(32, 155, 1358, 2));
                 GUI.BeginGroup(new Rect(32, 182, 1358, 530));
-                if (tab == 0) DrawRoute(); else if (tab == 1) DrawJournal(); else if (tab == 3) DrawAtlas(); else DrawSettings();
+                if (tab == 4) DrawCollections(); else if (tab == 0) DrawRoute(); else if (tab == 1) DrawJournal(); else if (tab == 3) DrawAtlas(); else DrawSettings();
                 Rule(new Rect(0, 42, 1358, 1), new Color(.20f, .30f, .35f));
                 GUI.EndGroup();
                 Divider(new Rect(32, 730, 1358, 2));
@@ -260,7 +263,7 @@ namespace Wisp.UI
                 var selected = steps[Mathf.Clamp(stepIndex, 0, steps.Length - 1)];
                 PrepareDescription(selected);
                 StepImage[] targets;
-                if ((selected.Spoiler && !mod.Settings.ShowSpoilers) || !media.Steps.TryGetValue(selected.Id, out targets)) targets = new StepImage[0];
+                if ((selected.Spoiler && !mod.Settings.ShowSpoilers) || !media.TryStepImages(Current.Goal, Current.Id, selected.Id, out targets)) targets = new StepImage[0];
                 float galleryHeight = targets.Length == 0 ? 0 : (targets.Any(t => t.Wide) ? 392 : ((targets.Length + 2) / 3) * 156 + 32);
                 string achievementKey;
                 bool hasAchievement = ProfileAchievements.Steps.TryGetValue(selected.Id, out achievementKey) && (!selected.Spoiler || mod.Settings.ShowSpoilers);
@@ -296,10 +299,12 @@ namespace Wisp.UI
                 else if (ProfileAchievements.Confirmed(selected, player)) GUI.Label(ContentRect(502, 434, 604, 40), Wisp.Core.I18n.T("✓ Получено в игровом профиле"), muted);
                 else if (Choose(ContentRect(500, 434, 612, 40), Done(selected) ? Wisp.Core.I18n.T("✓ Снять ручную отметку") : Wisp.Core.I18n.T("○ Отметить выполненным"))) { mod.Progress.Mark(selected.Id, !Done(selected)); InvalidateView(); }
             }
+            var collectionId = steps[Mathf.Clamp(stepIndex, 0, steps.Length - 1)].Collection;
+            if (collectionId.Length > 0 && MapButton(ContentRect(665, 498, 276, 32), I18n.T("Коллекция · Y"))) OpenCollection(collectionId);
             GUI.enabled = stepIndex > 0;
-            if (Choose(ContentRect(500, 486, 145, 36), Wisp.Core.I18n.T("‹ Назад"))) SelectStep(stepIndex - 1);
+            if (MapButton(ContentRect(500, 498, 145, 32), Wisp.Core.I18n.T("‹ Назад"))) SelectStep(stepIndex - 1);
             GUI.enabled = stepIndex < steps.Length - 1;
-            if (Choose(ContentRect(960, 486, 145, 36), Wisp.Core.I18n.T("Далее ›"))) SelectStep(stepIndex + 1);
+            if (MapButton(ContentRect(967, 498, 145, 32), Wisp.Core.I18n.T("Далее ›"))) SelectStep(stepIndex + 1);
             GUI.enabled = true;
         }
 
@@ -333,15 +338,15 @@ namespace Wisp.UI
             if (!expandedStepImage) return false;
             StepImage[] targets;
             var selected = RouteSteps[Mathf.Clamp(stepIndex, 0, RouteSteps.Length - 1)];
-            if ((selected.Spoiler && !mod.Settings.ShowSpoilers) || !media.Steps.TryGetValue(selected.Id, out targets) || targets.Length == 0)
+            if ((selected.Spoiler && !mod.Settings.ShowSpoilers) || !media.TryStepImages(Current.Goal, Current.Id, selected.Id, out targets) || targets.Length == 0)
             { expandedStepImage = false; return false; }
             stepImageIndex = (stepImageIndex % targets.Length + targets.Length) % targets.Length;
             var target = targets[stepImageIndex];
             if (MapButton(ContentRect(0, 0, 160, 34), Wisp.Core.I18n.T("‹ К описанию"))) expandedStepImage = false;
-            GUI.Label(ContentRect(180, 0, 900, 38), I18n.T(target.Label), muted);
+            GUI.Label(ContentRect(180, 0, 900, 34), I18n.T(target.Label), columnHeading);
             MapControls(ContentRect(0, 48, 360, 32));
             if (MapButton(ContentRect(630, 48, 80, 32), "‹")) { stepImageIndex--; mapPan = Vector2.zero; mapZoom = 1; }
-            GUI.Label(ContentRect(720, 48, 260, 32), (stepImageIndex + 1) + " / " + targets.Length, small);
+            GUI.Label(ContentRect(720, 48, 260, 32), (stepImageIndex + 1) + " / " + targets.Length, pageStyle);
             if (MapButton(ContentRect(1015, 48, 80, 32), "›")) { stepImageIndex++; mapPan = Vector2.zero; mapZoom = 1; }
             DrawMapTexture(ContentRect(0, 90, 1112, 405), target.Url);
             GUI.Label(ContentRect(0, 502, 1000, 26), "Hollow Knight Wiki / Team Cherry", small);
@@ -355,12 +360,14 @@ namespace Wisp.UI
                 stepImageIndex = (stepImageIndex % targets.Length + targets.Length) % targets.Length;
                 if (MapButton(ContentRect(8, top, 48, 32), "‹")) stepImageIndex = (stepImageIndex + targets.Length - 1) % targets.Length;
                 if (MapButton(ContentRect(522, top, 48, 32), "›")) stepImageIndex = (stepImageIndex + 1) % targets.Length;
-                GUI.Label(ContentRect(66, top, 450, 32), Wisp.Core.I18n.T("Иллюстрация ") + (stepImageIndex + 1) + " / " + targets.Length + Wisp.Core.I18n.T(" · Y: следующая"), small);
+                GUI.Label(ContentRect(66, top, 450, 32), Wisp.Core.I18n.T("Иллюстрация ") + (stepImageIndex + 1) + " / " + targets.Length + Wisp.Core.I18n.T(" · Y: следующая"), pageStyle);
                 var target = targets[stepImageIndex];
-                GUI.Label(ContentRect(8, top + 36, 564, 48), I18n.T(target.Label), muted);
+                bool caption = !string.IsNullOrWhiteSpace(target.Label);
+                if (caption) GUI.Label(ContentRect(8, top + 36, 564, 48), I18n.T(target.Label), muted);
+                float imageTop = caption ? 88 : 44;
                 var picture = media.Get(target.Url);
-                if (picture != null) GUI.DrawTexture(ContentRect(8, top + 88, 564, 270), picture, ScaleMode.ScaleToFit);
-                else DrawImageStatus(ContentRect(8, top + 88, 564, 80), target.Url);
+                if (picture != null) GUI.DrawTexture(ContentRect(8, top + imageTop, 564, 358 - imageTop), picture, ScaleMode.ScaleToFit);
+                else DrawImageStatus(ContentRect(8, top + imageTop, 564, 80), target.Url);
                 if (MapButton(ContentRect(8, top + 360, 564, 32), Wisp.Core.I18n.T("Развернуть · нажатие RS"))) OpenStepImage();
                 return;
             }
@@ -389,13 +396,15 @@ namespace Wisp.UI
             if (evt.type == EventType.ScrollWheel && viewport.Contains(evt.mousePosition))
             { page = Mathf.Clamp(page + (evt.delta.y > 0 ? 1 : -1), 0, last); evt.Use(); }
             page = Mathf.Clamp(page, 0, last);
-            float rowHeight = (viewport.height - 36) / count;
+            const float footerHeight = 32, footerGap = 12, cardGap = 8;
+            float cardHeight = (viewport.height - footerHeight - footerGap - cardGap * (count - 1)) / count;
+            float rowHeight = cardHeight + cardGap;
             for (int row = 0; row < count; row++)
             {
                 int position = page * count + row;
                 if (position >= indices.Length) break;
                 int index = indices[position];
-                Rect cell = new Rect(viewport.x, viewport.y + row * rowHeight, viewport.width - 14, rowHeight - 8);
+                Rect cell = new Rect(viewport.x, viewport.y + row * rowHeight, viewport.width, cardHeight);
                 string label = labels[index];
                 string suffix = "";
                 int split = label.LastIndexOf('\n');
@@ -407,13 +416,13 @@ namespace Wisp.UI
                 Border(cell, new Color(.12f,.20f,.25f));
                 if (Choose(cell, label + (shortened ? "…" : "") + suffix, index == selected, focused && index == selected)) select(index);
             }
-            float bottom = viewport.yMax - 30;
+            float bottom = viewport.yMax - footerHeight;
             GUI.enabled = page > 0;
-            if (MapButton(new Rect(viewport.x, bottom, 40, 28), "‹")) page--;
+            if (MapButton(new Rect(viewport.x, bottom, footerHeight, footerHeight), "‹")) page--;
             GUI.enabled = page < last;
-            if (MapButton(new Rect(viewport.xMax - 54, bottom, 40, 28), "›")) page++;
+            if (MapButton(new Rect(viewport.xMax - footerHeight, bottom, footerHeight, footerHeight), "›")) page++;
             GUI.enabled = true;
-            GUI.Label(new Rect(viewport.x + 46, bottom, viewport.width - 106, 28), (page + 1) + " / " + (last + 1), pageStyle);
+            GUI.Label(new Rect(viewport.x + 40, bottom, viewport.width - 80, footerHeight), (page + 1) + " / " + (last + 1), pageStyle);
         }
 
         private void Paragraph(Rect viewport, string title, string body)
@@ -531,7 +540,7 @@ namespace Wisp.UI
                 MapControls(ContentRect(770, 0, 322, 34));
                 DrawMapTexture(ContentRect(0, 44, 1112, 450), expandedUrl);
                 if (Choose(ContentRect(0, 497, 450, 30), Wisp.Core.I18n.T("Следующее место обитания ›"))) { enemyMapIndex++; mapZoom = 1; mapPan = Vector2.zero; }
-                GUI.Label(ContentRect(500, 497, 610, 30), Wisp.Core.I18n.T("Hollow Knight Wiki / Team Cherry · справочная карта"), small);
+                GUI.Label(ContentRect(500, 497, 610, 30), Wisp.Core.I18n.T("Hollow Knight Wiki / Team Cherry · справочная карта"), columnHeading);
                 return true;
             }
             expandedEnemyMap = false;

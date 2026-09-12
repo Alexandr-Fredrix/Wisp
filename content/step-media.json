@@ -444,77 +444,6 @@
       "wide": true
     }
   ],
-  "all-maps": [
-    {
-      "label": "Корнифер",
-      "url": "https://cdn.wikimg.net/en/hkwiki/images/f/ff/Cornifer.png"
-    },
-    {
-      "label": "Все места Корнифера",
-      "url": "embedded:locations/Mapshot_HK_Cornifer_01.png",
-      "wide": true
-    },
-    {
-      "label": "Корнифер · место 1",
-      "url": "embedded:locations/Screenshot_HK_Cornifer_01.png",
-      "wide": true
-    },
-    {
-      "label": "Корнифер · место 2",
-      "url": "embedded:locations/Screenshot_HK_Cornifer_02.png",
-      "wide": true
-    },
-    {
-      "label": "Корнифер · место 3",
-      "url": "embedded:locations/Screenshot_HK_Cornifer_03.png",
-      "wide": true
-    },
-    {
-      "label": "Корнифер · место 4",
-      "url": "embedded:locations/Screenshot_HK_Cornifer_04.png",
-      "wide": true
-    },
-    {
-      "label": "Корнифер · место 5",
-      "url": "embedded:locations/Screenshot_HK_Cornifer_05.png",
-      "wide": true
-    },
-    {
-      "label": "Корнифер · место 6",
-      "url": "embedded:locations/Screenshot_HK_Cornifer_06.png",
-      "wide": true
-    },
-    {
-      "label": "Корнифер · место 7",
-      "url": "embedded:locations/Screenshot_HK_Cornifer_07.png",
-      "wide": true
-    },
-    {
-      "label": "Корнифер · место 8",
-      "url": "embedded:locations/Screenshot_HK_Cornifer_08.png",
-      "wide": true
-    },
-    {
-      "label": "Корнифер · место 9",
-      "url": "embedded:locations/Screenshot_HK_Cornifer_09.png",
-      "wide": true
-    },
-    {
-      "label": "Корнифер · место 10",
-      "url": "embedded:locations/Screenshot_HK_Cornifer_10.png",
-      "wide": true
-    },
-    {
-      "label": "Корнифер · место 11",
-      "url": "embedded:locations/Screenshot_HK_Cornifer_11.png",
-      "wide": true
-    },
-    {
-      "label": "Корнифер · место 12",
-      "url": "embedded:locations/Screenshot_HK_Cornifer_12.png",
-      "wide": true
-    }
-  ],
   "station": [
     {
       "label": "Последний рогач",
@@ -523,58 +452,6 @@
     {
       "label": "Станции рогача · найди остановку Перепутья",
       "url": "embedded:locations/Stag_Station_Map.png",
-      "wide": true
-    }
-  ],
-  "half-stations": [
-    {
-      "label": "Последний рогач",
-      "url": "https://cdn.wikimg.net/en/hkwiki/images/a/af/Last_Stag.png"
-    },
-    {
-      "label": "Станции рогача · все остановки",
-      "url": "embedded:locations/Stag_Station_Map.png",
-      "wide": true
-    },
-    {
-      "label": "Станция Земель упокоения",
-      "url": "embedded:locations/Screenshot_HK_The_Last_Stag_01.png",
-      "wide": true
-    },
-    {
-      "label": "Сады королевы · ворота к станции",
-      "url": "embedded:locations/Screenshot_HK_Queen's_Gardens_10.png",
-      "wide": true
-    },
-    {
-      "label": "Станция Садов королевы",
-      "url": "embedded:locations/Screenshot_HK_Queen's_Gardens_11.png",
-      "wide": true
-    }
-  ],
-  "all-stations": [
-    {
-      "label": "Последний рогач",
-      "url": "https://cdn.wikimg.net/en/hkwiki/images/a/af/Last_Stag.png"
-    },
-    {
-      "label": "Станции рогача · все остановки",
-      "url": "embedded:locations/Stag_Station_Map.png",
-      "wide": true
-    },
-    {
-      "label": "Станция Земель упокоения",
-      "url": "embedded:locations/Screenshot_HK_The_Last_Stag_01.png",
-      "wide": true
-    },
-    {
-      "label": "Сады королевы · ворота к станции",
-      "url": "embedded:locations/Screenshot_HK_Queen's_Gardens_10.png",
-      "wide": true
-    },
-    {
-      "label": "Станция Садов королевы",
-      "url": "embedded:locations/Screenshot_HK_Queen's_Gardens_11.png",
       "wide": true
     }
   ],
@@ -1178,1180 +1055,6 @@
       "wide": true
     }
   ],
-  "half-grubs": [
-    {
-      "label": "Гусеничка",
-      "url": "https://cdn.wikimg.net/en/hkwiki/images/0/0c/Grub.png"
-    },
-    {
-      "label": "Отец гусеничек · награды",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Перепутье · 1",
-      "url": "embedded:locations/Grub_Forgotten_Crossroads_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Перепутье · 2",
-      "url": "embedded:locations/Grub_Forgotten_Crossroads_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Перепутье · 3",
-      "url": "embedded:locations/Grub_Forgotten_Crossroads_Location_3.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Перепутье · 4",
-      "url": "embedded:locations/Grub_Forgotten_Crossroads_Location_4.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Перепутье · 5",
-      "url": "embedded:locations/Grub_Forgotten_Crossroads_Location_5.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Зелёная тропа · 1",
-      "url": "embedded:locations/Grub_Greenpath_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Зелёная тропа · 2",
-      "url": "embedded:locations/Grub_Greenpath_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Зелёная тропа · 3",
-      "url": "embedded:locations/Grub_Greenpath_Location_3.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Воющие утёсы · 4",
-      "url": "embedded:locations/Grub_Greenpath_Location_4.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Зелёная тропа · 5",
-      "url": "embedded:locations/Grub_Greenpath_Location_5.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Грибные пустоши · 1",
-      "url": "embedded:locations/Grub_Fungal_Wastes_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Грибные пустоши · 2",
-      "url": "embedded:locations/Grub_Fungal_Wastes_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Город слёз · 1",
-      "url": "embedded:locations/Grub_City_of_Tears_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Город слёз · 2",
-      "url": "embedded:locations/Grub_City_of_Tears_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Город слёз · 3",
-      "url": "embedded:locations/Grub_City_of_Tears_Location_3.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Город слёз · 4",
-      "url": "embedded:locations/Grub_City_of_Tears_Location_4.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Город слёз · 5",
-      "url": "embedded:locations/Grub_City_of_Tears_Location_5.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Кристальный пик · 1",
-      "url": "embedded:locations/Grub_Crystal_Peak_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Кристальный пик · 2",
-      "url": "embedded:locations/Grub_Crystal_Peak_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Кристальный пик · 3",
-      "url": "embedded:locations/Grub_Crystal_Peak_Location_3.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Кристальный пик · 4",
-      "url": "embedded:locations/Grub_Crystal_Peak_Location_4.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Кристальный пик · 5",
-      "url": "embedded:locations/Grub_Crystal_Peak_Location_5.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Кристальный пик · 6",
-      "url": "embedded:locations/Grub_Crystal_Peak_Location_6.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Кристальный пик · 7",
-      "url": "embedded:locations/Grub_Crystal_Peak_Location_7.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Земли упокоения · 1",
-      "url": "embedded:locations/Grub_Resting_Grounds_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Королевские стоки · 1",
-      "url": "embedded:locations/Grub_Royal_Waterways_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Королевские стоки · 2",
-      "url": "embedded:locations/Grub_Royal_Waterways_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Королевские стоки · 3",
-      "url": "embedded:locations/Grub_Royal_Waterways_Location_3.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Край королевства · 1",
-      "url": "embedded:locations/Grub_Kingdom's_Edge_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Край королевства · 2",
-      "url": "embedded:locations/Grub_Kingdom's_Edge_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Туманный каньон · 1",
-      "url": "embedded:locations/Grub_Fog_Canyon_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Сады королевы · 1",
-      "url": "embedded:locations/Grub_Queen's_Gardens_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Сады королевы · 2",
-      "url": "embedded:locations/Grub_Queen's_Gardens_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Сады королевы · 3",
-      "url": "embedded:locations/Grub_Queen's_Gardens_Location_3.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Глубинное гнездо · 1",
-      "url": "embedded:locations/Grub_Deepnest_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Глубинное гнездо · 2",
-      "url": "embedded:locations/Grub_Deepnest_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Глубинное гнездо · 3",
-      "url": "embedded:locations/Grub_Deepnest_Location_3.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Глубинное гнездо · 4",
-      "url": "embedded:locations/Grub_Deepnest_Location_4.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Глубинное гнездо · 5",
-      "url": "embedded:locations/Grub_Deepnest_Location_5.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Древний котлован · 1",
-      "url": "embedded:locations/Grub_Ancient_Basin_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Древний котлован · 2",
-      "url": "embedded:locations/Grub_Ancient_Basin_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Улей · 1",
-      "url": "embedded:locations/Grub_Hive_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Улей · 2",
-      "url": "embedded:locations/Grub_Hive_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Башня любви · 1",
-      "url": "embedded:locations/Grub_Tower_of_Love_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Башня любви · 2",
-      "url": "embedded:locations/Grub_Tower_of_Love_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Башня любви · 3",
-      "url": "embedded:locations/Grub_Tower_of_Love_Location_3.png",
-      "wide": true
-    }
-  ],
-  "all-grubs": [
-    {
-      "label": "Гусеничка",
-      "url": "https://cdn.wikimg.net/en/hkwiki/images/0/0c/Grub.png"
-    },
-    {
-      "label": "Отец гусеничек · награды",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Перепутье · 1",
-      "url": "embedded:locations/Grub_Forgotten_Crossroads_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Перепутье · 2",
-      "url": "embedded:locations/Grub_Forgotten_Crossroads_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Перепутье · 3",
-      "url": "embedded:locations/Grub_Forgotten_Crossroads_Location_3.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Перепутье · 4",
-      "url": "embedded:locations/Grub_Forgotten_Crossroads_Location_4.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Перепутье · 5",
-      "url": "embedded:locations/Grub_Forgotten_Crossroads_Location_5.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Зелёная тропа · 1",
-      "url": "embedded:locations/Grub_Greenpath_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Зелёная тропа · 2",
-      "url": "embedded:locations/Grub_Greenpath_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Зелёная тропа · 3",
-      "url": "embedded:locations/Grub_Greenpath_Location_3.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Воющие утёсы · 4",
-      "url": "embedded:locations/Grub_Greenpath_Location_4.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Зелёная тропа · 5",
-      "url": "embedded:locations/Grub_Greenpath_Location_5.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Грибные пустоши · 1",
-      "url": "embedded:locations/Grub_Fungal_Wastes_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Грибные пустоши · 2",
-      "url": "embedded:locations/Grub_Fungal_Wastes_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Город слёз · 1",
-      "url": "embedded:locations/Grub_City_of_Tears_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Город слёз · 2",
-      "url": "embedded:locations/Grub_City_of_Tears_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Город слёз · 3",
-      "url": "embedded:locations/Grub_City_of_Tears_Location_3.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Город слёз · 4",
-      "url": "embedded:locations/Grub_City_of_Tears_Location_4.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Город слёз · 5",
-      "url": "embedded:locations/Grub_City_of_Tears_Location_5.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Кристальный пик · 1",
-      "url": "embedded:locations/Grub_Crystal_Peak_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Кристальный пик · 2",
-      "url": "embedded:locations/Grub_Crystal_Peak_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Кристальный пик · 3",
-      "url": "embedded:locations/Grub_Crystal_Peak_Location_3.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Кристальный пик · 4",
-      "url": "embedded:locations/Grub_Crystal_Peak_Location_4.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Кристальный пик · 5",
-      "url": "embedded:locations/Grub_Crystal_Peak_Location_5.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Кристальный пик · 6",
-      "url": "embedded:locations/Grub_Crystal_Peak_Location_6.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Кристальный пик · 7",
-      "url": "embedded:locations/Grub_Crystal_Peak_Location_7.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Земли упокоения · 1",
-      "url": "embedded:locations/Grub_Resting_Grounds_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Королевские стоки · 1",
-      "url": "embedded:locations/Grub_Royal_Waterways_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Королевские стоки · 2",
-      "url": "embedded:locations/Grub_Royal_Waterways_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Королевские стоки · 3",
-      "url": "embedded:locations/Grub_Royal_Waterways_Location_3.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Край королевства · 1",
-      "url": "embedded:locations/Grub_Kingdom's_Edge_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Край королевства · 2",
-      "url": "embedded:locations/Grub_Kingdom's_Edge_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Туманный каньон · 1",
-      "url": "embedded:locations/Grub_Fog_Canyon_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Сады королевы · 1",
-      "url": "embedded:locations/Grub_Queen's_Gardens_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Сады королевы · 2",
-      "url": "embedded:locations/Grub_Queen's_Gardens_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Сады королевы · 3",
-      "url": "embedded:locations/Grub_Queen's_Gardens_Location_3.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Глубинное гнездо · 1",
-      "url": "embedded:locations/Grub_Deepnest_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Глубинное гнездо · 2",
-      "url": "embedded:locations/Grub_Deepnest_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Глубинное гнездо · 3",
-      "url": "embedded:locations/Grub_Deepnest_Location_3.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Глубинное гнездо · 4",
-      "url": "embedded:locations/Grub_Deepnest_Location_4.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Глубинное гнездо · 5",
-      "url": "embedded:locations/Grub_Deepnest_Location_5.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Древний котлован · 1",
-      "url": "embedded:locations/Grub_Ancient_Basin_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Древний котлован · 2",
-      "url": "embedded:locations/Grub_Ancient_Basin_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Улей · 1",
-      "url": "embedded:locations/Grub_Hive_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Улей · 2",
-      "url": "embedded:locations/Grub_Hive_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Башня любви · 1",
-      "url": "embedded:locations/Grub_Tower_of_Love_Location_1.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Башня любви · 2",
-      "url": "embedded:locations/Grub_Tower_of_Love_Location_2.png",
-      "wide": true
-    },
-    {
-      "label": "Гусеничка · Башня любви · 3",
-      "url": "embedded:locations/Grub_Tower_of_Love_Location_3.png",
-      "wide": true
-    }
-  ],
-  "half-charms": [
-    {
-      "label": "Душа короля",
-      "url": "https://cdn.wikimg.net/en/hkwiki/images/3/34/Kingsoul.png"
-    },
-    {
-      "label": "Сердце пустоты",
-      "url": "https://cdn.wikimg.net/en/hkwiki/images/b/bb/Void_Heart.png"
-    },
-    {
-      "label": "Мрачное дитя",
-      "url": "https://cdn.wikimg.net/en/hkwiki/images/9/91/Grimmchild.png"
-    },
-    {
-      "label": "Капризный компас · место получения",
-      "url": "embedded:locations/Mapshot_HK_Iselda_01.png",
-      "wide": true
-    },
-    {
-      "label": "Загребущий рой · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Крепкий панцирь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Ловец душ · место получения",
-      "url": "embedded:locations/Mapshot_HK_Snail_Shaman_01.png",
-      "wide": true
-    },
-    {
-      "label": "Шаманский камень · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Пожиратель душ · место получения",
-      "url": "embedded:locations/Mapshot_HK_Soul_Eater.png",
-      "wide": true
-    },
-    {
-      "label": "Трюкач · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dashmaster.jpg",
-      "wide": true
-    },
-    {
-      "label": "Ловкач · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Песнь гусеничек · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Элегия куколки · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкое Сердце · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкая Жадность · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкая Сила · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Искажатель заклинаний · место получения",
-      "url": "embedded:locations/Mapshot_HK_Spell_Twister.png",
-      "wide": true
-    },
-    {
-      "label": "Непоколебимое тело · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Тяжелый выпад · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Быстрый удар · место получения",
-      "url": "embedded:locations/Mapshot_HK_Quick_Slash.png",
-      "wide": true
-    },
-    {
-      "label": "Длинный гвоздь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Метка гордости · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mark_of_Pride.png",
-      "wide": true
-    },
-    {
-      "label": "Ярость Павшего · место получения",
-      "url": "embedded:locations/Mapshot_HK_Fury_of_the_Fallen.jpg",
-      "wide": true
-    },
-    {
-      "label": "Колючки страданий · место получения",
-      "url": "embedded:locations/Mapshot_HK_Thorns_of_Agony.png",
-      "wide": true
-    },
-    {
-      "label": "Панцирь Бальдра · место получения",
-      "url": "embedded:locations/Mapshot_HK_Baldur_Shell.jpg",
-      "wide": true
-    },
-    {
-      "label": "Тремогнездо · место получения",
-      "url": "embedded:locations/Mapshot_HK_Flukemarm_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Герб Защитника · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dung_Defender_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Пылающее чрево · место получения",
-      "url": "embedded:locations/Mapshot_HK_Glowing_Womb.jpg",
-      "wide": true
-    },
-    {
-      "label": "Быстрый фокус · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Глубокий фокус · место получения",
-      "url": "embedded:locations/Mapshot_HK_Deep_Focus.png",
-      "wide": true
-    },
-    {
-      "label": "Живительное сердце · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Живительное ядро · место получения",
-      "url": "embedded:locations/Mapshot_HK_Lifeblood_Core.png",
-      "wide": true
-    },
-    {
-      "label": "Благословение Джони · место получения",
-      "url": "embedded:locations/Mapshot_HK_Joni_01.png",
-      "wide": true
-    },
-    {
-      "label": "Кровь Улья · место получения",
-      "url": "embedded:locations/Mapshot_HK_Hiveblood.png",
-      "wide": true
-    },
-    {
-      "label": "Споровый гриб · место получения",
-      "url": "embedded:locations/Mapshot_HK_Spore_Shroom.png",
-      "wide": true
-    },
-    {
-      "label": "Пронизывающая тень · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sharp_Shadow.png",
-      "wide": true
-    },
-    {
-      "label": "Облик Унн · место получения",
-      "url": "embedded:locations/Mapshot_HK_Unn_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Ореол Мастера гвоздя · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Песнь Ткача · место получения",
-      "url": "embedded:locations/Mapshot_HK_Weavers_Den.png",
-      "wide": true
-    },
-    {
-      "label": "Повелитель грез · место получения",
-      "url": "embedded:locations/Mapshot_HK_Seer_01.png",
-      "wide": true
-    },
-    {
-      "label": "Щит Грез · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dreamshield.png",
-      "wide": true
-    },
-    {
-      "label": "Мрачное дитя · место получения",
-      "url": "embedded:locations/Mapshot_HK_Brumm_01.png",
-      "wide": true
-    },
-    {
-      "label": "Беспечная песнь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Nymm_01.png",
-      "wide": true
-    },
-    {
-      "label": "Душа Короля · место получения",
-      "url": "embedded:locations/Mapshot_HK_White_Lady_01.png",
-      "wide": true
-    },
-    {
-      "label": "Душа Короля · место получения",
-      "url": "embedded:locations/Mapshot_HK_Kingsoul_01.png",
-      "wide": true
-    },
-    {
-      "label": "Сердце пустоты · место получения",
-      "url": "embedded:locations/Mapshot_HK_Birthplace.png",
-      "wide": true
-    }
-  ],
-  "all-charms": [
-    {
-      "label": "Душа короля",
-      "url": "https://cdn.wikimg.net/en/hkwiki/images/3/34/Kingsoul.png"
-    },
-    {
-      "label": "Сердце пустоты",
-      "url": "https://cdn.wikimg.net/en/hkwiki/images/b/bb/Void_Heart.png"
-    },
-    {
-      "label": "Мрачное дитя",
-      "url": "https://cdn.wikimg.net/en/hkwiki/images/9/91/Grimmchild.png"
-    },
-    {
-      "label": "Капризный компас · место получения",
-      "url": "embedded:locations/Mapshot_HK_Iselda_01.png",
-      "wide": true
-    },
-    {
-      "label": "Загребущий рой · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Крепкий панцирь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Ловец душ · место получения",
-      "url": "embedded:locations/Mapshot_HK_Snail_Shaman_01.png",
-      "wide": true
-    },
-    {
-      "label": "Шаманский камень · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Пожиратель душ · место получения",
-      "url": "embedded:locations/Mapshot_HK_Soul_Eater.png",
-      "wide": true
-    },
-    {
-      "label": "Трюкач · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dashmaster.jpg",
-      "wide": true
-    },
-    {
-      "label": "Ловкач · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Песнь гусеничек · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Элегия куколки · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкое Сердце · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкая Жадность · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкая Сила · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Искажатель заклинаний · место получения",
-      "url": "embedded:locations/Mapshot_HK_Spell_Twister.png",
-      "wide": true
-    },
-    {
-      "label": "Непоколебимое тело · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Тяжелый выпад · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Быстрый удар · место получения",
-      "url": "embedded:locations/Mapshot_HK_Quick_Slash.png",
-      "wide": true
-    },
-    {
-      "label": "Длинный гвоздь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Метка гордости · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mark_of_Pride.png",
-      "wide": true
-    },
-    {
-      "label": "Ярость Павшего · место получения",
-      "url": "embedded:locations/Mapshot_HK_Fury_of_the_Fallen.jpg",
-      "wide": true
-    },
-    {
-      "label": "Колючки страданий · место получения",
-      "url": "embedded:locations/Mapshot_HK_Thorns_of_Agony.png",
-      "wide": true
-    },
-    {
-      "label": "Панцирь Бальдра · место получения",
-      "url": "embedded:locations/Mapshot_HK_Baldur_Shell.jpg",
-      "wide": true
-    },
-    {
-      "label": "Тремогнездо · место получения",
-      "url": "embedded:locations/Mapshot_HK_Flukemarm_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Герб Защитника · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dung_Defender_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Пылающее чрево · место получения",
-      "url": "embedded:locations/Mapshot_HK_Glowing_Womb.jpg",
-      "wide": true
-    },
-    {
-      "label": "Быстрый фокус · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Глубокий фокус · место получения",
-      "url": "embedded:locations/Mapshot_HK_Deep_Focus.png",
-      "wide": true
-    },
-    {
-      "label": "Живительное сердце · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Живительное ядро · место получения",
-      "url": "embedded:locations/Mapshot_HK_Lifeblood_Core.png",
-      "wide": true
-    },
-    {
-      "label": "Благословение Джони · место получения",
-      "url": "embedded:locations/Mapshot_HK_Joni_01.png",
-      "wide": true
-    },
-    {
-      "label": "Кровь Улья · место получения",
-      "url": "embedded:locations/Mapshot_HK_Hiveblood.png",
-      "wide": true
-    },
-    {
-      "label": "Споровый гриб · место получения",
-      "url": "embedded:locations/Mapshot_HK_Spore_Shroom.png",
-      "wide": true
-    },
-    {
-      "label": "Пронизывающая тень · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sharp_Shadow.png",
-      "wide": true
-    },
-    {
-      "label": "Облик Унн · место получения",
-      "url": "embedded:locations/Mapshot_HK_Unn_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Ореол Мастера гвоздя · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Песнь Ткача · место получения",
-      "url": "embedded:locations/Mapshot_HK_Weavers_Den.png",
-      "wide": true
-    },
-    {
-      "label": "Повелитель грез · место получения",
-      "url": "embedded:locations/Mapshot_HK_Seer_01.png",
-      "wide": true
-    },
-    {
-      "label": "Щит Грез · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dreamshield.png",
-      "wide": true
-    },
-    {
-      "label": "Мрачное дитя · место получения",
-      "url": "embedded:locations/Mapshot_HK_Brumm_01.png",
-      "wide": true
-    },
-    {
-      "label": "Беспечная песнь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Nymm_01.png",
-      "wide": true
-    },
-    {
-      "label": "Душа Короля · место получения",
-      "url": "embedded:locations/Mapshot_HK_White_Lady_01.png",
-      "wide": true
-    },
-    {
-      "label": "Душа Короля · место получения",
-      "url": "embedded:locations/Mapshot_HK_Kingsoul_01.png",
-      "wide": true
-    },
-    {
-      "label": "Сердце пустоты · место получения",
-      "url": "embedded:locations/Mapshot_HK_Birthplace.png",
-      "wide": true
-    }
-  ],
-  "four-shards": [
-    {
-      "label": "Осколок маски",
-      "url": "https://cdn.wikimg.net/en/hkwiki/images/6/69/Mask_Shard.png"
-    },
-    {
-      "label": "Слай · четыре покупки",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Задумчивый чревень",
-      "url": "embedded:locations/Mapshot_HK_Brooding_Mawlek_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Отец гусеничек",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Перепутье · южнее Ложного рыцаря",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_03.png",
-      "wide": true
-    },
-    {
-      "label": "Станция королевы",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_04.png",
-      "wide": true
-    },
-    {
-      "label": "Дом Бретты",
-      "url": "embedded:locations/Mapshot_HK_Zote_02.png",
-      "wide": true
-    },
-    {
-      "label": "Каменное святилище",
-      "url": "embedded:locations/Mapshot_HK_No_Eyes_01.png",
-      "wide": true
-    },
-    {
-      "label": "Королевские стоки",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_07.png",
-      "wide": true
-    },
-    {
-      "label": "Глубинное гнездо",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_08.png",
-      "wide": true
-    },
-    {
-      "label": "Разъярённый страж",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_09.png",
-      "wide": true
-    },
-    {
-      "label": "Улей",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_10.png",
-      "wide": true
-    },
-    {
-      "label": "Провидица · 1500 эссенции",
-      "url": "embedded:locations/Mapshot_HK_Seer_01.png",
-      "wide": true
-    },
-    {
-      "label": "Нежный цветок",
-      "url": "embedded:locations/Mapshot_HK_Grey_Mourner_01.png",
-      "wide": true
-    }
-  ],
-  "all-shards": [
-    {
-      "label": "Осколок маски",
-      "url": "https://cdn.wikimg.net/en/hkwiki/images/6/69/Mask_Shard.png"
-    },
-    {
-      "label": "Слай · четыре покупки",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Задумчивый чревень",
-      "url": "embedded:locations/Mapshot_HK_Brooding_Mawlek_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Отец гусеничек",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Перепутье · южнее Ложного рыцаря",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_03.png",
-      "wide": true
-    },
-    {
-      "label": "Станция королевы",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_04.png",
-      "wide": true
-    },
-    {
-      "label": "Дом Бретты",
-      "url": "embedded:locations/Mapshot_HK_Zote_02.png",
-      "wide": true
-    },
-    {
-      "label": "Каменное святилище",
-      "url": "embedded:locations/Mapshot_HK_No_Eyes_01.png",
-      "wide": true
-    },
-    {
-      "label": "Королевские стоки",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_07.png",
-      "wide": true
-    },
-    {
-      "label": "Глубинное гнездо",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_08.png",
-      "wide": true
-    },
-    {
-      "label": "Разъярённый страж",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_09.png",
-      "wide": true
-    },
-    {
-      "label": "Улей",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_10.png",
-      "wide": true
-    },
-    {
-      "label": "Провидица · 1500 эссенции",
-      "url": "embedded:locations/Mapshot_HK_Seer_01.png",
-      "wide": true
-    },
-    {
-      "label": "Нежный цветок",
-      "url": "embedded:locations/Mapshot_HK_Grey_Mourner_01.png",
-      "wide": true
-    }
-  ],
-  "three-vessels": [
-    {
-      "label": "Черепок сосуда",
-      "url": "https://cdn.wikimg.net/en/hkwiki/images/2/29/Vessel_Fragment.png"
-    },
-    {
-      "label": "Слай · две покупки",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Зелёная тропа",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_02.png",
-      "wide": true
-    },
-    {
-      "label": "Перепутье",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_03.png",
-      "wide": true
-    },
-    {
-      "label": "Город слёз",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_04.png",
-      "wide": true
-    },
-    {
-      "label": "Глубинное гнездо",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_05.png",
-      "wide": true
-    },
-    {
-      "label": "Воющие утёсы",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_06.png",
-      "wide": true
-    },
-    {
-      "label": "Фонтан Древнего котлована",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_08.png",
-      "wide": true
-    },
-    {
-      "label": "Провидица · 700 эссенции",
-      "url": "embedded:locations/Mapshot_HK_Seer_01.png",
-      "wide": true
-    }
-  ],
-  "all-vessels": [
-    {
-      "label": "Черепок сосуда",
-      "url": "https://cdn.wikimg.net/en/hkwiki/images/2/29/Vessel_Fragment.png"
-    },
-    {
-      "label": "Слай · две покупки",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Зелёная тропа",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_02.png",
-      "wide": true
-    },
-    {
-      "label": "Перепутье",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_03.png",
-      "wide": true
-    },
-    {
-      "label": "Город слёз",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_04.png",
-      "wide": true
-    },
-    {
-      "label": "Глубинное гнездо",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_05.png",
-      "wide": true
-    },
-    {
-      "label": "Воющие утёсы",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_06.png",
-      "wide": true
-    },
-    {
-      "label": "Фонтан Древнего котлована",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_08.png",
-      "wide": true
-    },
-    {
-      "label": "Провидица · 700 эссенции",
-      "url": "embedded:locations/Mapshot_HK_Seer_01.png",
-      "wide": true
-    }
-  ],
   "delicate-flower": [
     {
       "label": "Нежный цветок",
@@ -2772,114 +1475,7 @@
       "wide": true
     }
   ],
-  "pdf-a-ref-17-guide": [
-    {
-      "label": "Слай · четыре покупки",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Задумчивый чревень",
-      "url": "embedded:locations/Mapshot_HK_Brooding_Mawlek_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Отец гусеничек",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Перепутье · южнее Ложного рыцаря",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_03.png",
-      "wide": true
-    },
-    {
-      "label": "Станция королевы",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_04.png",
-      "wide": true
-    },
-    {
-      "label": "Дом Бретты",
-      "url": "embedded:locations/Mapshot_HK_Zote_02.png",
-      "wide": true
-    },
-    {
-      "label": "Каменное святилище",
-      "url": "embedded:locations/Mapshot_HK_No_Eyes_01.png",
-      "wide": true
-    },
-    {
-      "label": "Королевские стоки",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_07.png",
-      "wide": true
-    },
-    {
-      "label": "Глубинное гнездо",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_08.png",
-      "wide": true
-    },
-    {
-      "label": "Разъярённый страж",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_09.png",
-      "wide": true
-    },
-    {
-      "label": "Улей",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_10.png",
-      "wide": true
-    },
-    {
-      "label": "Провидица · 1500 эссенции",
-      "url": "embedded:locations/Mapshot_HK_Seer_01.png",
-      "wide": true
-    },
-    {
-      "label": "Нежный цветок",
-      "url": "embedded:locations/Mapshot_HK_Grey_Mourner_01.png",
-      "wide": true
-    }
-  ],
   "pdf-a-ref-18-guide": [
-    {
-      "label": "Слай · две покупки",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Зелёная тропа",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_02.png",
-      "wide": true
-    },
-    {
-      "label": "Перепутье",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_03.png",
-      "wide": true
-    },
-    {
-      "label": "Город слёз",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_04.png",
-      "wide": true
-    },
-    {
-      "label": "Глубинное гнездо",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_05.png",
-      "wide": true
-    },
-    {
-      "label": "Воющие утёсы",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_06.png",
-      "wide": true
-    },
-    {
-      "label": "Фонтан Древнего котлована",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_08.png",
-      "wide": true
-    },
-    {
-      "label": "Провидица · 700 эссенции",
-      "url": "embedded:locations/Mapshot_HK_Seer_01.png",
-      "wide": true
-    },
     {
       "label": "Карта · Кузнец гвоздей",
       "url": "embedded:locations/Mapshot_HK_Nailsmith_01.png",
@@ -2918,552 +1514,11 @@
     {
       "label": "Руда · Испытание завоевателя",
       "url": "embedded:locations/Mapshot_HK_Zote_05.png",
-      "wide": true
-    }
-  ],
-  "pdf-a-ref-19-guide": [
-    {
-      "label": "Капризный компас · место получения",
-      "url": "embedded:locations/Mapshot_HK_Iselda_01.png",
-      "wide": true
-    },
-    {
-      "label": "Загребущий рой · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Крепкий панцирь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Ловец душ · место получения",
-      "url": "embedded:locations/Mapshot_HK_Snail_Shaman_01.png",
-      "wide": true
-    },
-    {
-      "label": "Шаманский камень · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Пожиратель душ · место получения",
-      "url": "embedded:locations/Mapshot_HK_Soul_Eater.png",
-      "wide": true
-    },
-    {
-      "label": "Трюкач · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dashmaster.jpg",
-      "wide": true
-    },
-    {
-      "label": "Ловкач · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Песнь гусеничек · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Элегия куколки · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкое Сердце · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкая Жадность · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкая Сила · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Искажатель заклинаний · место получения",
-      "url": "embedded:locations/Mapshot_HK_Spell_Twister.png",
-      "wide": true
-    },
-    {
-      "label": "Непоколебимое тело · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Тяжелый выпад · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Быстрый удар · место получения",
-      "url": "embedded:locations/Mapshot_HK_Quick_Slash.png",
-      "wide": true
-    },
-    {
-      "label": "Длинный гвоздь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Метка гордости · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mark_of_Pride.png",
-      "wide": true
-    },
-    {
-      "label": "Ярость Павшего · место получения",
-      "url": "embedded:locations/Mapshot_HK_Fury_of_the_Fallen.jpg",
-      "wide": true
-    },
-    {
-      "label": "Колючки страданий · место получения",
-      "url": "embedded:locations/Mapshot_HK_Thorns_of_Agony.png",
-      "wide": true
-    },
-    {
-      "label": "Панцирь Бальдра · место получения",
-      "url": "embedded:locations/Mapshot_HK_Baldur_Shell.jpg",
-      "wide": true
-    },
-    {
-      "label": "Тремогнездо · место получения",
-      "url": "embedded:locations/Mapshot_HK_Flukemarm_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Герб Защитника · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dung_Defender_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Пылающее чрево · место получения",
-      "url": "embedded:locations/Mapshot_HK_Glowing_Womb.jpg",
-      "wide": true
-    },
-    {
-      "label": "Быстрый фокус · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Глубокий фокус · место получения",
-      "url": "embedded:locations/Mapshot_HK_Deep_Focus.png",
-      "wide": true
-    },
-    {
-      "label": "Живительное сердце · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Живительное ядро · место получения",
-      "url": "embedded:locations/Mapshot_HK_Lifeblood_Core.png",
-      "wide": true
-    },
-    {
-      "label": "Благословение Джони · место получения",
-      "url": "embedded:locations/Mapshot_HK_Joni_01.png",
-      "wide": true
-    },
-    {
-      "label": "Кровь Улья · место получения",
-      "url": "embedded:locations/Mapshot_HK_Hiveblood.png",
-      "wide": true
-    },
-    {
-      "label": "Споровый гриб · место получения",
-      "url": "embedded:locations/Mapshot_HK_Spore_Shroom.png",
-      "wide": true
-    },
-    {
-      "label": "Пронизывающая тень · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sharp_Shadow.png",
-      "wide": true
-    },
-    {
-      "label": "Облик Унн · место получения",
-      "url": "embedded:locations/Mapshot_HK_Unn_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Ореол Мастера гвоздя · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Песнь Ткача · место получения",
-      "url": "embedded:locations/Mapshot_HK_Weavers_Den.png",
-      "wide": true
-    },
-    {
-      "label": "Повелитель грез · место получения",
-      "url": "embedded:locations/Mapshot_HK_Seer_01.png",
-      "wide": true
-    },
-    {
-      "label": "Щит Грез · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dreamshield.png",
-      "wide": true
-    },
-    {
-      "label": "Мрачное дитя · место получения",
-      "url": "embedded:locations/Mapshot_HK_Brumm_01.png",
-      "wide": true
-    },
-    {
-      "label": "Беспечная песнь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Nymm_01.png",
-      "wide": true
-    },
-    {
-      "label": "Душа Короля · место получения",
-      "url": "embedded:locations/Mapshot_HK_White_Lady_01.png",
-      "wide": true
-    },
-    {
-      "label": "Душа Короля · место получения",
-      "url": "embedded:locations/Mapshot_HK_Kingsoul_01.png",
-      "wide": true
-    },
-    {
-      "label": "Сердце пустоты · место получения",
-      "url": "embedded:locations/Mapshot_HK_Birthplace.png",
-      "wide": true
-    }
-  ],
-  "pdf-a-ref-20-guide": [
-    {
-      "label": "Капризный компас · место получения",
-      "url": "embedded:locations/Mapshot_HK_Iselda_01.png",
-      "wide": true
-    },
-    {
-      "label": "Загребущий рой · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Крепкий панцирь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Ловец душ · место получения",
-      "url": "embedded:locations/Mapshot_HK_Snail_Shaman_01.png",
-      "wide": true
-    },
-    {
-      "label": "Шаманский камень · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Пожиратель душ · место получения",
-      "url": "embedded:locations/Mapshot_HK_Soul_Eater.png",
-      "wide": true
-    },
-    {
-      "label": "Трюкач · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dashmaster.jpg",
-      "wide": true
-    },
-    {
-      "label": "Ловкач · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Песнь гусеничек · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Элегия куколки · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкое Сердце · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкая Жадность · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкая Сила · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Искажатель заклинаний · место получения",
-      "url": "embedded:locations/Mapshot_HK_Spell_Twister.png",
-      "wide": true
-    },
-    {
-      "label": "Непоколебимое тело · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Тяжелый выпад · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Быстрый удар · место получения",
-      "url": "embedded:locations/Mapshot_HK_Quick_Slash.png",
-      "wide": true
-    },
-    {
-      "label": "Длинный гвоздь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Метка гордости · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mark_of_Pride.png",
-      "wide": true
-    },
-    {
-      "label": "Ярость Павшего · место получения",
-      "url": "embedded:locations/Mapshot_HK_Fury_of_the_Fallen.jpg",
-      "wide": true
-    },
-    {
-      "label": "Колючки страданий · место получения",
-      "url": "embedded:locations/Mapshot_HK_Thorns_of_Agony.png",
-      "wide": true
-    },
-    {
-      "label": "Панцирь Бальдра · место получения",
-      "url": "embedded:locations/Mapshot_HK_Baldur_Shell.jpg",
-      "wide": true
-    },
-    {
-      "label": "Тремогнездо · место получения",
-      "url": "embedded:locations/Mapshot_HK_Flukemarm_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Герб Защитника · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dung_Defender_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Пылающее чрево · место получения",
-      "url": "embedded:locations/Mapshot_HK_Glowing_Womb.jpg",
-      "wide": true
-    },
-    {
-      "label": "Быстрый фокус · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Глубокий фокус · место получения",
-      "url": "embedded:locations/Mapshot_HK_Deep_Focus.png",
-      "wide": true
-    },
-    {
-      "label": "Живительное сердце · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Живительное ядро · место получения",
-      "url": "embedded:locations/Mapshot_HK_Lifeblood_Core.png",
-      "wide": true
-    },
-    {
-      "label": "Благословение Джони · место получения",
-      "url": "embedded:locations/Mapshot_HK_Joni_01.png",
-      "wide": true
-    },
-    {
-      "label": "Кровь Улья · место получения",
-      "url": "embedded:locations/Mapshot_HK_Hiveblood.png",
-      "wide": true
-    },
-    {
-      "label": "Споровый гриб · место получения",
-      "url": "embedded:locations/Mapshot_HK_Spore_Shroom.png",
-      "wide": true
-    },
-    {
-      "label": "Пронизывающая тень · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sharp_Shadow.png",
-      "wide": true
-    },
-    {
-      "label": "Облик Унн · место получения",
-      "url": "embedded:locations/Mapshot_HK_Unn_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Ореол Мастера гвоздя · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Песнь Ткача · место получения",
-      "url": "embedded:locations/Mapshot_HK_Weavers_Den.png",
-      "wide": true
-    },
-    {
-      "label": "Повелитель грез · место получения",
-      "url": "embedded:locations/Mapshot_HK_Seer_01.png",
-      "wide": true
-    },
-    {
-      "label": "Щит Грез · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dreamshield.png",
-      "wide": true
-    },
-    {
-      "label": "Мрачное дитя · место получения",
-      "url": "embedded:locations/Mapshot_HK_Brumm_01.png",
-      "wide": true
-    },
-    {
-      "label": "Беспечная песнь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Nymm_01.png",
-      "wide": true
-    },
-    {
-      "label": "Душа Короля · место получения",
-      "url": "embedded:locations/Mapshot_HK_White_Lady_01.png",
-      "wide": true
-    },
-    {
-      "label": "Душа Короля · место получения",
-      "url": "embedded:locations/Mapshot_HK_Kingsoul_01.png",
-      "wide": true
-    },
-    {
-      "label": "Сердце пустоты · место получения",
-      "url": "embedded:locations/Mapshot_HK_Birthplace.png",
-      "wide": true
-    }
-  ],
-  "pdf-b-ref-17-guide": [
-    {
-      "label": "Слай · четыре покупки",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Задумчивый чревень",
-      "url": "embedded:locations/Mapshot_HK_Brooding_Mawlek_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Отец гусеничек",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Перепутье · южнее Ложного рыцаря",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_03.png",
-      "wide": true
-    },
-    {
-      "label": "Станция королевы",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_04.png",
-      "wide": true
-    },
-    {
-      "label": "Дом Бретты",
-      "url": "embedded:locations/Mapshot_HK_Zote_02.png",
-      "wide": true
-    },
-    {
-      "label": "Каменное святилище",
-      "url": "embedded:locations/Mapshot_HK_No_Eyes_01.png",
-      "wide": true
-    },
-    {
-      "label": "Королевские стоки",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_07.png",
-      "wide": true
-    },
-    {
-      "label": "Глубинное гнездо",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_08.png",
-      "wide": true
-    },
-    {
-      "label": "Разъярённый страж",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_09.png",
-      "wide": true
-    },
-    {
-      "label": "Улей",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_10.png",
-      "wide": true
-    },
-    {
-      "label": "Провидица · 1500 эссенции",
-      "url": "embedded:locations/Mapshot_HK_Seer_01.png",
-      "wide": true
-    },
-    {
-      "label": "Нежный цветок",
-      "url": "embedded:locations/Mapshot_HK_Grey_Mourner_01.png",
       "wide": true
     }
   ],
   "pdf-b-ref-18-guide": [
     {
-      "label": "Слай · две покупки",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Зелёная тропа",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_02.png",
-      "wide": true
-    },
-    {
-      "label": "Перепутье",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_03.png",
-      "wide": true
-    },
-    {
-      "label": "Город слёз",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_04.png",
-      "wide": true
-    },
-    {
-      "label": "Глубинное гнездо",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_05.png",
-      "wide": true
-    },
-    {
-      "label": "Воющие утёсы",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_06.png",
-      "wide": true
-    },
-    {
-      "label": "Фонтан Древнего котлована",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_08.png",
-      "wide": true
-    },
-    {
-      "label": "Провидица · 700 эссенции",
-      "url": "embedded:locations/Mapshot_HK_Seer_01.png",
-      "wide": true
-    },
-    {
       "label": "Карта · Кузнец гвоздей",
       "url": "embedded:locations/Mapshot_HK_Nailsmith_01.png",
       "wide": true
@@ -3501,552 +1556,11 @@
     {
       "label": "Руда · Испытание завоевателя",
       "url": "embedded:locations/Mapshot_HK_Zote_05.png",
-      "wide": true
-    }
-  ],
-  "pdf-b-ref-19-guide": [
-    {
-      "label": "Капризный компас · место получения",
-      "url": "embedded:locations/Mapshot_HK_Iselda_01.png",
-      "wide": true
-    },
-    {
-      "label": "Загребущий рой · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Крепкий панцирь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Ловец душ · место получения",
-      "url": "embedded:locations/Mapshot_HK_Snail_Shaman_01.png",
-      "wide": true
-    },
-    {
-      "label": "Шаманский камень · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Пожиратель душ · место получения",
-      "url": "embedded:locations/Mapshot_HK_Soul_Eater.png",
-      "wide": true
-    },
-    {
-      "label": "Трюкач · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dashmaster.jpg",
-      "wide": true
-    },
-    {
-      "label": "Ловкач · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Песнь гусеничек · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Элегия куколки · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкое Сердце · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкая Жадность · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкая Сила · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Искажатель заклинаний · место получения",
-      "url": "embedded:locations/Mapshot_HK_Spell_Twister.png",
-      "wide": true
-    },
-    {
-      "label": "Непоколебимое тело · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Тяжелый выпад · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Быстрый удар · место получения",
-      "url": "embedded:locations/Mapshot_HK_Quick_Slash.png",
-      "wide": true
-    },
-    {
-      "label": "Длинный гвоздь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Метка гордости · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mark_of_Pride.png",
-      "wide": true
-    },
-    {
-      "label": "Ярость Павшего · место получения",
-      "url": "embedded:locations/Mapshot_HK_Fury_of_the_Fallen.jpg",
-      "wide": true
-    },
-    {
-      "label": "Колючки страданий · место получения",
-      "url": "embedded:locations/Mapshot_HK_Thorns_of_Agony.png",
-      "wide": true
-    },
-    {
-      "label": "Панцирь Бальдра · место получения",
-      "url": "embedded:locations/Mapshot_HK_Baldur_Shell.jpg",
-      "wide": true
-    },
-    {
-      "label": "Тремогнездо · место получения",
-      "url": "embedded:locations/Mapshot_HK_Flukemarm_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Герб Защитника · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dung_Defender_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Пылающее чрево · место получения",
-      "url": "embedded:locations/Mapshot_HK_Glowing_Womb.jpg",
-      "wide": true
-    },
-    {
-      "label": "Быстрый фокус · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Глубокий фокус · место получения",
-      "url": "embedded:locations/Mapshot_HK_Deep_Focus.png",
-      "wide": true
-    },
-    {
-      "label": "Живительное сердце · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Живительное ядро · место получения",
-      "url": "embedded:locations/Mapshot_HK_Lifeblood_Core.png",
-      "wide": true
-    },
-    {
-      "label": "Благословение Джони · место получения",
-      "url": "embedded:locations/Mapshot_HK_Joni_01.png",
-      "wide": true
-    },
-    {
-      "label": "Кровь Улья · место получения",
-      "url": "embedded:locations/Mapshot_HK_Hiveblood.png",
-      "wide": true
-    },
-    {
-      "label": "Споровый гриб · место получения",
-      "url": "embedded:locations/Mapshot_HK_Spore_Shroom.png",
-      "wide": true
-    },
-    {
-      "label": "Пронизывающая тень · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sharp_Shadow.png",
-      "wide": true
-    },
-    {
-      "label": "Облик Унн · место получения",
-      "url": "embedded:locations/Mapshot_HK_Unn_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Ореол Мастера гвоздя · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Песнь Ткача · место получения",
-      "url": "embedded:locations/Mapshot_HK_Weavers_Den.png",
-      "wide": true
-    },
-    {
-      "label": "Повелитель грез · место получения",
-      "url": "embedded:locations/Mapshot_HK_Seer_01.png",
-      "wide": true
-    },
-    {
-      "label": "Щит Грез · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dreamshield.png",
-      "wide": true
-    },
-    {
-      "label": "Мрачное дитя · место получения",
-      "url": "embedded:locations/Mapshot_HK_Brumm_01.png",
-      "wide": true
-    },
-    {
-      "label": "Беспечная песнь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Nymm_01.png",
-      "wide": true
-    },
-    {
-      "label": "Душа Короля · место получения",
-      "url": "embedded:locations/Mapshot_HK_White_Lady_01.png",
-      "wide": true
-    },
-    {
-      "label": "Душа Короля · место получения",
-      "url": "embedded:locations/Mapshot_HK_Kingsoul_01.png",
-      "wide": true
-    },
-    {
-      "label": "Сердце пустоты · место получения",
-      "url": "embedded:locations/Mapshot_HK_Birthplace.png",
-      "wide": true
-    }
-  ],
-  "pdf-b-ref-20-guide": [
-    {
-      "label": "Капризный компас · место получения",
-      "url": "embedded:locations/Mapshot_HK_Iselda_01.png",
-      "wide": true
-    },
-    {
-      "label": "Загребущий рой · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Крепкий панцирь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Ловец душ · место получения",
-      "url": "embedded:locations/Mapshot_HK_Snail_Shaman_01.png",
-      "wide": true
-    },
-    {
-      "label": "Шаманский камень · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Пожиратель душ · место получения",
-      "url": "embedded:locations/Mapshot_HK_Soul_Eater.png",
-      "wide": true
-    },
-    {
-      "label": "Трюкач · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dashmaster.jpg",
-      "wide": true
-    },
-    {
-      "label": "Ловкач · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Песнь гусеничек · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Элегия куколки · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкое Сердце · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкая Жадность · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкая Сила · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Искажатель заклинаний · место получения",
-      "url": "embedded:locations/Mapshot_HK_Spell_Twister.png",
-      "wide": true
-    },
-    {
-      "label": "Непоколебимое тело · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Тяжелый выпад · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Быстрый удар · место получения",
-      "url": "embedded:locations/Mapshot_HK_Quick_Slash.png",
-      "wide": true
-    },
-    {
-      "label": "Длинный гвоздь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Метка гордости · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mark_of_Pride.png",
-      "wide": true
-    },
-    {
-      "label": "Ярость Павшего · место получения",
-      "url": "embedded:locations/Mapshot_HK_Fury_of_the_Fallen.jpg",
-      "wide": true
-    },
-    {
-      "label": "Колючки страданий · место получения",
-      "url": "embedded:locations/Mapshot_HK_Thorns_of_Agony.png",
-      "wide": true
-    },
-    {
-      "label": "Панцирь Бальдра · место получения",
-      "url": "embedded:locations/Mapshot_HK_Baldur_Shell.jpg",
-      "wide": true
-    },
-    {
-      "label": "Тремогнездо · место получения",
-      "url": "embedded:locations/Mapshot_HK_Flukemarm_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Герб Защитника · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dung_Defender_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Пылающее чрево · место получения",
-      "url": "embedded:locations/Mapshot_HK_Glowing_Womb.jpg",
-      "wide": true
-    },
-    {
-      "label": "Быстрый фокус · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Глубокий фокус · место получения",
-      "url": "embedded:locations/Mapshot_HK_Deep_Focus.png",
-      "wide": true
-    },
-    {
-      "label": "Живительное сердце · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Живительное ядро · место получения",
-      "url": "embedded:locations/Mapshot_HK_Lifeblood_Core.png",
-      "wide": true
-    },
-    {
-      "label": "Благословение Джони · место получения",
-      "url": "embedded:locations/Mapshot_HK_Joni_01.png",
-      "wide": true
-    },
-    {
-      "label": "Кровь Улья · место получения",
-      "url": "embedded:locations/Mapshot_HK_Hiveblood.png",
-      "wide": true
-    },
-    {
-      "label": "Споровый гриб · место получения",
-      "url": "embedded:locations/Mapshot_HK_Spore_Shroom.png",
-      "wide": true
-    },
-    {
-      "label": "Пронизывающая тень · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sharp_Shadow.png",
-      "wide": true
-    },
-    {
-      "label": "Облик Унн · место получения",
-      "url": "embedded:locations/Mapshot_HK_Unn_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Ореол Мастера гвоздя · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Песнь Ткача · место получения",
-      "url": "embedded:locations/Mapshot_HK_Weavers_Den.png",
-      "wide": true
-    },
-    {
-      "label": "Повелитель грез · место получения",
-      "url": "embedded:locations/Mapshot_HK_Seer_01.png",
-      "wide": true
-    },
-    {
-      "label": "Щит Грез · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dreamshield.png",
-      "wide": true
-    },
-    {
-      "label": "Мрачное дитя · место получения",
-      "url": "embedded:locations/Mapshot_HK_Brumm_01.png",
-      "wide": true
-    },
-    {
-      "label": "Беспечная песнь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Nymm_01.png",
-      "wide": true
-    },
-    {
-      "label": "Душа Короля · место получения",
-      "url": "embedded:locations/Mapshot_HK_White_Lady_01.png",
-      "wide": true
-    },
-    {
-      "label": "Душа Короля · место получения",
-      "url": "embedded:locations/Mapshot_HK_Kingsoul_01.png",
-      "wide": true
-    },
-    {
-      "label": "Сердце пустоты · место получения",
-      "url": "embedded:locations/Mapshot_HK_Birthplace.png",
-      "wide": true
-    }
-  ],
-  "pdf-c-ref-17-guide": [
-    {
-      "label": "Слай · четыре покупки",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Задумчивый чревень",
-      "url": "embedded:locations/Mapshot_HK_Brooding_Mawlek_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Отец гусеничек",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Перепутье · южнее Ложного рыцаря",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_03.png",
-      "wide": true
-    },
-    {
-      "label": "Станция королевы",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_04.png",
-      "wide": true
-    },
-    {
-      "label": "Дом Бретты",
-      "url": "embedded:locations/Mapshot_HK_Zote_02.png",
-      "wide": true
-    },
-    {
-      "label": "Каменное святилище",
-      "url": "embedded:locations/Mapshot_HK_No_Eyes_01.png",
-      "wide": true
-    },
-    {
-      "label": "Королевские стоки",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_07.png",
-      "wide": true
-    },
-    {
-      "label": "Глубинное гнездо",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_08.png",
-      "wide": true
-    },
-    {
-      "label": "Разъярённый страж",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_09.png",
-      "wide": true
-    },
-    {
-      "label": "Улей",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_10.png",
-      "wide": true
-    },
-    {
-      "label": "Провидица · 1500 эссенции",
-      "url": "embedded:locations/Mapshot_HK_Seer_01.png",
-      "wide": true
-    },
-    {
-      "label": "Нежный цветок",
-      "url": "embedded:locations/Mapshot_HK_Grey_Mourner_01.png",
       "wide": true
     }
   ],
   "pdf-c-ref-18-guide": [
     {
-      "label": "Слай · две покупки",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Зелёная тропа",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_02.png",
-      "wide": true
-    },
-    {
-      "label": "Перепутье",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_03.png",
-      "wide": true
-    },
-    {
-      "label": "Город слёз",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_04.png",
-      "wide": true
-    },
-    {
-      "label": "Глубинное гнездо",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_05.png",
-      "wide": true
-    },
-    {
-      "label": "Воющие утёсы",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_06.png",
-      "wide": true
-    },
-    {
-      "label": "Фонтан Древнего котлована",
-      "url": "embedded:locations/Mapshot_HK_Vessel_Fragment_08.png",
-      "wide": true
-    },
-    {
-      "label": "Провидица · 700 эссенции",
-      "url": "embedded:locations/Mapshot_HK_Seer_01.png",
-      "wide": true
-    },
-    {
       "label": "Карта · Кузнец гвоздей",
       "url": "embedded:locations/Mapshot_HK_Nailsmith_01.png",
       "wide": true
@@ -4087,437 +1601,323 @@
       "wide": true
     }
   ],
-  "pdf-c-ref-19-guide": [
+  "112/pdf-a2/enter-greenpath": [
     {
-      "label": "Капризный компас · место получения",
-      "url": "embedded:locations/Mapshot_HK_Iselda_01.png",
-      "wide": true
-    },
-    {
-      "label": "Загребущий рой · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Крепкий панцирь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Ловец душ · место получения",
-      "url": "embedded:locations/Mapshot_HK_Snail_Shaman_01.png",
-      "wide": true
-    },
-    {
-      "label": "Шаманский камень · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Пожиратель душ · место получения",
-      "url": "embedded:locations/Mapshot_HK_Soul_Eater.png",
-      "wide": true
-    },
-    {
-      "label": "Трюкач · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dashmaster.jpg",
-      "wide": true
-    },
-    {
-      "label": "Ловкач · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Песнь гусеничек · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Элегия куколки · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкое Сердце · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкая Жадность · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкая Сила · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Искажатель заклинаний · место получения",
-      "url": "embedded:locations/Mapshot_HK_Spell_Twister.png",
-      "wide": true
-    },
-    {
-      "label": "Непоколебимое тело · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Тяжелый выпад · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Быстрый удар · место получения",
-      "url": "embedded:locations/Mapshot_HK_Quick_Slash.png",
-      "wide": true
-    },
-    {
-      "label": "Длинный гвоздь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Метка гордости · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mark_of_Pride.png",
-      "wide": true
-    },
-    {
-      "label": "Ярость Павшего · место получения",
-      "url": "embedded:locations/Mapshot_HK_Fury_of_the_Fallen.jpg",
-      "wide": true
-    },
-    {
-      "label": "Колючки страданий · место получения",
-      "url": "embedded:locations/Mapshot_HK_Thorns_of_Agony.png",
-      "wide": true
-    },
-    {
-      "label": "Панцирь Бальдра · место получения",
-      "url": "embedded:locations/Mapshot_HK_Baldur_Shell.jpg",
-      "wide": true
-    },
-    {
-      "label": "Тремогнездо · место получения",
-      "url": "embedded:locations/Mapshot_HK_Flukemarm_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Герб Защитника · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dung_Defender_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Пылающее чрево · место получения",
-      "url": "embedded:locations/Mapshot_HK_Glowing_Womb.jpg",
-      "wide": true
-    },
-    {
-      "label": "Быстрый фокус · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Глубокий фокус · место получения",
-      "url": "embedded:locations/Mapshot_HK_Deep_Focus.png",
-      "wide": true
-    },
-    {
-      "label": "Живительное сердце · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Живительное ядро · место получения",
-      "url": "embedded:locations/Mapshot_HK_Lifeblood_Core.png",
-      "wide": true
-    },
-    {
-      "label": "Благословение Джони · место получения",
-      "url": "embedded:locations/Mapshot_HK_Joni_01.png",
-      "wide": true
-    },
-    {
-      "label": "Кровь Улья · место получения",
-      "url": "embedded:locations/Mapshot_HK_Hiveblood.png",
-      "wide": true
-    },
-    {
-      "label": "Споровый гриб · место получения",
-      "url": "embedded:locations/Mapshot_HK_Spore_Shroom.png",
-      "wide": true
-    },
-    {
-      "label": "Пронизывающая тень · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sharp_Shadow.png",
-      "wide": true
-    },
-    {
-      "label": "Облик Унн · место получения",
-      "url": "embedded:locations/Mapshot_HK_Unn_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Ореол Мастера гвоздя · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Песнь Ткача · место получения",
-      "url": "embedded:locations/Mapshot_HK_Weavers_Den.png",
-      "wide": true
-    },
-    {
-      "label": "Повелитель грез · место получения",
-      "url": "embedded:locations/Mapshot_HK_Seer_01.png",
-      "wide": true
-    },
-    {
-      "label": "Щит Грез · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dreamshield.png",
-      "wide": true
-    },
-    {
-      "label": "Мрачное дитя · место получения",
-      "url": "embedded:locations/Mapshot_HK_Brumm_01.png",
-      "wide": true
-    },
-    {
-      "label": "Беспечная песнь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Nymm_01.png",
-      "wide": true
-    },
-    {
-      "label": "Душа Короля · место получения",
-      "url": "embedded:locations/Mapshot_HK_White_Lady_01.png",
-      "wide": true
-    },
-    {
-      "label": "Душа Короля · место получения",
-      "url": "embedded:locations/Mapshot_HK_Kingsoul_01.png",
-      "wide": true
-    },
-    {
-      "label": "Сердце пустоты · место получения",
-      "url": "embedded:locations/Mapshot_HK_Birthplace.png",
+      "label": "Старший бальдр преграждает вход · используй Мстительный дух",
+      "url": "embedded:locations/Screenshot_HK_Elder_Baldur_01.png",
       "wide": true
     }
   ],
-  "pdf-c-ref-20-guide": [
+  "112/pdf-a4/nail-upgrade": [
     {
-      "label": "Капризный компас · место получения",
-      "url": "embedded:locations/Mapshot_HK_Iselda_01.png",
+      "label": "Кузнец гвоздей",
+      "url": "embedded:locations/studio-a3f63e2e8af3ee357f80a20d660853567cc2bdfc2eb828c9e31fae34c76da953.png",
       "wide": true
     },
     {
-      "label": "Загребущий рой · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
+      "label": "Бледная руда",
+      "url": "embedded:locations/studio-54fa8205fe570259bff0d8fc52e002aa333a42d1307776910c1ad526d72abf1b.png",
       "wide": true
     },
     {
-      "label": "Крепкий панцирь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
+      "label": "Карта · Кузнец гвоздей",
+      "url": "embedded:locations/Mapshot_HK_Nailsmith_01.png",
       "wide": true
     },
     {
-      "label": "Ловец душ · место получения",
-      "url": "embedded:locations/Mapshot_HK_Snail_Shaman_01.png",
+      "label": "Место · Кузнец гвоздей",
+      "url": "embedded:locations/Screenshot_HK_Nailsmith_01.png",
       "wide": true
     },
     {
-      "label": "Шаманский камень · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
+      "label": "Руда · Древний котлован",
+      "url": "embedded:locations/Mapshot_HK_Pale_Ore_01.png",
       "wide": true
     },
     {
-      "label": "Пожиратель душ · место получения",
-      "url": "embedded:locations/Mapshot_HK_Soul_Eater.png",
+      "label": "Руда · Венец Халлоунеста нужен двойной прыжок",
+      "url": "embedded:locations/Mapshot_HK_Pale_Ore_03.png",
       "wide": true
     },
     {
-      "label": "Трюкач · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dashmaster.jpg",
+      "label": "Руда · Носк нужен фонарик",
+      "url": "embedded:locations/Mapshot_HK_Pale_Ore_04.png",
       "wide": true
     },
     {
-      "label": "Ловкач · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Песнь гусеничек · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Элегия куколки · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкое Сердце · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкая Жадность · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Хрупкая Сила · место получения",
-      "url": "embedded:locations/Mapshot_HK_Leg_Eater_01.png",
-      "wide": true
-    },
-    {
-      "label": "Искажатель заклинаний · место получения",
-      "url": "embedded:locations/Mapshot_HK_Spell_Twister.png",
-      "wide": true
-    },
-    {
-      "label": "Непоколебимое тело · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Тяжелый выпад · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Быстрый удар · место получения",
-      "url": "embedded:locations/Mapshot_HK_Quick_Slash.png",
-      "wide": true
-    },
-    {
-      "label": "Длинный гвоздь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Метка гордости · место получения",
-      "url": "embedded:locations/Mapshot_HK_Mark_of_Pride.png",
-      "wide": true
-    },
-    {
-      "label": "Ярость Павшего · место получения",
-      "url": "embedded:locations/Mapshot_HK_Fury_of_the_Fallen.jpg",
-      "wide": true
-    },
-    {
-      "label": "Колючки страданий · место получения",
-      "url": "embedded:locations/Mapshot_HK_Thorns_of_Agony.png",
-      "wide": true
-    },
-    {
-      "label": "Панцирь Бальдра · место получения",
-      "url": "embedded:locations/Mapshot_HK_Baldur_Shell.jpg",
-      "wide": true
-    },
-    {
-      "label": "Тремогнездо · место получения",
-      "url": "embedded:locations/Mapshot_HK_Flukemarm_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Герб Защитника · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dung_Defender_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Пылающее чрево · место получения",
-      "url": "embedded:locations/Mapshot_HK_Glowing_Womb.jpg",
-      "wide": true
-    },
-    {
-      "label": "Быстрый фокус · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Глубокий фокус · место получения",
-      "url": "embedded:locations/Mapshot_HK_Deep_Focus.png",
-      "wide": true
-    },
-    {
-      "label": "Живительное сердце · место получения",
-      "url": "embedded:locations/Mapshot_HK_Salubra_01.png",
-      "wide": true
-    },
-    {
-      "label": "Живительное ядро · место получения",
-      "url": "embedded:locations/Mapshot_HK_Lifeblood_Core.png",
-      "wide": true
-    },
-    {
-      "label": "Благословение Джони · место получения",
-      "url": "embedded:locations/Mapshot_HK_Joni_01.png",
-      "wide": true
-    },
-    {
-      "label": "Кровь Улья · место получения",
-      "url": "embedded:locations/Mapshot_HK_Hiveblood.png",
-      "wide": true
-    },
-    {
-      "label": "Споровый гриб · место получения",
-      "url": "embedded:locations/Mapshot_HK_Spore_Shroom.png",
-      "wide": true
-    },
-    {
-      "label": "Пронизывающая тень · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sharp_Shadow.png",
-      "wide": true
-    },
-    {
-      "label": "Облик Унн · место получения",
-      "url": "embedded:locations/Mapshot_HK_Unn_01.jpg",
-      "wide": true
-    },
-    {
-      "label": "Ореол Мастера гвоздя · место получения",
-      "url": "embedded:locations/Mapshot_HK_Sly_02.png",
-      "wide": true
-    },
-    {
-      "label": "Песнь Ткача · место получения",
-      "url": "embedded:locations/Mapshot_HK_Weavers_Den.png",
-      "wide": true
-    },
-    {
-      "label": "Повелитель грез · место получения",
+      "label": "Руда · 300 эссенции",
       "url": "embedded:locations/Mapshot_HK_Seer_01.png",
       "wide": true
     },
     {
-      "label": "Щит Грез · место получения",
-      "url": "embedded:locations/Mapshot_HK_Dreamshield.png",
+      "label": "Руда · 31 гусеничка",
+      "url": "embedded:locations/Mapshot_HK_Mask_Shard_02.png",
       "wide": true
     },
     {
-      "label": "Мрачное дитя · место получения",
-      "url": "embedded:locations/Mapshot_HK_Brumm_01.png",
+      "label": "Руда · Испытание завоевателя",
+      "url": "embedded:locations/studio-31bc397d80c018b9351758b65cc23bf7b743d4c64227e8d380e7686b70a31110.png",
+      "wide": true
+    }
+  ],
+  "112/pdf-a9/pdf-seven-warriors": [
+    {
+      "label": "Ксеро",
+      "url": "embedded:locations/studio-e715131bfc8f1fd0c04bff8c13ce078a5d974260a6a2d04b5bd0f6e2220a84d8.png",
       "wide": true
     },
     {
-      "label": "Беспечная песнь · место получения",
-      "url": "embedded:locations/Mapshot_HK_Nymm_01.png",
+      "label": "Ксеро · карта 1",
+      "url": "embedded:locations/studio-3adfb48d6fe240cc1f4be4d37abfbe64a8f724c84878bbf5a806f126e3f55dba.jpg",
       "wide": true
     },
     {
-      "label": "Душа Короля · место получения",
-      "url": "embedded:locations/Mapshot_HK_White_Lady_01.png",
+      "label": "Горб",
+      "url": "embedded:locations/studio-483830d43a91313e80e96849c066200899a3937b639775d70501248653550a14.png",
       "wide": true
     },
     {
-      "label": "Душа Короля · место получения",
-      "url": "embedded:locations/Mapshot_HK_Kingsoul_01.png",
+      "label": "Горб · карта 1",
+      "url": "embedded:locations/studio-02e70e66fef52b487ed4b43cd8cf29d3ab234fc201c265aed8587d31fd92485d.jpg",
       "wide": true
     },
     {
-      "label": "Сердце пустоты · место получения",
-      "url": "embedded:locations/Mapshot_HK_Birthplace.png",
+      "label": "Старейшина Ху",
+      "url": "embedded:locations/studio-22fef2ccc085f7f6202e9c18f91fa5ac23f48589fc198e9bcabef9e68ab129c8.png",
+      "wide": true
+    },
+    {
+      "label": "Старейшина Ху · карта 1",
+      "url": "embedded:locations/studio-d14114b9627653125d719fca40a9e1775d71c1e99b1a6da32dc1e34d30cbf9db.png",
+      "wide": true
+    },
+    {
+      "label": "Марму",
+      "url": "embedded:locations/studio-fcc00d8995210c402f2acbbe6bbf280d05f5e59a6dc14ca1988b76c5d7119553.png",
+      "wide": true
+    },
+    {
+      "label": "Марму · карта 1",
+      "url": "embedded:locations/studio-4311e650e3d481aad0b0533432d0b7c14b4db1ae8038357500be62044d73b054.png",
+      "wide": true
+    },
+    {
+      "label": "Безглазая",
+      "url": "embedded:locations/studio-4c30beefdf7fccdb0ea4326ac8d1872052895e52c6bf7b21888d8d306fec47f3.png",
+      "wide": true
+    },
+    {
+      "label": "Безглазая · карта 1",
+      "url": "embedded:locations/Mapshot_HK_No_Eyes_01.png",
+      "wide": true
+    },
+    {
+      "label": "Гальен",
+      "url": "embedded:locations/studio-9e43683cda4eab986617123cf9e31d1b5e7043ea59d0562b446074c28f73febb.png",
+      "wide": true
+    },
+    {
+      "label": "Гальен · карта 1",
+      "url": "embedded:locations/studio-7563a676b9fe997a7c5cda36d9b97525f76eb7773f1f1dfde9e4946c66c2d9e5.png",
+      "wide": true
+    },
+    {
+      "label": "Маркот",
+      "url": "embedded:locations/studio-264553e77108a217720ef025267c1bb423c7f70eeb92f9b9b2c412803427f2fb.png",
+      "wide": true
+    },
+    {
+      "label": "Маркот · карта 1",
+      "url": "embedded:locations/studio-18d12346f7a9d61c36a1071d962d5070607459dd02ef8a2ceb4ed79e1a5a2b74.jpg",
+      "wide": true
+    }
+  ],
+  "112/pdf-a12/delicate-flower": [
+    {
+      "label": "Нежный цветок",
+      "url": "embedded:locations/studio-13f26e3fdf58d232eec4a0f7618c31bc6d1fe169621f9b1e049061f192184805.png",
+      "wide": true
+    },
+    {
+      "label": "Карта · Серая Плакальщица",
+      "url": "embedded:locations/Mapshot_HK_Grey_Mourner_01.png",
+      "wide": true
+    },
+    {
+      "label": "Место · Серая Плакальщица",
+      "url": "embedded:locations/Screenshot_HK_Grey_Mourner_07.png",
+      "wide": true
+    },
+    {
+      "label": "Карта · Могила в Садах королевы",
+      "url": "embedded:locations/Mapshot_HK_Traitors'_Child_01.png",
+      "wide": true
+    },
+    {
+      "label": "Место · Могила в Садах королевы",
+      "url": "embedded:locations/Screenshot_HK_Grey_Mourner_03.png",
+      "wide": true
+    },
+    {
+      "label": "",
+      "url": "embedded:locations/studio-3c5a6f2508678964956cde0622b9294d3b6e4c35383601c21776428fc6aa46b3.png",
+      "wide": true
+    },
+    {
+      "label": "",
+      "url": "embedded:locations/studio-cf3abe06e30b970ffa0aa49f68bab249488f2901c682007ab95935fcd113468e.png",
+      "wide": true
+    },
+    {
+      "label": "",
+      "url": "embedded:locations/studio-a82b285f544bde561ac545e899fd09214d8fcdd8eeb00cb0098f08c5d39560a9.png",
+      "wide": true
+    },
+    {
+      "label": "",
+      "url": "embedded:locations/studio-720c1a93fc7fb3be8d7b0686ded87a7fe1c03c15b10ac39e474b30816fc7f895.png",
+      "wide": true
+    }
+  ],
+  "112/pdf-a14/pantheon-1": [],
+  "112/pdf-a14/pantheon-2": [],
+  "112/pdf-a14/pantheon-3": [],
+  "112/pdf-a14/pantheon-4": [],
+  "112/pdf-a14/complete-100": [],
+  "112/pdf-a14/complete-112": [],
+  "112/pdf-a15/pantheon-5": [
+    {
+      "label": "Механизм открытия верхнего пути",
+      "url": "embedded:locations/Screenshot_HK_Godhome_07.png",
+      "wide": true
+    },
+    {
+      "label": "Вход в Пантеон Халлоунеста",
+      "url": "embedded:locations/Screenshot_HK_Godhome_14.png",
+      "wide": true
+    }
+  ],
+  "speed/pdf-b1/well": [],
+  "all-maps": [
+    {
+      "label": "Корнифер",
+      "url": "https://cdn.wikimg.net/en/hkwiki/images/f/ff/Cornifer.png"
+    },
+    {
+      "label": "Все места Корнифера",
+      "url": "embedded:locations/Mapshot_HK_Cornifer_01.png",
+      "wide": true
+    },
+    {
+      "label": "Корнифер · место 1",
+      "url": "embedded:locations/Screenshot_HK_Cornifer_01.png",
+      "wide": true
+    },
+    {
+      "label": "Корнифер · место 2",
+      "url": "embedded:locations/Screenshot_HK_Cornifer_02.png",
+      "wide": true
+    },
+    {
+      "label": "Корнифер · место 3",
+      "url": "embedded:locations/Screenshot_HK_Cornifer_03.png",
+      "wide": true
+    },
+    {
+      "label": "Корнифер · место 4",
+      "url": "embedded:locations/Screenshot_HK_Cornifer_04.png",
+      "wide": true
+    },
+    {
+      "label": "Корнифер · место 5",
+      "url": "embedded:locations/Screenshot_HK_Cornifer_05.png",
+      "wide": true
+    },
+    {
+      "label": "Корнифер · место 6",
+      "url": "embedded:locations/Screenshot_HK_Cornifer_06.png",
+      "wide": true
+    },
+    {
+      "label": "Корнифер · место 7",
+      "url": "embedded:locations/Screenshot_HK_Cornifer_07.png",
+      "wide": true
+    },
+    {
+      "label": "Корнифер · место 8",
+      "url": "embedded:locations/Screenshot_HK_Cornifer_08.png",
+      "wide": true
+    },
+    {
+      "label": "Корнифер · место 9",
+      "url": "embedded:locations/Screenshot_HK_Cornifer_09.png",
+      "wide": true
+    },
+    {
+      "label": "Корнифер · место 10",
+      "url": "embedded:locations/Screenshot_HK_Cornifer_10.png",
+      "wide": true
+    },
+    {
+      "label": "Корнифер · место 11",
+      "url": "embedded:locations/Screenshot_HK_Cornifer_11.png",
+      "wide": true
+    },
+    {
+      "label": "Корнифер · место 12",
+      "url": "embedded:locations/Screenshot_HK_Cornifer_12.png",
+      "wide": true
+    }
+  ],
+  "half-stations": [
+    {
+      "label": "Последний рогач",
+      "url": "https://cdn.wikimg.net/en/hkwiki/images/a/af/Last_Stag.png"
+    },
+    {
+      "label": "Станции рогача · все остановки",
+      "url": "embedded:locations/Stag_Station_Map.png",
+      "wide": true
+    },
+    {
+      "label": "Станция Земель упокоения",
+      "url": "embedded:locations/Screenshot_HK_The_Last_Stag_01.png",
+      "wide": true
+    },
+    {
+      "label": "Сады королевы · ворота к станции",
+      "url": "embedded:locations/Screenshot_HK_Queen's_Gardens_10.png",
+      "wide": true
+    },
+    {
+      "label": "Станция Садов королевы",
+      "url": "embedded:locations/Screenshot_HK_Queen's_Gardens_11.png",
+      "wide": true
+    }
+  ],
+  "all-stations": [
+    {
+      "label": "Последний рогач",
+      "url": "https://cdn.wikimg.net/en/hkwiki/images/a/af/Last_Stag.png"
+    },
+    {
+      "label": "Станции рогача · все остановки",
+      "url": "embedded:locations/Stag_Station_Map.png",
+      "wide": true
+    },
+    {
+      "label": "Станция Земель упокоения",
+      "url": "embedded:locations/Screenshot_HK_The_Last_Stag_01.png",
+      "wide": true
+    },
+    {
+      "label": "Сады королевы · ворота к станции",
+      "url": "embedded:locations/Screenshot_HK_Queen's_Gardens_10.png",
+      "wide": true
+    },
+    {
+      "label": "Станция Садов королевы",
+      "url": "embedded:locations/Screenshot_HK_Queen's_Gardens_11.png",
       "wide": true
     }
   ]

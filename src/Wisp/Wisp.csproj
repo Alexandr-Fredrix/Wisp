@@ -4,7 +4,7 @@
     <LangVersion>latest</LangVersion>
     <AssemblyName>Wisp</AssemblyName>
     <RootNamespace>Wisp</RootNamespace>
-    <Version>1.0.1</Version>
+    <Version>1.1.0</Version>
     <Authors>Alexandr-Fredrix</Authors>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/Alexandr-Fredrix/Wisp</RepositoryUrl>
@@ -29,6 +29,7 @@
     <Reference Include="UnityEngine.UnityWebRequestModule"><HintPath>$(HollowKnightRefs)/UnityEngine.UnityWebRequestModule.dll</HintPath><Private>false</Private></Reference>
     <EmbeddedResource Include="../../content/ui/*.ttf" LogicalName="Wisp.ui/%(Filename)%(Extension)" />
     <EmbeddedResource Include="../../content/ui/*OFL.txt" LogicalName="Wisp.ui/%(Filename)%(Extension)" />
+    <EmbeddedResource Include="../../content/collections.json" LogicalName="Wisp.collections.json" />
     <EmbeddedResource Include="../../content/english.json" LogicalName="Wisp.english.json" />
     <EmbeddedResource Include="../../content/regions-en.json" LogicalName="Wisp.regions-en.json" />
     <EmbeddedResource Include="../../content/achievements.json" LogicalName="Wisp.achievements.json" />
