@@ -1,3 +1,5 @@
+> **1.0.0** remains the main release. Try [**1.0.1 (pre-release)**](https://github.com/Alexandr-Fredrix/Wisp/releases/tag/v1.0.1) to test fixes and optimizations. In-game testing is pending; see the [automated validation results](docs/releases/1.0.1.md).
+
 # Wisp
 
 An in-game Hallownest guide by **Alex / Alexandr-Fredrix**.

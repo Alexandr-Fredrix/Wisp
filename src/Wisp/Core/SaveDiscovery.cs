@@ -20,7 +20,7 @@ namespace Wisp.Core
             { "basin", new[] { "visitedAbyss" } },
             { "deepnest", new[] { "visitedDeepnest" } },
             { "edge", new[] { "visitedOutskirts" } },
-            { "abyss", new[] { "visitedAbyssLower", "visitedWhitePalace", "visitedRoyalGardens" } },
+            { "abyss", new[] { "visitedAbyssLower" } },
             { "godhome", new[] { "visitedGodhome" } },
             { "queens-gardens", new[] { "visitedRoyalGardens" } },
             { "white-palace", new[] { "visitedWhitePalace" } }

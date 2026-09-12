@@ -95,7 +95,6 @@ namespace Wisp.Core
         public bool ShowSpoilers;
         public bool HideCompleted;
         public bool ShowPauseHint = true;
-        public bool ShowHud = true;
     }
 
     public sealed class Enemy

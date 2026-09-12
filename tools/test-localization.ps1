@@ -8,8 +8,6 @@ try { $translations = $reader.ReadToEnd() | ConvertFrom-Json -AsHashtable } fina
 foreach ($key in $translations.Keys) { [Wisp.Core.I18n]::Translations[$key] = $translations[$key] }
 [Wisp.Core.I18n]::English = $false
 $ru = [Wisp.Game.Catalog]::Load()
-$progress = [Wisp.Core.SaveProgress]::new()
-$before = $progress | ConvertTo-Json -Depth 20
 [Wisp.Core.I18n]::English = $true
 $en = [Wisp.Game.Catalog]::Load()
 if ($en.PdfChapters[0].Title -ne 'A1 · Dirtmouth → Forgotten Crossroads') { throw 'English catalog was not translated' }
@@ -21,8 +19,7 @@ for ($i = 0; $i -lt $ru.PdfChapters.Length; $i++) {
         if ($a.Steps[$j].Id -ne $b.Steps[$j].Id) { throw 'Step identity changed' }
     }
 }
-if (($progress | ConvertTo-Json -Depth 20) -ne $before) { throw 'Progress changed during language switch' }
 [Wisp.Core.I18n]::English = $false
 $again = [Wisp.Game.Catalog]::Load()
 if ($again.PdfChapters[0].Title -ne $ru.PdfChapters[0].Title) { throw 'Switching back failed' }
-'Packaged catalog: Russian → English → Russian passed; identifiers and progress preserved.'
+'Packaged catalog: Russian → English → Russian passed; chapter and step identifiers preserved. Actual UI progress persistence is covered by test-adapter.ps1.'

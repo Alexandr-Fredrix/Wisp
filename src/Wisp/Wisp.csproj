@@ -4,7 +4,7 @@
     <LangVersion>latest</LangVersion>
     <AssemblyName>Wisp</AssemblyName>
     <RootNamespace>Wisp</RootNamespace>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Alexandr-Fredrix</Authors>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <RepositoryUrl>https://github.com/Alexandr-Fredrix/Wisp</RepositoryUrl>
@@ -38,7 +38,7 @@
     <EmbeddedResource Include="../../content/step-media.json" LogicalName="Wisp.step-media.json" />
     <EmbeddedResource Include="../../content/regions.json" LogicalName="Wisp.regions.json" />
     <EmbeddedResource Include="../../content/media.json" LogicalName="Wisp.media.json" />
-    <EmbeddedResource Include="../../content/ui/*.png" LogicalName="Wisp.ui/%(Filename)%(Extension)" />
+    <EmbeddedResource Include="../../content/ui/region-*.png" LogicalName="Wisp.ui/%(Filename)%(Extension)" />
     <EmbeddedResource Include="../../content/route-pdf.json" LogicalName="Wisp.route-pdf.json" />
     <EmbeddedResource Include="../../content/route.json" LogicalName="Wisp.route.json" />
     <EmbeddedResource Include="../../content/enemies.json" LogicalName="Wisp.enemies.json" />

@@ -10,3 +10,5 @@ Build locally against Hollow Knight 1.5.12620 and BepInEx 5.4.23.5 x64. Never up
 6. Verify release checks the tag, archive checksum and single-DLL layout after publication; it does not compile game adapters or certify runtime compatibility.
 
 Never silently replace a published binary or move its tag. Publish a new version for fixes. Wisp is not listed in Lumafly/Modlinks; the standard Modding API is a separate target.
+
+For local 1.0.1 candidates, build.ps1 creates build-manifest.json. Run validate_candidate.py before package_mod.py; packaging checks exact inputs, DLL and completed test logs. A package is a local candidate unless publication and runtime checks are explicitly completed.

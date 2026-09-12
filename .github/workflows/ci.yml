@@ -17,4 +17,7 @@ jobs:
       - name: Test C# progress logic
         shell: pwsh
         run: ./tools/test-core.ps1
+      - name: Test actual media loader with engine and network doubles
+        shell: pwsh
+        run: ./tools/test-media.ps1
       - run: python3 tools/package_source.py

@@ -1,15 +1,18 @@
-# Validation scope — 1.0.0
+# Validation scope — local 1.0.1 candidate
 
-Completed locally:
+Automated checks are run by `tools/validate_candidate.py` and recorded beside the DLL in `validation.json`, with hashed logs and a build manifest. They cover source metadata/content, core behavior, progress file recovery, image queue and cache limits, the actual MediaLibrary with deterministic engine/network doubles, packaged catalog resources, and the real UI language handler with populated progress and preference persistence.
 
-- 17 Python tests: route/media integrity, region regressions and complete English coverage for displayed text.
-- 45 C# core assertions.
-- Build against Hollow Knight 1.5.12620 / Unity 6 and BepInEx 5.4.23.5 x64.
-- Packaged catalog switched Russian → English → Russian, preserving chapter/step identifiers and a progress object.
-- User-supplied screenshots show the Russian route, map, Journal, atlas and settings before the language toggle was added.
+Two obsolete assertions for the unused Steel route filter were removed; the active three-goal catalog is covered by content tests. The catalog-only localization test no longer claims to verify an unrelated empty progress object.
 
-Not yet exercised in a running game: the final bilingual DLL, live language-switch layout, and controller input after that switch. The automated checks do not certify every controller or screen resolution. No claim of a full 63-achievement playthrough is made.
+The real game, native texture allocation, live network transport and physical controller are not certified by these tests. No final candidate was installed or published.
 
-For runtime verification: open each main tab, switch both languages, inspect long descriptions and illustrated references, scroll with a controller, change Journal regions, restart and verify language persistence, then save/reload and verify marks. Check achievement status against the game profile. Report the resolution, controller and exact step when reporting a problem.
+## Manual acceptance on a disposable test save
 
-Commands: `python -m unittest discover -s tests`, `python tools/check.py`, `pwsh -File tools/test-core.ps1`, and after building `pwsh -File tools/test-localization.ps1`.
+1. Open/close from gameplay and native pause. Verify mouse, F8 and stick chord; restore the original pause and cursor state.
+2. Switch RU/EN in all tabs. Read long route text and journal information, expand maps with RS, select locations with directional controls and return with B.
+3. Compare current-region enemies before/after Crossroads infection. In Greenpath select Vengefly and verify its first known habitat map. Unknown-region maps remain available later in the gallery.
+4. Disconnect networking with a cold test cache; check clickable retry and X/R on the relevant pane, then restore networking. Check a full queue during language switching.
+5. Save/reload marks and selected task on a test slot; change language and goal. Never use an important save for corruption tests (automated tests already use temporary directories).
+6. Compare baseline and candidate at the same resolution, scene and sequence of opened images: 60 seconds closed, 60 seconds route, 60 seconds journal, then repeated gallery cycles. Record frame times, GC allocations, native texture memory and peak process memory in Unity Profiler or equivalent instrumentation.
+
+The 128 MiB limit applies to cached decoded textures; download buffers, transient decoding and Unity deferred destruction are separate. Do not infer an FPS improvement from archive size reduction.

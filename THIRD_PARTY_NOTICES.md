@@ -36,3 +36,7 @@ Region reference maps: Hollow Knight Wiki / Team Cherry. The two Russian maps of
 ## English localization
 
 English guide prose is a translation/adaptation of the Russian Wisp route. Canonical game names and achievement captions follow Team Cherry’s localization. English atlas sources are recorded in content/regions.json and content/regions-en.json. Wiki contributor annotations retain their applicable [CC BY-SA terms](https://hollowknight.wiki/w/Hollow_Knight_Wiki:Copyrights), separately from Team Cherry game artwork. User-supplied screenshots under docs/images show actual gameplay UI and remain outside the original-code license.
+
+## Local 1.0.1 asset processing
+
+Bundled PNGs were recompressed losslessly with decoded RGBA equality checks and color metadata preservation. Reference artwork, authorship and licensing remain unchanged. Original files are retained in the separate editorial snapshot; optional JPEG comparisons are not included in the mod.

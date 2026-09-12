@@ -34,9 +34,17 @@ Build output is artifacts/Wisp/Wisp.dll. PlayerData fields are checked and conte
 
 - src/Wisp/Core: data models, progress normalization, read-only completion rules and journal-counter semantics.
 - src/Wisp/Game: API/game readers and embedded-content loading.
-- src/Wisp/UI: pause overlay, portraits and map-mesh rendering.
-- content: original guide text, enemy identifiers/regions and source links; no game images.
+- src/Wisp/UI: pause overlay, cached image viewer and controller navigation.
+- content: guide text, enemy region metadata, image references and bundled reference artwork.
 
 Never set game flags to simulate completed steps. Missing or unknown fields are unavailable, never completed. Alternative choices remain manual. Wisp stores sidecar data after a successful game-save callback; preferences save on normal application quit.
 
 Follow TESTING.md and RELEASING.md. Alpha releases list unverified behavior; CI does not replace a game test.
+
+## Local candidate validation
+
+Use PowerShell 7 and Python 3.11+. Pillow is needed only for editorial export and image optimization. Run `test-core.ps1` and `test-media.ps1` without game files. The latter uses engine/network doubles against the actual MediaLibrary.
+
+Build with `tools/build.ps1`, supplying `-HollowKnightRefs`, `-BepInExRefs` and `-Python` if Python is not on PATH. The build records exact input hashes and the DLL hash in build-manifest.json. Then run `python tools/validate_candidate.py --game MANAGED --api BEPINEX --pwsh PWSH`. Packaging requires current successful validation and rejects changed sources or DLLs. The direct dotnet build remains useful for compilation, but does not produce the required packaging attestation.
+
+The source base commit may have uncommitted changes; the complete input hashes, not the commit alone, identify the local candidate.

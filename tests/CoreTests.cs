@@ -95,8 +95,6 @@ public static class CoreTests
         Check(new SaveProgress().RouteGoal == "112", "Another slot defaults independently to full completion");
         goalSave.RouteGoal = "invalid"; goalSave.Normalize();
         Check(goalSave.RouteGoal == "112", "Unknown goals migrate safely");
-        Check(RouteGoals.Includes("steel", new Step { Id = "dream-nail" }), "Steel route preserves essential ability");
-        Check(!RouteGoals.Includes("steel", new Step { Id = "pantheon-5" }), "Steel route excludes optional pantheons");
         Check(!RouteGoals.IsSteelSave(state), "Selecting a goal cannot invent Steel Soul mode");
         state.Ints["permadeathMode"] = 1;
         Check(RouteGoals.IsSteelSave(state), "Read actual game mode");

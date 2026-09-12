@@ -1,7 +1,8 @@
 param(
     [Parameter(Mandatory=$true)][string]$HollowKnightRefs,
     [Parameter(Mandatory=$true)][string]$BepInExRefs,
-    [string]$OutputDirectory = (Join-Path $PSScriptRoot '../artifacts/Wisp')
+    [string]$OutputDirectory = (Join-Path $PSScriptRoot '../artifacts/Wisp'),
+    [string]$Python = 'python'
 )
 $ErrorActionPreference = 'Stop'
 # PowerShell 7 ships Roslyn. This path supports building without installing a system SDK.
@@ -29,7 +30,8 @@ foreach ($source in (Get-ChildItem (Join-Path $root 'src/Wisp') -Recurse -Filter
     $trees.Add([Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree]::ParseText([IO.File]::ReadAllText($source.FullName)))
 }
 $version = (Get-Content (Join-Path $root 'version.json') -Raw | ConvertFrom-Json).version
-$trees.Add([Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree]::ParseText('[assembly:System.Reflection.AssemblyVersion("1.0.0.0")][assembly:System.Reflection.AssemblyInformationalVersion("' + $version + '")]'))
+$assemblyVersion = ($version -split '-')[0] + '.0'
+$trees.Add([Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree]::ParseText('[assembly:System.Reflection.AssemblyVersion("' + $assemblyVersion + '")][assembly:System.Reflection.AssemblyInformationalVersion("' + $version + '")]'))
 $options = [Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions]::new([Microsoft.CodeAnalysis.OutputKind]::DynamicallyLinkedLibrary)
 $options = $options.WithOptimizationLevel([Microsoft.CodeAnalysis.OptimizationLevel]::Release).WithDeterministic($true)
 $compilation = [Microsoft.CodeAnalysis.CSharp.CSharpCompilation]::Create('Wisp', $trees, $references, $options)
@@ -38,9 +40,12 @@ $playerData = $compilation.GetTypeByMetadataName('PlayerData')
 $fields = @{}
 $membersMethod = [Microsoft.CodeAnalysis.INamespaceOrTypeSymbol].GetMethod('GetMembers', [Type[]]@())
 foreach ($member in $membersMethod.Invoke($playerData, @())) { $fields[$member.Name] = $member }
-$route = Get-Content (Join-Path $root 'content/route.json') -Raw | ConvertFrom-Json
+$route = @((Get-Content (Join-Path $root 'content/route.json') -Raw | ConvertFrom-Json)) + @((Get-Content (Join-Path $root 'content/route-pdf.json') -Raw | ConvertFrom-Json))
 foreach ($condition in $route.steps.conditions) {
     if (!$fields.ContainsKey($condition.field)) { throw "Unknown PlayerData field: $($condition.field)" }
+    $fieldType = ([Microsoft.CodeAnalysis.IFieldSymbol]$fields[$condition.field]).Type.SpecialType
+    $expected = if ($condition.kind -eq 'bool') { [Microsoft.CodeAnalysis.SpecialType]::System_Boolean } elseif ($condition.kind -eq 'int') { [Microsoft.CodeAnalysis.SpecialType]::System_Int32 } else { throw 'Unknown condition kind' }
+    if ($fieldType -ne $expected) { throw "Wrong PlayerData type: $($condition.field)" }
 }
 $enemies = Get-Content (Join-Path $root 'content/enemies.json') -Raw | ConvertFrom-Json
 foreach ($enemy in $enemies) {
@@ -49,7 +54,7 @@ foreach ($enemy in $enemies) {
     }
 }
 $resources = [System.Collections.Generic.List[Microsoft.CodeAnalysis.ResourceDescription]]::new()
-foreach ($name in @('english.json','regions-en.json','achievements.json','step-media.json','regions.json','ui/region-abyss.png','ui/region-queens-gardens.png','ui/region-fog-canyon.png','route.json','route-pdf.json','enemies.json','media.json','ui/frame.png','ui/divider.png','ui/JetBrainsMonoNerdFont-Regular.ttf','ui/JetBrainsMono-OFL.txt')) {
+foreach ($name in @('english.json','regions-en.json','achievements.json','step-media.json','regions.json','ui/region-abyss.png','ui/region-queens-gardens.png','ui/region-fog-canyon.png','route.json','route-pdf.json','enemies.json','media.json','ui/JetBrainsMonoNerdFont-Regular.ttf','ui/JetBrainsMono-OFL.txt')) {
     $resourcePath = Join-Path $root "content/$name"
     $factory = { [IO.File]::OpenRead($resourcePath) }.GetNewClosure()
     $resources.Add([Microsoft.CodeAnalysis.ResourceDescription]::new("Wisp.$name", [Func[IO.Stream]]$factory, $true))
@@ -77,3 +82,5 @@ try {
 foreach ($diagnostic in $result.Diagnostics) { Write-Output $diagnostic.ToString() }
 if (!$result.Success) { throw 'Wisp compilation failed.' }
 Write-Output "Built Wisp $version in $OutputDirectory"
+& $Python -B (Join-Path $PSScriptRoot 'build_manifest.py') $OutputDirectory --capture
+if ($LASTEXITCODE -ne 0) { throw 'Build manifest failed.' }

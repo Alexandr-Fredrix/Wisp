@@ -1,3 +1,5 @@
+> **1.0.0 — основной выпуск; 1.0.1 — предварительный выпуск для проверки.** Для установки 1.0.1 используйте `Wisp-1.0.1.zip` вместо указанного ниже архива 1.0.0. Порядок установки одинаков; сохраните старую DLL вне папки плагинов. Игровые проверки 1.0.1 ещё предстоят.
+
 # Установка / Installation
 
 Windows x64 · Hollow Knight 1.5.12620 · BepInEx 5.4.23.5 x64.
@@ -24,3 +26,9 @@ LB/RB switch main tabs; directional controls select panels/items; A opens and B 
 Mouse clicks select, the wheel scrolls descriptions or zooms maps, and dragging pans maps. Settings and per-save marks are stored separately in the game's persistent-data Wisp folder. Language changes preserve progress. Wiki images download on demand into WispCache unless embedded.
 
 Update or remove only Wisp.dll with the game closed. The release does not include BepInEx or game libraries.
+
+## Управление 1.0.1 (предварительный выпуск)
+
+В дневнике панели идут слева направо: враги → сведения → карта. A/стрелка вправо переходят дальше; B возвращает. В сведениях правый стик и вверх/вниз прокручивают текст. На карте RS разворачивает изображение, A включает перемещение, D-pad в режиме перемещения листает места. X повторяет неудавшуюся загрузку выбранной панели; при отсутствии ошибки открывает фильтр дневника. R повторяет загрузку с клавиатуры. Ошибку также можно нажать мышью.
+
+При невозможности восстановить отметки из основного файла, резервной копии и старого формата запись отметок блокируется. Сообщение видно в шапке Wisp; исходные файлы не перезаписываются. Успешное восстановление также отмечено сообщением.

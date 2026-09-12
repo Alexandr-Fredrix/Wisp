@@ -14,7 +14,6 @@ namespace Wisp.UI
         private WispMod mod;
         private Catalog catalog;
         private readonly PlayerReader player = new PlayerReader();
-        private readonly Dictionary<string, Sprite> portraits = new Dictionary<string, Sprite>();
         private EventSystem suspendedEvents;
         private bool navigationWasEnabled;
         private InControl.HollowKnightInputModule inputModule;
@@ -25,27 +24,21 @@ namespace Wisp.UI
         private int padPane = 0;
         private int detailChoice;
         private bool contentFocus;
-        private string notice = "";
-        private float noticeUntil;
-        private readonly Dictionary<string, int> lastKills = new Dictionary<string, int>();
         private bool cursorWasVisible;
         private CursorLockMode cursorLock;
         private bool open;
         private int chapterIndex;
         private int stepIndex;
         private int tab;
-        private int primaryTab;
         private bool revealChapter = true, revealStep = true;
-        private string query = "";
         private bool allRegions;
-        private Vector2 chapterScroll, stepScroll, detailScroll, enemyScroll;
+        private Vector2 detailScroll, enemyScroll;
         private GUIStyle text, heading, button, active, muted;
         private Texture2D panelTexture, buttonTexture, activeTexture;
         private Font font;
         private string liveChapter = "";
         private string liveRegion = "";
         private float nextRefresh;
-        private string hudTask = "";
         private Vector2 mapPan;
         private float mapZoom = 1;
         private bool mapTab;
@@ -62,20 +55,28 @@ namespace Wisp.UI
         {
             Close();
             if (catalog == null || mod == null) return;
-            chapterIndex = Math.Max(0, Array.FindIndex(RouteChapters, c => c.Id == mod.Progress.ChapterId));
-            stepIndex = Math.Max(0, Array.FindIndex(RouteSteps, s => s.Id == mod.Progress.StepId));
-            detailScroll = stepScroll = chapterScroll = enemyScroll = Vector2.zero;
+            InvalidateView();
+            locating = !RouteView.Restore(RouteChapters, mod.Progress, out chapterIndex, out stepIndex);
+            detailScroll = enemyScroll = Vector2.zero;
             liveChapter = liveRegion = "";
-            locating = true;
-            lastKills.Clear();
             nextRefresh = 0;
-            portraits.Clear();
-
-
         }
 
-        private Chapter[] RouteChapters { get { return catalog.PdfChapters.Where(c => c.Goal == mod.Progress.RouteGoal).ToArray(); } }
-        private Step[] RouteSteps { get { return Current.Steps.Where(s => !s.ReferenceOnly || s.Id.EndsWith("-guide")).ToArray(); } }
+        private Catalog cachedCatalog;
+        private string cachedGoal;
+        private Chapter[] cachedChapters;
+        private readonly Dictionary<string, Step[]> cachedSteps = new Dictionary<string, Step[]>();
+        private Chapter[] RouteChapters
+        {
+            get {
+                if (cachedCatalog != catalog || cachedGoal != mod.Progress.RouteGoal) {
+                    cachedCatalog = catalog; cachedGoal = mod.Progress.RouteGoal;
+                    cachedChapters = catalog.PdfChapters.Where(c => c.Goal == cachedGoal).ToArray(); cachedSteps.Clear();
+                }
+                return cachedChapters;
+            }
+        }
+        private Step[] RouteSteps { get { Step[] steps; var chapter = Current; if (!cachedSteps.TryGetValue(chapter.Id, out steps)) cachedSteps[chapter.Id] = steps = RouteView.VisibleSteps(chapter); return steps; } }
         private Chapter Current { get { return RouteChapters[Mathf.Clamp(chapterIndex, 0, RouteChapters.Length - 1)]; } }
         private string CurrentMapId { get { return RouteSteps[Mathf.Clamp(stepIndex, 0, RouteSteps.Length - 1)].MapChapter; } }
         private bool InSession
@@ -116,6 +117,8 @@ namespace Wisp.UI
             }
             if (device.LeftBumper.WasPressed) CycleMainTab(-1);
             if (device.RightBumper.WasPressed) CycleMainTab(1);
+            bool retriedImage = device.Action3.WasPressed && RetryFocusedImages();
+            if (Input.GetKeyDown(KeyCode.R)) RetryFocusedImages();
             if (expandedStepImage)
             {
                 mapPan += MapStick(device, true) * Time.unscaledDeltaTime * 350;
@@ -125,7 +128,7 @@ namespace Wisp.UI
                 if (device.Action4.WasPressed) { mapPan = Vector2.zero; mapZoom = 1; }
                 return;
             }
-            bool onMap = contentFocus && ((tab == 0 && mapTab) || tab == 1 || tab == 3);
+            bool onMap = contentFocus && ((tab == 0 && mapTab) || (tab == 1 && padPane == 2) || tab == 3);
             int vertical = device.DPadUp.IsPressed || (!onMap && device.LeftStickY.Value > .5f) ? -1 : device.DPadDown.IsPressed || (!onMap && device.LeftStickY.Value < -.5f) ? 1 : 0;
             int horizontal = device.DPadLeft.IsPressed || (!onMap && device.LeftStickX.Value < -.5f) ? -1 : device.DPadRight.IsPressed || (!onMap && device.LeftStickX.Value > .5f) ? 1 : 0;
             int trigger = !contentFocus && device.LeftTrigger.WasPressed ? -1 : !contentFocus && device.RightTrigger.WasPressed ? 1 : 0;
@@ -147,8 +150,8 @@ namespace Wisp.UI
                     if (padPane < 2)
                     {
                         if (dx != 0) padPane = Mathf.Clamp(padPane + dx, 0, 2);
-                        else if (padPane == 0 && dy != 0) { SelectChapter(Mathf.Clamp(chapterIndex + dy, 0, RouteChapters.Length - 1)); chapterScroll.y = Mathf.Max(0, chapterIndex * 112 - 224); }
-                        else if (padPane == 1 && dy != 0) { SelectStep(Mathf.Clamp(stepIndex + dy, 0, RouteSteps.Length - 1)); stepScroll.y = Mathf.Max(0, stepIndex * 112 - 224); }
+                        else if (padPane == 0 && dy != 0) { SelectChapter(Mathf.Clamp(chapterIndex + dy, 0, RouteChapters.Length - 1)); }
+                        else if (padPane == 1 && dy != 0) { SelectStep(Mathf.Clamp(stepIndex + dy, 0, RouteSteps.Length - 1)); }
                     }
                     else if (dx != 0) { detailChoice = Mathf.Clamp(detailChoice + dx, 0, 2); if (detailChoice < 2) mapTab = detailChoice == 1; }
                     if (device.Action1.WasPressed)
@@ -157,9 +160,9 @@ namespace Wisp.UI
                         else if (detailChoice == 2) OpenRegionJournal();
                         else contentFocus = true;
                     }
-                    if (device.Action3.WasPressed) { mapTab = true; detailChoice = 1; padPane = 2; }
+                    if (device.Action3.WasPressed && !retriedImage) { mapTab = true; detailChoice = 1; padPane = 2; }
                     if (device.Action4.WasPressed && padPane == 1 && !ProfileAchievements.Steps.ContainsKey(RouteSteps[stepIndex].Id) && !RouteSteps[stepIndex].ReferenceOnly && !Completion.Confirmed(RouteSteps[stepIndex], player) && !ProfileAchievements.Confirmed(RouteSteps[stepIndex], player))
-                        mod.Progress.Mark(RouteSteps[stepIndex].Id, !Done(RouteSteps[stepIndex]));
+                        { mod.Progress.Mark(RouteSteps[stepIndex].Id, !Done(RouteSteps[stepIndex])); InvalidateView(); }
                 }
                 // The selected description is scrollable without an extra confirm press.
                 if (!mapTab && padPane == 2 && detailChoice == 0)
@@ -170,20 +173,26 @@ namespace Wisp.UI
                     detailScroll.y = Mathf.Max(0, detailScroll.y + dy * 64 - stick * Time.unscaledDeltaTime * 350);
                 }
             }
-            else if (tab == 1 && !contentFocus)
+            else if (tab == 1)
             {
-                if (padPane == 0)
+                if (!contentFocus)
                 {
-                    if (dy != 0) { enemyIndex = Mathf.Clamp(enemyIndex + dy, 0, Math.Max(0, FilteredEnemies().Length - 1)); enemyScroll.y = Mathf.Max(0, enemyIndex * 96 - 192); enemyMapIndex = 0; mapPan = Vector2.zero; mapZoom = 1;  }
-                    if (dx > 0 || device.Action1.WasPressed) padPane = 1;
+                    if (padPane == 0 && dy != 0) { enemyIndex = Mathf.Clamp(enemyIndex + dy, 0, Math.Max(0, FilteredEnemies().Length - 1)); enemyScroll.y = Mathf.Max(0, enemyIndex * 96 - 192); enemyMapIndex = 0; habitatScroll = mapPan = Vector2.zero; mapZoom = 1; }
+                    if (dx != 0) padPane = Mathf.Clamp(padPane + dx, 0, 2);
+                    if (device.Action1.WasPressed) { if (padPane < 2) padPane++; else contentFocus = true; }
                 }
-                else
+                if (padPane == 1)
                 {
-                    if (dx < 0) padPane = 0;
-                    if (device.Action1.WasPressed) contentFocus = true;
-                    if (device.Action4.WasPressed) { enemyMapIndex++;  mapPan = Vector2.zero; mapZoom = 1; }
+                    float stick = Mathf.Abs(device.RightStickY.Value) > .18f ? device.RightStickY.Value : 0;
+                    habitatScroll.y = Mathf.Max(0, habitatScroll.y + dy * 64 - stick * Time.unscaledDeltaTime * 350);
                 }
-                if (device.Action3.WasPressed) { OpenJournalRegions(); }
+                if (padPane == 2)
+                {
+                    if (device.RightStickButton.WasPressed) { expandedEnemyMap = !expandedEnemyMap; contentFocus = true; }
+                    if (!contentFocus && device.Action4.WasPressed) { enemyMapIndex++; mapPan = Vector2.zero; mapZoom = 1; }
+                    if (contentFocus && (device.DPadLeft.WasPressed || device.DPadRight.WasPressed)) { enemyMapIndex += device.DPadLeft.WasPressed ? -1 : 1; mapPan = Vector2.zero; mapZoom = 1; }
+                }
+                if (device.Action3.WasPressed && !retriedImage) OpenJournalRegions();
             }
             else if (tab == 3)
             {
@@ -232,7 +241,7 @@ namespace Wisp.UI
         private void Open()
         {
             if (!Paused || open) return;
-            Refresh();
+            Refresh(true);
             ResetJournalRegion();
             open = true; expandedStepImage = false;
             contentFocus = false; padPane = 0; detailChoice = mapTab ? 1 : 0;
@@ -247,9 +256,7 @@ namespace Wisp.UI
             cursorLock = Cursor.lockState;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-            foreach (var entry in Resources.FindObjectsOfTypeAll<JournalEntryStats>())
-                if (!string.IsNullOrEmpty(entry.playerDataName) && entry.sprite != null)
-                    portraits[entry.playerDataName] = entry.sprite;
+
         }
 
         public void Close()
@@ -268,52 +275,39 @@ namespace Wisp.UI
             if (resume && Paused) GameManager.instance.StartCoroutine(GuideInputGuard.ToggleOwnedPause(GameManager.instance));
         }
 
-        private void Refresh()
+        private bool? infected;
+        private readonly Dictionary<string, JournalStatus> journalStatuses = new Dictionary<string, JournalStatus>();
+        private void Refresh(bool force = false)
         {
-            player.RefreshAchievements();
             var scene = GameManager.instance == null ? "" : GameManager.instance.GetSceneNameString();
             SaveDiscovery.Import(catalog.Chapters, mod.Progress, player);
             string previousRegion = liveRegion;
             liveChapter = catalog.ChapterFor(player.Zone, scene);
-            liveRegion = Catalog.RegionFor(player.Zone, scene);
-            if (!string.IsNullOrEmpty(liveChapter) && !mod.Progress.VisitedChapters.Contains(liveChapter))
-                mod.Progress.VisitedChapters.Add(liveChapter);
+            liveRegion = HabitatMaps.CurrentRegion(Catalog.RegionFor(player.Zone, scene), player);
+            bool flag; infected = player.TryBool("crossroadsInfected", out flag) ? (bool?)flag : null;
+            if (!string.IsNullOrEmpty(liveChapter) && !mod.Progress.VisitedChapters.Contains(liveChapter)) mod.Progress.VisitedChapters.Add(liveChapter);
+            if (open || force || locating) player.RefreshAchievements();
             if (locating && !string.IsNullOrEmpty(liveChapter))
             {
                 locating = false;
                 int index = Array.FindIndex(RouteChapters, c => c.Steps.Any(s => s.MapChapter == liveChapter));
                 if (index >= 0) { SelectChapter(index); int next = Array.FindIndex(RouteSteps, s => !s.ReferenceOnly && !DoneInSave(s)); SelectStep(Math.Max(0, next)); }
             }
-            if (previousRegion != liveRegion && !string.IsNullOrEmpty(liveRegion))
-            {
-                ResetJournalRegion();
-                notice = Wisp.Core.I18n.T("Новая область · ") + liveRegion;
-                noticeUntil = Time.unscaledTime + 7;
+            if (previousRegion != liveRegion && !string.IsNullOrEmpty(liveRegion) && string.IsNullOrEmpty(journalRegion) && !allRegions) ResetJournalRegion();
+            if (open || force) {
+                journalStatuses.Clear();
+                foreach (var enemy in catalog.Enemies) journalStatuses[enemy.Id] = JournalStatus.Read(enemy, player);
+                InvalidateView();
             }
-            foreach (var enemy in catalog.Enemies.Where(e => e.Regions.Contains(liveRegion)))
-            {
-                var status = JournalStatus.Read(enemy, player);
-                if (!status.Available) continue;
-                int previous;
-                if (lastKills.TryGetValue(enemy.Id, out previous) && status.Remaining < previous)
-                {
-                    notice = enemy.Name + (status.Complete ? Wisp.Core.I18n.T(" · запись завершена") : Wisp.Core.I18n.T(" · осталось: ") + status.Remaining);
-                    noticeUntil = Time.unscaledTime + 5;
-                }
-                lastKills[enemy.Id] = status.Remaining;
-            }
-            // Resolve save/journal state on the refresh tick, never in every IMGUI event.
-            var hudChapter = RouteChapters.FirstOrDefault(c => c.Steps.Any(s => s.MapChapter == liveChapter));
-            var hudNext = hudChapter == null ? null : hudChapter.Steps.FirstOrDefault(s => !s.ReferenceOnly && !DoneInSave(s) && (!s.Spoiler || mod.Settings.ShowSpoilers));
-            hudTask = hudNext == null ? "" : hudNext.Title;
         }
+        private JournalStatus StatusOf(Enemy enemy) { JournalStatus status; if (!journalStatuses.TryGetValue(enemy.Id, out status)) journalStatuses[enemy.Id] = status = JournalStatus.Read(enemy, player); return status; }
 
         private void SelectChapter(int index)
         {
-            chapterIndex = index;
+            chapterIndex = index; InvalidateView();
             revealChapter = revealStep = true;
             stepIndex = 0; stepImageIndex = 0;
-            stepScroll = detailScroll = Vector2.zero;
+            detailScroll = Vector2.zero;
 
             mapPan = Vector2.zero;
             mapZoom = 1;
@@ -322,7 +316,7 @@ namespace Wisp.UI
 
         private void SelectStep(int index)
         {
-            stepIndex = index; stepImageIndex = 0;
+            stepIndex = index; stepImageIndex = 0; InvalidateView();
             revealStep = true;
              mapPan = Vector2.zero; mapZoom = 1;
             detailScroll = Vector2.zero;
@@ -335,7 +329,7 @@ namespace Wisp.UI
             mod.Progress.StepId = RouteSteps[stepIndex].Id;
         }
 
-        // A profile achievement does not remove prerequisites from the current run's HUD.
+        // Profile achievements and current-save prerequisites remain independent.
         private bool DoneInSave(Step step) { return Completion.Confirmed(step, player) || mod.Progress.Completed.Contains(step.Id); }
         private bool Done(Step step) { return ProfileAchievements.Steps.ContainsKey(step.Id) ? ProfileAchievements.Confirmed(step, player) : DoneInSave(step); }
         private bool Visible(Chapter chapter) { return mod.Settings.ShowSpoilers || chapter.Id.Contains("-ref-") || chapter.Id == liveChapter || mod.Progress.VisitedChapters.Contains(chapter.Id) || chapter.Id == "kings-pass" || chapter.Id == "pdf-a1" || chapter.Goal == "speed" || chapter.Goal == "steel" || chapter.Steps.Any(s => SaveDiscovery.HasVisitEvidence(s.MapChapter, player)) || chapter.Steps.Any(s => ProfileAchievements.Confirmed(s, player)); }
@@ -344,7 +338,7 @@ namespace Wisp.UI
         {
             Close();
             if (media != null) media.Dispose();
-            foreach (var texture in new[] { panelTexture, buttonTexture, activeTexture, frameTexture, dividerTexture, scrollThumb })
+            foreach (var texture in new[] { panelTexture, buttonTexture, activeTexture, scrollThumb })
                 if (texture != null) Destroy(texture);
             if (font != null) Destroy(font);
             if (flatSkin != null) Destroy(flatSkin);

@@ -10,7 +10,7 @@ using Wisp.UI;
 using Wisp.Game;
 namespace Wisp
 {
-    [BepInPlugin("com.alexandr-fredrix.wisp", "Wisp", "1.0.0")]
+    [BepInPlugin("com.alexandr-fredrix.wisp", "Wisp", "1.0.1")]
     public sealed class WispMod : BaseUnityPlugin
     {
         internal static WispMod Instance;
@@ -20,12 +20,17 @@ namespace Wisp
         private Harmony patches;
         private int slot;
         private string directory;
+        private ProgressStore progressStore;
+        private ProgressRead progressRead;
+        public bool ProgressSaveBlocked { get { return progressRead != null && !progressRead.WriteAllowed; } }
+        public bool ProgressRecovered { get { return progressRead != null && progressRead.Recovered; } }
         public void LogError(object message) { Logger.LogError(message); }
         private void Awake()
         {
             Instance = this;
             directory = Path.Combine(Application.persistentDataPath, "Wisp");
             Directory.CreateDirectory(directory);
+            progressStore = new ProgressStore(DecodeProgress, p => JsonConvert.SerializeObject(p, Formatting.Indented));
             Settings = Read<Preferences>(Path.Combine(directory, "settings.json")) ?? new Preferences();
             using (var stream = typeof(WispMod).Assembly.GetManifestResourceStream("Wisp.english.json"))
             using (var reader = new StreamReader(stream))
@@ -35,7 +40,7 @@ namespace Wisp
             guide.Initialize(this, Catalog.Load());
             patches = new Harmony("com.alexandr-fredrix.wisp");
             patches.PatchAll(typeof(WispMod).Assembly);
-            Logger.LogInfo("Wisp 1.0.0 / Unity 6. F8 or both sticks opens the guide. No input backend changes.");
+            Logger.LogInfo("Wisp 1.0.1 / Unity 6. F8 or both sticks opens the guide. No input backend changes.");
         }
         private T Read<T>(string path) where T : class
         {
@@ -46,18 +51,28 @@ namespace Wisp
         internal void Loaded(int id, bool fresh)
         {
             slot = id;
-            Progress = fresh ? new SaveProgress() : Read<SaveProgress>(Path.Combine(directory, "user" + id + ".json"));
-            if (Progress == null)
-            {
-                // Read only Wisp's old section; never rewrite the shared legacy file.
-                var legacy = Read<JObject>(Path.Combine(Application.persistentDataPath, "user" + id + ".modded.json"));
-                try { Progress = legacy?["modData"]?["Wisp"]?.ToObject<SaveProgress>(); }
-                catch (Exception e) { Logger.LogWarning("Legacy Wisp import skipped: " + e.Message); }
-            }
-            Progress = Progress ?? new SaveProgress();
-            Progress.Normalize();
+            progressRead = progressStore.Load(Path.Combine(directory, "user" + id + ".json"),
+                Path.Combine(Application.persistentDataPath, "user" + id + ".modded.json"), DecodeLegacy, fresh);
+            Progress = progressRead.Data;
+            if (progressRead.Message.Length > 0) Logger.LogWarning(progressRead.Message);
             guide.ResetView();
             Logger.LogInfo("Guide loaded for slot " + id + (fresh ? " (new game)" : ""));
+        }
+        private static SaveProgress DecodeProgress(string json)
+        {
+            var data = JObject.Parse(json);
+            bool recognized = false;
+            foreach (var property in data.Properties())
+                if (string.Equals(property.Name, "Completed", StringComparison.OrdinalIgnoreCase) || string.Equals(property.Name, "VisitedChapters", StringComparison.OrdinalIgnoreCase) || string.Equals(property.Name, "ChapterId", StringComparison.OrdinalIgnoreCase)) recognized = true;
+            if (!recognized) throw new InvalidDataException("Unrecognized progress object");
+            var schema = data.GetValue("Schema", StringComparison.OrdinalIgnoreCase);
+            if (schema != null && (schema.Type != JTokenType.Integer || (int)schema != 1)) throw new InvalidDataException("Unsupported progress schema");
+            return data.ToObject<SaveProgress>();
+        }
+        private static SaveProgress DecodeLegacy(string json)
+        {
+            var section = JObject.Parse(json)["modData"]?["Wisp"];
+            return section == null ? null : DecodeProgress(section.ToString());
         }
         private void Write(string path, object value)
         {
@@ -73,7 +88,9 @@ namespace Wisp
         internal void SavePreferences() { Write(Path.Combine(directory, "settings.json"), Settings); }
         internal void Saved(int id)
         {
-            if (slot == id && id > 0) Write(Path.Combine(directory, "user" + id + ".json"), Progress);
+            if (slot == id && id > 0 && progressRead != null && progressRead.WriteAllowed)
+                try { progressStore.Save(Path.Combine(directory, "user" + id + ".json"), progressRead); }
+                catch (Exception e) { Logger.LogError("Cannot save Wisp progress: " + e.Message); }
             Write(Path.Combine(directory, "settings.json"), Settings);
         }
         private void OnApplicationQuit() { Write(Path.Combine(directory, "settings.json"), Settings); }

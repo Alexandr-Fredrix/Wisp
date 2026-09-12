@@ -13,183 +13,159 @@ using UnityEngine.Networking;
 namespace Wisp.UI
 {
     public sealed class StepImage { public string Label = ""; public string Url = ""; public bool Wide; }
-
     public sealed class EnemyMedia
     {
         public string Portrait = "";
-        public string[] Maps = new string[0];
-        public string[] MapCaptions = new string[0];
+        public HabitatMap[] HabitatMaps = new HabitatMap[0];
     }
-
-    // Local reference images are embedded; remaining wiki artwork is cached on demand.
     public sealed class MediaLibrary : IDisposable
     {
         private readonly MonoBehaviour owner;
         private readonly Dictionary<string, Texture2D> images = new Dictionary<string, Texture2D>();
-        private readonly HashSet<string> pending = new HashSet<string>();
-        private readonly Dictionary<string, string> errors = new Dictionary<string, string>();
-        private readonly Queue<string> order = new Queue<string>();
+        private readonly Dictionary<string, string> keys = new Dictionary<string, string>();
+        private readonly Dictionary<string, string> regionSources = new Dictionary<string, string>();
+        private readonly HashSet<string> checkedLocal = new HashSet<string>();
+        private readonly HashSet<UnityWebRequest> requests = new HashSet<UnityWebRequest>();
+        private readonly ImageLoads loads = new ImageLoads();
+        private readonly ImageBudget budget = new ImageBudget();
         private bool disposed;
         public readonly Dictionary<string, EnemyMedia> Enemies;
         public readonly Dictionary<string, string> Regions;
         public readonly Dictionary<string, string> EnglishRegions;
         public readonly Dictionary<string, StepImage[]> Steps;
         public string Cache { get; private set; }
-
+        public long CachedBytes { get { return budget.Bytes; } }
+        public int CachedCount { get { return images.Count; } }
         public MediaLibrary(MonoBehaviour owner)
         {
             this.owner = owner;
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Wisp.regions-en.json"))
-            using (var reader = new StreamReader(stream))
-                EnglishRegions = JsonConvert.DeserializeObject<Dictionary<string,string>>(reader.ReadToEnd());
             Cache = Path.Combine(Application.persistentDataPath, "WispCache");
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Wisp.media.json"))
-            using (var reader = new StreamReader(stream))
-                Enemies = JsonConvert.DeserializeObject<Dictionary<string, EnemyMedia>>(reader.ReadToEnd());
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Wisp.regions.json"))
-            using (var reader = new StreamReader(stream))
-                Regions = JsonConvert.DeserializeObject<Dictionary<string, string>>(reader.ReadToEnd());
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Wisp.step-media.json"))
-            using (var reader = new StreamReader(stream))
-                Steps = JsonConvert.DeserializeObject<Dictionary<string, StepImage[]>>(reader.ReadToEnd());
+            EnglishRegions = Read<Dictionary<string, string>>("regions-en.json");
+            Regions = Read<Dictionary<string, string>>("regions.json");
+            Enemies = Read<Dictionary<string, EnemyMedia>>("media.json");
+            Steps = Read<Dictionary<string, StepImage[]>>("step-media.json");
         }
-
-        public Texture2D AchievementIcon(string key)
+        private static T Read<T>(string name)
         {
-            string id = "achievement-" + key;
-            Texture2D image;
-            if (images.TryGetValue(id, out image)) return image;
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Wisp.achievements/" + key + ".jpg"))
-                if (stream != null) using (var buffer = new MemoryStream()) { stream.CopyTo(buffer); return Decode(id, buffer.ToArray()); }
-            return null;
+            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Wisp." + name))
+            using (var reader = new StreamReader(stream)) return JsonConvert.DeserializeObject<T>(reader.ReadToEnd());
         }
-
-        public Texture2D Region(string id)
+        public Texture2D AchievementIcon(string key) { return Get("embedded:achievements/" + key + ".jpg"); }
+        public string RegionSource(string id)
         {
-            string key = "region-" + id;
-            if (I18n.English)
-            {
-                string englishMap;
-                if (EnglishRegions.TryGetValue(id, out englishMap)) return Get(englishMap);
-                return Regions.TryGetValue(id, out englishMap) ? Get(englishMap) : null;
-            }
-            Texture2D texture;
-            if (images.TryGetValue(key, out texture)) return texture;
-            using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Wisp.ui/" + key + ".png"))
-                if (stream != null) using (var buffer = new MemoryStream()) { stream.CopyTo(buffer); return Decode(key, buffer.ToArray()); }
-            texture = Local(key);
-            if (texture != null) return texture;
             string url;
-            return Regions.TryGetValue(id, out url) ? Get(url) : null;
+            string key = (I18n.English ? "en:" : "ru:") + id;
+            if (regionSources.TryGetValue(key, out url)) return url;
+            if (I18n.English && EnglishRegions.TryGetValue(id, out url)) return regionSources[key] = url;
+            if (!I18n.English)
+            {
+                if (id == "abyss" || id == "queens-gardens" || id == "fog-canyon") return regionSources[key] = "embedded:ui/region-" + id + ".png";
+                if (File.Exists(Path.Combine(Cache, "region-" + id + ".png"))) return regionSources[key] = "local:region-" + id;
+            }
+            return regionSources[key] = Regions.TryGetValue(id, out url) ? url : "";
         }
-        public string RegionStatus(string id)
-        { string url; return Regions.TryGetValue(id, out url) ? Status(url) : Wisp.Core.I18n.T("Для этой зоны справочная карта пока не добавлена."); }
-
+        public Texture2D Region(string id) { return Get(RegionSource(id)); }
+        public string RegionStatus(string id) { return Status(RegionSource(id)); }
         public static string Key(string url)
         {
-            using (var hash = SHA256.Create())
-                return BitConverter.ToString(hash.ComputeHash(Encoding.UTF8.GetBytes(url))).Replace("-", "").ToLowerInvariant();
+            using (var hash = SHA256.Create()) return BitConverter.ToString(hash.ComputeHash(Encoding.UTF8.GetBytes(url))).Replace("-", "").ToLowerInvariant();
         }
-
-        public Texture2D Local(string key)
-        {
-            Texture2D result;
-            if (images.TryGetValue(key, out result)) return result;
-            if (errors.ContainsKey(key)) return null;
-            try
-            {
-                var path = Path.Combine(Cache, key + ".png");
-                if (File.Exists(path)) { var decoded = Decode(key, File.ReadAllBytes(path)); if (decoded != null) return decoded; }
-            }
-            catch (Exception) { }
-            errors[key] = Wisp.Core.I18n.T("Изображение ещё не сохранено на этом компьютере.");
-            return null;
-        }
-
+        private string CacheKey(string url)
+        { string key; if (!keys.TryGetValue(url, out key)) keys[url] = key = Key(url); return key; }
         public Texture2D Get(string url)
         {
-            if (string.IsNullOrEmpty(url)) return null;
-            if (url.StartsWith("embedded:"))
+            if (disposed || string.IsNullOrEmpty(url)) return null;
+            string key = CacheKey(url);
+            Texture2D texture;
+            if (images.TryGetValue(key, out texture)) { budget.Touch(key); return texture; }
+            if (loads.State(key) == ImageLoadState.Failed) return null;
+            if (checkedLocal.Add(key))
             {
-                Texture2D saved; if (images.TryGetValue(url, out saved)) return saved;
-                using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Wisp." + url.Substring(9)))
-                    if (stream != null) using (var buffer = new MemoryStream()) { stream.CopyTo(buffer); return Decode(url, buffer.ToArray()); }
-                return null;
+                try
+                {
+                    if (url.StartsWith("embedded:", StringComparison.Ordinal))
+                    {
+                        using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Wisp." + url.Substring(9)))
+                        {
+                            if (stream == null) throw new FileNotFoundException();
+                            using (var buffer = new MemoryStream()) { stream.CopyTo(buffer); texture = Decode(key, buffer.ToArray()); }
+                        }
+                    }
+                    else
+                    {
+                        string path = Path.Combine(Cache, (url.StartsWith("local:", StringComparison.Ordinal) ? url.Substring(6) : key) + ".png");
+                        texture = File.Exists(path) ? Decode(key, File.ReadAllBytes(path)) : null;
+                    }
+                    if (texture != null) return texture;
+                }
+                catch (Exception e) { Debug.LogWarning("[Wisp] Image cache read failed: " + e.Message); }
+                if (url.StartsWith("embedded:", StringComparison.Ordinal) || url.StartsWith("local:", StringComparison.Ordinal))
+                { loads.Finish(key, false); return null; }
             }
-            string key = Key(url);
-            var texture = Local(key);
-            if (texture != null) return texture;
-            if (!pending.Contains(key) && errors[key] == Wisp.Core.I18n.T("Изображение ещё не сохранено на этом компьютере.") && pending.Count < 3)
-            {
-                pending.Add(key);
-                errors[key] = Wisp.Core.I18n.T("Загрузка изображения…");
-                owner.StartCoroutine(Download(url, key));
-            }
+            if (loads.TryStart(key)) owner.StartCoroutine(Download(url, key));
             return null;
         }
-
         public string Status(string url)
         {
-            string result;
-            return errors.TryGetValue(Key(url), out result) ? result : Wisp.Core.I18n.T("Загрузка изображения…");
+            if (string.IsNullOrEmpty(url)) return I18n.T("Для этой зоны справочная карта пока не добавлена.");
+            return loads.State(CacheKey(url)) == ImageLoadState.Failed ? I18n.T("Не удалось загрузить изображение. Повторить · X") : I18n.T("Загрузка изображения…");
         }
-
-        public void Retry()
+        public bool CanRetry(string url) { return !string.IsNullOrEmpty(url) && loads.State(CacheKey(url)) == ImageLoadState.Failed; }
+        public void Retry(string url)
         {
-            foreach (var key in new List<string>(errors.Keys))
-                if (!pending.Contains(key)) errors.Remove(key);
+            if (!CanRetry(url)) return;
+            string key = CacheKey(url); loads.Retry(key); checkedLocal.Remove(key); Get(url);
         }
-
         private IEnumerator Download(string url, string key)
         {
             Uri uri;
             if (!Uri.TryCreate(url, UriKind.Absolute, out uri) || uri.Scheme != "https" || uri.Host != "cdn.wikimg.net")
-            { errors[key] = Wisp.Core.I18n.T("Неизвестный источник изображения."); pending.Remove(key); yield break; }
-            using (var request = new UnityWebRequest())
+            { loads.Finish(key, false); yield break; }
+            var request = UnityWebRequest.Get(url);
+            request.timeout = 20;
+            requests.Add(request);
+            bool success = false;
+            try
             {
-                request.url = url;
-                request.method = "GET";
-                request.downloadHandler = new DownloadHandlerBuffer();
-                request.timeout = 20;
                 yield return request.SendWebRequest();
-                if (!disposed)
+                if (!disposed && request.result == UnityWebRequest.Result.Success)
                 {
-                    if (request.result != UnityWebRequest.Result.Success)
-                        errors[key] = Wisp.Core.I18n.T("Нет связи с библиотекой изображений. Нажми «Повторить».");
-                    else try
+                    try
                     {
-                        var data = request.downloadHandler.data;
-                        if (data.Length > 16 * 1024 * 1024) throw new InvalidDataException();
-                        var decoded = Decode(key, data);
-                        if (decoded == null) throw new InvalidDataException();
-                        Directory.CreateDirectory(Cache);
-                        File.WriteAllBytes(Path.Combine(Cache, key + ".png"), data);
+                        byte[] data = request.downloadHandler.data;
+                        if (data.Length > 16 * 1024 * 1024) throw new InvalidDataException("Image exceeds download limit");
+                        success = Decode(key, data) != null;
+                        if (success)
+                            try { Directory.CreateDirectory(Cache); string path = Path.Combine(Cache, key + ".png"); File.WriteAllBytes(path + ".tmp", data); if (File.Exists(path)) File.Replace(path + ".tmp", path, null); else File.Move(path + ".tmp", path); }
+                            catch (Exception e) { Debug.LogWarning("[Wisp] Image is available, but disk cache failed: " + e.Message); }
                     }
-                    catch (Exception) { errors[key] = Wisp.Core.I18n.T("Не удалось прочитать или сохранить изображение."); }
+                    catch (Exception e) { Debug.LogWarning("[Wisp] Image decode failed: " + e.Message); }
                 }
             }
-            pending.Remove(key);
+            finally { requests.Remove(request); request.Dispose(); loads.Finish(key, success); }
         }
-
         private Texture2D Decode(string key, byte[] data)
         {
             var texture = new Texture2D(2, 2, TextureFormat.RGBA32, false);
-            if (!ImageConversion.LoadImage(texture, data, true)) { UnityEngine.Object.Destroy(texture); return null; }
-            while (images.Count >= 24 && order.Count > 0)
+            try
             {
-                var oldest = order.Dequeue();
-                UnityEngine.Object.Destroy(images[oldest]); images.Remove(oldest);
+                if (!ImageConversion.LoadImage(texture, data, true)) throw new InvalidDataException("Invalid image");
+                long bytes = (long)texture.width * texture.height * 4;
+                if (!budget.Fits(bytes)) throw new InvalidDataException("Decoded image exceeds memory budget");
+                foreach (var oldest in budget.Admit(key, bytes))
+                { UnityEngine.Object.Destroy(images[oldest]); images.Remove(oldest); checkedLocal.Remove(oldest); loads.Evicted(oldest); }
+                texture.filterMode = FilterMode.Bilinear; images[key] = texture;
+                if (loads.State(key) != ImageLoadState.Loading) loads.Finish(key, true);
+                return texture;
             }
-            texture.filterMode = FilterMode.Bilinear;
-            images[key] = texture; order.Enqueue(key); errors.Remove(key);
-            return texture;
+            catch { UnityEngine.Object.Destroy(texture); throw; }
         }
-
         public void Dispose()
         {
             disposed = true;
+            foreach (var request in requests) request.Abort();
             foreach (var image in images.Values) UnityEngine.Object.Destroy(image);
-            images.Clear();
+            images.Clear(); budget.Clear();
         }
     }
 }
